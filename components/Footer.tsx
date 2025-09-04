@@ -12,15 +12,14 @@ export default function Footer() {
     <footer style={{
       backgroundColor: 'var(--deep-blue)',
       color: 'var(--light-gray)',
-      padding: '2rem 0',
+      padding: '2rem 1rem',
       marginTop: 'auto',
       width: '100%',
-      zIndex: 100,
-      position: 'sticky',
-      bottom: 0
+      zIndex: 100
     }}>
+      {/* Sticky CTA Bar */}
       <div style={{
-        position: 'sticky',
+        position: 'fixed',
         bottom: 0,
         left: 0,
         right: 0,
@@ -28,9 +27,10 @@ export default function Footer() {
         color: 'var(--deep-blue)',
         textAlign: 'center',
         padding: '1rem',
-        zIndex: 200,
-        boxShadow: '0 -2px 10px rgba(0,0,0,0.1)'
-      }}>
+        zIndex: 1000,
+        boxShadow: '0 -2px 10px rgba(0,0,0,0.1)',
+        borderTop: '2px solid var(--deep-blue)'
+      }} id="sticky-cta">
         <Link
           href="/contact"
           style={{
@@ -49,7 +49,9 @@ export default function Footer() {
           Schedule Your Free AI Audit Now
         </Link>
       </div>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
+
+      {/* Footer Content with padding top to account for sticky CTA */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '0' }}>
         <div className="grid grid-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
           <div>
             <h3>Follow Me</h3>
