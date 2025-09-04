@@ -15,8 +15,40 @@ export default function Footer() {
       padding: '2rem 0',
       marginTop: 'auto',
       width: '100%',
-      zIndex: 100
+      zIndex: 100,
+      position: 'sticky',
+      bottom: 0
     }}>
+      <div style={{
+        position: 'sticky',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: 'var(--golden-yellow)',
+        color: 'var(--deep-blue)',
+        textAlign: 'center',
+        padding: '1rem',
+        zIndex: 200,
+        boxShadow: '0 -2px 10px rgba(0,0,0,0.1)'
+      }}>
+        <Link
+          href="/contact"
+          style={{
+            fontSize: '18px',
+            fontWeight: 'bold',
+            color: 'var(--deep-blue)',
+            textDecoration: 'none',
+            display: 'inline-block',
+            marginBottom: '0.5rem',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          <i className="fas fa-calendar-check" style={{ marginRight: '0.5rem' }}></i>
+          Schedule Your Free AI Audit Now
+        </Link>
+      </div>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
         <div className="grid grid-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
           <div>

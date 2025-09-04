@@ -4,7 +4,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 :root {
-  --olive-green: #556B2F;
+  --olive-green: #6B8E23;
   --deep-blue: #001F3F;
   --golden-yellow: #DAA520;
   --white: #FFFFFF;
@@ -98,7 +98,7 @@ button, a {
 }
 
 .hero-meta {
-  animation: slideUp 1s ease-out 0.6s both;
+  animation: slideUp 1s ease-out 0.6s both, fadeIn 1s ease-out 0.6s both;
 }
 
 /* Animation Keyframes */

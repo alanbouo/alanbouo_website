@@ -15,8 +15,8 @@ export default function HomePage() {
       <section
         className="hero-section"
         style={{
-          background: 'linear-gradient(135deg, var(--deep-blue) 60%, var(--olive-green) 100%)',
-          padding: '4rem 1rem',
+          background: 'linear-gradient(135deg, var(--deep-blue) 40%, var(--olive-green) 80%, var(--golden-yellow) 100%)',
+          padding: '4rem 20px',
           textAlign: 'center',
           color: 'var(--white)',
           minHeight: '100vh',
@@ -60,7 +60,7 @@ export default function HomePage() {
       </section>
 
       {/* Olive Grove Infographic */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--white)', borderTop: '1px solid var(--light-gray)' }}>
+      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--white)', borderTop: '1px solid var(--light-gray)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ marginBottom: '3rem', color: 'var(--deep-blue)' }}>
             <em style={{ fontFamily: 'Pacifico, cursive', fontSize: '36px' }}>AI Ecosystem as Olive Grove</em>
@@ -96,24 +96,24 @@ export default function HomePage() {
       </section>
 
       {/* Services Teaser */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--white)' }}>
+      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--white)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Services</h2>
           <div className="grid grid-3">
             <div style={{ padding: '1rem', textAlign: 'center' }}>
-              <i className="fas fa-lock" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
+              <i className="fas fa-leaf" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
               <h3>AI Ethics Audits</h3>
               <p>Ensure your AI deployments are privacy-first and ethical</p>
               <Link href="/services" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
             </div>
             <div style={{ padding: '1rem', textAlign: 'center' }}>
-              <i className="fas fa-cloud" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
+              <i className="fas fa-leaf" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
               <h3>Cloud-to-Self Migration</h3>
               <p>Move your AI infrastructure off cloud providers</p>
               <Link href="/services" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
             </div>
             <div style={{ padding: '1rem', textAlign: 'center' }}>
-              <i className="fas fa-cogs" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
+              <i className="fas fa-leaf" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
               <h3>Custom Integration</h3>
               <p>Tailored AI solutions for your specific needs</p>
               <Link href="/services" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
@@ -123,7 +123,7 @@ export default function HomePage() {
       </section>
 
       {/* Profile Section */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--deep-blue)', color: 'var(--white)' }}>
+      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--deep-blue)', color: 'var(--white)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 300px', gap: '3rem', alignItems: 'center' }}>
           <div>
             <h2 style={{ marginBottom: '1.5rem' }}>Rencontrez Alanbouo</h2>
@@ -140,20 +140,33 @@ export default function HomePage() {
             </Link>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <img
-              src="/img/placeholder-avatar.svg"
-              alt="Alanbouo - Consultant IA auto-hébergée"
-              style={{
-                width: '250px',
-                height: '250px',
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+              <img
+                src="/img/placeholder-avatar.svg"
+                alt="Alanbouo - Consultant IA auto-hébergée"
+                style={{
+                  width: '250px',
+                  height: '250px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  border: '4px solid var(--golden-yellow)',
+                  boxShadow: '0 8px 25px rgba(218, 165, 32, 0.3)',
+                  transition: 'transform 0.3s ease'
+                }}
+                className="profile-image"
+              />
+              <i className="fas fa-leaf" style={{
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                fontSize: '32px',
+                color: 'var(--olive-green)',
+                backgroundColor: 'var(--white)',
                 borderRadius: '50%',
-                objectFit: 'cover',
-                border: '4px solid var(--golden-yellow)',
-                boxShadow: '0 8px 25px rgba(218, 165, 32, 0.3)',
-                transition: 'transform 0.3s ease'
-              }}
-              className="profile-image"
-            />
+                padding: '0.5rem',
+                boxShadow: '0 0 10px rgba(0,0,0,0.1)'
+              }}></i>
+            </div>
             <div style={{ marginTop: '1rem', opacity: '0.9' }}>
               <i className="fas fa-map-marker-alt" style={{ marginRight: '0.5rem', color: 'var(--olive-green)' }}></i>
               Marseille, France
@@ -163,7 +176,7 @@ export default function HomePage() {
       </section>
 
       {/* AI Ethics Quiz - Self-Hosted */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--light-gray)' }}>
+      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--light-gray)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2>AI Ethics Quiz: Cultivate Your Harvest</h2>
@@ -179,7 +192,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof Testimonials */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--white)' }}>
+      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--white)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ color: 'var(--deep-blue)' }}>Client Harvest Success Stories</h2>
@@ -284,7 +297,7 @@ export default function HomePage() {
       </section>
 
       {/* Newsletter Signup & YouTube Link */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--deep-blue)', color: 'var(--white)' }}>
+      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--deep-blue)', color: 'var(--white)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{
             backgroundColor: 'var(--white)',
