@@ -127,7 +127,7 @@ button, a {
   animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Enhanced olive circuit pattern animation */
+/* Enhanced olive circuit pattern animation - olive branches intertwined with AI circuits */
 .hero-section::before {
   content: '';
   position: absolute;
@@ -136,14 +136,20 @@ button, a {
   right: 0;
   bottom: 0;
   z-index: 1;
-  opacity: 0.4;
+  opacity: 0.6;
   background-image:
-    radial-gradient(circle at 15% 85%, rgba(213, 165, 32, 0.15) 1%, transparent 1%),
-    radial-gradient(circle at 85% 15%, rgba(85, 107, 47, 0.2) 0.8%, transparent 0.8%),
-    radial-gradient(circle at 70% 70%, rgba(218, 165, 32, 0.1) 1.2%, transparent 1.2%),
-    linear-gradient(45deg, transparent 40%, rgba(85, 107, 47, 0.05) 42%, transparent 44%);
-  background-size: 180px 180px, 240px 240px, 150px 150px, 300px 300px;
-  background-position: 0 0, 100px 200px, 200px 50px, 0 0;
+    /* AI circuit nodes */
+    radial-gradient(circle at 10% 80%, rgba(213, 165, 32, 0.2) 2%, transparent 2%),
+    radial-gradient(circle at 90% 20%, rgba(85, 107, 47, 0.25) 1.5%, transparent 1.5%),
+    radial-gradient(circle at 75% 75%, rgba(218, 165, 32, 0.15) 1.8%, transparent 1.8%),
+    radial-gradient(circle at 20% 60%, rgba(85, 107, 47, 0.2) 1.5%, transparent 1.5%),
+    radial-gradient(circle at 70% 30%, rgba(218, 165, 32, 0.12) 2%, transparent 2%),
+    /* Olive branch patterns */
+    conic-gradient(at 50% 50%, rgba(85, 107, 47, 0.1) 0deg, transparent 60deg, rgba(218, 165, 32, 0.08) 90deg, transparent 150deg),
+    linear-gradient(135deg, transparent 30%, rgba(85, 107, 47, 0.05) 32%, rgba(218, 165, 32, 0.04) 35%, transparent 37%),
+    linear-gradient(45deg, transparent 50%, rgba(85, 107, 47, 0.06) 52%, rgba(213, 165, 32, 0.03) 55%, transparent 57%);
+  background-size: 220px 220px, 280px 280px, 180px 180px, 160px 160px, 200px 200px, 350px 350px, 300px 300px, 250px 250px;
+  background-position: 0 0, 120px 220px, 180px 40px, 50px 120px, 220px 160px, 0 0, 80px 100px, 150px 150px;
   animation: circuitFlow 8s linear infinite;
   pointer-events: none;
 }
