@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 export default function Footer() {
   const handleNewsletter = (e: any) => {
@@ -8,15 +9,43 @@ export default function Footer() {
     alert('Thank you for subscribing!')
   }
 
+  const [isSticky, setIsSticky] = useState(false)
+
+  useEffect(() => {
+    const checkFooterPosition = () => {
+      const mainContent = document.querySelector('main')
+      if (mainContent) {
+        const contentHeight = mainContent.scrollHeight
+        const windowHeight = window.innerHeight
+        // Make sticky if content is shorter than window height
+        setIsSticky(contentHeight < windowHeight)
+      }
+    }
+
+    checkFooterPosition()
+    window.addEventListener('resize', checkFooterPosition)
+    return () => window.removeEventListener('resize', checkFooterPosition)
+  }, [])
+
   return (
-    <footer style={{
-      backgroundColor: 'var(--deep-blue)',
-      color: 'var(--light-gray)',
-      padding: '3rem 1rem 1rem 1rem',
-      marginTop: 'auto',
-      width: '100%',
-      zIndex: 100
-    }}>
+    <footer
+      tabIndex={0}
+      style={{
+        backgroundColor: 'var(--deep-blue)',
+        color: 'var(--light-gray)',
+        padding: '2rem 1rem',
+        marginTop: '20px',
+        width: '100%',
+        ...(isSticky ? {
+          position: 'sticky',
+          bottom: '0',
+          zIndex: '10'
+        } : {
+          position: 'relative'
+        }),
+        borderTop: '1px solid #556B2F'
+      }}
+    >
       {/* Footer Content */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '2rem' }}>
 
@@ -69,10 +98,40 @@ export default function Footer() {
             </form>
           </div>
         </div>
-        <div style={{ textAlign: 'center', marginTop: '2rem', borderTop: '1px solid var(--olive-green)', paddingTop: '1rem' }}>
+        <div style={{
+          textAlign: 'center',
+          marginTop: '2rem',
+          borderTop: '1px solid var(--olive-green)',
+          paddingTop: '1rem',
+          fontFamily: 'Roboto, sans-serif',
+          fontSize: '14px'
+        }}>
           <p>&copy; 2025 Alanbouo. All rights reserved. <em>Empowering ethical AI growth, one olive seed at a time.</em></p>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          footer {
+            padding: 10px !important;
+            display: flex !important;
+            flex-direction: column !important;
+          }
+
+          footer > div {
+            padding-bottom: 1rem !important;
+          }
+        }
+
+        footer {
+          outline: none;
+        }
+
+        footer:focus, footer:has(*:focus) {
+          outline: 2px solid var(--golden-yellow);
+          outline-offset: 2px;
+        }
+      `}</style>
     </footer>
   )
 }
