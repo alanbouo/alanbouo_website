@@ -20,42 +20,7 @@ export default function Footer() {
       {/* Footer Content */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '2rem' }}>
 
-        {/* CTA Section */}
-        <div style={{
-          backgroundColor: 'var(--golden-yellow)',
-          color: 'var(--deep-blue)',
-          padding: '2rem 1rem',
-          marginBottom: '2rem',
-          borderRadius: '12px',
-          textAlign: 'center',
-          boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-        }}>
-          <h3 style={{ marginBottom: '1rem', fontSize: '20px', fontFamily: 'Pacifico' }}>Ready to Cultivate Your AI Future?</h3>
-          <p style={{ marginBottom: '1.5rem', fontSize: '16px' }}>
-            Book your free AI ethics audit and discover how self-hosted AI can transform your business.
-          </p>
-          <Link
-            href="/contact"
-            style={{
-              backgroundColor: 'var(--deep-blue)',
-              color: 'var(--golden-yellow)',
-              padding: '1rem 2rem',
-              borderRadius: '8px',
-              textDecoration: 'none',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <i className="fas fa-calendar-check"></i>
-            Schedule Your Free Audit
-          </Link>
-        </div>
+
 
         <div className="grid grid-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
           <div>
