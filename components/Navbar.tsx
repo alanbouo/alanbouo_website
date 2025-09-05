@@ -62,39 +62,95 @@ export default function Navbar() {
           <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
 
-        <ul style={{
-          listStyle: 'none',
-          display: 'flex',
-          gap: '1.5rem',
-          margin: 0,
-          padding: 0
-        }}>
-          <li>
-            <Link href="/" className="nav-link hover-glow" aria-label="Home page">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/services" className="nav-link hover-glow" aria-label="Services page">
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog" className="nav-link hover-glow" aria-label="Blog page">
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className="nav-link hover-glow" aria-label="About page">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" className="nav-link hover-glow" aria-label="Contact page">
-              Contact
-            </Link>
-          </li>
-        </ul>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <ul style={{
+            listStyle: 'none',
+            display: 'flex',
+            gap: '1.5rem',
+            margin: 0,
+            padding: 0
+          }}>
+            <li>
+              <Link href="/" className="nav-link hover-glow" aria-label="Home page">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" className="nav-link hover-glow" aria-label="Services page">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="nav-link hover-glow" aria-label="Blog page">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="nav-link hover-glow" aria-label="About page">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="nav-link hover-glow" aria-label="Contact page">
+                Contact
+              </Link>
+            </li>
+          </ul>
+
+          <div style={{
+            display: 'flex',
+            gap: '1rem',
+            marginLeft: '1rem',
+            paddingLeft: '1rem',
+            borderLeft: '1px solid var(--olive-green)'
+          }}>
+            <a
+              href="https://youtube.com/alanbouo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-nav-link"
+              aria-label="Follow Alanbouo on YouTube"
+              style={{
+                color: 'var(--olive-green)',
+                textDecoration: 'none',
+                fontSize: '20px',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <i className="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/alanbouo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-nav-link"
+              aria-label="Connect with Alanbouo on LinkedIn"
+              style={{
+                color: 'var(--olive-green)',
+                textDecoration: 'none',
+                fontSize: '20px',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://twitter.com/alanbouo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-nav-link"
+              aria-label="Follow Alanbouo on X/Twitter"
+              style={{
+                color: 'var(--olive-green)',
+                textDecoration: 'none',
+                fontSize: '20px',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <i className="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
       </div>
 
       {isOpen && (
