@@ -86,7 +86,7 @@ export default function RootLayout({
           fontWeight: 'bold',
           fontFamily: 'Montserrat, sans-serif'
         }}>
-          🎯 <Link
+          <Link
             href="/contact"
             style={{
               color: 'var(--deep-blue)',
@@ -95,7 +95,7 @@ export default function RootLayout({
             }}
           >
             Schedule Your Free AI Audit Now
-          </Link> 🌿
+          </Link>
         </div>
 
         <main data-cta-variant={ctaVariant}>
