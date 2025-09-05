@@ -1,31 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 
 export default function Footer() {
   const handleNewsletter = (e: any) => {
     e.preventDefault()
     alert('Thank you for subscribing!')
   }
-
-  const [isSticky, setIsSticky] = useState(false)
-
-  useEffect(() => {
-    const checkFooterPosition = () => {
-      const mainContent = document.querySelector('main')
-      if (mainContent) {
-        const contentHeight = mainContent.scrollHeight
-        const windowHeight = window.innerHeight
-        // Make sticky if content is shorter than window height
-        setIsSticky(contentHeight < windowHeight)
-      }
-    }
-
-    checkFooterPosition()
-    window.addEventListener('resize', checkFooterPosition)
-    return () => window.removeEventListener('resize', checkFooterPosition)
-  }, [])
 
   return (
     <footer
@@ -36,13 +17,7 @@ export default function Footer() {
         padding: '2rem 1rem',
         marginTop: '20px',
         width: '100%',
-        ...(isSticky ? {
-          position: 'sticky',
-          bottom: '0',
-          zIndex: '10'
-        } : {
-          position: 'relative'
-        }),
+        position: 'relative',
         borderTop: '1px solid #556B2F'
       }}
     >

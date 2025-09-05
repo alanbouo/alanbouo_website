@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -71,6 +72,32 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
+        {/* Top CTA Banner */}
+        <div style={{
+          backgroundColor: 'var(--golden-yellow)',
+          color: 'var(--deep-blue)',
+          padding: '0.75rem 1rem',
+          textAlign: 'center',
+          borderBottom: '2px solid var(--deep-blue)',
+          position: 'sticky',
+          top: '0',
+          zIndex: '5',
+          fontSize: '18px',
+          fontWeight: 'bold',
+          fontFamily: 'Montserrat, sans-serif'
+        }}>
+          🎯 <Link
+            href="/contact"
+            style={{
+              color: 'var(--deep-blue)',
+              textDecoration: 'underline',
+              fontWeight: 'bold',
+            }}
+          >
+            Schedule Your Free AI Audit Now
+          </Link> 🌿
+        </div>
+
         <main data-cta-variant={ctaVariant}>
           {children}
         </main>
