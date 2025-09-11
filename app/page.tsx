@@ -1,11 +1,9 @@
 import Link from 'next/link'
-import AIEthicsQuiz from '@/components/AIEthicsQuiz'
-import CTAWithAB from '@/components/CTAWithAB'
-import { Metadata } from 'next'
+import Image from 'next/image'
 
-export const metadata: Metadata = {
-  title: 'Alanbouo - Self-Hosted AI Consulting',
-  description: 'Empowering businesses with self-hosted AI for privacy and control',
+export const metadata = {
+  title: 'Alanbouo - Passionate Developer & Tech Enthusiast',
+  description: 'Exploring technology through development, open-source, self-hosting, and ethical AI. Full-stack developer passionate about clean code and innovative solutions.'
 }
 
 export default function HomePage() {
@@ -15,11 +13,11 @@ export default function HomePage() {
       <section
         className="hero-section"
         style={{
-          background: 'linear-gradient(135deg, var(--deep-blue) 40%, var(--olive-green) 80%, var(--golden-yellow) 100%)',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           padding: '4rem 20px',
           textAlign: 'center',
-          color: 'var(--white)',
-          minHeight: '100vh',
+          color: 'white',
+          minHeight: '90vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -27,387 +25,423 @@ export default function HomePage() {
           overflow: 'hidden'
         }}
       >
-        {/* CSS-based olive circuit pattern overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            opacity: 0.3,
-            background: `
-              radial-gradient(circle at 20% 30%, rgba(213, 165, 32, 0.1) 2%, transparent 2%),
-              radial-gradient(circle at 80% 70%, rgba(85, 107, 47, 0.15) 1.5%, transparent 1.5%),
-              radial-gradient(circle at 40% 60%, rgba(218, 165, 32, 0.08) 1%, transparent 1%),
-              radial-gradient(circle at 90% 20%, rgba(85, 107, 47, 0.12) 1.5%, transparent 1.5%)
-            `,
-            backgroundSize: '300px 300px, 200px 200px, 400px 400px, 250px 250px',
-            backgroundPosition: '0 0, 100px 100px, 50px 200px, 150px 50px',
-            pointerEvents: 'none'
-          }}
-        ></div>
-        <div className="hero-content">
-          <h1 className="hero-title">Empowering Businesses with Self-Hosted AI</h1>
-          <p className="hero-subtitle">
-            <em>Just as olives yield rich oil when pressed locally, self-hosted AI extracts value without leaking data to the cloud.</em>
-          </p>
-          <CTAWithAB href="/services" className="cta fade-glow hover-glow hero-cta">
-            Book a Free AI Audit
-          </CTAWithAB>
-    <p className="hero-meta">100% privacy-focused deployments • Reduced costs by 40% for clients • 50+ clients transformed</p>
-        </div>
-      </section>
-
-      {/* Olive Grove Infographic */}
-      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--white)', borderTop: '1px solid var(--light-gray)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '3rem', color: 'var(--deep-blue)' }}>
-            <em style={{ fontFamily: 'Pacifico, cursive', fontSize: '36px' }}>AI Ecosystem as Olive Grove</em>
-          </h2>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', maxWidth: '900px', margin: '0 auto' }}>
-            {/* Roots */}
-            <div style={{ padding: '2rem', backgroundColor: 'var(--light-gray)', borderRadius: '15px', border: '3px solid var(--golden-yellow)' }}>
-              <i className="fas fa-seedling" style={{ fontSize: '48px', color: 'var(--olive-green)', marginBottom: '1rem' }}></i>
-              <h3 style={{ color: 'var(--deep-blue)', marginBottom: '1rem' }}>Roots: Data Privacy</h3>
-              <p style={{ lineHeight: '1.6' }}>Strong foundation built on secure, self-hosted infrastructure that protects sensitive data like precious olive roots.</p>
-            </div>
-
-            {/* Branches */}
-            <div style={{ padding: '2rem', backgroundColor: 'var(--light-gray)', borderRadius: '15px', border: '3px solid var(--golden-yellow)' }}>
-              <i className="fas fa-tree" style={{ fontSize: '48px', color: 'var(--olive-green)', marginBottom: '1rem' }}></i>
-              <h3 style={{ color: 'var(--deep-blue)', marginBottom: '1rem' }}>Branches: Ethical Decisions</h3>
-              <p style={{ lineHeight: '1.6' }}><em style={{ fontFamily: 'Pacifico, cursive' }}>Nurturing AI like olive trees</em> ensures balanced growth and responsible decision-making.</p>
-            </div>
-
-            {/* Fruits */}
-            <div style={{ padding: '2rem', backgroundColor: 'var(--light-gray)', borderRadius: '15px', border: '3px solid var(--golden-yellow)' }}>
-              <i className="fas fa-apple-alt" style={{ fontSize: '48px', color: 'var(--olive-green)', marginBottom: '1rem' }}></i>
-              <h3 style={{ color: 'var(--deep-blue)', marginBottom: '1rem' }}>Fruits: Profitable Outcomes</h3>
-              <p style={{ lineHeight: '1.6' }}>Harvest the rich rewards of efficient, secure AI deployments that drive business success.</p>
-            </div>
-          </div>
-
-          <p style={{ marginTop: '3rem', fontStyle: 'italic', fontFamily: 'Pacifico, cursive', fontSize: '20px', color: 'var(--olive-green)' }}>
-            Cultivating ethical AI that thrives locally, just like the finest Mediterranean olive groves.
-          </p>
-        </div>
-      </section>
-
-      {/* Services Teaser */}
-      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--white)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Services</h2>
-          <div className="grid grid-3">
-            <div style={{ padding: '1rem', textAlign: 'center' }}>
-              <i className="fas fa-leaf" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
-              <h3>AI Ethics Audits</h3>
-              <p>Ensure your AI deployments are privacy-first and ethical</p>
-              <Link href="/services" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
-            </div>
-            <div style={{ padding: '1rem', textAlign: 'center' }}>
-              <i className="fas fa-leaf" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
-              <h3>Cloud-to-Self Migration</h3>
-              <p>Move your AI infrastructure off cloud providers</p>
-              <Link href="/services" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
-            </div>
-            <div style={{ padding: '1rem', textAlign: 'center' }}>
-              <i className="fas fa-leaf" style={{ fontSize: '48px', color: 'var(--olive-green)' }}></i>
-              <h3>Custom Integration</h3>
-              <p>Tailored AI solutions for your specific needs</p>
-              <Link href="/services" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Profile Section */}
-      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--deep-blue)', color: 'var(--white)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 300px', gap: '3rem', alignItems: 'center' }}>
-          <div>
-            <h2 style={{ marginBottom: '1.5rem' }}>Rencontrez Alanbouo</h2>
-            <p style={{ fontSize: '18px', marginBottom: '1.5rem', lineHeight: '1.8' }}>
-              Passionné par l'IA auto-hébergée depuis mes années d'université, j'aide les entreprises à maîtriser
-              leurs données tout en réduisant leur dépendance aux géants cloud.
-            </p>
-            <p style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '2rem' }}>
-              Comme le dit si bien le proverbe : "Les meilleurs oliviers portent leurs plus beaux fruits."
-              Mon approche place l'éthique et la confidentialité au cœur de chaque déploiement IA.
-            </p>
-            <Link href="/about" className="cta" style={{ backgroundColor: 'var(--golden-yellow)', color: 'var(--deep-blue)' }}>
-              En savoir plus sur moi
-            </Link>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ position: 'relative', display: 'inline-block' }}>
-              <img
-                src="/img/placeholder-avatar.svg"
-                alt="Alanbouo - Consultant IA auto-hébergée"
-                style={{
-                  width: '250px',
-                  height: '250px',
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  border: '4px solid var(--golden-yellow)',
-                  boxShadow: '0 8px 25px rgba(218, 165, 32, 0.3)',
-                  transition: 'transform 0.3s ease'
-                }}
-                className="profile-image"
-              />
-              <i className="fas fa-leaf" style={{
-                position: 'absolute',
-                top: '10px',
-                right: '10px',
-                fontSize: '32px',
-                color: 'var(--olive-green)',
-                backgroundColor: 'var(--white)',
-                borderRadius: '50%',
-                padding: '0.5rem',
-                boxShadow: '0 0 10px rgba(0,0,0,0.1)'
-              }}></i>
-            </div>
-            <div style={{ marginTop: '1rem', opacity: '0.9' }}>
-              <i className="fas fa-map-marker-alt" style={{ marginRight: '0.5rem', color: 'var(--olive-green)' }}></i>
-              Marseille, France
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Ethics Quiz - Self-Hosted */}
-      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--light-gray)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2>AI Ethics Quiz: Cultivate Your Harvest</h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-color)' }}>
-              <em style={{ fontFamily: 'Pacifico, cursive', color: 'var(--olive-green)' }}>
-                Discover your AI privacy maturity level
-              </em> - No external APIs, 100% local processing for under 2-second loads
-            </p>
-          </div>
-
-          <AIEthicsQuiz />
-        </div>
-      </section>
-
-      {/* Social Proof Testimonials */}
-      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--white)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ color: 'var(--deep-blue)' }}>Client Harvest Success Stories</h2>
+        <div style={{ zIndex: 2, maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '2rem' }}>
             <div style={{
-              width: '60px',
-              height: '4px',
-              backgroundColor: 'var(--golden-yellow)',
-              margin: '1rem auto 2rem auto'
-            }}></div>
+              width: '120px',
+              height: '120px',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              margin: '0 auto 1.5rem',
+              border: '4px solid white',
+              boxShadow: '0 8px 25px rgba(0,0,0,0.2)'
+            }}>
+              <Image
+                src="/img/alan.png"
+                alt="Alan Bouo - Developer & Tech Enthusiast"
+                width={120}
+                height={120}
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+            <h1 style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>Hi, I'm Alan Bouo</h1>
+            <p style={{ fontSize: '1.2rem', opacity: 0.9, marginBottom: '2rem' }}>
+              Full-stack developer passionate about creating meaningful solutions
+            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '1rem',
+            marginBottom: '2rem',
+            maxWidth: '800px',
+            margin: '0 auto 2rem'
+          }}>
             {[
-              {
-                quote: "Alanbouo's setup saved us 40% while keeping data ethical—fruitful results!",
-                author: "Marie Dubois",
-                role: "CTO, TechStart Marseille",
-                logo: "M"
-              },
-              {
-                quote: "From cloud dependency to complete data sovereignty. Olive grove wisdom at its finest.",
-                author: "Pierre Laurent",
-                role: "Data Director, FinanceFlow",
-                logo: "F"
-              },
-              {
-                quote: "50+ clients transformed, including mine. The moral of the olive: true value comes from ethical nurture.",
-                author: "Sophie Martinez",
-                role: "Privacy Officer, HealthTech Solutions",
-                logo: "H"
-              }
-            ].map((testimonial, index) => (
+              { icon: 'fas fa-code', text: 'Full-Stack Development' },
+              { icon: 'fas fa-server', text: 'Self-Hosting & DevOps' },
+              { icon: 'fas fa-brain', text: 'AI & Machine Learning' },
+              { icon: 'fas fa-users', text: 'Open-Source Contributor' }
+            ].map((skill, index) => (
               <div key={index} style={{
-                backgroundColor: 'var(--light-gray)',
-                padding: '2rem',
-                borderRadius: '15px',
-                border: '3px solid var(--golden-yellow)',
-                position: 'relative',
-                transition: 'transform 0.3s ease'
-              }} className="testimonial-card">
-                <div style={{
-                  position: 'absolute',
-                  top: '-15px',
-                  left: '20px',
-                  width: '50px',
-                  height: '50px',
-                  backgroundColor: 'var(--olive-green)',
-                  borderRadius: '50%',
-                  border: '4px solid var(--white)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--white)',
-                  fontWeight: 'bold',
-                  fontSize: '18px'
-                }}>
-                  {testimonial.logo}
-                </div>
-
-                <blockquote style={{
-                  fontStyle: 'italic',
-                  marginBottom: '2rem',
-                  marginTop: '2rem',
-                  lineHeight: '1.6',
-                  color: 'var(--text-color)',
-                  fontSize: '16px'
-                }}>
-                  "{testimonial.quote}"
-                </blockquote>
-
-                <div style={{ borderTop: '1px solid var(--golden-yellow)', paddingTop: '1rem' }}>
-                  <div style={{ fontWeight: 'bold', color: 'var(--deep-blue)' }}>
-                    {testimonial.author}
-                  </div>
-                  <div style={{ fontSize: '14px', color: 'var(--olive-green)' }}>
-                    {testimonial.role}
-                  </div>
-                </div>
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                padding: '1rem',
+                borderRadius: '10px',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255,255,255,0.2)'
+              }}>
+                <i className={skill.icon} style={{ fontSize: '24px', marginBottom: '0.5rem' }}></i>
+                <div>{skill.text}</div>
               </div>
             ))}
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <div style={{
+            display: 'flex',
+            gap: '1rem',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            marginTop: '2rem'
+          }}>
             <Link
-              href="/about#testimonials"
+              href="/projects"
               style={{
-                backgroundColor: 'var(--golden-yellow)',
-                color: 'var(--deep-blue)',
+                backgroundColor: 'white',
+                color: '#667eea',
                 padding: '1rem 2rem',
                 borderRadius: '8px',
                 textDecoration: 'none',
                 fontWeight: 'bold',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.5rem'
+                gap: '0.5rem',
+                transition: 'all 0.3s ease'
               }}
             >
-              <i className="fas fa-plus"></i> View All Success Stories
+              <i className="fas fa-folder-open"></i>
+              View My Work
             </Link>
+            <Link
+              href="/about"
+              style={{
+                backgroundColor: 'transparent',
+                color: 'white',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                border: '2px solid white',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <i className="fas fa-user"></i>
+              About Me
+            </Link>
+          </div>
+        </div>
+
+        {/* Background pattern */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          opacity: 0.1,
+          background: `
+            radial-gradient(circle at 20% 20%, white 2%, transparent 2%),
+            radial-gradient(circle at 80% 80%, white 1.5%, transparent 1.5%),
+            radial-gradient(circle at 40% 60%, white 1%, transparent 1%)
+          `,
+          backgroundSize: '100px 100px, 80px 80px, 120px 120px'
+        }}></div>
+      </section>
+
+      {/* Activities Section */}
+      <section style={{ padding: '4rem 20px', backgroundColor: '#f8f9fa' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: '#333' }}>
+            What I'm Working On
+          </h2>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+            {/* Self-Hosting Card */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2.5rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #e9ecef'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: '#28a745',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-server" style={{ fontSize: '24px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem' }}>Self-Hosting & DevOps</h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Building and deploying applications on personal infrastructure for better control,
+                  security, and cost efficiency.
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid #e9ecef', paddingTop: '1.5rem' }}>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#28a745', marginRight: '0.5rem' }}></i>
+                    Docker & Kubernetes
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#28a745', marginRight: '0.5rem' }}></i>
+                    Cloud-Native Architecture
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#28a745', marginRight: '0.5rem' }}></i>
+                    Security & Privacy
+                  </li>
+                </ul>
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+                <Link
+                  href="/activities/self-hosting"
+                  style={{
+                    backgroundColor: '#28a745',
+                    color: 'white',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    fontWeight: 'bold',
+                    display: 'inline-block'
+                  }}
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+
+            {/* Web Development Card */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2.5rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #e9ecef'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: '#007bff',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-code" style={{ fontSize: '24px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem' }}>Web Development</h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Creating modern, responsive web applications with clean architecture and user-centric design.
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid #e9ecef', paddingTop: '1.5rem' }}>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
+                    React & Next.js
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
+                    TypeScript & Node.js
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
+                    Modern UI/UX
+                  </li>
+                </ul>
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+                <Link
+                  href="/activities/webdev"
+                  style={{
+                    backgroundColor: '#007bff',
+                    color: 'white',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    fontWeight: 'bold',
+                    display: 'inline-block'
+                  }}
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+
+            {/* AI & ML Card */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2.5rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #e9ecef'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: '#6f42c1',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-brain" style={{ fontSize: '24px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem' }}>AI & Machine Learning</h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Exploring AI and ML technologies with a focus on privacy, ethics, and practical applications.
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid #e9ecef', paddingTop: '1.5rem' }}>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#6f42c1', marginRight: '0.5rem' }}></i>
+                    Privacy-First AI
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#6f42c1', marginRight: '0.5rem' }}></i>
+                    Ethical ML Deployment
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', color: '#666' }}>
+                    <i className="fas fa-check" style={{ color: '#6f42c1', marginRight: '0.5rem' }}></i>
+                    Self-Hosted Solutions
+                  </li>
+                </ul>
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+                <Link
+                  href="/activities/ai"
+                  style={{
+                    backgroundColor: '#6f42c1',
+                    color: 'white',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    fontWeight: 'bold',
+                    display: 'inline-block'
+                  }}
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Newsletter Signup & YouTube Link */}
-      <section style={{ padding: '4rem 20px', backgroundColor: 'var(--deep-blue)', color: 'var(--white)' }}>
+      {/* Latest Posts Section */}
+      <section style={{ padding: '4rem 20px', backgroundColor: 'white' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{
-            backgroundColor: 'var(--white)',
-            color: 'var(--deep-blue)',
-            padding: '3rem',
-            borderRadius: '20px',
-            textAlign: 'center'
-          }}>
-            <h2 style={{ marginBottom: '1rem' }}>Cultivate Your AI Knowledge</h2>
-            <p style={{ fontSize: '18px', marginBottom: '2rem', color: 'var(--text-color)' }}>
-              Get weekly insights on ethical AI deployment and self-hosted best practices
-            </p>
+          <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: '#333' }}>
+            Latest from My Blog
+          </h2>
 
-            <div style={{
-              backgroundColor: 'var(--light-gray)',
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            <Link href="/blog/migrating-from-cloud-to-self-hosted" style={{
+              backgroundColor: '#f8f9fa',
               padding: '2rem',
-              borderRadius: '15px',
-              marginBottom: '2rem',
-              maxWidth: '500px',
-              margin: '2rem auto'
+              borderRadius: '10px',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease',
+              border: '2px solid #e9ecef'
             }}>
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  style={{
-                    padding: '1rem',
-                    borderRadius: '8px',
-                    border: 'none',
-                    fontSize: '16px',
-                    flex: '1',
-                    minWidth: '200px'
-                  }}
-                />
-                <button
-                  style={{
-                    backgroundColor: 'var(--golden-yellow)',
-                    color: 'var(--deep-blue)',
-                    border: 'none',
-                    padding: '1rem 2rem',
-                    borderRadius: '8px',
-                    fontSize: '16px',
-                    fontWeight: 'bold',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                  }}
-                >
-                  <i className="fas fa-seedling"></i> Subscribe
-                </button>
+              <div style={{ color: '#28a745', fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold' }}>
+                SELF-HOSTING
               </div>
-            </div>
+              <h4 style={{ color: '#333', marginBottom: '1rem' }}>
+                Complete Guide: Migrating from Cloud AI to Self-Hosted Infrastructure
+              </h4>
+              <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
+                Transform your data control while reducing cloud costs by up to 40%. Step-by-step guide for secure AI deployment.
+              </p>
+              <div style={{ fontSize: '14px', color: '#999' }}>
+                <i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>
+                February 9, 2025
+              </div>
+            </Link>
 
             <div style={{
-              borderTop: '2px solid var(--golden-yellow)',
-              paddingTop: '2rem',
-              marginTop: '2rem'
+              backgroundColor: '#f8f9fa',
+              padding: '2rem',
+              borderRadius: '10px',
+              border: '2px solid #e9ecef',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              textAlign: 'center'
             }}>
-              <h3 style={{ marginBottom: '1rem' }}>Also Discover:</h3>
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '2rem',
-                maxWidth: '600px',
-                margin: '0 auto'
+              <i className="fas fa-plus" style={{ fontSize: '48px', color: '#007bff', marginBottom: '1rem' }}></i>
+              <h4 style={{ color: '#333', marginBottom: '1rem' }}>More Coming Soon</h4>
+              <p style={{ color: '#666', marginBottom: '1rem' }}>
+                Exciting new tutorials and insights on web development, DevOps, and AI
+              </p>
+              <Link href="/blog" style={{
+                backgroundColor: '#007bff',
+                color: 'white',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                display: 'inline-block',
+                alignSelf: 'center'
               }}>
-                <a
-                  href="https://youtube.com/alanbouo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    backgroundColor: 'var(--olive-green)',
-                    color: 'white',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    transition: 'transform 0.3s ease'
-                  }}
-                  className="social-link"
-                >
-                  <i className="fab fa-youtube" style={{ fontSize: '48px', marginBottom: '0.5rem' }}></i>
-                  <span style={{ fontSize: '14px', fontWeight: 'bold' }}>Tutorial Videos</span>
-                  <span style={{ fontSize: '12px', opacity: '0.8' }}>Step-by-step guides</span>
-                </a>
-
-                <a
-                  href="/blog"
-                  style={{
-                    backgroundColor: 'var(--golden-yellow)',
-                    color: 'var(--deep-blue)',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    transition: 'transform 0.3s ease'
-                  }}
-                  className="social-link"
-                >
-                  <i className="fas fa-blog" style={{ fontSize: '48px', marginBottom: '0.5rem' }}></i>
-                  <span style={{ fontSize: '14px', fontWeight: 'bold' }}>AI Blog</span>
-                  <span style={{ fontSize: '12px', opacity: '0.8' }}>Deep insights</span>
-                </a>
-              </div>
+                View All Posts
+              </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section style={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        padding: '3rem 20px',
+        textAlign: 'center',
+        color: 'white'
+      }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h2 style={{ marginBottom: '1rem' }}>Let's Connect</h2>
+          <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
+            Interested in collaborating? Have questions about my work? I'd love to hear from you.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Link href="/contact" style={{
+              backgroundColor: 'white',
+              color: '#667eea',
+              padding: '1rem 2rem',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}>
+              <i className="fas fa-envelope"></i>
+              Get In Touch
+            </Link>
+            <a href="https://github.com/alan-bouo" style={{
+              backgroundColor: 'transparent',
+              color: 'white',
+              padding: '1rem 2rem',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              border: '2px solid white'
+            }}>
+              <i className="fab fa-github"></i>
+              GitHub
+            </a>
           </div>
         </div>
       </section>

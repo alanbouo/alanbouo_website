@@ -30,8 +30,8 @@ _paq.push(['setCustomVariable', 3, "CTA_Variant", window.ctaVariant, "page"]);
 `}
 
 export const metadata: Metadata = {
-  title: 'Alanbouo - Self-Hosted AI Consulting',
-  description: 'Empowering businesses with self-hosted AI for privacy and control',
+  title: 'Alanbouo - Passionate Developer & Tech Enthusiast',
+  description: 'Exploring technology through development, open-source, self-hosting, and ethical AI. Full-stack developer passionate about clean code and innovative solutions.',
 }
 
 export default function RootLayout({

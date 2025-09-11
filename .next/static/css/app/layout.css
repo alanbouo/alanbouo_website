@@ -1,0 +1,314 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./app/globals.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+:root {
+  --olive-green: #6B8E23;
+  --deep-blue: #001F3F;
+  --golden-yellow: #DAA520;
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --text-color: #333333;
+  --line-height: 1.6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 48px; font-weight: bold; }
+h2 { font-size: 32px; font-weight: bold; }
+h3 { font-size: 24px; font-weight: bold; }
+
+button, a {
+  transition: all 0.3s ease;
+}
+
+.cta {
+  background-color: var(--golden-yellow);
+  color: var(--deep-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background-color: var(--olive-green);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+}
+
+.fade-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(218, 165, 32, 0.8);
+  transform: scale(1.02);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hero Animations */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  animation: slideUp 1s ease-out, glowPulse 3s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  animation: slideUp 1s ease-out 0.3s both;
+  font-family: 'Pacifico', cursive;
+  font-size: 18px;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-style: italic;
+}
+
+.hero-cta {
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.hero-meta {
+  animation: slideUp 1s ease-out 0.6s both, fadeIn 1s ease-out 0.6s both;
+}
+
+/* Animation Keyframes */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(218, 165, 32, 0.8);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hero Background Animation */
+.hero-section {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Enhanced olive circuit pattern animation - olive branches intertwined with AI circuits */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.6;
+  background-image:
+    /* AI circuit nodes */
+    radial-gradient(circle at 10% 80%, rgba(213, 165, 32, 0.2) 2%, transparent 2%),
+    radial-gradient(circle at 90% 20%, rgba(85, 107, 47, 0.25) 1.5%, transparent 1.5%),
+    radial-gradient(circle at 75% 75%, rgba(218, 165, 32, 0.15) 1.8%, transparent 1.8%),
+    radial-gradient(circle at 20% 60%, rgba(85, 107, 47, 0.2) 1.5%, transparent 1.5%),
+    radial-gradient(circle at 70% 30%, rgba(218, 165, 32, 0.12) 2%, transparent 2%),
+    /* Olive branch patterns */
+    conic-gradient(at 50% 50%, rgba(85, 107, 47, 0.1) 0deg, transparent 60deg, rgba(218, 165, 32, 0.08) 90deg, transparent 150deg),
+    linear-gradient(135deg, transparent 30%, rgba(85, 107, 47, 0.05) 32%, rgba(218, 165, 32, 0.04) 35%, transparent 37%),
+    linear-gradient(45deg, transparent 50%, rgba(85, 107, 47, 0.06) 52%, rgba(213, 165, 32, 0.03) 55%, transparent 57%);
+  background-size: 220px 220px, 280px 280px, 180px 180px, 160px 160px, 200px 200px, 350px 350px, 300px 300px, 250px 250px;
+  background-position: 0 0, 120px 220px, 180px 40px, 50px 120px, 220px 160px, 0 0, 80px 100px, 150px 150px;
+  animation: circuitFlow 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes circuitFlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hover-glow:hover {
+    transform: none;
+  }
+  .stat-card:hover {
+    transform: none;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+}
+
+.cta:hover {
+  background-color: var(--olive-green);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  color: var(--golden-yellow);
+}
+
+.footer-link {
+  color: var(--light-gray);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--golden-yellow);
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  h1 { font-size: 36px; }
+  h2 { font-size: 28px; }
+  body { font-size: 14px; }
+}
+
+/* Profile Styles */
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(218, 165, 32, 0.5);
+}
+
+@media (max-width: 768px) {
+  .profile-section {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 2rem !important;
+  }
+
+  .profile-info {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Accessibility */
+button:focus, a:focus, input:focus, textarea:focus {
+  outline: 2px solid var(--golden-yellow);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Blog Article Hover Effects */
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Social Links Hover Effects */
+.social-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Testimonial Card Hover Effects */
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Social Icon Hover Effects */
+.social-icon:hover i {
+  transform: scale(1.1);
+  color: var(--golden-yellow) !important;
+}
+
+.social-icon:hover span {
+  color: var(--golden-yellow) !important;
+  font-weight: bold;
+}
+
+/* Teaser Card Hover Effects */
+.teaser-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+

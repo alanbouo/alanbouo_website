@@ -76,8 +76,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/services" className="nav-link hover-glow" aria-label="Services page">
-                Services
+              <Link href="/activities" className="nav-link hover-glow" aria-label="Activities page">
+                Activities
               </Link>
             </li>
             <li>
@@ -185,13 +185,13 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/services"
+                href="/activities"
                 className="nav-link hover-glow"
                 onClick={() => setIsOpen(false)}
-                aria-label="Services page"
+                aria-label="Activities page"
               >
                 <i className="fas fa-tools" style={{ marginRight: '1rem', width: '20px' }}></i>
-                Services
+                Activities
               </Link>
             </li>
             <li>
