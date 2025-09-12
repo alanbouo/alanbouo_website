@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav style={{
-      backgroundColor: 'var(--deep-blue)',
+      backgroundColor: 'var(--primary-blue)',
       padding: '1rem 0',
       position: 'sticky',
       top: 0,
@@ -27,9 +27,8 @@ export default function Navbar() {
           href="/"
           style={{
             textDecoration: 'none',
-            fontFamily: 'Pacifico',
             fontSize: '24px',
-            color: 'var(--olive-green)',
+            color: 'var(--tech-green)',
             transition: 'all 0.3s ease',
             display: 'flex',
             alignItems: 'center',
@@ -38,7 +37,7 @@ export default function Navbar() {
           className="brand-link hover-glow"
           aria-label="Alanbouo - Home"
         >
-          <i className="fas fa-leaf"></i>
+          <i className="fas fa-code"></i>
           Alanbouo
         </Link>
 
@@ -47,7 +46,7 @@ export default function Navbar() {
           style={{
             display: 'none',
             background: 'none',
-            border: '2px solid var(--olive-green)',
+            border: '2px solid var(--tech-green)',
             borderRadius: '5px',
             color: 'var(--white)',
             fontSize: '20px',
@@ -76,8 +75,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/activities" className="nav-link hover-glow" aria-label="Activities page">
-                Activities
+              <Link href="/services" className="nav-link hover-glow" aria-label="Services page">
+                Services
               </Link>
             </li>
             <li>
@@ -185,13 +184,13 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/activities"
+                href="/services"
                 className="nav-link hover-glow"
                 onClick={() => setIsOpen(false)}
-                aria-label="Activities page"
+                aria-label="Services page"
               >
                 <i className="fas fa-tools" style={{ marginRight: '1rem', width: '20px' }}></i>
-                Activities
+                Services
               </Link>
             </li>
             <li>

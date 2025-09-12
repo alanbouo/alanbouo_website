@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 :root {
-  --olive-green: #6B8E23;
-  --deep-blue: #001F3F;
-  --golden-yellow: #DAA520;
+  --primary-blue: #001F3F;
+  --tech-green: #556B2F;
+  --cta-yellow: #DAA520;
   --white: #FFFFFF;
   --light-gray: #F5F5F5;
   --text-color: #333333;
@@ -32,17 +30,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
-h1 { font-size: 48px; font-weight: bold; }
-h2 { font-size: 32px; font-weight: bold; }
-h3 { font-size: 24px; font-weight: bold; }
+h1 { font-size: 48px; font-weight: 700; }
+h2 { font-size: 32px; font-weight: 700; }
+h3 { font-size: 24px; font-weight: 700; }
 
 button, a {
   transition: all 0.3s ease;
 }
 
 .cta {
-  background-color: var(--golden-yellow);
-  color: var(--deep-blue);
+  background-color: var(--cta-yellow);
+  color: var(--primary-blue);
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
@@ -52,7 +50,7 @@ button, a {
 }
 
 .cta:hover {
-  background-color: var(--olive-green);
+  background-color: var(--tech-green);
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
 }
@@ -84,7 +82,6 @@ button, a {
 
 .hero-subtitle {
   animation: slideUp 1s ease-out 0.3s both;
-  font-family: 'Pacifico', cursive;
   font-size: 18px;
   margin-bottom: 2rem;
   max-width: 800px;
@@ -127,7 +124,7 @@ button, a {
   animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Enhanced olive circuit pattern animation - olive branches intertwined with AI circuits */
+/* Tech-focused circuit pattern background */
 .hero-section::before {
   content: '';
   position: absolute;
@@ -136,28 +133,21 @@ button, a {
   right: 0;
   bottom: 0;
   z-index: 1;
-  opacity: 0.6;
+  opacity: 0.3;
   background-image:
-    /* AI circuit nodes */
-    radial-gradient(circle at 10% 80%, rgba(213, 165, 32, 0.2) 2%, transparent 2%),
-    radial-gradient(circle at 90% 20%, rgba(85, 107, 47, 0.25) 1.5%, transparent 1.5%),
-    radial-gradient(circle at 75% 75%, rgba(218, 165, 32, 0.15) 1.8%, transparent 1.8%),
-    radial-gradient(circle at 20% 60%, rgba(85, 107, 47, 0.2) 1.5%, transparent 1.5%),
-    radial-gradient(circle at 70% 30%, rgba(218, 165, 32, 0.12) 2%, transparent 2%),
-    /* Olive branch patterns */
-    conic-gradient(at 50% 50%, rgba(85, 107, 47, 0.1) 0deg, transparent 60deg, rgba(218, 165, 32, 0.08) 90deg, transparent 150deg),
-    linear-gradient(135deg, transparent 30%, rgba(85, 107, 47, 0.05) 32%, rgba(218, 165, 32, 0.04) 35%, transparent 37%),
-    linear-gradient(45deg, transparent 50%, rgba(85, 107, 47, 0.06) 52%, rgba(213, 165, 32, 0.03) 55%, transparent 57%);
-  background-size: 220px 220px, 280px 280px, 180px 180px, 160px 160px, 200px 200px, 350px 350px, 300px 300px, 250px 250px;
-  background-position: 0 0, 120px 220px, 180px 40px, 50px 120px, 220px 160px, 0 0, 80px 100px, 150px 150px;
-  animation: circuitFlow 8s linear infinite;
+    radial-gradient(circle at 10% 80%, rgba(0, 31, 63, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 90% 20%, rgba(218, 165, 32, 0.2) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(0, 31, 63, 0.25) 1px, transparent 1px),
+    radial-gradient(circle at 20% 60%, rgba(85, 107, 47, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 70% 30%, rgba(218, 165, 32, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: techFlow 12s linear infinite;
   pointer-events: none;
 }
 
-@keyframes circuitFlow {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+@keyframes techFlow {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
 }
 
 @keyframes fadeIn {
@@ -198,7 +188,7 @@ button, a {
 }
 
 .cta:hover {
-  background-color: var(--olive-green);
+  background-color: var(--tech-green);
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
 }
@@ -210,7 +200,7 @@ button, a {
 }
 
 .nav-link:hover {
-  color: var(--golden-yellow);
+  color: var(--cta-yellow);
 }
 
 .footer-link {
@@ -219,7 +209,7 @@ button, a {
 }
 
 .footer-link:hover {
-  color: var(--golden-yellow);
+  color: var(--cta-yellow);
 }
 
 .grid {
@@ -259,7 +249,7 @@ button, a {
 
 /* Accessibility */
 button:focus, a:focus, input:focus, textarea:focus {
-  outline: 2px solid var(--golden-yellow);
+  outline: 2px solid var(--cta-yellow);
   outline-offset: 2px;
 }
 
@@ -294,11 +284,11 @@ button:focus, a:focus, input:focus, textarea:focus {
 /* Social Icon Hover Effects */
 .social-icon:hover i {
   transform: scale(1.1);
-  color: var(--golden-yellow) !important;
+  color: var(--cta-yellow) !important;
 }
 
 .social-icon:hover span {
-  color: var(--golden-yellow) !important;
+  color: var(--cta-yellow) !important;
   font-weight: bold;
 }
 

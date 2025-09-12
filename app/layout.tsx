@@ -25,13 +25,13 @@ _paq.push(['setCustomVariable', 1, "Traffic_Source", "Homepage_Hero", "page"]);
 _paq.push(['setCustomVariable', 2, "Target_Path", "Services_Blog", "page"]);
 
 // A/B Testing for CTA buttons
-window.ctaVariant = Math.random() < 0.5 ? 'Book_Harvest' : 'Book_Audit';
+window.ctaVariant = Math.random() < 0.5 ? 'Book_Demo' : 'Book_Audit';
 _paq.push(['setCustomVariable', 3, "CTA_Variant", window.ctaVariant, "page"]);
 `}
 
 export const metadata: Metadata = {
-  title: 'Alanbouo - Passionate Developer & Tech Enthusiast',
-  description: 'Exploring technology through development, open-source, self-hosting, and ethical AI. Full-stack developer passionate about clean code and innovative solutions.',
+  title: 'Alanbouo - Self-Hosted AI Consultant for Privacy & Control',
+  description: 'Empowering businesses with self-hosted AI solutions for maximum privacy, data control, and cost efficiency. Expert consultation on cloud-to-self migration and AI ethics audits.'
 }
 
 export default function RootLayout({
@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   // A/B Testing variant for CTA buttons
-  const ctaVariant = Math.random() < 0.5 ? 'harvest' : 'audit';
+  const ctaVariant = Math.random() < 0.5 ? 'demo' : 'audit';
 
   return (
     <html lang="en">
@@ -74,11 +74,11 @@ export default function RootLayout({
         <Navbar />
         {/* Top CTA Banner */}
         <div style={{
-          backgroundColor: 'var(--golden-yellow)',
-          color: 'var(--deep-blue)',
+          backgroundColor: 'var(--cta-yellow)',
+          color: 'var(--primary-blue)',
           padding: '0.75rem 1rem',
           textAlign: 'center',
-          borderBottom: '2px solid var(--deep-blue)',
+          borderBottom: '2px solid var(--primary-blue)',
           position: 'sticky',
           top: '0',
           zIndex: '5',
@@ -89,7 +89,7 @@ export default function RootLayout({
           <Link
             href="/contact"
             style={{
-              color: 'var(--deep-blue)',
+              color: 'var(--primary-blue)',
               textDecoration: 'underline',
               fontWeight: 'bold',
             }}

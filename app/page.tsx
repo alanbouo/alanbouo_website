@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import AIEthicsQuiz from '@/components/AIEthicsQuiz'
 
 export const metadata = {
-  title: 'Alanbouo - Passionate Developer & Tech Enthusiast',
-  description: 'Exploring technology through development, open-source, self-hosting, and ethical AI. Full-stack developer passionate about clean code and innovative solutions.'
+  title: 'Alanbouo - Self-Hosted AI Consultant for Privacy & Control',
+  description: 'Empowering businesses with self-hosted AI solutions for maximum privacy, data control, and cost efficiency. Expert consultation on cloud-to-self migration and AI ethics audits.'
 }
 
 export default function HomePage() {
@@ -13,43 +14,39 @@ export default function HomePage() {
       <section
         className="hero-section"
         style={{
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          padding: '4rem 20px',
+          backgroundColor: 'var(--primary-blue)',
+          padding: '4rem 2rem',
           textAlign: 'center',
           color: 'white',
-          minHeight: '90vh',
+          minHeight: '80vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          position: 'relative',
-          overflow: 'hidden'
+          position: 'relative'
         }}
       >
         <div style={{ zIndex: 2, maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '2rem' }}>
-            <div style={{
-              width: '120px',
-              height: '120px',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              margin: '0 auto 1.5rem',
-              border: '4px solid white',
-              boxShadow: '0 8px 25px rgba(0,0,0,0.2)'
-            }}>
-              <Image
-                src="/img/alan.png"
-                alt="Alan Bouo - Developer & Tech Enthusiast"
-                width={120}
-                height={120}
-                style={{ objectFit: 'cover' }}
-                priority
-              />
-            </div>
-            <h1 style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>Hi, I'm Alan Bouo</h1>
-            <p style={{ fontSize: '1.2rem', opacity: 0.9, marginBottom: '2rem' }}>
-              Full-stack developer passionate about creating meaningful solutions
-            </p>
-          </div>
+          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: '1.2' }}>
+            Empowering Businesses with<br />
+            Self-Hosted AI for Privacy and Control
+          </h1>
+          <p style={{ fontSize: '1.3rem', opacity: 0.9, marginBottom: '2rem', maxWidth: '700px', margin: '0 auto 3rem' }}>
+            Transform your data sovereignty while reducing costs by up to 40%.
+            Expert guidance on cloud-to-self migration and AI ethics.
+          </p>
+
+          <Link
+            href="/contact"
+            className="cta"
+            style={{
+              fontSize: '1.2rem',
+              padding: '1rem 2rem',
+              display: 'inline-block',
+              marginBottom: '2rem'
+            }}
+          >
+            Book a Free AI Audit
+          </Link>
 
           <div style={{
             display: 'grid',
