@@ -297,3 +297,65 @@ button:focus, a:focus, input:focus, textarea:focus {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
+/* Minimal Footer Styles */
+footer {
+  background-color: #f8f8f8 !important;
+  color: #333 !important;
+  padding: 1.5rem !important;
+  border-top: 1px solid #ddd;
+}
+
+footer h3 {
+  color: #333 !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+footer p {
+  color: #666 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.4;
+}
+
+footer .footer-link {
+  color: #555 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0.25rem;
+}
+
+footer .footer-link:hover {
+  color: #007bff !important;
+  text-decoration: none;
+}
+
+footer input[type="email"] {
+  background-color: white !important;
+  color: #333 !important;
+  border: 1px solid #ccc !important;
+  font-size: 0.9rem !important;
+  padding: 0.5rem !important;
+  width: 100% !important;
+}
+
+footer input[type="email"]:focus {
+  border-color: #007bff !important;
+  outline: none;
+}
+
+footer button {
+  font-size: 0.9rem !important;
+  padding: 0.5rem 1rem !important;
+  background-color: #007bff !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer;
+  width: 100% !important;
+}
+
+footer button:hover {
+  background-color: #0056b3 !important;
+}

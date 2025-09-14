@@ -1,11 +1,9 @@
+'use client'
+
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
-import AIEthicsQuiz from '@/components/AIEthicsQuiz'
-
-export const metadata = {
-  title: 'Alanbouo - Self-Hosted AI Consultant for Privacy & Control',
-  description: 'Empowering businesses with self-hosted AI solutions for maximum privacy, data control, and cost efficiency. Expert consultation on cloud-to-self migration and AI ethics audits.'
-}
 
 export default function HomePage() {
   return (
@@ -27,60 +25,66 @@ export default function HomePage() {
       >
         <div style={{ zIndex: 2, maxWidth: '1200px', margin: '0 auto' }}>
           <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: '1.2' }}>
-            Empowering Businesses with<br />
-            Self-Hosted AI for Privacy and Control
+            AI Expertise<br />
+            <span style={{ color: '#ff6b35' }}>Unleashed</span>
           </h1>
           <p style={{ fontSize: '1.3rem', opacity: 0.9, marginBottom: '2rem', maxWidth: '700px', margin: '0 auto 3rem' }}>
-            Transform your data sovereignty while reducing costs by up to 40%.
-            Expert guidance on cloud-to-self migration and AI ethics.
+            Learn practical AI skills fast with clear tutorials and actionable strategies. Stay ahead in the field.
           </p>
 
           <Link
             href="/contact"
-            className="cta"
             style={{
-              fontSize: '1.2rem',
-              padding: '1rem 2rem',
+              backgroundColor: '#ff6b35',
+              color: 'white',
+              fontSize: '1.4rem',
+              padding: '1.5rem 3rem',
+              borderRadius: '50px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
               display: 'inline-block',
-              marginBottom: '2rem'
+              marginBottom: '4rem',
+              border: 'none',
+              boxShadow: '0 8px 25px rgba(255, 107, 53, 0.5)',
+              transition: 'all 0.3s ease'
             }}
           >
-            Book a Free AI Audit
+            Grow Your Business with AI Today
           </Link>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1rem',
-            marginBottom: '2rem',
-            maxWidth: '800px',
-            margin: '0 auto 2rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '2rem',
+            marginBottom: '3rem',
+            maxWidth: '1000px',
+            margin: '0 auto 4rem'
           }}>
             {[
-              { icon: 'fas fa-code', text: 'Full-Stack Development' },
-              { icon: 'fas fa-server', text: 'Self-Hosting & DevOps' },
-              { icon: 'fas fa-brain', text: 'AI & Machine Learning' },
-              { icon: 'fas fa-users', text: 'Open-Source Contributor' }
+              { icon: 'fas fa-server', text: 'Self-Hosting AI' },
+              { icon: 'fab fa-ethereum', text: 'Multi-Chain Protocol' },
+              { icon: 'fas fa-shield-alt', text: 'AI Ethics & Privacy' }
             ].map((skill, index) => (
               <div key={index} style={{
-                backgroundColor: 'rgba(255,255,255,0.1)',
-                padding: '1rem',
-                borderRadius: '10px',
+                backgroundColor: 'rgba(255,255,255,0.08)',
+                padding: '1.5rem',
+                borderRadius: '15px',
                 backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255,255,255,0.2)'
+                border: '1px solid rgba(255,255,255,0.15)',
+                transition: 'all 0.3s ease'
               }}>
-                <i className={skill.icon} style={{ fontSize: '24px', marginBottom: '0.5rem' }}></i>
-                <div>{skill.text}</div>
+                <i className={skill.icon} style={{ fontSize: '32px', marginBottom: '1rem' }}></i>
+                <div style={{ fontSize: '1.1rem', fontWeight: 600 }}>{skill.text}</div>
               </div>
             ))}
           </div>
 
           <div style={{
             display: 'flex',
-            gap: '1rem',
+            gap: '2rem',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            marginTop: '2rem'
+            marginTop: '4rem'
           }}>
             <Link
               href="/projects"
@@ -209,7 +213,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Web Development Card */}
+            {/* Multi-Chain Protocol (MCP) Card */}
             <div style={{
               backgroundColor: 'white',
               padding: '2.5rem',
@@ -222,41 +226,41 @@ export default function HomePage() {
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  backgroundColor: '#007bff',
+                  backgroundColor: '#6c757d',
                   borderRadius: '50%',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1rem'
                 }}>
-                  <i className="fas fa-code" style={{ fontSize: '24px', color: 'white' }}></i>
+                  <i className="fab fa-ethereum" style={{ fontSize: '24px', color: 'white' }}></i>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>Web Development</h3>
+                <h3 style={{ color: '#333', marginBottom: '1rem' }}>Multi-Chain Protocol (MCP)</h3>
                 <p style={{ color: '#666', lineHeight: '1.6' }}>
-                  Creating modern, responsive web applications with clean architecture and user-centric design.
+                  Highlights your expertise in leveraging decentralized AI protocols to enhance self-hosted solutions, enabling secure, scalable, and interoperable AI systems across multiple chains or networks.
                 </p>
               </div>
               <div style={{ borderTop: '1px solid #e9ecef', paddingTop: '1.5rem' }}>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                    <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
-                    React & Next.js
+                    <i className="fas fa-check" style={{ color: '#6c757d', marginRight: '0.5rem' }}></i>
+                    Decentralized Protocols
                   </li>
                   <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                    <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
-                    TypeScript & Node.js
+                    <i className="fas fa-check" style={{ color: '#6c757d', marginRight: '0.5rem' }}></i>
+                    Cross-Chain Interoperability
                   </li>
                   <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                    <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
-                    Modern UI/UX
+                    <i className="fas fa-check" style={{ color: '#6c757d', marginRight: '0.5rem' }}></i>
+                    Secure AI Networks
                   </li>
                 </ul>
               </div>
               <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
                 <Link
-                  href="/activities/webdev"
+                  href="/activities/mcp"
                   style={{
-                    backgroundColor: '#007bff',
+                    backgroundColor: '#6c757d',
                     color: 'white',
                     padding: '0.75rem 1.5rem',
                     borderRadius: '8px',
@@ -283,41 +287,41 @@ export default function HomePage() {
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  backgroundColor: '#6f42c1',
+                  backgroundColor: '#8b2e8b',
                   borderRadius: '50%',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1rem'
                 }}>
-                  <i className="fas fa-brain" style={{ fontSize: '24px', color: 'white' }}></i>
+                  <i className="fas fa-shield-alt" style={{ fontSize: '24px', color: 'white' }}></i>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>AI & Machine Learning</h3>
+                <h3 style={{ color: '#333', marginBottom: '1rem' }}>AI Ethics and Privacy</h3>
                 <p style={{ color: '#666', lineHeight: '1.6' }}>
-                  Exploring AI and ML technologies with a focus on privacy, ethics, and practical applications.
+                  Builds on data privacy and ethical AI practices, focusing on developing trustworthy, compliant AI systems that prioritize user consent and fairness, complementing the decentralized nature of MCP.
                 </p>
               </div>
               <div style={{ borderTop: '1px solid #e9ecef', paddingTop: '1.5rem' }}>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                    <i className="fas fa-check" style={{ color: '#6f42c1', marginRight: '0.5rem' }}></i>
-                    Privacy-First AI
+                    <i className="fas fa-check" style={{ color: '#8b2e8b', marginRight: '0.5rem' }}></i>
+                    User Consent & Fairness
                   </li>
                   <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                    <i className="fas fa-check" style={{ color: '#6f42c1', marginRight: '0.5rem' }}></i>
-                    Ethical ML Deployment
+                    <i className="fas fa-check" style={{ color: '#8b2e8b', marginRight: '0.5rem' }}></i>
+                    Ethical Compliance
                   </li>
                   <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                    <i className="fas fa-check" style={{ color: '#6f42c1', marginRight: '0.5rem' }}></i>
-                    Self-Hosted Solutions
+                    <i className="fas fa-check" style={{ color: '#8b2e8b', marginRight: '0.5rem' }}></i>
+                    Privacy-First Development
                   </li>
                 </ul>
               </div>
               <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
                 <Link
-                  href="/activities/ai"
+                  href="/activities/ethics"
                   style={{
-                    backgroundColor: '#6f42c1',
+                    backgroundColor: '#8b2e8b',
                     color: 'white',
                     padding: '0.75rem 1.5rem',
                     borderRadius: '8px',
@@ -341,15 +345,32 @@ export default function HomePage() {
             Latest from My Blog
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
             <Link href="/blog/migrating-from-cloud-to-self-hosted" style={{
               backgroundColor: '#f8f9fa',
               padding: '2rem',
               borderRadius: '10px',
               textDecoration: 'none',
               transition: 'all 0.3s ease',
-              border: '2px solid #e9ecef'
+              border: '2px solid #e9ecef',
+              overflow: 'hidden',
+              position: 'relative'
             }}>
+              {/* Blog Post Thumbnail */}
+              <div style={{
+                width: '100%',
+                height: '120px',
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                borderRadius: '8px',
+                marginBottom: '1.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '48px'
+              }}>
+                <i className="fas fa-brain"></i>
+              </div>
               <div style={{ color: '#28a745', fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold' }}>
                 SELF-HOSTING
               </div>
@@ -357,12 +378,12 @@ export default function HomePage() {
                 Complete Guide: Migrating from Cloud AI to Self-Hosted Infrastructure
               </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Transform your data control while reducing cloud costs by up to 40%. Step-by-step guide for secure AI deployment.
+                Discover the latest AI innovations transforming businesses: from advanced machine learning to next-generation intelligent assistants.
               </p>
-              <div style={{ fontSize: '14px', color: '#999' }}>
-                <i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>
-                February 9, 2025
-              </div>
+                <div style={{ fontSize: '14px', color: '#999' }}>
+                  <i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>
+                  September 14, 2025
+                </div>
             </Link>
 
             <div style={{
@@ -411,34 +432,22 @@ export default function HomePage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link href="/contact" style={{
-              backgroundColor: 'white',
-              color: '#667eea',
-              padding: '1rem 2rem',
-              borderRadius: '8px',
-              textDecoration: 'none',
-              fontWeight: 'bold',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem'
-            }}>
-              <i className="fas fa-envelope"></i>
-              Get In Touch
-            </Link>
-            <a href="https://github.com/alan-bouo" style={{
-              backgroundColor: 'transparent',
+              backgroundColor: '#ff6b35',
               color: 'white',
-              padding: '1rem 2rem',
-              borderRadius: '8px',
+              padding: '1.5rem 2.5rem',
+              borderRadius: '10px',
               textDecoration: 'none',
               fontWeight: 'bold',
+              fontSize: '1.2rem',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
-              border: '2px solid white'
+              boxShadow: '0 6px 20px rgba(255, 107, 53, 0.4)',
+              transition: 'all 0.3s ease'
             }}>
-              <i className="fab fa-github"></i>
-              GitHub
-            </a>
+              <i className="fas fa-rocket" style={{ fontSize: '1.3rem' }}></i>
+              Grow Your Business with AI Today
+            </Link>
           </div>
         </div>
       </section>

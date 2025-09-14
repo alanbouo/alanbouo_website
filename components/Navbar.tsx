@@ -81,6 +81,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="/blog" className="nav-link hover-glow" aria-label="Blog page">
+                <i className="fas fa-blog" style={{ marginRight: '0.5rem' }}></i>
                 Blog
               </Link>
             </li>
@@ -96,9 +97,38 @@ export default function Navbar() {
             </li>
           </ul>
 
+          {/* CTA Button */}
+          <Link href="/contact" style={{
+            backgroundColor: '#ff6b35',
+            color: 'white',
+            padding: '0.75rem 1.5rem',
+            borderRadius: '25px',
+            textDecoration: 'none',
+            fontSize: '0.9rem',
+            fontWeight: 'bold',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            boxShadow: '0 4px 15px rgba(255, 107, 53, 0.4)',
+            transition: 'all 0.3s ease',
+            transform: 'scale(1)'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.05)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 107, 53, 0.6)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.4)';
+          }}
+          >
+            <i className="fas fa-rocket" style={{ fontSize: '0.9rem' }}></i>
+            Unlock Business AI Solutions
+          </Link>
+
           <div style={{
             display: 'flex',
-            gap: '1rem',
+            gap: '0.75rem',
             marginLeft: '1rem',
             paddingLeft: '1rem',
             borderLeft: '1px solid var(--olive-green)'
@@ -110,10 +140,26 @@ export default function Navbar() {
               className="social-nav-link"
               aria-label="Follow Alanbouo on YouTube"
               style={{
-                color: 'var(--olive-green)',
+                backgroundColor: 'white',
+                color: '#ff0000',
                 textDecoration: 'none',
-                fontSize: '20px',
-                transition: 'all 0.3s ease'
+                fontSize: '22px',
+                borderRadius: '50%',
+                width: '42px',
+                height: '42px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1)';
+                e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,0.25)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
               }}
             >
               <i className="fab fa-youtube"></i>
@@ -125,10 +171,26 @@ export default function Navbar() {
               className="social-nav-link"
               aria-label="Connect with Alanbouo on LinkedIn"
               style={{
-                color: 'var(--olive-green)',
+                backgroundColor: 'white',
+                color: '#0077b5',
                 textDecoration: 'none',
-                fontSize: '20px',
-                transition: 'all 0.3s ease'
+                fontSize: '22px',
+                borderRadius: '50%',
+                width: '42px',
+                height: '42px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1)';
+                e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,0.25)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
               }}
             >
               <i className="fab fa-linkedin"></i>
@@ -140,10 +202,26 @@ export default function Navbar() {
               className="social-nav-link"
               aria-label="Follow Alanbouo on X/Twitter"
               style={{
-                color: 'var(--olive-green)',
+                backgroundColor: 'white',
+                color: '#1da1f2',
                 textDecoration: 'none',
-                fontSize: '20px',
-                transition: 'all 0.3s ease'
+                fontSize: '22px',
+                borderRadius: '50%',
+                width: '42px',
+                height: '42px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1)';
+                e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,0.25)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
               }}
             >
               <i className="fab fa-twitter"></i>
@@ -274,6 +352,10 @@ export default function Navbar() {
           .mobile-menu .nav-link {
             padding: 1rem;
             border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+          }
+          /* Hide CTA button on mobile */
+          .mobile-menu-toggle + div + div a[href*="/contact"][style*="backgroundColor"] {
+            display: none !important;
           }
         }
 

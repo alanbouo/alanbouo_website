@@ -94,7 +94,7 @@ export default function RootLayout({
               fontWeight: 'bold',
             }}
           >
-            Schedule Your Free AI Audit Now
+            Grow Your Business with AI Today
           </Link>
         </div>
 
