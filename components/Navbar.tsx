@@ -38,7 +38,7 @@ export default function Navbar() {
           aria-label="Alanbouo - Home"
         >
           <i className="fa-solid fa-code"></i>
-          Alanbouo
+          Alan Bouo
         </Link>
 
         <button
@@ -123,7 +123,7 @@ export default function Navbar() {
           }}
           >
             <i className="fa-solid fa-rocket" style={{ fontSize: '0.9rem' }}></i>
-            Unlock Business AI Solutions
+            Grow with AI now
           </Link>
 
           <div style={{
@@ -225,6 +225,37 @@ export default function Navbar() {
               }}
             >
               <i className="fa-brands fa-x-twitter"></i>
+            </a>
+            <a
+              href="https://github.com/alan-bouo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-nav-link"
+              aria-label="Visit Alanbouo's GitHub profile"
+              style={{
+                backgroundColor: 'white',
+                color: '#333',
+                textDecoration: 'none',
+                fontSize: '22px',
+                borderRadius: '50%',
+                width: '42px',
+                height: '42px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1)';
+                e.currentTarget.style.boxShadow = '0 3px 12px rgba(0,0,0,0.25)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+              }}
+            >
+              <i className="fa-brands fa-github"></i>
             </a>
           </div>
         </div>
