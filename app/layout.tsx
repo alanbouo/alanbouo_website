@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import './globals.css'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -45,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

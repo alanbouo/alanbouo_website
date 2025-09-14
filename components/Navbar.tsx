@@ -37,7 +37,7 @@ export default function Navbar() {
           className="brand-link hover-glow"
           aria-label="Alanbouo - Home"
         >
-          <i className="fas fa-code"></i>
+          <i className="fa-solid fa-code"></i>
           Alanbouo
         </Link>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
         >
-          <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'}`}></i>
+          <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
         </button>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
@@ -81,7 +81,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="/blog" className="nav-link hover-glow" aria-label="Blog page">
-                <i className="fas fa-blog" style={{ marginRight: '0.5rem' }}></i>
+                <i className="fa-solid fa-blog" style={{ marginRight: '0.5rem' }}></i>
                 Blog
               </Link>
             </li>
@@ -122,7 +122,7 @@ export default function Navbar() {
             e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.4)';
           }}
           >
-            <i className="fas fa-rocket" style={{ fontSize: '0.9rem' }}></i>
+            <i className="fa-solid fa-rocket" style={{ fontSize: '0.9rem' }}></i>
             Unlock Business AI Solutions
           </Link>
 
@@ -162,7 +162,7 @@ export default function Navbar() {
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
               }}
             >
-              <i className="fab fa-youtube"></i>
+              <i className="fa-brands fa-youtube"></i>
             </a>
             <a
               href="https://linkedin.com/in/alanbouo"
@@ -193,7 +193,7 @@ export default function Navbar() {
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
               }}
             >
-              <i className="fab fa-linkedin"></i>
+              <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
               href="https://twitter.com/alanbouo"
@@ -224,7 +224,7 @@ export default function Navbar() {
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
               }}
             >
-              <i className="fab fa-twitter"></i>
+              <i className="fa-brands fa-x-twitter"></i>
             </a>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 aria-label="Home page"
               >
-                <i className="fas fa-home" style={{ marginRight: '1rem', width: '20px' }}></i>
+                <i className="fa-solid fa-home" style={{ marginRight: '1rem', width: '20px' }}></i>
                 Home
               </Link>
             </li>
@@ -267,7 +267,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 aria-label="Services page"
               >
-                <i className="fas fa-tools" style={{ marginRight: '1rem', width: '20px' }}></i>
+                <i className="fa-solid fa-tools" style={{ marginRight: '1rem', width: '20px' }}></i>
                 Services
               </Link>
             </li>
@@ -278,7 +278,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 aria-label="Blog page"
               >
-                <i className="fas fa-blog" style={{ marginRight: '1rem', width: '20px' }}></i>
+                <i className="fa-solid fa-blog" style={{ marginRight: '1rem', width: '20px' }}></i>
                 Blog
               </Link>
             </li>
@@ -289,7 +289,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 aria-label="About page"
               >
-                <i className="fas fa-user" style={{ marginRight: '1rem', width: '20px' }}></i>
+                <i className="fa-solid fa-user" style={{ marginRight: '1rem', width: '20px' }}></i>
                 About
               </Link>
             </li>
@@ -300,7 +300,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 aria-label="Contact page"
               >
-                <i className="fas fa-envelope" style={{ marginRight: '1rem', width: '20px' }}></i>
+                <i className="fa-solid fa-envelope" style={{ marginRight: '1rem', width: '20px' }}></i>
                 Contact
               </Link>
             </li>
