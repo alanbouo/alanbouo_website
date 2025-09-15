@@ -108,6 +108,7 @@ export default function Navbar() {
             transition: 'all 0.3s ease',
             transform: 'scale(1)'
           }}
+          className="desktop-cta-button"
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'scale(1.05)';
             e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 107, 53, 0.6)';
@@ -121,7 +122,7 @@ export default function Navbar() {
             Grow with AI now
           </Link>
 
-          <div style={{
+          <div className="social-links-container" style={{
             display: 'flex',
             gap: '0.75rem',
             marginLeft: '1rem',
@@ -368,8 +369,16 @@ export default function Navbar() {
             padding: 1rem;
             border-bottom: 1px solid rgba(218, 165, 32, 0.2);
           }
-          /* Hide CTA button on mobile */
-          .mobile-menu-toggle + div + div a[href*="/contact"][style*="backgroundColor"] {
+          /* Hide CTA button and social links on mobile */
+          .desktop-cta-button {
+            display: none !important;
+          }
+          .social-links-container {
+            display: none !important;
+          }
+
+          /* Additional specificity for CTA button */
+          .mobile-menu-toggle + div + div a.desktop-cta-button {
             display: none !important;
           }
         }
@@ -381,6 +390,23 @@ export default function Navbar() {
           .nav-link {
             padding: 0.75rem !important;
             font-size: 14px;
+          }
+          /* Ensure CTA button is hidden on all mobile devices */
+          .desktop-cta-button {
+            display: none !important;
+          }
+          .social-links-container {
+            display: none !important;
+          }
+        }
+
+        /* Additional breakpoint for mobile devices */
+        @media (max-width: 640px) {
+          .desktop-cta-button {
+            display: none !important;
+          }
+          .social-links-container {
+            display: none !important;
           }
         }
       `}</style>
