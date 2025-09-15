@@ -102,17 +102,14 @@ export default function Navbar() {
             textDecoration: 'none',
             fontSize: '0.9rem',
             fontWeight: 'bold',
-            display: 'none', // Caché sur mobile
-            '@media (min-width: 1024px)': {
-              display: 'inline-flex' // Afficher sur desktop
-            },
+            display: 'none', // Caché par défaut, sera géré par le CSS
             alignItems: 'center',
             gap: '0.5rem',
             boxShadow: '0 4px 15px rgba(255, 107, 53, 0.4)',
             transition: 'all 0.3s ease',
             transform: 'scale(1)'
           }}
-          className="desktop-cta-button"
+          className="cta-button desktop-cta-button"
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'scale(1.05)';
             e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 107, 53, 0.6)';
@@ -358,6 +355,17 @@ export default function Navbar() {
         @keyframes slideDown {
           from { opacity: 0; transform: translateY(-10px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Styles pour le bouton CTA */
+        .cta-button {
+          display: none !important; /* S'assurer qu'il est masqué par défaut */
+        }
+
+        @media (min-width: 1024px) {
+          .cta-button {
+            display: inline-flex !important; /* S'affiche uniquement sur desktop */
+          }
         }
 
         @media (max-width: 768px) {
