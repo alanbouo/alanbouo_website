@@ -1,15 +1,15 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Blog - Alanbouo | Self-Hosted AI Insights',
-  description: 'Latest tutorials and insights on self-hosted AI, privacy-focused deployments, and ethical AI implementations.',
+  title: 'Blog - Alanbouo | AI Self-Hosting Guide',
+  description: 'Latest insights and practical guides on self-hosting AI models, data privacy management, and ethical AI deployment.',
 }
 
 export default function BlogPage() {
   const articles = [
     {
-      title: "Complete Guide: Migrating from Cloud AI to Self-Hosted Infrastructure",
-      excerpt: "Step-by-step tutorial to move your AI workloads from cloud providers to secure, self-hosted solutions while maintaining performance and reducing costs.",
+      title: "Complete Guide: Moving from Cloud AI to Self-Hosted AI Models",
+      excerpt: "Step-by-step guide to deploy your own AI models locally, enhance data privacy, and create cost-effective AI solutions.",
       date: "2025-02-09",
       readTime: "8 min read",
       slug: "migrating-from-cloud-to-self-hosted",
@@ -42,7 +42,7 @@ export default function BlogPage() {
     },
     {
       title: "Cost Analysis: Why Self-Hosted AI Saves Money in the Long Run",
-      excerpt: "Detailed financial breakdown showing how switching to self-hosted infrastructure reduces operational costs by up to 60%.",
+      excerpt: "Detailed financial breakdown showing how switching to self-hosted AI models reduces operational costs by up to 60%.",
       date: "2024-12-15",
       readTime: "6 min read",
       slug: "cost-analysis-self-hosted-ai",
@@ -55,9 +55,9 @@ export default function BlogPage() {
       {/* Header */}
       <section style={{ padding: '3rem 1rem', backgroundColor: 'var(--deep-blue)', color: 'var(--white)', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h1>Self-Hosted AI Insights</h1>
+          <h1>AI Self-Hosting Guide</h1>
           <p style={{ fontSize: '18px', marginTop: '1rem' }}>
-            Practical guides, ethical considerations, and latest trends in privacy-focused AI deployments
+            Practical guides and insights for running your own AI models, maintaining data privacy, and implementing ethical AI solutions
           </p>
         </div>
       </section>
@@ -185,9 +185,9 @@ export default function BlogPage() {
       {/* CTA Section */}
       <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--deep-blue)', color: 'var(--white)', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2>Stay Updated with AI Ethics Insights</h2>
+          <h2>Stay Updated with AI Self-Hosting Insights</h2>
           <p style={{ fontSize: '18px', marginTop: '1rem', marginBottom: '2rem' }}>
-            Get weekly updates on the latest self-hosted AI developments and ethical implementation strategies
+            Get weekly updates on the latest AI self-hosting developments and data privacy implementation strategies
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
             <Link

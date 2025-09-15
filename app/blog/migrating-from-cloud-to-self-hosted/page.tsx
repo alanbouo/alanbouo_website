@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Complete Guide: Migrating from Cloud AI to Self-Hosted Infrastructure',
-  description: 'Step-by-step tutorial to move your AI workloads from cloud providers to secure, self-hosted solutions while maintaining performance and reducing costs.',
+  title: 'Complete Guide: Moving from Cloud AI to Self-Hosted AI Models',
+  description: 'Step-by-step guide to deploy your own AI models locally, enhance data privacy, and create cost-effective AI solutions.',
 }
 
 export default function MigrationTutorial() {
@@ -31,7 +31,7 @@ export default function MigrationTutorial() {
             </span>
           </div>
           <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-            Complete Guide: Migrating from Cloud AI to Self-Hosted Infrastructure
+            Complete Guide: Moving from Cloud AI to Self-Hosted AI Models
           </h1>
           <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '2rem' }}>
             Transform your data control while reducing cloud costs by up to 40%.
@@ -66,7 +66,7 @@ export default function MigrationTutorial() {
             self-hosted infrastructure without sacrificing performance.
           </p>
           <p>
-            Whether you're running ML models on AWS SageMaker, Google Vertex AI, or Azure ML, the principles here
+            Whether you're using cloud-based AI services or looking for more control over your models, the principles here
             apply universally. Let's harvest the benefits of self-hosted AI together.
           </p>
         </div>
@@ -151,23 +151,7 @@ export default function MigrationTutorial() {
               </ul>
             </div>
 
-            <pre style={{
-              backgroundColor: '#f6f8fa',
-              padding: '1.5rem',
-              borderRadius: '8px',
-              overflowX: 'auto',
-              marginBottom: '1rem',
-              border: '1px solid #e1e4e8',
-              fontSize: '14px'
-            }}>
-              <code style={{ color: '#d73a49' }}>
-{`# Check current AI model usage (AWS SageMaker example)
-aws logs filter-log-events \\
-  --log-group-name '/aws/sagemaker/model/[your-model]' \\
-  --start-time "$(date +%s -d '1 day')000" \\
-  --output json | jq '.events[].message' | grep 'prediction' | wc -l`}
-              </code>
-            </pre>
+
 
             <p style={{ lineHeight: '1.7' }}>
               <em style={{ fontFamily: 'Pacifico, cursive', color: 'var(--olive-green)' }}>
@@ -356,14 +340,14 @@ ollama run mistral:7b`}
               <i className="fab fa-linkedin" style={{ marginRight: '0.5rem' }}></i>LinkedIn
             </Link>
             <Link
-              href="https://twitter.com/intent/tweet?url=https://alanbouo.com/blog/migrating-from-cloud-to-self-hosted&text=Migrating from cloud AI to self-hosted: Reduce costs by 40% while gaining data privacy control"
+              href="https://twitter.com/intent/tweet?url=https://alanbouo.com/blog/migrating-from-cloud-to-self-hosted&text=Moving from cloud AI to self-hosted AI models: Enhance data privacy and reduce costs by 40%"
               style={{ backgroundColor: '#1da1f2', color: 'white', padding: '0.5rem 1rem', borderRadius: '4px', textDecoration: 'none', fontSize: '14px' }}
               target="_blank"
             >
-              <i className="fab fa-twitter" style={{ marginRight: '0.5rem' }}></i>Twitter
+              <i className="fab fa-twitter" style={{ marginRight: '0.5rem' }}>Twitter</i>
             </Link>
             <Link
-              href="mailto:?subject=Complete AI Migration Tutorial&body=Check out this comprehensive guide: https://alanbouo.com/blog/migrating-from-cloud-to-self-hosted"
+              href="mailto:?subject=AI Self-Hosting Complete Guide&body=Check out this comprehensive guide: https://alanbouo.com/blog/migrating-from-cloud-to-self-hosted"
               style={{ backgroundColor: 'var(--golden-yellow)', color: 'var(--deep-blue)', padding: '0.5rem 1rem', borderRadius: '4px', textDecoration: 'none', fontSize: '14px' }}
             >
               <i className="fas fa-envelope" style={{ marginRight: '0.5rem' }}></i>Email

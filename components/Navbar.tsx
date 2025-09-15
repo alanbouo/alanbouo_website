@@ -70,11 +70,6 @@ export default function Navbar() {
             padding: 0
           }}>
             <li>
-              <Link href="/" className="nav-link hover-glow" aria-label="Home page">
-                Home
-              </Link>
-            </li>
-            <li>
               <Link href="/services" className="nav-link hover-glow" aria-label="Services page">
                 Services
               </Link>
@@ -280,17 +275,6 @@ export default function Navbar() {
             flexDirection: 'column',
             gap: '1rem'
           }}>
-            <li>
-              <Link
-                href="/"
-                className="nav-link hover-glow"
-                onClick={() => setIsOpen(false)}
-                aria-label="Home page"
-              >
-                <i className="fa-solid fa-home" style={{ marginRight: '1rem', width: '20px' }}></i>
-                Home
-              </Link>
-            </li>
             <li>
               <Link
                 href="/services"
