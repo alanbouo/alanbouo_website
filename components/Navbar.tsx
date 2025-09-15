@@ -44,7 +44,7 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           style={{
-            display: 'none',
+            display: 'none', // Sera affiché par la media query
             background: 'none',
             border: '2px solid var(--tech-green)',
             borderRadius: '5px',
@@ -52,7 +52,8 @@ export default function Navbar() {
             fontSize: '20px',
             padding: '8px 12px',
             cursor: 'pointer',
-            transition: 'all 0.3s ease'
+            transition: 'all 0.3s ease',
+            zIndex: 101
           }}
           className="mobile-menu-toggle hover-glow"
           aria-label="Toggle navigation menu"
@@ -61,7 +62,7 @@ export default function Navbar() {
           <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
         </button>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+        <div className="desktop-menu" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           <ul style={{
             listStyle: 'none',
             display: 'flex',
@@ -101,7 +102,10 @@ export default function Navbar() {
             textDecoration: 'none',
             fontSize: '0.9rem',
             fontWeight: 'bold',
-            display: 'inline-flex',
+            display: 'none', // Caché sur mobile
+            '@media (min-width: 1024px)': {
+              display: 'inline-flex' // Afficher sur desktop
+            },
             alignItems: 'center',
             gap: '0.5rem',
             boxShadow: '0 4px 15px rgba(255, 107, 53, 0.4)',
@@ -260,11 +264,16 @@ export default function Navbar() {
       {isOpen && (
         <div
           style={{
-            display: 'none',
+            display: isOpen ? 'block' : 'none',
             backgroundColor: 'var(--deep-blue)',
             padding: '1rem',
             borderTop: '1px solid var(--olive-green)',
-            animation: 'slideDown 0.3s ease'
+            animation: 'slideDown 0.3s ease',
+            position: 'absolute',
+            width: '100%',
+            left: 0,
+            top: '100%',
+            zIndex: 100
           }}
           className="mobile-menu"
         >
@@ -353,13 +362,16 @@ export default function Navbar() {
 
         @media (max-width: 768px) {
           .mobile-menu-toggle {
-            display: block !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
           }
-          ul {
+          .desktop-menu {
             display: none !important;
           }
-          .mobile-menu {
-            display: block !important;
+          .desktop-menu ul,
+          .desktop-menu > div {
+            display: none !important;
           }
           .mobile-menu ul {
             flex-direction: column;
