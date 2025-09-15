@@ -64,12 +64,12 @@ export default function Footer() {
           <div>
             <h3>Links</h3>
             <ul style={{ listStyle: 'none' }}>
-              <li><Link href="/" className="footer-link">Home</Link></li>
-              <li><Link href="/services" className="footer-link">Services</Link></li>
-              <li><Link href="/blog" className="footer-link">Blog</Link></li>
-              <li><Link href="/about" className="footer-link">About</Link></li>
-              <li><Link href="/contact" className="footer-link">Contact</Link></li>
-              <li><Link href="/privacy" className="footer-link">Privacy Policy</Link></li>
+              <li><Link href="/" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Home</Link></li>
+              <li><Link href="/services" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Services</Link></li>
+              <li><Link href="/blog" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Blog</Link></li>
+              <li><Link href="/about" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>About</Link></li>
+              <li><Link href="/contact" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Contact</Link></li>
+              <li><Link href="/privacy" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Privacy Policy</Link></li>
             </ul>
           </div>
           <div>

@@ -74,31 +74,6 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        {/* Top CTA Banner */}
-        <div style={{
-          backgroundColor: 'var(--cta-yellow)',
-          color: 'var(--primary-blue)',
-          padding: '0.75rem 1rem',
-          textAlign: 'center',
-          borderBottom: '2px solid var(--primary-blue)',
-          position: 'sticky',
-          top: '0',
-          zIndex: '5',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          fontFamily: 'Montserrat, sans-serif'
-        }}>
-          <Link
-            href="/contact"
-            style={{
-              color: 'var(--primary-blue)',
-              textDecoration: 'underline',
-              fontWeight: 'bold',
-            }}
-          >
-            Grow Your Business with AI Today
-          </Link>
-        </div>
 
         <main data-cta-variant={ctaVariant}>
           {children}
