@@ -45,7 +45,7 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
           style={{
             display: 'none', // Sera affiché par la media query
-            background: 'none',
+            background: 'var(--deep-blue)',
             border: '2px solid var(--tech-green)',
             borderRadius: '5px',
             color: 'var(--white)',
@@ -53,7 +53,8 @@ export default function Navbar() {
             padding: '8px 12px',
             cursor: 'pointer',
             transition: 'all 0.3s ease',
-            zIndex: 101
+            zIndex: 101,
+            position: 'relative'
           }}
           className="mobile-menu-toggle hover-glow"
           aria-label="Toggle navigation menu"
@@ -263,14 +264,19 @@ export default function Navbar() {
           style={{
             display: isOpen ? 'block' : 'none',
             backgroundColor: 'var(--deep-blue)',
-            padding: '1rem',
-            borderTop: '1px solid var(--olive-green)',
-            animation: 'slideDown 0.3s ease',
-            position: 'absolute',
+            padding: '5rem 1.5rem 2rem',
+            borderLeft: '1px solid var(--olive-green)',
+            animation: isOpen ? 'slideIn 0.3s ease' : 'none',
+            position: 'fixed',
             width: '100%',
-            left: 0,
-            top: '100%',
-            zIndex: 100
+            maxWidth: '320px',
+            right: 0,
+            top: 0,
+            bottom: 0,
+            zIndex: 1000,
+            overflowY: 'auto',
+            boxSizing: 'border-box',
+            WebkitOverflowScrolling: 'touch'
           }}
           className="mobile-menu"
         >
@@ -352,6 +358,11 @@ export default function Navbar() {
           transform: scale(1.05);
         }
 
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateX(100%); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
         @keyframes slideDown {
           from { opacity: 0; transform: translateY(-10px); }
           to { opacity: 1; transform: translateY(0); }
@@ -373,6 +384,10 @@ export default function Navbar() {
             display: flex !important;
             align-items: center;
             justify-content: center;
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1100;
           }
           .desktop-menu {
             display: none !important;
@@ -384,10 +399,23 @@ export default function Navbar() {
           .mobile-menu ul {
             flex-direction: column;
             align-items: stretch;
+            margin: 0;
+            padding: 0;
+            width: 100%;
           }
           .mobile-menu .nav-link {
-            padding: 1rem;
+            display: block;
+            padding: 1.2rem 1rem;
             border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+          }
+          
+          .mobile-menu .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            padding-left: 1.5rem;
           }
           /* Hide CTA button and social links on mobile */
           .desktop-cta-button {

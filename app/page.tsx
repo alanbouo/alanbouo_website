@@ -13,22 +13,44 @@ export default function HomePage() {
         className="hero-section"
         style={{
           backgroundColor: 'var(--primary-blue)',
-          padding: '4rem 2rem',
+          padding: '6rem 1rem 4rem',
           textAlign: 'center',
           color: 'white',
-          minHeight: '80vh',
+          minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          position: 'relative'
+          position: 'relative',
+          width: '100%',
+          overflowX: 'hidden',
+          boxSizing: 'border-box'
         }}
       >
-        <div style={{ zIndex: 2, maxWidth: '1200px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: '1.2' }}>
+        <div style={{ 
+          zIndex: 2, 
+          maxWidth: '1200px', 
+          margin: '0 auto',
+          width: '100%',
+          padding: '0 1rem',
+          boxSizing: 'border-box'
+        }}>
+          <h1 style={{ 
+            fontSize: 'clamp(2rem, 6vw, 3.5rem)', 
+            marginBottom: '1rem', 
+            lineHeight: '1.2',
+            padding: '0 1rem'
+          }}>
             AI Expertise<br />
             <span style={{ color: '#ff6b35' }}>Unleashed</span>
           </h1>
-          <p style={{ fontSize: '1.3rem', opacity: 0.9, marginBottom: '2rem', maxWidth: '700px', margin: '0 auto 3rem' }}>
+          <p style={{ 
+            fontSize: 'clamp(1rem, 4vw, 1.3rem)', 
+            opacity: 0.9, 
+            margin: '0 auto 3rem',
+            maxWidth: '700px',
+            padding: '0 1rem',
+            boxSizing: 'border-box'
+          }}>
             Learn practical AI skills fast with clear tutorials and actionable strategies. Stay ahead in the field.
           </p>
 
