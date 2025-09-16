@@ -4,8 +4,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
     <>
       <nav className="navbar">
@@ -27,27 +25,27 @@ const Navbar = () => {
               <Link href="/contact" className="cta-button">Get in Touch</Link>
             </div>
           </div>
-
-          <button 
-            className={`mobile-menu-toggle ${isOpen ? 'open' : ''}`}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isOpen}
-          >
-            <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
-          </button>
         </div>
       </nav>
 
-      <div className={`mobile-menu-overlay ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(false)}>
-        <div className="mobile-menu" onClick={e => e.stopPropagation()}>
-          <ul className="mobile-menu-list">
-            <li><Link href="/services" className="mobile-nav-link" onClick={() => setIsOpen(false)}>Services</Link></li>
-            <li><Link href="/blog" className="mobile-nav-link" onClick={() => setIsOpen(false)}>Blog</Link></li>
-            <li><Link href="/about" className="mobile-nav-link" onClick={() => setIsOpen(false)}>About</Link></li>
-            <li><Link href="/contact" className="mobile-nav-link" onClick={() => setIsOpen(false)}>Contact</Link></li>
-          </ul>
-        </div>
+      {/* Mobile Navigation Bar */}
+      <div className="mobile-nav-bar">
+        <Link href="/services" className="mobile-nav-item">
+          <i className="fas fa-tools"></i>
+          <span>Services</span>
+        </Link>
+        <Link href="/blog" className="mobile-nav-item">
+          <i className="fas fa-blog"></i>
+          <span>Blog</span>
+        </Link>
+        <Link href="/about" className="mobile-nav-item">
+          <i className="fas fa-user"></i>
+          <span>About</span>
+        </Link>
+        <Link href="/contact" className="mobile-nav-item">
+          <i className="fas fa-envelope"></i>
+          <span>Contact</span>
+        </Link>
       </div>
 
       <style jsx global>{`
@@ -60,6 +58,8 @@ const Navbar = () => {
           z-index: 100;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+        
+
         
         .navbar-container {
           max-width: 1200px;
@@ -141,7 +141,8 @@ const Navbar = () => {
           font-size: 1.5rem;
           cursor: pointer;
           padding: 0.5rem;
-          z-index: 1001;
+          position: relative;
+          z-index: 2000;
         }
         
         /* Mobile Menu */
@@ -152,10 +153,11 @@ const Navbar = () => {
           right: 0;
           bottom: 0;
           background: rgba(0, 0, 0, 0.5);
-          z-index: 999;
+          z-index: 1000;
           opacity: 0;
           visibility: hidden;
           transition: all 0.3s ease;
+          -webkit-tap-highlight-color: transparent;
         }
         
         .mobile-menu-overlay.open {
@@ -174,7 +176,8 @@ const Navbar = () => {
           padding: 5rem 1.5rem 2rem;
           transform: translateX(100%);
           transition: transform 0.3s ease;
-          z-index: 1000;
+          z-index: 1500;
+          overflow-y: auto;
         }
         
         .mobile-menu-overlay.open .mobile-menu {
@@ -204,23 +207,56 @@ const Navbar = () => {
           padding-left: 1.5rem;
         }
         
+        /* Mobile Navigation Bar */
+        .mobile-nav-bar {
+          display: none;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: var(--primary-blue);
+          padding: 0.5rem 0;
+          z-index: 1000;
+          box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-nav-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: white;
+          text-decoration: none;
+          font-size: 0.7rem;
+          padding: 0.5rem 0;
+          flex: 1;
+          text-align: center;
+        }
+        
+        .mobile-nav-item i {
+          font-size: 1.2rem;
+          margin-bottom: 0.2rem;
+        }
+        
+        .mobile-nav-item:hover {
+          color: var(--golden-yellow);
+        }
+        
         /* Responsive Styles */
         @media (max-width: 768px) {
           .desktop-menu {
             display: none;
           }
           
-          .mobile-menu-toggle {
-            display: block;
-          }
-          
           .desktop-cta {
             display: none;
           }
-        }
-        
-        @media (min-width: 769px) {
-          .mobile-menu-overlay {
+          
+          .mobile-nav-bar {
+            display: flex;
+            justify-content: space-around;
+          }
+          
+          .desktop-only {
             display: none;
           }
         }
