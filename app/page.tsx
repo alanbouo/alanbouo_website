@@ -1,7 +1,5 @@
 'use client'
 
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -16,19 +14,14 @@ export default function HomePage() {
           padding: '6rem 1rem 4rem',
           textAlign: 'center',
           color: 'white',
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           position: 'relative',
           width: '100%',
           overflowX: 'hidden',
           boxSizing: 'border-box'
         }}
       >
-        <div style={{ 
-          zIndex: 2, 
-          maxWidth: '1200px', 
+        <div style={{
+          maxWidth: '1200px',
           margin: '0 auto',
           width: '100%',
           padding: '0 1rem',
@@ -148,21 +141,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Background pattern */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          opacity: 0.1,
-          background: `
-            radial-gradient(circle at 20% 20%, white 2%, transparent 2%),
-            radial-gradient(circle at 80% 80%, white 1.5%, transparent 1.5%),
-            radial-gradient(circle at 40% 60%, white 1%, transparent 1%)
-          `,
-          backgroundSize: '100px 100px, 80px 80px, 120px 120px'
-        }}></div>
+
       </section>
 
       {/* Activities Section */}

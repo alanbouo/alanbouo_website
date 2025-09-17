@@ -122,33 +122,15 @@ button, a {
 /* Hero Background Animation */
 .hero-section {
   animation: fadeIn 1.5s ease-in-out;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Tech-focused circuit pattern background */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  opacity: 0.3;
-  background-image:
-    radial-gradient(circle at 10% 80%, rgba(0, 31, 63, 0.3) 1px, transparent 1px),
-    radial-gradient(circle at 90% 20%, rgba(218, 165, 32, 0.2) 1px, transparent 1px),
-    radial-gradient(circle at 75% 75%, rgba(0, 31, 63, 0.25) 1px, transparent 1px),
-    radial-gradient(circle at 20% 60%, rgba(85, 107, 47, 0.3) 1px, transparent 1px),
-    radial-gradient(circle at 70% 30%, rgba(218, 165, 32, 0.2) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: techFlow 12s linear infinite;
-  pointer-events: none;
-}
 
-@keyframes techFlow {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
-}
+
+
 
 @keyframes fadeIn {
   from {
@@ -180,6 +162,9 @@ button, a {
   .hero-section {
     min-height: auto;
     padding: 2rem 1rem;
+    display: block;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .hero-title {

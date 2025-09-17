@@ -49,21 +49,6 @@ const Navbar = () => {
       </div>
 
       <style jsx global>{`
-        /* Global Styles */
-        html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-          -webkit-overflow-scrolling: touch;
-          position: relative;
-        }
-        
-        /* Ajout d'un padding en bas pour le contenu principal */
-        main {
-          padding-bottom: 60px; /* Hauteur de la barre de navigation mobile */
-        }
-        
         /* Base Styles */
         .navbar {
           background-color: var(--primary-blue);
@@ -73,6 +58,8 @@ const Navbar = () => {
           z-index: 100;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+        
+
         
         .navbar-container {
           max-width: 1200px;
@@ -108,20 +95,6 @@ const Navbar = () => {
         }
         
         .desktop-menu-list {
-          html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-          -webkit-overflow-scrolling: touch;
-          position: relative;
-        }
-        
-        /* Ajout d'un padding en bas pour le contenu principal */
-        main {
-          padding-bottom: 60px; /* Hauteur de la barre de navigation mobile */
-        }
-        
           display: flex;
           list-style: none;
           margin: 0;
@@ -245,8 +218,6 @@ const Navbar = () => {
           padding: 0.5rem 0;
           z-index: 1000;
           box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-          -webkit-overflow-scrolling: touch;
-          height: 60px; /* Hauteur fixe pour la barre de navigation */
         }
         
         .mobile-nav-item {
@@ -285,22 +256,8 @@ const Navbar = () => {
             justify-content: space-around;
           }
           
-          /* Ajustement pour le padding du body sur mobile */
-          body {
-            padding-bottom: 60px; /* Même hauteur que la barre de navigation */
-          }
-          
-          /* Amélioration du défilement sur iOS */
-          @supports (-webkit-touch-callout: none) {
-            body {
-              height: -webkit-fill-available;
-              min-height: -webkit-fill-available;
-            }
-            
-            html {
-              height: -webkit-fill-available;
-              min-height: -webkit-fill-available;
-            }
+          .desktop-only {
+            display: none;
           }
         }
       `}</style>
