@@ -11,6 +11,8 @@ export default function ContactPage() {
     message: ''
   })
   const [submitted, setSubmitted] = useState(false)
+  const [newsletterEmail, setNewsletterEmail] = useState('')
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -28,6 +30,17 @@ export default function ContactPage() {
       ...prev,
       [e.target.name]: e.target.value
     }))
+  }
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Newsletter subscription logic would go here
+    setNewsletterSubmitted(true)
+    setTimeout(() => {
+      alert('Thank you for subscribing! You will receive updates on the latest AI innovations.')
+      setNewsletterEmail('')
+      setNewsletterSubmitted(false)
+    }, 1000)
   }
 
   return (
@@ -259,23 +272,51 @@ export default function ContactPage() {
 
       {/* Secondary CTA - Newsletter */}
       <section style={{ padding: '4rem 1rem', backgroundColor: '#f8f9fa', textAlign: 'center' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
           <h2 style={{ marginBottom: '1rem', color: '#333' }}>Stay Updated on the Latest AI Innovations</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: '#666' }}>
             Subscribe to our newsletter for insights on AI ethics, self-hosting, and cutting-edge developments.
           </p>
-          <Link href="/newsletter" style={{
-            backgroundColor: '#667eea',
-            color: 'white',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontWeight: 'bold',
-            display: 'inline-block',
-            transition: 'all 0.3s ease'
-          }}>
-            Subscribe to Newsletter
-          </Link>
+          <form onSubmit={handleNewsletterSubmit} style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <input
+              type="email"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+              required
+              style={{
+                flex: '1',
+                minWidth: '250px',
+                padding: '0.75rem',
+                borderRadius: '8px',
+                border: '2px solid #e9ecef',
+                fontSize: '16px',
+                transition: 'border-color 0.3s ease',
+                backgroundColor: 'white'
+              }}
+              placeholder="Enter your email address"
+              aria-label="Email address for newsletter subscription"
+            />
+            <button
+              type="submit"
+              disabled={newsletterSubmitted}
+              style={{
+                backgroundColor: '#667eea',
+                color: 'white',
+                border: 'none',
+                padding: '0.75rem 2rem',
+                borderRadius: '8px',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 15px rgba(102, 126, 234, 0.3)'
+              }}
+              aria-label="Subscribe to newsletter"
+            >
+              <i className="fas fa-envelope" style={{ marginRight: '0.5rem' }}></i>
+              {newsletterSubmitted ? 'Subscribing...' : 'Subscribe'}
+            </button>
+          </form>
         </div>
       </section>
 
