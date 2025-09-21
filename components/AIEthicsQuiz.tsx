@@ -217,7 +217,7 @@ export default function AIEthicsQuiz() {
             Retake Quiz
           </button>
           <a
-            href="/services"
+            href="/projects"
             style={{
               padding: '0.75rem 1.5rem',
               backgroundColor: 'var(--golden-yellow)',

@@ -126,7 +126,7 @@ export default function NotFound() {
             </Link>
 
             <Link
-              href="/services"
+              href="/projects"
               style={{
                 display: 'block',
                 padding: '1rem',
@@ -140,7 +140,7 @@ export default function NotFound() {
               className="nav-link-card"
             >
               <i className="fas fa-tools" style={{ fontSize: '24px', color: 'var(--olive-green)', marginBottom: '0.5rem' }}></i>
-              <div style={{ fontWeight: 'bold' }}>Services</div>
+              <div style={{ fontWeight: 'bold' }}>Projects</div>
             </Link>
 
             <Link

@@ -15,17 +15,17 @@ export default function ServicesPage() {
         padding: '4rem 1rem',
         textAlign: 'center',
         color: 'white',
-        minHeight: '70vh',
+        minHeight: '50vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '1.5rem', lineHeight: '1.2', fontWeight: 'bold' }}>
-            AI Products & Projects
+            AI & Data Products
           </h1>
           <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '3rem', opacity: 0.9 }}>
-            Explore my portfolio of shipped AI solutions and innovative projects.
+            Check out what I have been up to.
           </p>
           <Link href="/contact" style={{
             backgroundColor: '#ff6b35',
@@ -53,12 +53,11 @@ export default function ServicesPage() {
       <section style={{ padding: '4rem 1rem', backgroundColor: 'white' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#333' }}>
-            Real AI Impact from Projects & Products
+            Shipped Products
           </h2>
           <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', fontSize: '18px' }}>
-            Explore the results of my AI leadership and innovation.
+            What is your favorite ?
           </p>
-
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {/* AI Predictive Analytics Solution */}
             <div style={{

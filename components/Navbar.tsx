@@ -15,7 +15,7 @@ const Navbar = () => {
 
           <div className="desktop-menu">
             <ul className="desktop-menu-list">
-              <li><Link href="/services" className="nav-link">Services</Link></li>
+              <li><Link href="/projects" className="nav-link">Projects</Link></li>
               <li><Link href="/blog" className="nav-link">Blog</Link></li>
               <li><Link href="/about" className="nav-link">About</Link></li>
               <li><Link href="/contact" className="nav-link">Contact</Link></li>
@@ -30,9 +30,9 @@ const Navbar = () => {
 
       {/* Mobile Navigation Bar */}
       <div className="mobile-nav-bar">
-        <Link href="/services" className="mobile-nav-item">
+        <Link href="/projects" className="mobile-nav-item">
           <i className="fas fa-tools"></i>
-          <span>Services</span>
+          <span>Projects</span>
         </Link>
         <Link href="/blog" className="mobile-nav-item">
           <i className="fas fa-blog"></i>
