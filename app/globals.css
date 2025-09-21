@@ -283,6 +283,69 @@ button:focus, a:focus, input:focus, textarea:focus {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* About Page Responsive Styles */
+@media (max-width: 768px) {
+  .hero-section .hero-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 2rem !important;
+  }
+
+  .hero-section .hero-text {
+    text-align: center !important;
+  }
+
+  .timeline {
+    position: relative;
+  }
+
+  .timeline-line {
+    left: 20px !important;
+    transform: none !important;
+  }
+
+  .timeline-item {
+    width: calc(100% - 40px) !important;
+    margin-left: 40px !important;
+    margin-right: 0 !important;
+  }
+
+  .timeline-dot {
+    left: 0 !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .specializations-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .languages-interests {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 2rem 1rem !important;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem !important;
+  }
+
+  .section-padding {
+    padding: 2rem 1rem !important;
+  }
+}
+
 /* Minimal Footer Styles */
 footer {
   background-color: #f8f8f8 !important;
