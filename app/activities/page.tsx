@@ -231,7 +231,7 @@ export default function ActivitiesPage() {
             </div>
             <div style={{ textAlign: 'center' }}>
               <a
-                href="https://github.com/alan-bouo"
+                href="https://github.com/alanbouo"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

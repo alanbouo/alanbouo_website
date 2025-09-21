@@ -53,11 +53,11 @@ export default function Footer() {
                 <Link href="https://linkedin.com/in/alanbouo" className="footer-link">LinkedIn</Link>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <a href="https://github.com/alan-bouo" className="social-icon" aria-label="GitHub repository"
+                <a href="https://github.com/alanbouo" className="social-icon" aria-label="GitHub repository"
                    style={{ backgroundColor: 'white', padding: '8px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
                   <i className="fa-brands fa-github" style={{ color: '#333', fontSize: '18px' }}></i>
                 </a>
-                <Link href="https://github.com/alan-bouo" className="footer-link">GitHub</Link>
+                <Link href="https://github.com/alanbouo" className="footer-link">GitHub</Link>
               </div>
             </div>
           </div>

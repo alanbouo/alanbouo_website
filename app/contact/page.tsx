@@ -394,6 +394,28 @@ export default function ContactPage() {
             >
               <i className="fab fa-linkedin" style={{ fontSize: '24px' }}></i>
             </a>
+
+            <a
+              href="https://github.com/alanbouo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: 'white',
+                color: '#667eea',
+                padding: '1rem',
+                borderRadius: '50%',
+                width: '60px',
+                height: '60px',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
+              }}
+              aria-label="Follow Alanbouo on GitHub"
+            >
+              <i className="fab fa-github" style={{ fontSize: '24px' }}></i>
+            </a>
           </div>
         </div>
       </section>
