@@ -120,7 +120,7 @@ export default function AboutPage() {
             }} className="profile-image-hover">
               <Image
                 src="/img/alan.png"
-                alt="Alan BOUO - Data Science & AI Consultant"
+                alt="Alan BOUO - Data Science & AI Expert"
                 width={320}
                 height={320}
                 style={{ objectFit: 'cover', width: '100%', height: '100%' }}
@@ -151,9 +151,12 @@ export default function AboutPage() {
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease',
-              border: '3px solid #667eea'
+              border: '3px solid #667eea',
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '280px'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
@@ -166,23 +169,9 @@ export default function AboutPage() {
                 }}>
                   <i className="fas fa-robot" style={{ fontSize: '24px', color: 'white' }}></i>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>Large Language Models (LLM)</h3>
+                <h3 style={{ color: '#333', margin: 0 }}>Large Language Models (LLM)</h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#667eea', marginRight: '0.5rem' }}></i>
-                  Fine-tuning and deployment of transformer-based models (GPT, BERT, custom architectures)
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#667eea', marginRight: '0.5rem' }}></i>
-                  Enterprise-grade LLM optimization and scaling
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#667eea', marginRight: '0.5rem' }}></i>
-                  Self-hosted AI solutions with privacy-first approaches
-                </li>
-              </ul>
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                 <Link href="/services" style={{
                   backgroundColor: '#667eea',
                   color: 'white',
@@ -204,9 +193,12 @@ export default function AboutPage() {
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease',
-              border: '3px solid #28a745'
+              border: '3px solid #28a745',
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '280px'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
@@ -219,23 +211,9 @@ export default function AboutPage() {
                 }}>
                   <i className="fas fa-brain" style={{ fontSize: '24px', color: 'white' }}></i>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>Machine Learning & Data Science</h3>
+                <h3 style={{ color: '#333', margin: 0 }}>Machine Learning & Data Science</h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#28a745', marginRight: '0.5rem' }}></i>
-                  Advanced ML algorithms: NLP, Graph Analysis, Time Series Forecasting
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#28a745', marginRight: '0.5rem' }}></i>
-                  Deep Learning architectures: CNNs, RNNs, Transformer models
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#28a745', marginRight: '0.5rem' }}></i>
-                  Statistical modeling and predictive analytics for business insights
-                </li>
-              </ul>
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                 <Link href="/services" style={{
                   backgroundColor: '#28a745',
                   color: 'white',
@@ -257,9 +235,12 @@ export default function AboutPage() {
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease',
-              border: '3px solid #6c757d'
+              border: '3px solid #6c757d',
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '280px'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
@@ -272,23 +253,9 @@ export default function AboutPage() {
                 }}>
                   <i className="fas fa-server" style={{ fontSize: '24px', color: 'white' }}></i>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>AI Technologies & Infrastructure</h3>
+                <h3 style={{ color: '#333', margin: 0 }}>AI Technologies & Infrastructure</h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#6c757d', marginRight: '0.5rem' }}></i>
-                  Python ecosystem: TensorFlow, PyTorch, Scikit-Learn, Hugging Face
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#6c757d', marginRight: '0.5rem' }}></i>
-                  Infrastructure solutions: AWS, Kubernetes, Docker for cloud and self-hosted deployments
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#6c757d', marginRight: '0.5rem' }}></i>
-                  Data engineering and analytics: SQL, NoSQL, Spark, ML pipelines
-                </li>
-              </ul>
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                 <Link href="/services" style={{
                   backgroundColor: '#6c757d',
                   color: 'white',
@@ -310,9 +277,12 @@ export default function AboutPage() {
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease',
-              border: '3px solid #8b2e8b'
+              border: '3px solid #8b2e8b',
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '280px'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
@@ -325,23 +295,9 @@ export default function AboutPage() {
                 }}>
                   <i className="fas fa-shield-alt" style={{ fontSize: '24px', color: 'white' }}></i>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>AI Ethics & Privacy</h3>
+                <h3 style={{ color: '#333', margin: 0 }}>AI Ethics & Privacy</h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#8b2e8b', marginRight: '0.5rem' }}></i>
-                  Responsible AI development with privacy-first approaches
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#8b2e8b', marginRight: '0.5rem' }}></i>
-                  Compliance frameworks and ethical AI governance
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#8b2e8b', marginRight: '0.5rem' }}></i>
-                  Self-hosted solutions ensuring data sovereignty
-                </li>
-              </ul>
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                 <Link href="/blog" style={{
                   backgroundColor: '#8b2e8b',
                   color: 'white',
@@ -363,9 +319,12 @@ export default function AboutPage() {
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease',
-              border: '3px solid #ff6b35'
+              border: '3px solid #ff6b35',
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '280px'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
@@ -378,23 +337,9 @@ export default function AboutPage() {
                 }}>
                   <i className="fas fa-chart-line" style={{ fontSize: '24px', color: 'white' }}></i>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>AI Strategy & Business Intelligence</h3>
+                <h3 style={{ color: '#333', margin: 0 }}>AI Strategy & Business Intelligence</h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#ff6b35', marginRight: '0.5rem' }}></i>
-                  Strategic AI roadmap development and implementation planning
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#ff6b35', marginRight: '0.5rem' }}></i>
-                  Business intelligence dashboards and KPI optimization
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#ff6b35', marginRight: '0.5rem' }}></i>
-                  ROI analysis and AI project evaluation frameworks
-                </li>
-              </ul>
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                 <Link href="/services" style={{
                   backgroundColor: '#ff6b35',
                   color: 'white',
@@ -416,9 +361,12 @@ export default function AboutPage() {
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease',
-              border: '3px solid #007bff'
+              border: '3px solid #007bff',
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '280px'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
@@ -431,23 +379,9 @@ export default function AboutPage() {
                 }}>
                   <i className="fas fa-search" style={{ fontSize: '24px', color: 'white' }}></i>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>SEO & AI Search Solutions</h3>
+                <h3 style={{ color: '#333', margin: 0 }}>SEO & AI Search Solutions</h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
-                  Traditional SEO optimization and technical implementation
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
-                  AI-enhanced search through LLM assistants and semantic analysis
-                </li>
-                <li style={{ marginBottom: '0.5rem', color: '#666' }}>
-                  <i className="fas fa-check" style={{ color: '#007bff', marginRight: '0.5rem' }}></i>
-                  Content strategy, keyword research, and performance analytics
-                </li>
-              </ul>
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                 <Link href="/services" style={{
                   backgroundColor: '#007bff',
                   color: 'white',
