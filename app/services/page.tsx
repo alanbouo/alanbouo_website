@@ -1,139 +1,477 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
+export const metadata = {
+  title: 'AI Products & Projects - Alan Bou Data Science & AI Expert',
+  description: 'Explore my shipped AI products and projects: predictive analytics, self-hosted AI systems, LLM chatbots, and innovative AI solutions with measurable business impact.'
+}
 
 export default function ServicesPage() {
   return (
     <main>
       {/* Hero Section */}
       <section style={{
-        background: 'linear-gradient(135deg, var(--deep-blue) 60%, var(--olive-green) 100%)',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         padding: '4rem 1rem',
         textAlign: 'center',
-        color: 'var(--white)',
-        minHeight: '50vh',
+        color: 'white',
+        minHeight: '70vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-        <div style={{ maxWidth: '800px' }}>
-          <h1 style={{ fontFamily: 'Montserrat', marginBottom: '1rem' }}>AI Services that Grow with You</h1>
-          <p style={{ fontSize: '18px', lineHeight: '1.6', fontFamily: 'Pacifico', fontStyle: 'italic' }}>
-            <em>From seedling to harvest—cultivating ethical AI solutions that protect your data and maximize profits.</em>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '1.5rem', lineHeight: '1.2', fontWeight: 'bold' }}>
+            AI Products & Projects
+          </h1>
+          <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '3rem', opacity: 0.9 }}>
+            Explore my portfolio of shipped AI solutions and innovative projects.
           </p>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--white)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Our Olive Tree Services</h2>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
-            <div style={{ padding: '2rem', textAlign: 'center', border: '3px solid var(--olive-green)', borderRadius: '15px' }}>
-              <i className="fas fa-lock" style={{ fontSize: '64px', color: 'var(--olive-green)', marginBottom: '1rem' }}></i>
-              <h3>AI Ethics Audits</h3>
-              <p>Comprehensive privacy assessments and ethical AI implementation frameworks for complete data sovereignty.</p>
-              <div style={{ padding: '1rem', backgroundColor: 'var(--light-gray)', borderRadius: '10px', margin: '1rem 0' }}>
-                <p><strong>What's Included:</strong></p>
-                <ul style={{ textAlign: 'left', lineHeight: '1.6' }}>
-                  <li>• Privacy impact assessment</li>
-                  <li>• Ethical framework development</li>
-                  <li>• Compliance gap analysis</li>
-                  <li>• Self-hosted migration roadmap</li>
-                </ul>
-              </div>
-              <Link href="#contact" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>
-                Request Audit
-              </Link>
-            </div>
-
-            <div style={{ padding: '2rem', textAlign: 'center', border: '3px solid var(--olive-green)', borderRadius: '15px' }}>
-              <i className="fas fa-cloud" style={{ fontSize: '64px', color: 'var(--olive-green)', marginBottom: '1rem' }}></i>
-              <h3>Cloud-to-Self Migration</h3>
-              <p>Seamless transition from cloud dependency to secure, self-hosted AI infrastructure reducing costs by 40%+.</p>
-              <div style={{ padding: '1rem', backgroundColor: 'var(--light-gray)', borderRadius: '10px', margin: '1rem 0' }}>
-                <p><strong>Migration Process:</strong></p>
-                <ul style={{ textAlign: 'left', lineHeight: '1.6' }}>
-                  <li>• Infrastructure assessment</li>
-                  <li>• Zero-downtime migration</li>
-                  <li>• Performance optimization</li>
-                  <li>• 24/7 monitoring setup</li>
-                </ul>
-              </div>
-              <Link href="#contact" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>
-                Start Migration
-              </Link>
-            </div>
-
-            <div style={{ padding: '2rem', textAlign: 'center', border: '3px solid var(--olive-green)', borderRadius: '15px' }}>
-              <i className="fas fa-cogs" style={{ fontSize: '64px', color: 'var(--olive-green)', marginBottom: '1rem' }}></i>
-              <h3>Custom Integration</h3>
-              <p>Tailored AI solutions seamlessly integrated with your existing systems, maintaining full data control.</p>
-              <div style={{ padding: '1rem', backgroundColor: 'var(--light-gray)', borderRadius: '10px', margin: '1rem 0' }}>
-                <p><strong>Integration Features:</strong></p>
-                <ul style={{ textAlign: 'left', lineHeight: '1.6' }}>
-                  <li>• APIs and microservices</li>
-                  <li>• Legacy system compatibility</li>
-                  <li>• Custom model development</li>
-                  <li>• Performance optimization</li>
-                </ul>
-              </div>
-              <Link href="#contact" className="cta" style={{ display: 'inline-block', marginTop: '1rem' }}>
-                Discuss Project
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--deep-blue)', color: 'var(--white)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '3rem', fontFamily: 'Pacifico', fontSize: '36px' }}>
-            How We Grow Your AI Garden
-          </h2>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-            <div style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '48px', color: 'var(--golden-yellow)', marginBottom: '1rem' }}>🌱</div>
-              <h3>Seed Planting</h3>
-              <p>Discovery and assessment phase where we understand your current AI landscape.</p>
-            </div>
-
-            <div style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '48px', color: 'var(--golden-yellow)', marginBottom: '1rem' }}>🌿</div>
-              <h3>Root Development</h3>
-              <p>Building secure infrastructure and implementing privacy-first frameworks.</p>
-            </div>
-
-            <div style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '48px', color: 'var(--golden-yellow)', marginBottom: '1rem' }}>🌳</div>
-              <h3>Branch Expansion</h3>
-              <p>Integration with existing systems and scaling for optimal performance.</p>
-            </div>
-
-            <div style={{ padding: '1.5rem' }}>
-              <div style={{ fontSize: '48px', color: 'var(--golden-yellow)', marginBottom: '1rem' }}>🍃</div>
-              <h3>Fruit Harvest</h3>
-              <p>Measuring success and realizing ethical AI's profitable transformation.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'var(--white)', textAlign: 'center' }}>
-        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <h2>Ready to Cultivate Your AI Future?</h2>
-          <p style={{ fontFamily: 'Pacifico', fontStyle: 'italic', margin: '2rem 0', color: 'var(--olive-green)' }}>
-            Join 50+ clients who've transformed their AI capabilities and achieved unprecedented data sovereignty.
-          </p>
-          <Link href="/contact" className="cta" style={{ fontSize: '18px', padding: '1rem 2rem' }}>
-            <i className="fas fa-calendar-alt" style={{ marginRight: '0.5rem' }}></i>
-            Schedule Free Consultation
+          <Link href="/contact" style={{
+            backgroundColor: '#ff6b35',
+            color: 'white',
+            padding: '1.2rem 3rem',
+            borderRadius: '50px',
+            textDecoration: 'none',
+            fontWeight: 'bold',
+            fontSize: '18px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            boxShadow: '0 8px 25px rgba(255, 107, 53, 0.5)',
+            transition: 'all 0.3s ease'
+          }}>
+            <i className="fas fa-calendar"></i>
+            Get in Touch
           </Link>
         </div>
       </section>
 
+
+
+      {/* Key Achievements & Shipped Products Section */}
+      <section style={{ padding: '4rem 1rem', backgroundColor: 'white' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#333' }}>
+            Real AI Impact from Projects & Products
+          </h2>
+          <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', fontSize: '18px' }}>
+            Explore the results of my AI leadership and innovation.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            {/* AI Predictive Analytics Solution */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #28a745'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#28a745',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-chart-bar" style={{ fontSize: '20px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>AI Predictive Analytics Solution</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
+                  Shipped a predictive model improving operational efficiency by measurable percentages, using advanced timeseries analysis.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span style={{ backgroundColor: '#f0fff0', color: '#28a745', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Efficiency +X%</span>
+                  <span style={{ backgroundColor: '#f0fff0', color: '#28a745', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Timeseries</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/projects/predictive-analytics" style={{
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  fontSize: '14px'
+                }}>
+                  View Project
+                </Link>
+              </div>
+            </div>
+
+            {/* Self-Hosted AI Deployment */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #667eea'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#667eea',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-server" style={{ fontSize: '20px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>Self-Hosted AI Deployment</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
+                  Delivered a Kubernetes-based self-hosted system, enhancing data control and security by significant percentages.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span style={{ backgroundColor: '#f0f8ff', color: '#667eea', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Security +X%</span>
+                  <span style={{ backgroundColor: '#f0f8ff', color: '#667eea', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Kubernetes</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/projects/self-hosted-ai" style={{
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  fontSize: '14px'
+                }}>
+                  View Project
+                </Link>
+              </div>
+            </div>
+
+            {/* NLP-Powered SEO Tool */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #8b2e8b'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#8b2e8b',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-search" style={{ fontSize: '20px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>NLP-Powered SEO Tool</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
+                  Shipped an AI tool boosting search rankings by significant percentages through intelligent content analysis.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Ranking +X%</span>
+                  <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>NLP</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/projects/seo-tool" style={{
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  fontSize: '14px'
+                }}>
+                  View Project
+                </Link>
+              </div>
+            </div>
+
+            {/* LLM Chatbot Product */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #28a745'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#28a745',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-robot" style={{ fontSize: '20px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>LLM Chatbot Product</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
+                  Developed an LLM chatbot reducing response time by measurable percentages for enterprise applications.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span style={{ backgroundColor: '#f0fff0', color: '#28a745', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Response -X%</span>
+                  <span style={{ backgroundColor: '#f0fff0', color: '#28a745', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>LLM</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/projects/llm-chatbot" style={{
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  fontSize: '14px'
+                }}>
+                  View Project
+                </Link>
+              </div>
+            </div>
+
+            {/* AI Ethics Compliance Framework */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #667eea'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#667eea',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-shield-alt" style={{ fontSize: '20px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>AI Ethics Compliance Framework</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
+                  Implemented a privacy-first system achieving full compliance standards and ethical AI governance.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span style={{ backgroundColor: '#f0f8ff', color: '#667eea', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>100% Compliance</span>
+                  <span style={{ backgroundColor: '#f0f8ff', color: '#667eea', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Ethics</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/projects/ai-ethics" style={{
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  fontSize: '14px'
+                }}>
+                  View Project
+                </Link>
+              </div>
+            </div>
+
+            {/* Multi-Chain AI Protocol */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #8b2e8b'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#8b2e8b',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fab fa-ethereum" style={{ fontSize: '20px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>Multi-Chain AI Protocol</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
+                  Shipped interoperable AI networks improving scalability and decentralization by significant percentages.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Scalability +X%</span>
+                  <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Blockchain</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/projects/multi-chain" style={{
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  fontSize: '14px'
+                }}>
+                  View Project
+                </Link>
+              </div>
+            </div>
+
+            {/* Risk Prediction Model */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #28a745'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#28a745',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-chart-area" style={{ fontSize: '20px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>Risk Prediction Model</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
+                  Delivered an AI model cutting operational risks by measurable percentages through advanced analytics.
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span style={{ backgroundColor: '#f0fff0', color: '#28a745', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Risk -X%</span>
+                  <span style={{ backgroundColor: '#f0fff0', color: '#28a745', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Analytics</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/projects/risk-model" style={{
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  fontSize: '14px'
+                }}>
+                  View Project
+                </Link>
+              </div>
+            </div>
+
+            {/* AI SEO Integration Tool */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease',
+              border: '3px solid #667eea'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#667eea',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <i className="fas fa-search-plus" style={{ fontSize: '20px', color: 'white' }}></i>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>AI SEO Integration Tool</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
+                  Developed an AI-enhanced SEO strategy improving online performance by significant percentages.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginBottom: '1rem' }}>
+                  <span style={{ backgroundColor: '#f0f8ff', color: '#667eea', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>Performance +X%</span>
+                  <span style={{ backgroundColor: '#f0f8ff', color: '#667eea', padding: '0.25rem 0.5rem', borderRadius: '10px', fontSize: '11px', fontWeight: 'bold' }}>SEO</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/projects/seo-integration" style={{
+                  backgroundColor: '#ff6b35',
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  fontSize: '14px'
+                }}>
+                  View Project
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Call to Action & Footer */}
+      <section style={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        padding: '4rem 1rem',
+        textAlign: 'center',
+        color: 'white'
+      }}>
+        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <h2 style={{ marginBottom: '1rem' }}>Ready to Transform Your Business with AI?</h2>
+          <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
+            Ready to harness AI for your data? Let's discuss your goals today—contact me now.
+          </p>
+          <Link href="/contact" style={{
+            backgroundColor: '#ff6b35',
+            color: 'white',
+            padding: '1.5rem 3rem',
+            borderRadius: '50px',
+            textDecoration: 'none',
+            fontWeight: 'bold',
+            fontSize: '1.2rem',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            boxShadow: '0 8px 25px rgba(255, 107, 53, 0.5)',
+            transition: 'all 0.3s ease'
+          }}>
+            <i className="fas fa-rocket"></i>
+            Get in Touch
+          </Link>
+        </div>
+      </section>
     </main>
   )
 }
