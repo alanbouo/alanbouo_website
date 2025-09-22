@@ -93,9 +93,9 @@ export default function BlogPage() {
         {/* Header */}
         <section className="blog-header" style={{ padding: '3rem 1rem', backgroundColor: 'var(--primary-blue)', color: 'var(--white)', textAlign: 'center' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h1>AI Self-Hosting Guide</h1>
+            <h1>AI Knowledge Hub</h1>
             <p style={{ fontSize: '18px', marginTop: '1rem' }}>
-              Practical guides and insights for running your own AI models, maintaining data privacy, and implementing ethical AI solutions
+              Discover practical tips, trends, and solutions to empower your AI journey. Stay informed.
             </p>
           </div>
         </section>
