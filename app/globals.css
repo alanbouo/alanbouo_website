@@ -346,6 +346,81 @@ button:focus, a:focus, input:focus, textarea:focus {
   }
 }
 
+/* Blog Page Styles */
+.category-link:hover {
+  background-color: #f0f0f0 !important;
+}
+
+/* Blog Page Responsive Styles */
+@media (max-width: 1024px) {
+  .blog-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .blog-sidebar {
+    order: 2 !important;
+  }
+
+  .blog-main-content {
+    order: 1 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-article-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .blog-featured-article {
+    padding: 2rem !important;
+  }
+
+  .blog-featured-title {
+    font-size: 2rem !important;
+  }
+
+  .blog-sidebar {
+    margin-top: 2rem !important;
+  }
+
+  .blog-cta-section {
+    padding: 3rem 1rem !important;
+  }
+
+  .blog-cta-button {
+    padding: 1rem 2rem !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-header {
+    padding: 2rem 1rem !important;
+  }
+
+  .blog-header h1 {
+    font-size: 2rem !important;
+  }
+
+  .blog-header p {
+    font-size: 16px !important;
+  }
+
+  .blog-main-section {
+    padding: 2rem 1rem !important;
+  }
+
+  .blog-article-card {
+    padding: 1.5rem !important;
+  }
+
+  .blog-sidebar {
+    padding: 1.5rem !important;
+  }
+}
+
 /* Minimal Footer Styles */
 footer {
   background-color: #f8f8f8 !important;
