@@ -68,10 +68,7 @@ export default function BlogPage() {
   const recentPosts = articles.slice(0, 3)
 
   return (
-    <>
-      <Navbar />
-
-      <main>
+    <main>
         {/* Header */}
         <section className="blog-header" style={{ padding: '3rem 1rem', backgroundColor: 'var(--primary-blue)', color: 'var(--white)', textAlign: 'center' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -327,9 +324,7 @@ export default function BlogPage() {
             </Link>
           </div>
         </section>
-      </main>
-
       <Footer />
-    </>
+    </main>
   )
 }
