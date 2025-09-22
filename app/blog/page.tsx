@@ -1,71 +1,92 @@
 import Link from 'next/link'
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+// Temporarily using hardcoded data until contentlayer is properly configured
+// import { allBlogs } from 'contentlayer/generated'
+// import { compareDesc } from 'date-fns'
 
 export const metadata = {
   title: 'Blog - Alanbouo | AI Self-Hosting Guide',
   description: 'Latest insights and practical guides on self-hosting AI models, data privacy management, and ethical AI deployment.',
 }
 
+const categoryColors = {
+  Tutorial: "#28a745",
+  Ethics: "#667eea",
+  Security: "#8b5cf6",
+  Personal: "#28a745",
+  Business: "#667eea"
+}
+
+// Temporary hardcoded posts - will be replaced with contentlayer data
+const posts = [
+  {
+    title: "Complete Guide: Moving from Cloud AI to Self-Hosted AI Models",
+    description: "Step-by-step guide to deploy your own AI models locally, enhance data privacy, and create cost-effective AI solutions.",
+    date: "2025-02-09",
+    slug: "migrating-from-cloud-to-self-hosted",
+    category: "Tutorial",
+    featured: true,
+    readingTime: 8
+  },
+  {
+    title: "Why My Olive Grove Framework Is Changing AI Ethics",
+    description: "Exploring how agriculture-inspired thinking creates more sustainable and ethical AI deployment strategies.",
+    date: "2025-01-15",
+    slug: "olive-grove-framework-ai-ethics",
+    category: "Ethics",
+    featured: false,
+    readingTime: 5
+  },
+  {
+    title: "Privacy Audit Checklist: 10 Signs Your AI Setup Needs Security Updates",
+    description: "A comprehensive checklist to assess your current AI infrastructure and identify potential privacy vulnerabilities.",
+    date: "2025-01-08",
+    slug: "privacy-audit-checklist-ai",
+    category: "Security",
+    featured: false,
+    readingTime: 7
+  },
+  {
+    title: "From Marseille Startup to Global Self-Hosted AI Leader",
+    description: "Personal journey and lessons learned building an ethical AI consultancy in the heart of French innovation.",
+    date: "2024-12-22",
+    slug: "marseille-startup-to-global-ai",
+    category: "Personal",
+    featured: false,
+    readingTime: 4
+  },
+  {
+    title: "Cost Analysis: Why Self-Hosted AI Saves Money in the Long Run",
+    description: "Detailed financial breakdown showing how switching to self-hosted AI models reduces operational costs by up to 60%.",
+    date: "2024-12-15",
+    slug: "cost-analysis-self-hosted-ai",
+    category: "Business",
+    featured: false,
+    readingTime: 6
+  }
+]
+
 export default function BlogPage() {
-  const articles = [
-    {
-      title: "Complete Guide: Moving from Cloud AI to Self-Hosted AI Models",
-      excerpt: "Step-by-step guide to deploy your own AI models locally, enhance data privacy, and create cost-effective AI solutions.",
-      date: "2025-02-09",
-      readTime: "8 min read",
-      slug: "migrating-from-cloud-to-self-hosted",
-      category: "Tutorial",
-      featured: true,
-      color: "#28a745"
-    },
-    {
-      title: "Why My Olive Grove Framework Is Changing AI Ethics",
-      excerpt: "Exploring how agriculture-inspired thinking creates more sustainable and ethical AI deployment strategies.",
-      date: "2025-01-15",
-      readTime: "5 min read",
-      slug: "olive-grove-framework-ai-ethics",
-      category: "Ethics",
-      color: "#667eea"
-    },
-    {
-      title: "Privacy Audit Checklist: 10 Signs Your AI Setup Needs Security Updates",
-      excerpt: "A comprehensive checklist to assess your current AI infrastructure and identify potential privacy vulnerabilities.",
-      date: "2025-01-08",
-      readTime: "7 min read",
-      slug: "privacy-audit-checklist-ai",
-      category: "Security",
-      color: "#8b5cf6"
-    },
-    {
-      title: "From Marseille Startup to Global Self-Hosted AI Leader",
-      excerpt: "Personal journey and lessons learned building an ethical AI consultancy in the heart of French innovation.",
-      date: "2024-12-22",
-      readTime: "4 min read",
-      slug: "marseille-startup-to-global-ai",
-      category: "Personal",
-      color: "#28a745"
-    },
-    {
-      title: "Cost Analysis: Why Self-Hosted AI Saves Money in the Long Run",
-      excerpt: "Detailed financial breakdown showing how switching to self-hosted AI models reduces operational costs by up to 60%.",
-      date: "2024-12-15",
-      readTime: "6 min read",
-      slug: "cost-analysis-self-hosted-ai",
-      category: "Business",
-      color: "#667eea"
-    }
-  ]
+  // Temporarily using hardcoded data
+  // const posts = allBlogs
+  //   .filter((post) => !post.draft)
+  //   .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
-  const categories = [
-    { name: "AI Trends", count: 12 },
-    { name: "Tutorials", count: 8 },
-    { name: "Ethics", count: 6 },
-    { name: "Security", count: 4 },
-    { name: "Business", count: 3 }
-  ]
+  const featuredPost = posts.find(post => post.featured)
+  const regularPosts = posts.filter(post => !post.featured)
 
-  const recentPosts = articles.slice(0, 3)
+  // Get unique categories with counts
+  const categoryCounts = posts.reduce((acc, post) => {
+    acc[post.category] = (acc[post.category] || 0) + 1
+    return acc
+  }, {} as Record<string, number>)
+
+  const categories = Object.entries(categoryCounts).map(([name, count]) => ({
+    name,
+    count
+  }))
+
+  const recentPosts = posts.slice(0, 3)
 
   return (
     <main>
@@ -97,19 +118,19 @@ export default function BlogPage() {
                   }}></div>
                 </div>
 
-                {articles.filter(article => article.featured).map(article => (
-                  <article key={article.slug} className="blog-featured-article" style={{
+                {featuredPost && (
+                  <article key={featuredPost.slug} className="blog-featured-article" style={{
                     backgroundColor: 'var(--white)',
                     padding: '3rem',
                     borderRadius: '15px',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
                     marginBottom: '2rem',
                     textAlign: 'center',
-                    border: `3px solid ${article.color}`
+                    border: `3px solid ${categoryColors[featuredPost.category as keyof typeof categoryColors] || '#28a745'}`
                   }}>
                     <div style={{ marginBottom: '2rem' }}>
                       <span style={{
-                        backgroundColor: article.color,
+                        backgroundColor: categoryColors[featuredPost.category as keyof typeof categoryColors] || '#28a745',
                         color: 'var(--white)',
                         padding: '0.5rem 1rem',
                         borderRadius: '20px',
@@ -117,25 +138,25 @@ export default function BlogPage() {
                         fontWeight: 'bold'
                       }}>
                         <i className="fas fa-book" style={{ marginRight: '0.5rem' }}></i>
-                        {article.category}
+                        {featuredPost.category}
                       </span>
                     </div>
 
                     <h2 className="blog-featured-title" style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--primary-blue)' }}>
-                      {article.title}
+                      {featuredPost.title}
                     </h2>
 
                     <p style={{ fontSize: '18px', lineHeight: '1.7', marginBottom: '2rem', maxWidth: '700px', margin: '0 auto 2rem auto' }}>
-                      {article.excerpt}
+                      {featuredPost.description}
                     </p>
 
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem', fontSize: '14px', color: 'var(--text-color)' }}>
-                      <span><i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>{article.date}</span>
-                      <span><i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>{article.readTime}</span>
+                      <span><i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>{new Date(featuredPost.date).toLocaleDateString()}</span>
+                      <span><i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>{featuredPost.readingTime} min read</span>
                     </div>
 
                     <Link
-                      href={`/blog/${article.slug}`}
+                      href={`/blog/${featuredPost.slug}`}
                       style={{
                         backgroundColor: '#ff6b35',
                         color: 'var(--white)',
@@ -149,7 +170,7 @@ export default function BlogPage() {
                       Read More <i className="fas fa-arrow-right" style={{ marginLeft: '0.5rem' }}></i>
                     </Link>
                   </article>
-                ))}
+                )}
               </div>
 
               {/* Article Grid */}
@@ -159,40 +180,40 @@ export default function BlogPage() {
                 </h2>
 
                 <div className="blog-article-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
-                  {articles.filter(article => !article.featured).map(article => (
-                    <article key={article.slug} className="blog-article-card article-card" style={{
+                  {regularPosts.map(post => (
+                    <article key={post.slug} className="blog-article-card article-card" style={{
                       backgroundColor: 'var(--white)',
                       padding: '2rem',
                       borderRadius: '12px',
-                      border: `3px solid ${article.color}`,
+                      border: `3px solid ${categoryColors[post.category as keyof typeof categoryColors] || '#28a745'}`,
                       transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                       boxShadow: '0 5px 15px rgba(0,0,0,0.1)'
                     }}>
                       <div style={{ marginBottom: '1rem' }}>
                         <span style={{
-                          backgroundColor: article.color,
+                          backgroundColor: categoryColors[post.category as keyof typeof categoryColors] || '#28a745',
                           color: 'var(--white)',
                           padding: '0.3rem 0.8rem',
                           borderRadius: '15px',
                           fontSize: '12px',
                           fontWeight: 'bold'
                         }}>
-                          {article.category}
+                          {post.category}
                         </span>
                       </div>
 
                       <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>
-                        {article.title}
+                        {post.title}
                       </h3>
 
                       <p style={{ lineHeight: '1.6', marginBottom: '1.5rem', color: 'var(--text-color)' }}>
-                        {article.excerpt}
+                        {post.description}
                       </p>
 
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '14px', color: 'var(--text-color)' }}>
-                        <span><i className="fas fa-clock" style={{ marginRight: '0.3rem' }}></i>{article.readTime}</span>
+                        <span><i className="fas fa-clock" style={{ marginRight: '0.3rem' }}></i>{post.readingTime} min read</span>
                         <Link
-                          href={`/blog/${article.slug}`}
+                          href={`/blog/${post.slug}`}
                           style={{ color: '#ff6b35', textDecoration: 'none', fontWeight: 'bold' }}
                         >
                           Read More <i className="fas fa-arrow-right" style={{ marginLeft: '0.3rem', fontSize: '12px' }}></i>
@@ -278,7 +299,7 @@ export default function BlogPage() {
                         </h4>
                         <span style={{ fontSize: '12px', color: '#999' }}>
                           <i className="fas fa-calendar" style={{ marginRight: '0.3rem' }}></i>
-                          {post.date}
+                          {new Date(post.date).toLocaleDateString()}
                         </span>
                       </Link>
                     </li>
