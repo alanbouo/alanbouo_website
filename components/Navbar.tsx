@@ -9,7 +9,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-container">
           <Link href="/" className="brand-link">
-            <i className="fas fa-code" style={{ color: 'var(--olive-green)' }}></i>
+            <i className="fas fa-code" style={{ color: 'var(--cta-yellow)' }}></i>
             <span>Alan Bouo</span>
           </Link>
 
@@ -83,7 +83,7 @@ const Navbar = () => {
         }
         
         .brand-link:hover {
-          color: var(--golden-yellow);
+          color: var(--cta-yellow);
           transform: translateY(-2px);
         }
         
@@ -111,23 +111,24 @@ const Navbar = () => {
         }
         
         .nav-link:hover {
-          color: var(--golden-yellow);
+          color: var(--cta-yellow);
           background: rgba(255, 255, 255, 0.1);
         }
         
         /* CTA Button */
         .cta-button {
-          background: var(--olive-green);
-          color: var(--deep-blue);
+          background: var(--cta-yellow);
+          color: var(--primary-blue);
           padding: 0.5rem 1.5rem;
           border-radius: 4px;
           text-decoration: none;
           font-weight: 600;
           transition: all 0.3s ease;
         }
-        
+
         .cta-button:hover {
-          background: var(--golden-yellow);
+          background: var(--white);
+          color: var(--primary-blue);
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
@@ -172,7 +173,7 @@ const Navbar = () => {
           bottom: 0;
           width: 100%;
           max-width: 300px;
-          background: var(--deep-blue);
+          background: var(--primary-blue);
           padding: 5rem 1.5rem 2rem;
           transform: translateX(100%);
           transition: transform 0.3s ease;
@@ -238,7 +239,7 @@ const Navbar = () => {
         }
         
         .mobile-nav-item:hover {
-          color: var(--golden-yellow);
+          color: var(--cta-yellow);
         }
         
         /* Responsive Styles */
