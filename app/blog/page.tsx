@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Footer from '@/components/Footer'
 // Temporarily using hardcoded data until contentlayer is properly configured
 // import { allBlogs } from 'contentlayer/generated'
 // import { compareDesc } from 'date-fns'
@@ -345,7 +344,7 @@ export default function BlogPage() {
             </Link>
           </div>
         </section>
-      <Footer />
-    </main>
-  )
-}
+      {/* Footer rendered by layout */}
+     </main>
+   )
+ }

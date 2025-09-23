@@ -63,7 +63,7 @@ export default function ContactPage() {
                   me@alanbouo.com
                 </a>
               </p>
-              <p style={{ fontSize: '0.9rem', color: '#666' }}>Best for detailed inquiries and consultations</p>
+              <p style={{ fontSize: '0.9rem', color: '#666' }}>Let's get in touch!</p>
             </div>
 
             <div style={{ padding: '2rem', backgroundColor: '#f8f9fa', borderRadius: '15px', borderLeft: '5px solid #667eea', textAlign: 'center' }}>
@@ -134,8 +134,8 @@ export default function ContactPage() {
             >
               <i className="fa-brands fa-x-twitter" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>X</h3>
-              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Real-time updates and discussions</p>
-            </a>
+{/*               <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Connect with me on X</p>
+ */}            </a>
 
             <a
               href="https://linkedin.com/in/alanbouo"
@@ -158,8 +158,8 @@ export default function ContactPage() {
             >
               <i className="fab fa-linkedin" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>LinkedIn</h3>
-              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Professional networking and articles</p>
-            </a>
+{/*               <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Professional networking and articles</p>
+ */}            </a>
 
             <a
               href="https://github.com/alanbouo"
@@ -187,11 +187,11 @@ export default function ContactPage() {
           </div>
 
           <div style={{ marginTop: '3rem' }}>
-            <p style={{ fontSize: '1.1rem', opacity: '0.9', marginBottom: '2rem' }}>
+{/*             <p style={{ fontSize: '1.1rem', opacity: '0.9', marginBottom: '2rem' }}>
               💡 <strong>Pro tip:</strong> Follow me on multiple platforms to get the full spectrum of content -
               from deep technical tutorials on YouTube to quick insights on X!
-            </p>
-            <Link
+            </p> */}
+            {/* <Link
               href="/blog"
               style={{
                 backgroundColor: 'white',
@@ -210,7 +210,7 @@ export default function ContactPage() {
             >
               <i className="fas fa-arrow-left"></i>
               Back to Blog
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
