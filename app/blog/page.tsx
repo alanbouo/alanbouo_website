@@ -90,7 +90,7 @@ export default function BlogPage() {
   return (
     <main>
         {/* Header */}
-        <section className="blog-header" style={{ padding: '3rem 1rem', backgroundColor: 'var(--primary-blue)', color: 'var(--white)', textAlign: 'center' }}>
+        <section className="blog-header" style={{ padding: '3rem 1rem', background: 'linear-gradient(135deg, #6A1B9A 0%, #9C27B0 100%)', color: 'var(--white)', textAlign: 'center' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h1>AI Knowledge Hub</h1>
             <p style={{ fontSize: '18px', marginTop: '1rem' }}>
@@ -157,7 +157,7 @@ export default function BlogPage() {
                     <Link
                       href={`/blog/${featuredPost.slug}`}
                       style={{
-                        backgroundColor: '#ff6b35',
+                        backgroundColor: '#FF9800',
                         color: 'var(--white)',
                         padding: '1rem 2rem',
                         borderRadius: '8px',
@@ -213,7 +213,7 @@ export default function BlogPage() {
                         <span><i className="fas fa-clock" style={{ marginRight: '0.3rem' }}></i>{post.readingTime} min read</span>
                         <Link
                           href={`/blog/${post.slug}`}
-                          style={{ color: '#ff6b35', textDecoration: 'none', fontWeight: 'bold' }}
+                          style={{ color: '#FF9800', textDecoration: 'none', fontWeight: 'bold' }}
                         >
                           Read More <i className="fas fa-arrow-right" style={{ marginLeft: '0.3rem', fontSize: '12px' }}></i>
                         </Link>
@@ -325,7 +325,7 @@ export default function BlogPage() {
               href="/contact"
               className="blog-cta-button"
               style={{
-                backgroundColor: '#ff6b35',
+                backgroundColor: '#FF9800',
                 color: 'var(--white)',
                 padding: '1.5rem 3rem',
                 borderRadius: '50px',
@@ -335,7 +335,7 @@ export default function BlogPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                boxShadow: '0 8px 25px rgba(255, 107, 53, 0.5)',
+                boxShadow: '0 8px 25px rgba(255, 152, 0, 0.5)',
                 transition: 'all 0.3s ease'
               }}
             >

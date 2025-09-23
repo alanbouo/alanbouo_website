@@ -10,7 +10,7 @@ export default function HomePage() {
       <section
         className="hero-section"
         style={{
-          backgroundColor: 'var(--primary-blue)',
+          background: 'linear-gradient(135deg, #6A1B9A 0%, #9C27B0 100%)',
           padding: '6rem 1rem 4rem',
           textAlign: 'center',
           color: 'white',
@@ -50,7 +50,7 @@ export default function HomePage() {
           <Link
             href="/contact"
             style={{
-              backgroundColor: '#ff6b35',
+              backgroundColor: '#FF9800',
               color: 'white',
               fontSize: '1.4rem',
               padding: '1.5rem 3rem',
@@ -60,7 +60,7 @@ export default function HomePage() {
               display: 'inline-block',
               marginBottom: '4rem',
               border: 'none',
-              boxShadow: '0 8px 25px rgba(255, 107, 53, 0.5)',
+              boxShadow: '0 8px 25px rgba(255, 152, 0, 0.5)',
               transition: 'all 0.3s ease'
             }}
           >
@@ -433,7 +433,7 @@ export default function HomePage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link href="/contact" style={{
-              backgroundColor: '#ff6b35',
+              backgroundColor: '#FF9800',
               color: 'white',
               padding: '1.5rem 2.5rem',
               borderRadius: '10px',
@@ -443,7 +443,7 @@ export default function HomePage() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
-              boxShadow: '0 6px 20px rgba(255, 107, 53, 0.4)',
+              boxShadow: '0 6px 20px rgba(255, 152, 0, 0.4)',
               transition: 'all 0.3s ease'
             }}>
               <i className="fas fa-rocket" style={{ fontSize: '1.3rem' }}></i>

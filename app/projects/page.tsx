@@ -44,7 +44,7 @@ export default function ServicesPage() {
             Check out what I have been up to.
           </p>
           <Link href="/contact" style={{
-            backgroundColor: '#ff6b35',
+            backgroundColor: '#FF9800',
             color: 'white',
             padding: '1.2rem 3rem',
             borderRadius: '50px',
@@ -54,7 +54,7 @@ export default function ServicesPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.5rem',
-            boxShadow: '0 8px 25px rgba(255, 107, 53, 0.5)',
+            boxShadow: '0 8px 25px rgba(255, 152, 0, 0.5)',
             transition: 'all 0.3s ease'
           }}>
             <i className="fas fa-calendar"></i>
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <Link href={project.link} style={{
-                      backgroundColor: '#ff6b35',
+                      backgroundColor: '#FF9800',
                       color: 'white',
                       padding: '0.5rem 1rem',
                       borderRadius: '6px',

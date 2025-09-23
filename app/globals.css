@@ -39,7 +39,7 @@ button, a {
 }
 
 .cta {
-  background-color: var(--cta-yellow);
+  background-color: #FF9800;
   color: var(--primary-blue);
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -50,9 +50,9 @@ button, a {
 }
 
 .cta:hover {
-  background-color: var(--tech-green);
+  background-color: #F57C00;
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+  box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
 }
 
 .fade-glow {

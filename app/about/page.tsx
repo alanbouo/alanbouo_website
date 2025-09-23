@@ -45,22 +45,22 @@ export default function AboutPage() {
             </div>
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-              <Link href="/contact" style={{
-                backgroundColor: '#ff6b35',
-                color: 'white',
-                padding: '1rem 2rem',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                boxShadow: '0 8px 25px rgba(255, 107, 53, 0.5)',
-                transition: 'all 0.3s ease'
-              }}>
-                <i className="fas fa-envelope"></i>
-                Contact Me
-              </Link>
+            <Link href="/contact" style={{
+              backgroundColor: '#FF9800',
+              color: 'white',
+              padding: '1rem 2rem',
+              borderRadius: '50px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              boxShadow: '0 8px 25px rgba(255, 152, 0, 0.5)',
+              transition: 'all 0.3s ease'
+            }}>
+              <i className="fas fa-envelope"></i>
+              Contact Me
+            </Link>
             </div>
 
             <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'flex-start', marginBottom: '2rem' }}>
@@ -812,7 +812,7 @@ export default function AboutPage() {
             Interested in collaboration? Contact me to discuss your AI projects and unlock your data potential.
           </p>
           <Link href="/contact" style={{
-            backgroundColor: '#ff6b35',
+            backgroundColor: '#FF9800',
             color: 'white',
             padding: '1.5rem 3rem',
             borderRadius: '50px',
@@ -822,7 +822,7 @@ export default function AboutPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.5rem',
-            boxShadow: '0 8px 25px rgba(255, 107, 53, 0.5)',
+            boxShadow: '0 8px 25px rgba(255, 152, 0, 0.5)',
             transition: 'all 0.3s ease'
           }}>
             <i className="fas fa-rocket"></i>

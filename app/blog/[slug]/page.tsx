@@ -175,10 +175,10 @@ export default function BlogPost({ params }: Props) {
       
       <main>
         {/* Article Header */}
-        <section style={{ 
-          padding: '4rem 1rem 2rem', 
-          backgroundColor: 'var(--primary-blue)', 
-          color: 'var(--white)' 
+        <section style={{
+          padding: '4rem 1rem 2rem',
+          background: 'linear-gradient(135deg, #6A1B9A 0%, #9C27B0 100%)',
+          color: 'var(--white)'
         }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ marginBottom: '1rem' }}>
@@ -374,7 +374,7 @@ export default function BlogPost({ params }: Props) {
               <Link
                 href="/contact"
                 style={{
-                  backgroundColor: '#ff6b35',
+                  backgroundColor: '#FF9800',
                   color: 'white',
                   padding: '0.75rem 1.5rem',
                   borderRadius: '8px',
