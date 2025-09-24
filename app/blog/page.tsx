@@ -317,7 +317,7 @@ export default function BlogPage() {
           textAlign: 'center'
         }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h2 style={{ marginBottom: '1rem' }}>Grow Your Business with AI Today</h2>
+            <h2 style={{ marginBottom: '1rem' }}>Ready to explore AI opportunities?</h2>
             <p style={{ fontSize: '18px', marginBottom: '2rem' }}>
               Ready to harness the power of self-hosted AI for your business? Let's discuss how we can transform your operations.
             </p>

@@ -7,14 +7,15 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section style={{
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        padding: '4rem 1rem',
+        padding: '3rem 1rem',
         textAlign: 'center',
         color: 'white',
-        minHeight: '50vh',
+        minHeight: '35vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden'
       }}>
         <div className="hero-icons" style={{
           position: 'absolute',
