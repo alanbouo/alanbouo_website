@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --primary-blue: #001F3F;
@@ -18,7 +17,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: var(--line-height);
   color: var(--text-color);
@@ -26,13 +25,28 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-h1 { font-size: 48px; font-weight: 700; }
-h2 { font-size: 32px; font-weight: 700; }
-h3 { font-size: 24px; font-weight: 700; }
+h1 {
+  font-size: clamp(48px, 6vw, 60px);
+  font-weight: 700;
+  color: white;
+}
+
+h2 {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+}
 
 button, a {
   transition: all 0.3s ease;
@@ -82,11 +96,13 @@ button, a {
 
 .hero-subtitle {
   animation: slideUp 1s ease-out 0.3s both;
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 400;
   margin-bottom: 2rem;
   max-width: 800px;
   margin: 0 auto 2rem auto;
-  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
 }
 
 .hero-cta {
@@ -209,9 +225,7 @@ button, a {
 }
 
 @media (max-width: 767px) {
-  h1 { font-size: 36px; }
-  h2 { font-size: 28px; }
-  body { font-size: 14px; }
+  body { font-size: 16px; }
 }
 
 /* Profile Styles */

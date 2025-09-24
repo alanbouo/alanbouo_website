@@ -17,14 +17,15 @@ export default function PrivacyPage() {
           boxShadow: '0 0 10px rgba(0,0,0,0.1)',
           borderRadius: '5px',
           padding: '20px',
-          fontFamily: 'Arial, sans-serif',
+          fontFamily: 'Inter, sans-serif',
           lineHeight: 1.6,
           color: '#333',
+          fontSize: '16px',
         }}
       >
         <header style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-          <h1 style={{ color: '#2c3e50', marginBottom: '0.5rem', fontWeight: 700 }}>Privacy Policy</h1>
-          <p style={{ color: '#2c3e50', fontSize: '0.95rem' }}>Last Updated: September 23, 2025</p>
+          <h1 style={{ color: '#2c3e50', marginBottom: '0.5rem', fontWeight: 700, fontSize: 'clamp(48px, 6vw, 60px)', fontFamily: 'Inter, sans-serif' }}>Privacy Policy</h1>
+          <p style={{ color: '#2c3e50', fontSize: 'clamp(16px, 2vw, 18px)', fontWeight: 400, fontFamily: 'Inter, sans-serif' }}>Last Updated: September 23, 2025</p>
         </header>
 
         <section style={{ marginBottom: '1.25rem' }}>
@@ -142,24 +143,30 @@ export default function PrivacyPage() {
 /* Inline style helpers */
 const sectionHeadingStyle: React.CSSProperties = {
   color: '#34495e',
-  fontWeight: 700,
-  fontSize: '1.25rem',
+  fontWeight: 500,
+  fontSize: 'clamp(24px, 4vw, 32px)',
   margin: 0,
   marginBottom: '0.5rem',
+  fontFamily: 'Inter, sans-serif',
 }
 
 const pStyle: React.CSSProperties = {
   margin: 0,
   marginBottom: '15px',
+  fontSize: '16px',
+  lineHeight: '1.6',
+  fontFamily: 'Inter, sans-serif',
 }
 
 const ulStyle: React.CSSProperties = {
   margin: 0,
   paddingLeft: '1.25rem',
   marginBottom: '15px',
+  fontFamily: 'Inter, sans-serif',
 }
 
 const linkStyle: React.CSSProperties = {
   color: '#34495e',
   textDecoration: 'underline',
+  fontFamily: 'Inter, sans-serif',
 }
