@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'About Alan Bou - Data Science & AI Consultant',
-  description: 'Meet Alan Bou, expert data science consultant specializing in AI, machine learning, and SEO. Based in Lyon, France, with 10+ years experience in transforming data into business advantages.'
+  title: 'About Alan Bou - AI App Builder & Indie Developer',
+  description: 'Meet Alan Bou, indie AI developer building and shipping AI-powered products. Creator of TubeChatAI, MemoMind, VibeX, and VigilAI. Based in Lyon, France.'
 }
 
 export default function AboutPage() {
@@ -26,21 +26,19 @@ export default function AboutPage() {
               ALAN BOUO
             </h1>
             <h2 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.2rem)', marginBottom: '2rem', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '600' }}>
-              AI & DATA EXPERT
+              AI APP BUILDER
             </h2>
             <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '2rem', fontWeight: '500' }}>
-              Harnessing the power of AI and data science to drive innovation and create competitive advantages for forward-thinking businesses.
+              I build and ship AI-powered products that solve real problems. From idea to launch, I create tools people actually use.
             </p>
 
             <div style={{ marginBottom: '2rem' }}>
-              <h3 style={{ fontSize: '18px', marginBottom: '1rem', color: 'rgba(255,255,255,0.9)' }}>Specializations:</h3>
+              <h3 style={{ fontSize: '18px', marginBottom: '1rem', color: 'rgba(255,255,255,0.9)' }}>Products I've Shipped:</h3>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '16px', lineHeight: '1.8' }}>
-                <li style={{ marginBottom: '0.5rem' }}>• Large Language Models (LLM) - Fine-tuning, deployment, and optimization of transformer-based models like GPT, BERT, and custom architectures for enterprise applications</li>
-                <li style={{ marginBottom: '0.5rem' }}>• Machine Learning (NLP, Graph, timeseries)</li>
-                <li style={{ marginBottom: '0.5rem' }}>• Deep Learning (CNN & LLM)</li>
-                <li style={{ marginBottom: '0.5rem' }}>• Data Science</li>
-                <li style={{ marginBottom: '0.5rem' }}>• Technologies (Python [Scikit-Learn, Keras, Tensorflow], AWS, SQL)</li>
-                <li style={{ marginBottom: '0.5rem' }}>• Search Engine Optimisation (SEO)</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>TubeChatAI</a> - Chat with any YouTube video</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>MemoMind</a> - AI-powered voice memo insights</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://vibx.space" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>VibeX</a> - AI growth tool for X/Twitter</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://vigilai.watch" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>VigilAI</a> - Brand monitoring across AI assistants</li>
               </ul>
             </div>
 

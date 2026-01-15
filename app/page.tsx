@@ -33,8 +33,8 @@ export default function HomePage() {
             lineHeight: '1.2',
             padding: '0 1rem'
           }}>
-            AI Expertise<br />
-            <span style={{ color: '#ff6b35' }}>Unleashed</span>
+            I Build<br />
+            <span style={{ color: '#ff6b35' }}>AI Products</span>
           </h1>
           <p style={{ 
             fontSize: 'clamp(1rem, 4vw, 1.3rem)', 
@@ -44,11 +44,11 @@ export default function HomePage() {
             padding: '0 1rem',
             boxSizing: 'border-box'
           }}>
-            Learn practical AI skills fast with clear tutorials and actionable strategies. Stay ahead in the field.
+            Shipping AI-powered apps that solve real problems. From idea to product, I build tools people actually use.
           </p>
 
           <Link
-            href="/contact"
+            href="/projects"
             style={{
               backgroundColor: '#FF9800',
               color: 'white',
@@ -64,7 +64,7 @@ export default function HomePage() {
               transition: 'all 0.3s ease'
             }}
           >
-            Ready to explore AI opportunities?
+            See My Products
           </Link>
 
           <div style={{
@@ -76,9 +76,9 @@ export default function HomePage() {
             margin: '0 auto 4rem'
           }}>
             {[
-              { icon: 'database', text: 'Self-Hosting AI' },
-              { icon: 'link', text: 'Multi-Chain Protocol' },
-              { icon: 'shield', text: 'AI Ethics & Privacy' }
+              { icon: 'database', text: '4 Products Shipped' },
+              { icon: 'link', text: 'AI-Powered Tools' },
+              { icon: 'shield', text: 'Indie Builder' }
             ].map((skill, index) => (
               <div key={index} style={{
                 background: 'rgba(255,255,255,0.1)',
@@ -195,240 +195,149 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Activities Section */}
+      {/* Products Section */}
       <section style={{ padding: '4rem 20px', backgroundColor: '#f8f9fa' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: '#333' }}>
-            What I'm Working On
+          <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#333' }}>
+            Products I've Built
           </h2>
+          <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', maxWidth: '600px', margin: '0 auto 3rem' }}>
+            AI-powered tools solving real problems for real users
+          </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
-            {/* Self-Hosting Card */}
-            <div style={{
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            {/* TubeChatAI */}
+            <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: 'white',
-              padding: '2.5rem',
+              padding: '2rem',
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              transition: 'transform 0.3s ease',
-              border: '3px solid #e9ecef'
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '3px solid #FF0000',
+              textDecoration: 'none',
+              display: 'block'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  background: 'linear-gradient(135deg, #28a745 0%, #20c997 100%)',
+                  background: 'linear-gradient(135deg, #FF0000 0%, #CC0000 100%)',
                   borderRadius: '50%',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1rem',
-                  boxShadow: '0 4px 15px rgba(40, 167, 69, 0.3)'
+                  boxShadow: '0 4px 15px rgba(255, 0, 0, 0.3)'
                 }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-                    <line x1="6" y1="18" x2="6" y2="18"/>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                   </svg>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>Self-Hosting & DevOps</h3>
-                <p style={{ color: '#666', lineHeight: '1.6' }}>
-                  Building and deploying applications on personal infrastructure for better control,
-                  security, and cost efficiency.
+                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>TubeChatAI</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                  Chat with any YouTube video — ask questions, get clarifications, dive deeper into content in real time.
                 </p>
               </div>
-              <div style={{ borderTop: '1px solid #e9ecef', paddingTop: '1.5rem' }}>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#28a745',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    Docker & Kubernetes
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#28a745',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    Cloud-Native Architecture
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#28a745',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    Security & Privacy
-                  </li>
-                </ul>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>YouTube</span>
+                <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>LLM</span>
+                <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Learning</span>
               </div>
-              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-                <Link
-                  href="/activities/self-hosting"
-                  style={{
-                    backgroundColor: '#28a745',
-                    color: 'white',
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '8px',
-                    textDecoration: 'none',
-                    fontWeight: 'bold',
-                    display: 'inline-block'
-                  }}
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
+            </a>
 
-            {/* Multi-Chain Protocol (MCP) Card */}
-            <div style={{
+            {/* MemoMind */}
+            <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: 'white',
-              padding: '2.5rem',
+              padding: '2rem',
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              transition: 'transform 0.3s ease',
-              border: '3px solid #e9ecef'
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '3px solid #667eea',
+              textDecoration: 'none',
+              display: 'block'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  background: 'linear-gradient(135deg, #6c757d 0%, #495057 100%)',
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                   borderRadius: '50%',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1rem',
-                  boxShadow: '0 4px 15px rgba(108, 117, 125, 0.3)'
+                  boxShadow: '0 4px 15px rgba(102, 126, 234, 0.3)'
                 }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/>
-                    <line x1="8" y1="12" x2="16" y2="12"/>
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <line x1="12" y1="19" x2="12" y2="23"/>
+                    <line x1="8" y1="23" x2="16" y2="23"/>
                   </svg>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>Multi-Chain Protocol (MCP)</h3>
-                <p style={{ color: '#666', lineHeight: '1.6' }}>
-                  Highlights your expertise in leveraging decentralized AI protocols to enhance self-hosted solutions, enabling secure, scalable, and interoperable AI systems across multiple chains or networks.
+                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>MemoMind</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                  Chat with your voice memos. Extract insights, organize ideas, turn recordings into actionable knowledge.
                 </p>
               </div>
-              <div style={{ borderTop: '1px solid #e9ecef', paddingTop: '1.5rem' }}>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#6c757d',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    Decentralized Protocols
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#6c757d',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    Cross-Chain Interoperability
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#6c757d',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    Secure AI Networks
-                  </li>
-                </ul>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Voice AI</span>
+                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Notes</span>
+                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivity</span>
               </div>
-              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-                <Link
-                  href="/activities/mcp"
-                  style={{
-                    backgroundColor: '#6c757d',
-                    color: 'white',
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '8px',
-                    textDecoration: 'none',
-                    fontWeight: 'bold',
-                    display: 'inline-block'
-                  }}
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
+            </a>
 
-            {/* AI & ML Card */}
-            <div style={{
+            {/* VibeX */}
+            <a href="https://vibx.space" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: 'white',
-              padding: '2.5rem',
+              padding: '2rem',
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              transition: 'transform 0.3s ease',
-              border: '3px solid #e9ecef'
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '3px solid #1DA1F2',
+              textDecoration: 'none',
+              display: 'block'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1DA1F2 0%, #0d8ecf 100%)',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem',
+                  boxShadow: '0 4px 15px rgba(29, 161, 242, 0.3)'
+                }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>VibeX</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                  AI-powered growth tool for X. Smart content suggestions, analytics, and optimization to grow your audience.
+                </p>
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>X/Twitter</span>
+                <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Growth</span>
+                <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Analytics</span>
+              </div>
+            </a>
+
+            {/* VigilAI */}
+            <a href="https://vigilai.watch" target="_blank" rel="noopener noreferrer" style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '3px solid #8b2e8b',
+              textDecoration: 'none',
+              display: 'block'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <div style={{
                   width: '60px',
                   height: '60px',
@@ -441,89 +350,20 @@ export default function HomePage() {
                   boxShadow: '0 4px 15px rgba(139, 46, 139, 0.3)'
                 }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
                   </svg>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '1rem' }}>AI Ethics and Privacy</h3>
-                <p style={{ color: '#666', lineHeight: '1.6' }}>
-                  Builds on data privacy and ethical AI practices, focusing on developing trustworthy, compliant AI systems that prioritize user consent and fairness, complementing the decentralized nature of MCP.
+                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>VigilAI</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                  Monitor your brand across AI assistants like ChatGPT & Claude. Visibility scores, sentiment, competitor analysis.
                 </p>
               </div>
-              <div style={{ borderTop: '1px solid #e9ecef', paddingTop: '1.5rem' }}>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#8b2e8b',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    User Consent & Fairness
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#8b2e8b',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    Ethical Compliance
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', color: '#666', display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: '16px',
-                      height: '16px',
-                      backgroundColor: '#8b2e8b',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '0.5rem',
-                      flexShrink: 0
-                    }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                    </div>
-                    Privacy-First Development
-                  </li>
-                </ul>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Brand Monitoring</span>
+                <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>AI Visibility</span>
               </div>
-              <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-                <Link
-                  href="/activities/ethics"
-                  style={{
-                    backgroundColor: '#8b2e8b',
-                    color: 'white',
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '8px',
-                    textDecoration: 'none',
-                    fontWeight: 'bold',
-                    display: 'inline-block'
-                  }}
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -658,9 +498,9 @@ export default function HomePage() {
         color: 'white'
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Let's Connect</h2>
+          <h2 style={{ marginBottom: '1rem' }}>Building Something with AI?</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Interested in collaborating? Have questions about my work? I'd love to hear from you.
+            Want to chat about AI products, indie building, or just say hi? I'd love to connect.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link href="/contact" style={{

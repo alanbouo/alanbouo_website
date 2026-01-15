@@ -1,74 +1,42 @@
 [
   {
-    "id": "predictive-analytics",
-    "title": "AI Predictive Analytics Solution",
-    "description": "Shipped a predictive model improving operational efficiency by measurable percentages, using advanced timeseries analysis.",
-    "icon": "chart-bar",
-    "color": "#28a745",
-    "tags": ["Efficiency +X%", "Timeseries"],
-    "link": "/projects/predictive-analytics"
+    "id": "tubechatai",
+    "title": "TubeChatAI",
+    "description": "Chat with any YouTube video — ask questions, get clarifications, or dive deeper into the content in real time. Turn passive watching into an engaging, conversational learning experience.",
+    "icon": "youtube",
+    "color": "#FF0000",
+    "tags": ["YouTube", "LLM", "Learning"],
+    "link": "https://tubechatai.xyz",
+    "external": true
   },
   {
-    "id": "self-hosted-ai",
-    "title": "Self-Hosted AI Deployment",
-    "description": "Delivered a Kubernetes-based self-hosted system, enhancing data control and security by significant percentages.",
-    "icon": "server",
+    "id": "memomind",
+    "title": "MemoMind",
+    "description": "Chat with and extract insights from your voice memos or recorded thoughts. Organize ideas, recall details, and turn casual recordings into actionable knowledge effortlessly.",
+    "icon": "microphone",
     "color": "#667eea",
-    "tags": ["Security +X%", "Kubernetes"],
-    "link": "/projects/self-hosted-ai"
+    "tags": ["Voice AI", "Notes", "Productivity"],
+    "link": "https://memomind.space",
+    "external": true
   },
   {
-    "id": "seo-tool",
-    "title": "NLP-Powered SEO Tool",
-    "description": "Shipped an AI tool boosting search rankings by significant percentages through intelligent content analysis.",
-    "icon": "search",
+    "id": "vibex",
+    "title": "VibeX",
+    "description": "AI-powered growth tool for X (Twitter). Boost your presence, engagement, and audience through smart content suggestions, analytics, and optimization.",
+    "icon": "twitter",
+    "color": "#1DA1F2",
+    "tags": ["X/Twitter", "Growth", "Analytics"],
+    "link": "https://vibx.space",
+    "external": true
+  },
+  {
+    "id": "vigilai",
+    "title": "VigilAI",
+    "description": "Monitor your brand's visibility and reputation across major AI assistants like ChatGPT and Claude. Get real-time visibility scores, sentiment analysis, and competitor comparisons.",
+    "icon": "eye",
     "color": "#8b2e8b",
-    "tags": ["Ranking +X%", "NLP"],
-    "link": "/projects/seo-tool"
-  },
-  {
-    "id": "llm-chatbot",
-    "title": "LLM Chatbot Product",
-    "description": "Developed an LLM chatbot reducing response time by measurable percentages for enterprise applications.",
-    "icon": "robot",
-    "color": "#28a745",
-    "tags": ["Response -X%", "LLM"],
-    "link": "/projects/llm-chatbot"
-  },
-  {
-    "id": "ai-ethics",
-    "title": "AI Ethics Compliance Framework",
-    "description": "Implemented a privacy-first system achieving full compliance standards and ethical AI governance.",
-    "icon": "shield-alt",
-    "color": "#667eea",
-    "tags": ["100% Compliance", "Ethics"],
-    "link": "/projects/ai-ethics"
-  },
-  {
-    "id": "multi-chain",
-    "title": "Multi-Chain AI Protocol",
-    "description": "Shipped interoperable AI networks improving scalability and decentralization by significant percentages.",
-    "icon": "ethereum",
-    "color": "#8b2e8b",
-    "tags": ["Scalability +X%", "Blockchain"],
-    "link": "/projects/multi-chain"
-  },
-  {
-    "id": "risk-model",
-    "title": "Risk Prediction Model",
-    "description": "Delivered an AI model cutting operational risks by measurable percentages through advanced analytics.",
-    "icon": "chart-area",
-    "color": "#28a745",
-    "tags": ["Risk -X%", "Analytics"],
-    "link": "/projects/risk-model"
-  },
-  {
-    "id": "seo-integration",
-    "title": "AI SEO Integration Tool",
-    "description": "Developed an AI-enhanced SEO strategy improving online performance by significant percentages.",
-    "icon": "search-plus",
-    "color": "#667eea",
-    "tags": ["Performance +X%", "SEO"],
-    "link": "/projects/seo-integration"
+    "tags": ["Brand Monitoring", "AI Visibility", "Analytics"],
+    "link": "https://vigilai.watch",
+    "external": true
   }
 ]
