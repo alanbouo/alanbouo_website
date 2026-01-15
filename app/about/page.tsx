@@ -76,7 +76,7 @@ export default function AboutPage() {
               }} aria-label="Email">
                 <i className="fas fa-envelope"></i>
               </a>
-              <a href="https://linkedin.com/al-bou" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://www.linkedin.com/in/alanbouo/" target="_blank" rel="noopener noreferrer" style={{
                 color: 'white',
                 fontSize: '24px',
                 transition: 'all 0.3s ease'
