@@ -55,7 +55,7 @@ export default function ContactPage() {
 
           <div className="social-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
             <a
-              href="https://youtube.com/alanbouo"
+              href="https://www.youtube.com/@alanbouo"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -148,6 +148,32 @@ export default function ContactPage() {
               <i className="fab fa-github" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>GitHub</h3>
               <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Open source projects and code</p>
+            </a>
+
+            <a
+              href="https://substack.com/@alanbouo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: 'white',
+                color: '#667eea',
+                padding: '2rem 1rem',
+                borderRadius: '15px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)'
+              }}
+              aria-label="Subscribe to Alanbouo's Newsletter"
+            >
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="#667eea" style={{ marginBottom: '1rem' }}>
+                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+              </svg>
+              <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>Newsletter</h3>
+              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>AI insights in your inbox</p>
             </a>
           </div>
 
