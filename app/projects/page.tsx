@@ -74,10 +74,45 @@ export default function ServicesPage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {displayedProjects.map((project) => {
-              const iconPrefix = project.icon === 'ethereum' ? 'fab' : 'fas'
-              const tagBackgroundColor = project.color === '#28a745' ? '#f0fff0' :
-                                       project.color === '#667eea' ? '#f0f8ff' :
+              const tagBackgroundColor = project.id === 'tubechatai' ? '#fff0f0' :
+                                       project.id === 'memomind' ? '#f0f4ff' :
+                                       project.id === 'vibex' ? '#f0f9ff' :
                                        '#fdf2ff'
+
+              const getIcon = (id: string) => {
+                switch(id) {
+                  case 'tubechatai':
+                    return (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                    )
+                  case 'memomind':
+                    return (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <line x1="12" y1="19" x2="12" y2="23"/>
+                        <line x1="8" y1="23" x2="16" y2="23"/>
+                      </svg>
+                    )
+                  case 'vibex':
+                    return (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
+                    )
+                  case 'vigilai':
+                    return (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                      </svg>
+                    )
+                  default:
+                    return null
+                }
+              }
 
               return (
                 <div key={project.id} style={{
@@ -90,16 +125,20 @@ export default function ServicesPage() {
                 }}>
                   <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
                     <div style={{
-                      width: '50px',
-                      height: '50px',
-                      backgroundColor: project.color,
+                      width: '60px',
+                      height: '60px',
+                      background: project.id === 'tubechatai' ? 'linear-gradient(135deg, #FF0000 0%, #CC0000 100%)' :
+                                 project.id === 'memomind' ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' :
+                                 project.id === 'vibex' ? 'linear-gradient(135deg, #1DA1F2 0%, #0d8ecf 100%)' :
+                                 'linear-gradient(135deg, #8b2e8b 0%, #6f1e6f 100%)',
                       borderRadius: '50%',
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      marginBottom: '1rem'
+                      marginBottom: '1rem',
+                      boxShadow: `0 4px 15px ${project.color}4D`
                     }}>
-                      <i className={`${iconPrefix} fa-${project.icon}`} style={{ fontSize: '20px', color: 'white' }}></i>
+                      {getIcon(project.id)}
                     </div>
                     <h3 style={{ color: '#333', marginBottom: '1rem', fontSize: '18px' }}>{project.title}</h3>
                     <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem', fontSize: '14px' }}>
