@@ -45,43 +45,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'white' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ marginBottom: '1rem', color: '#333' }}>Get In Touch</h2>
-            <p style={{ fontSize: '1.2rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              Ready to explore AI opportunities? Reach out through any of these channels.
-            </p>
-          </div>
-
-          <div className="contact-info-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
-            <div style={{ padding: '2rem', backgroundColor: '#f8f9fa', borderRadius: '15px', borderLeft: '5px solid #667eea', textAlign: 'center' }}>
-              <i className="fas fa-envelope" style={{ fontSize: '32px', color: '#667eea', marginBottom: '1rem' }}></i>
-              <h3 style={{ color: '#333', marginBottom: '1rem' }}>Email</h3>
-              <p style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>
-                <a href="mailto:me@alanbouo.com" style={{ color: '#667eea', textDecoration: 'none', fontWeight: '600' }}>
-                  me@alanbouo.com
-                </a>
-              </p>
-              <p style={{ fontSize: '0.9rem', color: '#666' }}>Let's get in touch!</p>
-            </div>
-
-            <div style={{ padding: '2rem', backgroundColor: '#f8f9fa', borderRadius: '15px', borderLeft: '5px solid #667eea', textAlign: 'center' }}>
-              <i className="fas fa-calendar-alt" style={{ fontSize: '32px', color: '#667eea', marginBottom: '1rem' }}></i>
-              <h3 style={{ color: '#333', marginBottom: '1rem' }}>Schedule a Call</h3>
-              <p style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>
-                <a href="https://cal.com/alanbouo/ai-growth-consultation" target="_blank" rel="noopener noreferrer" style={{ color: '#667eea', textDecoration: 'none', fontWeight: '600' }}>
-                  Book a meeting
-                </a>
-              </p>
-              <p style={{ fontSize: '0.9rem', color: '#666' }}>30-minute consultation to discuss your AI needs</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced Social Media Section */}
+      {/* Social Media Section */}
       <section style={{ padding: '4rem 1rem', backgroundColor: '#667eea', color: 'white', textAlign: 'center' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <h2 style={{ marginBottom: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Follow My Journey</h2>
