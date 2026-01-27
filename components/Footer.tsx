@@ -95,7 +95,7 @@ export default function Footer() {
           fontFamily: 'Roboto, sans-serif',
           fontSize: '14px'
         }}>
-            <p style={{ color: '#e0e0e0', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2025 Alan Bouo. All rights reserved. <em style={{ color: '#ffffff' }}>Accelerating AI innovation through expert insights and ethical guidance.</em></p>
+            <p style={{ color: '#e0e0e0', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2025 Alan Bouo. All rights reserved. <em style={{ color: '#ffffff' }}>Building AI products — and sharing the journey in public.</em></p>
         </div>
       </div>
 
