@@ -33,8 +33,8 @@ export default function HomePage() {
             lineHeight: '1.2',
             padding: '0 1rem'
           }}>
-            I Build<br />
-            <span style={{ color: '#ff6b35' }}>AI Products</span>
+            I build & ship<br />
+            <span style={{ color: '#ff6b35' }}>AI products</span>
           </h1>
           <p style={{ 
             fontSize: 'clamp(1rem, 4vw, 1.3rem)', 
@@ -44,7 +44,7 @@ export default function HomePage() {
             padding: '0 1rem',
             boxSizing: 'border-box'
           }}>
-            Shipping AI-powered apps that solve real problems. From idea to product, I build tools people actually use.
+            I’m Alan — an AI dev building products end-to-end (build → launch → marketing) and sharing what I learn as I grow an audience.
           </p>
 
           <Link
@@ -77,8 +77,8 @@ export default function HomePage() {
           }}>
             {[
               { icon: 'database', text: '4 Products Shipped' },
-              { icon: 'link', text: 'AI-Powered Tools' },
-              { icon: 'shield', text: 'Indie Builder' }
+              { icon: 'link', text: 'Build → Launch → Market' },
+              { icon: 'shield', text: 'Building in Public' }
             ].map((skill, index) => (
               <div key={index} style={{
                 background: 'rgba(255,255,255,0.1)',
@@ -161,8 +161,10 @@ export default function HomePage() {
               </div>
               View My Work
             </Link>
-            <Link
-              href="/about"
+            <a
+              href="https://x.com/alanbouo"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 backgroundColor: 'transparent',
                 color: 'white',
@@ -184,13 +186,12 @@ export default function HomePage() {
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
               </div>
-              About Me
-            </Link>
+              Follow on X
+            </a>
           </div>
         </div>
       </section>
@@ -202,7 +203,7 @@ export default function HomePage() {
             Products I've Built
           </h2>
           <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', maxWidth: '600px', margin: '0 auto 3rem' }}>
-            AI-powered tools solving real problems for real users
+            A few things I’ve built while learning what actually works (product + distribution).
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -421,7 +422,7 @@ export default function HomePage() {
                 Complete Guide: Migrating from Cloud AI to Self-Hosted Infrastructure
               </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Discover the latest AI innovations transforming businesses: from advanced machine learning to next-generation intelligent assistants.
+                A practical guide to moving from hosted LLM APIs to self-hosted models: architecture, tradeoffs, costs, and pitfalls.
               </p>
                 <div style={{ fontSize: '14px', color: '#999', display: 'flex', alignItems: 'center' }}>
                   <div style={{
@@ -498,41 +499,48 @@ export default function HomePage() {
         color: 'white'
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Building Something with AI?</h2>
+          <h2 style={{ marginBottom: '1rem' }}>Building in public</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Want to chat about AI products, indie building, or just say hi? I'd love to connect.
+            I share what I’m shipping, what’s working in marketing, and what’s not — in real time.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="/contact" style={{
+            <a href="https://x.com/alanbouo" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: '#FF9800',
               color: 'white',
-              padding: '1.5rem 2.5rem',
+              padding: '1.25rem 2.25rem',
               borderRadius: '10px',
               textDecoration: 'none',
               fontWeight: 'bold',
-              fontSize: '1.2rem',
+              fontSize: '1.15rem',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
               boxShadow: '0 6px 20px rgba(255, 152, 0, 0.4)',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{
-                width: '24px',
-                height: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4.5 16.5c-1.5 1.5-3 3.5-3 5.5s1.5 4 3 5.5c1.5-1.5 3-3.5 3-5.5s-1.5-4-3-5.5z"/>
-                  <path d="M19.5 7.5c1.5-1.5 3-3.5 3-5.5s-1.5-4-3-5.5c-1.5 1.5-3 3.5-3 5.5s1.5 4 3 5.5z"/>
-                  <path d="M12 12c-1.5-1.5-3-3.5-3-5.5s1.5-4 3-5.5c1.5 1.5 3 3.5 3 5.5s-1.5 4-3 5.5z"/>
-                  <path d="M12 12c1.5 1.5 3 3.5 3 5.5s-1.5 4-3 5.5c-1.5-1.5-3-3.5-3-5.5s1.5-4 3-5.5z"/>
-                  <line x1="12" y1="2" x2="12" y2="22"/>
+              <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
-              </div>
-              Ready to explore AI opportunities?
+              </span>
+              Follow the builds on X
+            </a>
+
+            <Link href="/contact" style={{
+              backgroundColor: 'transparent',
+              color: 'white',
+              padding: '1.25rem 2.25rem',
+              borderRadius: '10px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              fontSize: '1.15rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              border: '2px solid rgba(255,255,255,0.9)',
+              transition: 'all 0.3s ease'
+            }}>
+              Say hi
             </Link>
           </div>
         </div>
