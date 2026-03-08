@@ -77,6 +77,7 @@ export default function ServicesPage() {
               const tagBackgroundColor = project.id === 'tubechatai' ? '#fff0f0' :
                                        project.id === 'memomind' ? '#f0f4ff' :
                                        project.id === 'vibex' ? '#f0f9ff' :
+                                       project.id === 'clawpilot' ? '#f0fff4' :
                                        '#fdf2ff'
 
               const getIcon = (id: string) => {
@@ -102,6 +103,14 @@ export default function ServicesPage() {
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                       </svg>
                     )
+                  case 'clawpilot':
+                    return (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        <circle cx="9" cy="10" r="1"/>
+                        <circle cx="15" cy="10" r="1"/>
+                      </svg>
+                    )
                   case 'vigilai':
                     return (
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -121,15 +130,19 @@ export default function ServicesPage() {
                   borderRadius: '15px',
                   boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
                   transition: 'transform 0.3s ease',
-                  border: `3px solid ${project.color}`
+                  border: `3px solid ${project.color}`,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%'
                 }}>
-                  <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                  <div style={{ textAlign: 'center', marginBottom: '1.5rem', flex: 1 }}>
                     <div style={{
                       width: '60px',
                       height: '60px',
                       background: project.id === 'tubechatai' ? 'linear-gradient(135deg, #FF0000 0%, #CC0000 100%)' :
                                  project.id === 'memomind' ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' :
                                  project.id === 'vibex' ? 'linear-gradient(135deg, #1DA1F2 0%, #0d8ecf 100%)' :
+                                 project.id === 'clawpilot' ? 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)' :
                                  'linear-gradient(135deg, #8b2e8b 0%, #6f1e6f 100%)',
                       borderRadius: '50%',
                       display: 'inline-flex',
@@ -159,7 +172,7 @@ export default function ServicesPage() {
                       ))}
                     </div>
                   </div>
-                  <div style={{ textAlign: 'center' }}>
+                  <div style={{ textAlign: 'center', marginTop: 'auto' }}>
                     <Link href={project.link} style={{
                       backgroundColor: '#FF9800',
                       color: 'white',

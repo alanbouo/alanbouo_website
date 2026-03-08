@@ -76,7 +76,7 @@ export default function HomePage() {
             margin: '0 auto 4rem'
           }}>
             {[
-              { icon: 'database', text: '4 Products Shipped' },
+              { icon: 'database', text: '5 Products Shipped' },
               { icon: 'link', text: 'AI-Powered Tools' },
               { icon: 'shield', text: 'Indie Builder' }
             ].map((skill, index) => (
@@ -206,6 +206,47 @@ export default function HomePage() {
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            {/* ClawPilot */}
+            <a href="https://clawpilot.life" target="_blank" rel="noopener noreferrer" style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '3px solid #25D366',
+              textDecoration: 'none',
+              display: 'block'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem',
+                  boxShadow: '0 4px 15px rgba(37, 211, 102, 0.3)'
+                }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    <circle cx="9" cy="10" r="1"/>
+                    <circle cx="15" cy="10" r="1"/>
+                  </svg>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>ClawPilot</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                  Your personal AI on WhatsApp. No app to download, no account to create. Just text.
+                </p>
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>WhatsApp</span>
+                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>AI Assistant</span>
+                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Personal AI</span>
+              </div>
+            </a>
+
             {/* TubeChatAI */}
             <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: 'white',

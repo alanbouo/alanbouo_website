@@ -1,5 +1,15 @@
 [
   {
+    "id": "clawpilot",
+    "title": "ClawPilot",
+    "description": "Your personal AI that remembers you, acts for you, and keeps your data private. Available on WhatsApp - no app to download, no account to create. Just text.",
+    "icon": "message-circle",
+    "color": "#25D366",
+    "tags": ["WhatsApp", "AI Assistant", "Personal AI"],
+    "link": "https://clawpilot.life",
+    "external": true
+  },
+  {
     "id": "tubechatai",
     "title": "TubeChatAI",
     "description": "Chat with any YouTube video — ask questions, get clarifications, or dive deeper into the content in real time. Turn passive watching into an engaging, conversational learning experience.",
