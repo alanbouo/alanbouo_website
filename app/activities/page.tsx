@@ -52,7 +52,7 @@ export default function ActivitiesPage() {
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <Link
-                    href="/blog/migrating-from-cloud-to-self-hosted"
+                    href="/blog/construire-un-saas-rentable-en-public"
                     style={{
                       backgroundColor: '#28a745',
                       color: 'white',
@@ -175,7 +175,7 @@ export default function ActivitiesPage() {
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <Link
-                    href="/blog/migrating-from-cloud-to-self-hosted"
+                    href="/blog/construire-un-saas-rentable-en-public"
                     style={{
                       backgroundColor: '#6f42c1',
                       color: 'white',
@@ -262,7 +262,7 @@ export default function ActivitiesPage() {
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            <Link href="/blog/migrating-from-cloud-to-self-hosted" style={{
+            <Link href="/blog/construire-un-saas-rentable-en-public" style={{
               backgroundColor: 'white',
               padding: '2rem',
               borderRadius: '10px',

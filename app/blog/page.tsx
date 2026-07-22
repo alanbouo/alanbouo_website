@@ -1,75 +1,13 @@
 import Link from 'next/link'
-// Temporarily using hardcoded data until contentlayer is properly configured
-// import { allBlogs } from 'contentlayer/generated'
-// import { compareDesc } from 'date-fns'
+import { articles, categoryColors } from '../../data/articles'
 
 export const metadata = {
-  title: 'Blog - Alanbouo | AI Self-Hosting Guide',
-  description: 'Latest insights and practical guides on self-hosting AI models, data privacy management, and ethical AI deployment.',
+  title: 'Blog — Alan Bouo | IA & cybersécurité vulgarisées, build in public',
+  description: "Vulgarisation de l'IA et de la cybersécurité, et coulisses de ma construction de SaaS à revenus récurrents, documentées en public.",
 }
-
-const categoryColors = {
-  Tutorial: "#28a745",
-  Ethics: "#667eea",
-  Security: "#8b5cf6",
-  Personal: "#28a745",
-  Business: "#667eea"
-}
-
-// Temporary hardcoded posts - will be replaced with contentlayer data
-const posts = [
-  {
-    title: "Complete Guide: Moving from Cloud AI to Self-Hosted AI Models",
-    description: "Step-by-step guide to deploy your own AI models locally, enhance data privacy, and create cost-effective AI solutions.",
-    date: "2025-02-09",
-    slug: "migrating-from-cloud-to-self-hosted",
-    category: "Tutorial",
-    featured: true,
-    readingTime: 8
-  },
-  {
-    title: "Why My Olive Grove Framework Is Changing AI Ethics",
-    description: "Exploring how agriculture-inspired thinking creates more sustainable and ethical AI deployment strategies.",
-    date: "2025-01-15",
-    slug: "olive-grove-framework-ai-ethics",
-    category: "Ethics",
-    featured: false,
-    readingTime: 5
-  },
-  {
-    title: "Privacy Audit Checklist: 10 Signs Your AI Setup Needs Security Updates",
-    description: "A comprehensive checklist to assess your current AI infrastructure and identify potential privacy vulnerabilities.",
-    date: "2025-01-08",
-    slug: "privacy-audit-checklist-ai",
-    category: "Security",
-    featured: false,
-    readingTime: 7
-  },
-  {
-    title: "From Marseille Startup to Global Self-Hosted AI Leader",
-    description: "Personal journey and lessons learned building an ethical AI consultancy in the heart of French innovation.",
-    date: "2024-12-22",
-    slug: "marseille-startup-to-global-ai",
-    category: "Personal",
-    featured: false,
-    readingTime: 4
-  },
-  {
-    title: "Cost Analysis: Why Self-Hosted AI Saves Money in the Long Run",
-    description: "Detailed financial breakdown showing how switching to self-hosted AI models reduces operational costs by up to 60%.",
-    date: "2024-12-15",
-    slug: "cost-analysis-self-hosted-ai",
-    category: "Business",
-    featured: false,
-    readingTime: 6
-  }
-]
 
 export default function BlogPage() {
-  // Temporarily using hardcoded data
-  // const posts = allBlogs
-  //   .filter((post) => !post.draft)
-  //   .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+  const posts = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   const featuredPost = posts.find(post => post.featured)
   const regularPosts = posts.filter(post => !post.featured)
@@ -92,9 +30,9 @@ export default function BlogPage() {
         {/* Header */}
         <section className="blog-header" style={{ padding: '3rem 1rem', background: 'linear-gradient(135deg, #6A1B9A 0%, #9C27B0 100%)', color: 'var(--white)', textAlign: 'center' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h1>AI Knowledge Hub</h1>
+            <h1>Le blog</h1>
             <p style={{ fontSize: '18px', marginTop: '1rem' }}>
-              Discover practical tips, trends, and solutions to empower your AI journey. Stay informed.
+              IA et cybersécurité vulgarisées, et coulisses de ma construction de SaaS en public.
             </p>
           </div>
         </section>
@@ -108,7 +46,7 @@ export default function BlogPage() {
               {/* Featured Article */}
               <div style={{ marginBottom: '4rem' }}>
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                  <h2>Featured Tutorial</h2>
+                  <h2>À la une</h2>
                   <div style={{
                     width: '60px',
                     height: '4px',
@@ -150,8 +88,8 @@ export default function BlogPage() {
                     </p>
 
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem', fontSize: '14px', color: 'var(--text-color)' }}>
-                      <span><i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>{new Date(featuredPost.date).toLocaleDateString()}</span>
-                      <span><i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>{featuredPost.readingTime} min read</span>
+                      <span><i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>{new Date(featuredPost.date).toLocaleDateString('fr-FR')}</span>
+                      <span><i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>{featuredPost.readingTime} min de lecture</span>
                     </div>
 
                     <Link
@@ -166,7 +104,7 @@ export default function BlogPage() {
                         display: 'inline-block'
                       }}
                     >
-                      Read More <i className="fas fa-arrow-right" style={{ marginLeft: '0.5rem' }}></i>
+                      Lire l'article <i className="fas fa-arrow-right" style={{ marginLeft: '0.5rem' }}></i>
                     </Link>
                   </article>
                 )}
@@ -175,7 +113,7 @@ export default function BlogPage() {
               {/* Article Grid */}
               <div>
                 <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: 'var(--primary-blue)' }}>
-                  Latest Articles
+                  Derniers articles
                 </h2>
 
                 <div className="blog-article-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
@@ -210,12 +148,12 @@ export default function BlogPage() {
                       </p>
 
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '14px', color: 'var(--text-color)' }}>
-                        <span><i className="fas fa-clock" style={{ marginRight: '0.3rem' }}></i>{post.readingTime} min read</span>
+                        <span><i className="fas fa-clock" style={{ marginRight: '0.3rem' }}></i>{post.readingTime} min de lecture</span>
                         <Link
                           href={`/blog/${post.slug}`}
                           style={{ color: '#FF9800', textDecoration: 'none', fontWeight: 'bold' }}
                         >
-                          Read More <i className="fas fa-arrow-right" style={{ marginLeft: '0.3rem', fontSize: '12px' }}></i>
+                          Lire <i className="fas fa-arrow-right" style={{ marginLeft: '0.3rem', fontSize: '12px' }}></i>
                         </Link>
                       </div>
                     </article>
@@ -228,11 +166,11 @@ export default function BlogPage() {
             <aside className="blog-sidebar" style={{ backgroundColor: 'var(--light-gray)', padding: '2rem', borderRadius: '12px', height: 'fit-content' }}>
               {/* Search Bar */}
               <div style={{ marginBottom: '2rem' }}>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Search</h3>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Recherche</h3>
                 <div style={{ position: 'relative' }}>
                   <input
                     type="text"
-                    placeholder="Search articles..."
+                    placeholder="Rechercher un article..."
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
@@ -253,7 +191,7 @@ export default function BlogPage() {
 
               {/* Categories */}
               <div style={{ marginBottom: '2rem' }}>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Categories</h3>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Catégories</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   {categories.map((category, index) => (
                     <li key={index} style={{ marginBottom: '0.5rem' }}>
@@ -281,7 +219,7 @@ export default function BlogPage() {
 
               {/* Recent Posts */}
               <div>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Recent Posts</h3>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Articles récents</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   {recentPosts.map((post, index) => (
                     <li key={index} style={{ marginBottom: '1rem', paddingBottom: '1rem', borderBottom: index < recentPosts.length - 1 ? '1px solid #eee' : 'none' }}>
@@ -298,7 +236,7 @@ export default function BlogPage() {
                         </h4>
                         <span style={{ fontSize: '12px', color: '#999' }}>
                           <i className="fas fa-calendar" style={{ marginRight: '0.3rem' }}></i>
-                          {new Date(post.date).toLocaleDateString()}
+                          {new Date(post.date).toLocaleDateString('fr-FR')}
                         </span>
                       </Link>
                     </li>
@@ -317,9 +255,9 @@ export default function BlogPage() {
           textAlign: 'center'
         }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h2 style={{ marginBottom: '1rem' }}>Ready to explore AI opportunities?</h2>
+            <h2 style={{ marginBottom: '1rem' }}>On échange ?</h2>
             <p style={{ fontSize: '18px', marginBottom: '2rem' }}>
-              Ready to harness the power of self-hosted AI for your business? Let's discuss how we can transform your operations.
+              Une question sur l'IA, la cybersécurité ou le build in public ? Suis le parcours ou écris-moi.
             </p>
             <Link
               href="/contact"
@@ -340,7 +278,7 @@ export default function BlogPage() {
               }}
             >
               <i className="fas fa-rocket"></i>
-              Get Started Now
+              Me contacter
             </Link>
           </div>
         </section>

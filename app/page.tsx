@@ -515,7 +515,7 @@ export default function HomePage() {
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
-            <Link href="/blog/migrating-from-cloud-to-self-hosted" style={{
+            <Link href="/blog/construire-un-saas-rentable-en-public" style={{
               backgroundColor: '#f8f9fa',
               padding: '2rem',
               borderRadius: '10px',
@@ -553,14 +553,14 @@ export default function HomePage() {
                   </svg>
                 </div>
               </div>
-              <div style={{ color: '#28a745', fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold' }}>
-                AUTO-HÉBERGEMENT
+              <div style={{ color: '#FF9800', fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold' }}>
+                BUILD IN PUBLIC
               </div>
               <h4 style={{ color: '#333', marginBottom: '1rem' }}>
-                Guide complet : migrer d'une IA cloud vers une infrastructure auto-hébergée
+                Construire un SaaS rentable en public : ma méthode
               </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Reprendre le contrôle de ses données et de ses coûts en passant du cloud à une IA auto-hébergée — pourquoi, quand et comment.
+                Comment je documente en transparence ma route vers des SaaS à revenus récurrents — en pariant sur l'exécution et la localisation.
               </p>
                 <div style={{ fontSize: '14px', color: '#999', display: 'flex', alignItems: 'center' }}>
                   <div style={{
@@ -578,7 +578,7 @@ export default function HomePage() {
                       <line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                   </div>
-                  14 septembre 2025
+                  15 juillet 2026
                 </div>
             </Link>
 
