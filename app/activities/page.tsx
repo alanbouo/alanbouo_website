@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Activities - Alanbouo\'s Tech Journey',
-  description: 'Explore my work in web development, self-hosting, AI/ML, and open-source contributions. Comprehensive guides, tutorials, and insights.'
+  title: "Activités — Le parcours tech d'Alan Bouo",
+  description: "Découvre mon travail en développement web, auto-hébergement, IA/ML et open source. Guides, tutoriels et retours d'expérience."
 }
 
 export default function ActivitiesPage() {
@@ -16,9 +16,9 @@ export default function ActivitiesPage() {
         color: 'white'
       }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>My Tech Journey</h1>
+          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Mon parcours tech</h1>
           <p style={{ fontSize: '1.2rem', opacity: 0.9, marginBottom: '2rem' }}>
-            A collection of my work across different domains of technology
+            Un aperçu de mon travail dans différents domaines de la tech
           </p>
         </div>
       </section>
@@ -43,12 +43,13 @@ export default function ActivitiesPage() {
                 }}>
                   <i className="fas fa-server" style={{ fontSize: '48px', color: 'white' }}></i>
                 </div>
-                <h2 style={{ color: '#333', marginBottom: '1rem' }}>Self-Hosting & DevOps</h2>
+                <h2 style={{ color: '#333', marginBottom: '1rem' }}>Auto-hébergement &amp; DevOps</h2>
               </div>
               <div>
                 <p style={{ fontSize: '18px', color: '#666', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                  Building and managing my own infrastructure for better privacy, security, and cost control.
-                  Everything from setting up servers to deploying applications in the cloud or on-premises.
+                  Concevoir et gérer ma propre infrastructure pour plus de confidentialité, de sécurité et de
+                  maîtrise des coûts. De la mise en place des serveurs au déploiement des applications, dans le
+                  cloud ou en local.
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <Link
@@ -66,7 +67,7 @@ export default function ActivitiesPage() {
                     }}
                   >
                     <i className="fas fa-external-link-alt"></i>
-                    Cloud Migration Guide
+                    Ma méthode build in public
                   </Link>
                   <Link
                     href="/projects"
@@ -84,7 +85,7 @@ export default function ActivitiesPage() {
                     }}
                   >
                     <i className="fas fa-folder-open"></i>
-                    View Projects
+                    Voir les produits
                   </Link>
                 </div>
               </div>
@@ -101,10 +102,10 @@ export default function ActivitiesPage() {
           }}>
             <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '3rem', alignItems: 'center' }}>
               <div>
-                <h2 style={{ color: '#007bff', marginBottom: '1rem' }}>Web Development</h2>
+                <h2 style={{ color: '#007bff', marginBottom: '1rem' }}>Développement web</h2>
                 <p style={{ fontSize: '18px', color: '#666', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                  Creating modern, responsive web applications using the latest technologies.
-                  From concept to deployment, I build applications that are fast, scalable, and user-friendly.
+                  Créer des applications web modernes et responsives avec les dernières technologies.
+                  Du concept au déploiement, je construis des applications rapides, évolutives et agréables à utiliser.
                 </p>
                 <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
                   {['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL'].map(tech => (
@@ -131,7 +132,7 @@ export default function ActivitiesPage() {
                     display: 'inline-block'
                   }}
                 >
-                  See My Work <i className="fas fa-arrow-right" style={{ marginLeft: '0.5rem' }}></i>
+                  Voir mon travail <i className="fas fa-arrow-right" style={{ marginLeft: '0.5rem' }}></i>
                 </Link>
               </div>
               <div style={{ textAlign: 'center' }}>
@@ -166,16 +167,17 @@ export default function ActivitiesPage() {
                 }}>
                   <i className="fas fa-brain" style={{ fontSize: '48px', color: 'white' }}></i>
                 </div>
-                <h2 style={{ color: '#333', marginBottom: '1rem' }}>AI & Machine Learning</h2>
+                <h2 style={{ color: '#333', marginBottom: '1rem' }}>IA &amp; Machine Learning</h2>
               </div>
               <div>
                 <p style={{ fontSize: '18px', color: '#666', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                  Exploring AI and ML with a focus on privacy, ethics, and practical applications.
-                  Researching how to build responsible AI systems that respect user privacy and data sovereignty.
+                  Explorer l'IA et le ML avec un souci constant de confidentialité, d'éthique et d'usages concrets.
+                  Comprendre et expliquer comment construire des systèmes responsables qui respectent la vie privée
+                  et la souveraineté des données.
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <Link
-                    href="/blog/construire-un-saas-rentable-en-public"
+                    href="/blog/l-ia-expliquee-simplement"
                     style={{
                       backgroundColor: '#6f42c1',
                       color: 'white',
@@ -189,7 +191,7 @@ export default function ActivitiesPage() {
                     }}
                   >
                     <i className="fas fa-brain"></i>
-                    AI Ethics Research
+                    L'IA expliquée simplement
                   </Link>
                   <Link
                     href="/projects"
@@ -207,7 +209,7 @@ export default function ActivitiesPage() {
                     }}
                   >
                     <i className="fas fa-project-diagram"></i>
-                    ML Projects
+                    Mes produits
                   </Link>
                 </div>
               </div>
@@ -224,9 +226,9 @@ export default function ActivitiesPage() {
           }}>
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <i className="fab fa-github" style={{ fontSize: '72px', color: '#333' }}></i>
-              <h2 style={{ color: '#333', marginBottom: '1rem' }}>Open Source Contributions</h2>
+              <h2 style={{ color: '#333', marginBottom: '1rem' }}>Contributions open source</h2>
               <p style={{ fontSize: '18px', color: '#666', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
-                Passionate about contributing to the open-source community and building tools that benefit everyone.
+                Passionné par la communauté open source et par la création d'outils utiles à tous.
               </p>
             </div>
             <div style={{ textAlign: 'center' }}>
@@ -247,7 +249,7 @@ export default function ActivitiesPage() {
                 }}
               >
                 <i className="fab fa-github"></i>
-                View on GitHub
+                Voir sur GitHub
               </a>
             </div>
           </div>
@@ -258,7 +260,7 @@ export default function ActivitiesPage() {
       <section style={{ padding: '4rem 1rem', backgroundColor: '#f8f9fa' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: '#333' }}>
-            Recent Blog Posts
+            Articles récents
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -271,15 +273,15 @@ export default function ActivitiesPage() {
               border: '1px solid #e9ecef'
             }}>
               <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                <span style={{ backgroundColor: '#28a745', color: 'white', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>
-                  SELF-HOSTING
+                <span style={{ backgroundColor: '#FF9800', color: 'white', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>
+                  BUILD IN PUBLIC
                 </span>
               </div>
               <h4 style={{ color: '#333', marginBottom: '1rem' }}>
-                Complete Guide: Migrating from Cloud AI to Self-Hosted Infrastructure
+                Construire un SaaS rentable en public : ma méthode
               </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Follow this comprehensive guide to migrate your AI workloads and reduce costs by up to 40%.
+                Comment je documente en transparence ma route vers des SaaS à revenus récurrents — en pariant sur l'exécution et la localisation.
               </p>
               <div style={{
                 display: 'flex',
@@ -288,8 +290,8 @@ export default function ActivitiesPage() {
                 fontSize: '14px',
                 color: '#999'
               }}>
-                <span><i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>Feb 9, 2025</span>
-                <span><i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>8 min read</span>
+                <span><i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>15 juil. 2026</span>
+                <span><i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>6 min de lecture</span>
               </div>
             </Link>
 
@@ -304,9 +306,9 @@ export default function ActivitiesPage() {
               textAlign: 'center'
             }}>
               <i className="fas fa-plus" style={{ fontSize: '48px', color: '#007bff', marginBottom: '1rem' }}></i>
-              <h4 style={{ color: '#333', marginBottom: '1rem' }}>More Tutorials Coming Soon</h4>
+              <h4 style={{ color: '#333', marginBottom: '1rem' }}>Bientôt plus d'articles</h4>
               <p style={{ color: '#666', marginBottom: '1rem' }}>
-                Web development tips, DevOps guides, and AI insights on the way
+                Vulgarisation IA, cybersécurité accessible et coulisses du build in public
               </p>
               <Link href="/blog" style={{
                 backgroundColor: '#007bff',
@@ -318,29 +320,40 @@ export default function ActivitiesPage() {
                 display: 'inline-block',
                 alignSelf: 'center'
               }}>
-                Explore All Posts
+                Voir tous les articles
               </Link>
             </div>
 
-            <div style={{
+            <Link href="/blog/cybersecurite-et-ia-les-angles-morts" style={{
               backgroundColor: 'white',
               padding: '2rem',
               borderRadius: '10px',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease',
               border: '1px solid #e9ecef'
             }}>
               <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                <span style={{ backgroundColor: '#6f42c1', color: 'white', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>
-                  AI/ML
+                <span style={{ backgroundColor: '#8b2e8b', color: 'white', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>
+                  CYBERSÉCURITÉ
                 </span>
               </div>
-              <h4 style={{ color: '#333', marginBottom: '1rem' }}>Coming Soon</h4>
+              <h4 style={{ color: '#333', marginBottom: '1rem' }}>
+                Cybersécurité et IA : les angles morts que personne ne montre
+              </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Deep dive into ethical AI practices and privacy-first machine learning.
+                Les risques concrets quand on utilise des assistants et des données au quotidien — et comment s'en prémunir.
               </p>
-              <div style={{ fontSize: '14px', color: '#999' }}>
-                <i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>Coming Soon
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                fontSize: '14px',
+                color: '#999'
+              }}>
+                <span><i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>30 juin 2026</span>
+                <span><i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>7 min de lecture</span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
