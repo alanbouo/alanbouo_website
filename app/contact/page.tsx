@@ -50,7 +50,7 @@ export default function ContactPage() {
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <h2 style={{ marginBottom: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Suis mon parcours</h2>
           <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', marginBottom: '3rem', opacity: '0.9', maxWidth: '640px', margin: '0 auto 3rem' }}>
-            X pour le journal de bord au quotidien, YouTube pour approfondir l'IA et la cybersécurité, LinkedIn pour les opportunités.
+            X pour le journal de bord au quotidien, YouTube pour approfondir l'IA et la cybersécurité, LinkedIn pour échanger avec celles et ceux qui construisent.
           </p>
 
           <div className="social-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
@@ -123,7 +123,7 @@ export default function ContactPage() {
             >
               <i className="fab fa-linkedin" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>LinkedIn</h3>
-              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Crédibilité &amp; opportunités pros</p>
+              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Échanger avec ceux qui construisent</p>
             </a>
 
             <a

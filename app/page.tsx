@@ -44,9 +44,9 @@ export default function HomePage() {
             padding: '0 1rem',
             boxSizing: 'border-box'
           }}>
-            Expert IA &amp; cybersécurité, je documente en transparence ma route vers des produits à
-            revenus récurrents — en vulgarisant l'intelligence artificielle et la sécurité pour le
-            public francophone.
+            Passionné d'IA &amp; de cybersécurité, je construis des produits et j'apprends en
+            avançant — en partageant tout, sans filtre, pour rendre ces sujets accessibles au plus
+            grand nombre.
           </p>
 
           <Link
@@ -80,7 +80,7 @@ export default function HomePage() {
             {[
               { icon: 'database', text: 'Build in public' },
               { icon: 'link', text: 'IA & Cybersécurité' },
-              { icon: 'shield', text: 'Objectif : revenus récurrents' }
+              { icon: 'shield', text: 'Apprendre en construisant' }
             ].map((skill, index) => (
               <div key={index} style={{
                 background: 'rgba(255,255,255,0.1)',
@@ -217,14 +217,13 @@ export default function HomePage() {
             Construire en public, pour de vrai
           </h2>
           <p style={{ color: '#555', lineHeight: '1.8', maxWidth: '760px', margin: '0 auto 1.5rem', fontSize: '1.1rem' }}>
-            L'objectif : bâtir un ou plusieurs SaaS générant un revenu récurrent, déconnecté de
-            mon temps. La méthode : adapter au marché francophone des produits déjà validés
-            ailleurs — pour porter le pari sur l'exécution et la localisation, pas sur l'existence
-            du besoin.
+            J'aime comprendre comment les choses marchent, les construire de mes mains, et voir
+            quelqu'un s'en servir. Le build in public, c'est simplement ma façon d'avancer : je
+            montre le chemin réel, pas la version marketing.
           </p>
           <p style={{ color: '#555', lineHeight: '1.8', maxWidth: '760px', margin: '0 auto', fontSize: '1.1rem' }}>
-            Le contenu n'est pas une fin en soi : c'est mon moteur de distribution et de test.
-            Je partage les métriques, les décisions, les avancées — et les ratés assumés.
+            Pas de storytelling lissé : je partage les vraies décisions, les avancées, les doutes —
+            et les ratés assumés. Autant que ça puisse aider quelqu'un d'autre en chemin.
           </p>
 
           {/* Funnel: X -> YouTube -> LinkedIn */}
@@ -247,8 +246,8 @@ export default function HomePage() {
                 <h3 style={{ margin: 0, color: '#333' }}>X — le journal de bord</h3>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
-                Court et fréquent. Capte l'attention au jour le jour : métriques, décisions,
-                avancées, ratés assumés.
+                Court et fréquent, au jour le jour : ce que je teste, ce que je décide, ce qui
+                avance et ce qui rate.
               </p>
             </div>
 
@@ -261,11 +260,11 @@ export default function HomePage() {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
                 <i className="fa-brands fa-youtube" style={{ fontSize: '22px', color: '#FF0000' }}></i>
-                <h3 style={{ margin: 0, color: '#333' }}>YouTube — le pilier</h3>
+                <h3 style={{ margin: 0, color: '#333' }}>YouTube — pour approfondir</h3>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
-                Vulgarisation IA &amp; cyber + documentation du parcours de construction.
-                J'approfondis et je démontre l'expertise.
+                Je prends le temps d'expliquer l'IA et la cybersécurité, et de montrer les coulisses
+                de ce que je construis.
               </p>
             </div>
 
@@ -278,17 +277,17 @@ export default function HomePage() {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
                 <i className="fa-brands fa-linkedin" style={{ fontSize: '22px', color: '#0077b5' }}></i>
-                <h3 style={{ margin: 0, color: '#333' }}>LinkedIn — les opportunités</h3>
+                <h3 style={{ margin: 0, color: '#333' }}>LinkedIn — pour échanger</h3>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
-                Crédibilité professionnelle auprès des décideurs francophones. Transforme la
-                crédibilité en opportunités, une fois les premiers jalons atteints.
+                Le format plus posé : je partage les enseignements de fond avec celles et ceux qui
+                construisent aussi.
               </p>
             </div>
           </div>
 
           <p style={{ color: '#888', fontStyle: 'italic', marginTop: '2rem', fontSize: '0.95rem' }}>
-            X capte l'attention → YouTube démontre l'expertise → LinkedIn ouvre les portes.
+            Trois formats, un même fil : construire, comprendre, et partager en chemin.
           </p>
         </div>
       </section>
@@ -515,7 +514,7 @@ export default function HomePage() {
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
-            <Link href="/blog/construire-un-saas-rentable-en-public" style={{
+            <Link href="/blog/construire-en-public" style={{
               backgroundColor: '#f8f9fa',
               padding: '2rem',
               borderRadius: '10px',
@@ -557,10 +556,10 @@ export default function HomePage() {
                 BUILD IN PUBLIC
               </div>
               <h4 style={{ color: '#333', marginBottom: '1rem' }}>
-                Construire un SaaS rentable en public : ma méthode
+                Construire en public : ma façon d'avancer
               </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Comment je documente en transparence ma route vers des SaaS à revenus récurrents — en pariant sur l'exécution et la localisation.
+                Pourquoi je montre le chemin réel plutôt que la version marketing : mes décisions, mes doutes, et ce que j'apprends en construisant.
               </p>
                 <div style={{ fontSize: '14px', color: '#999', display: 'flex', alignItems: 'center' }}>
                   <div style={{

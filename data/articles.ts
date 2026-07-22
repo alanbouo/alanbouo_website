@@ -30,56 +30,44 @@ export const categoryColors: Record<string, string> = {
 
 export const articles: Article[] = [
   {
-    slug: 'construire-un-saas-rentable-en-public',
-    title: 'Construire un SaaS rentable en public : ma méthode',
+    slug: 'construire-en-public',
+    title: 'Construire en public : ma façon d’avancer',
     description:
-      "Comment je documente en transparence ma route vers des SaaS à revenus récurrents — en pariant sur l'exécution et la localisation, pas sur l'existence du besoin.",
+      "Pourquoi je montre le chemin réel plutôt que la version marketing : mes décisions, mes doutes, et ce que j'apprends en construisant.",
     date: '2026-07-15',
     modified: '2026-07-15',
     category: 'Build in public',
-    tags: ['Build in public', 'SaaS', 'MRR', 'Indie hacking', 'Stratégie'],
+    tags: ['Build in public', 'Indie hacking', 'Transparence', 'Artisanat'],
     featured: true,
-    readingTime: 6,
+    readingTime: 5,
     content: [
       {
         type: 'p',
-        text: "Je construis des SaaS et je documente tout en public. Pas pour la mise en scène, mais parce que partager le parcours est le moyen le plus honnête — et le plus efficace — de tester des idées et de trouver ses premiers utilisateurs. Voici la méthode que je suis.",
+        text: "Je construis des produits et je raconte tout en public. Pas pour la mise en scène, mais parce que c'est la façon la plus honnête d'avancer — et parce que ça peut aider quelqu'un qui se lance aussi.",
       },
-      { type: 'h2', text: 'Le cap : un revenu récurrent déconnecté de mon temps' },
+      { type: 'h2', text: 'Ce qui me motive vraiment' },
       {
         type: 'p',
-        text: "L'objectif n'est pas de vendre mon temps, mais de bâtir un ou plusieurs produits qui génèrent un revenu récurrent (MRR). C'est le modèle popularisé par Pieter Levels et Marc Lou : des SaaS simples, lancés vite, améliorés au contact du marché. Un cap clair permet de dire non à tout le reste.",
+        text: "Ce qui me fait avancer, ce n'est pas un tableau de bord financier. C'est le plaisir de comprendre comment marchent les choses, de les fabriquer de mes mains, et de voir quelqu'un s'en servir. Si, en plus, ça me permet de vivre de ce que je crée tout en gardant mon indépendance, alors c'est gagné.",
       },
-      { type: 'h2', text: "Le pari : l'exécution, pas le besoin" },
+      { type: 'h2', text: 'Partir de ce qui a fait ses preuves' },
       {
         type: 'p',
-        text: "Plutôt que d'inventer un besoin, j'adapte au marché francophone des produits déjà validés ailleurs. Si un équivalent se vend déjà à l'international, le marché est prouvé. Le risque que j'accepte d'absorber devient l'exécution et la localisation française — pas la question « est-ce que quelqu'un en veut ? ».",
+        text: "Je n'ai pas l'obsession d'inventer le concept révolutionnaire. Je préfère m'inspirer de ce qui marche déjà, le refaire à ma façon, et me concentrer sur l'exécution et les détails. C'est plus artisan que visionnaire — et ça me va très bien.",
       },
+      { type: 'h2', text: 'Montrer le chemin réel, pas la version marketing' },
       {
         type: 'p',
-        text: 'Concrètement, pour prioriser une idée parmi les autres, je regarde :',
-      },
-      {
-        type: 'ul',
-        items: [
-          "Le succès prouvé de l'équivalent ailleurs (revenus visibles, marché installé).",
-          "Ma capacité à l'exécuter vite, seul, avec 8 à 10 h par semaine.",
-          "Ce que mon expertise IA + cybersécurité apporte de différenciant à la version française.",
-        ],
-      },
-      { type: 'h2', text: 'Le contenu comme moteur, pas comme vitrine' },
-      {
-        type: 'p',
-        text: "Le contenu n'est pas une fin en soi : c'est mon moteur de distribution et de test. X capte l'attention au jour le jour (métriques, décisions, ratés assumés), YouTube approfondit et démontre l'expertise, LinkedIn transforme la crédibilité en opportunités une fois les premiers jalons atteints.",
+        text: "Sur X, je tiens le journal de bord au jour le jour ; sur YouTube, je prends le temps d'expliquer et de montrer les coulisses. Je partage les décisions, les avancées, les doutes et les ratés assumés — sans storytelling lissé.",
       },
       {
         type: 'quote',
-        text: "Moins de concurrence ne veut pas dire plus de demande. Le vrai test n'est pas « y a-t-il de la place ? » mais « mes futurs clients sont-ils atteignables et convaincus via du contenu en français ? ». Seul le terrain répond.",
+        text: "Je préfère une petite chose vraie que quelqu'un utilise à une grande promesse que personne ne teste.",
       },
-      { type: 'h2', text: 'Ce que je garde volontairement ouvert' },
+      { type: 'h2', text: 'Ce que je garde ouvert' },
       {
         type: 'p',
-        text: "Certaines décisions se trancheront idée par idée, pas au niveau de la stratégie : le type de client final (B2B, B2C ou mix) et la zone géographique précise du premier SaaS. Les figer maintenant serait prématuré. J'avance, je publie, j'ajuste — et je documente chaque étape ici.",
+        text: "Beaucoup de choses se décideront en chemin plutôt qu'à l'avance. J'avance, je publie, j'ajuste — et je documente chaque étape ici. Si ça résonne, suis le parcours.",
       },
     ],
   },
@@ -97,7 +85,7 @@ export const articles: Article[] = [
     content: [
       {
         type: 'p',
-        text: "Il y a beaucoup de bruit autour de l'IA et peu de contenu francophone qui l'explique simplement. Voici l'essentiel pour partir sur de bonnes bases, sans hype ni jargon inutile.",
+        text: "Il y a beaucoup de bruit autour de l'IA et peu de choses, en français, qui l'expliquent simplement. Voici l'essentiel pour partir sur de bonnes bases, sans hype ni jargon inutile.",
       },
       { type: 'h2', text: "Un modèle de langage, c'est quoi au fond ?" },
       {
@@ -173,40 +161,40 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: 'adapter-un-saas-qui-marche-deja',
-    title: "Adapter un SaaS qui marche déjà : localiser plutôt qu'inventer",
+    slug: 'partir-de-ce-qui-marche',
+    title: 'Partir de ce qui marche : refaire à sa façon',
     description:
-      "Pourquoi partir d'un produit déjà validé ailleurs réduit le risque, et comment réussir la localisation pour le marché francophone.",
+      "Pourquoi je préfère m'inspirer de ce qui fonctionne déjà et le refaire à ma façon, plutôt que de courir après l'idée révolutionnaire.",
     date: '2026-06-20',
     modified: '2026-06-20',
     category: 'Build in public',
-    tags: ['Build in public', 'SaaS', 'Localisation', 'Marché francophone'],
+    tags: ['Build in public', 'Exécution', 'Artisanat', 'Produit'],
     featured: false,
     readingTime: 5,
     content: [
       {
         type: 'p',
-        text: "Inventer un besoin est le pari le plus risqué qui soit. Adapter un produit qui se vend déjà ailleurs déplace le risque là où j'ai le plus de contrôle : l'exécution et la localisation.",
+        text: "Chercher l'idée que personne n'a jamais eue, c'est souvent le meilleur moyen de ne jamais rien lancer. Je préfère partir de ce qui marche déjà et y mettre ma patte.",
       },
-      { type: 'h2', text: "Pourquoi c'est plus malin que de partir de zéro" },
+      { type: 'h2', text: "Pourquoi c'est plus sain qu'une page blanche" },
       {
         type: 'p',
-        text: "Si un équivalent génère déjà des revenus visibles à l'international, la question « le marché existe-t-il ? » est réglée. Reste à bien exécuter et à parler juste au public francophone. C'est un problème d'artisan, pas de devin.",
+        text: "Si une idée fonctionne déjà quelque part, la question « est-ce que ça intéresse quelqu'un ? » est en partie réglée. Je peux alors me concentrer sur ce que j'aime vraiment : bien exécuter, soigner les détails, et rendre le tout plus clair et plus accessible.",
       },
-      { type: 'h2', text: 'Localiser, ce n\'est pas traduire' },
+      { type: 'h2', text: "Refaire, ce n'est pas copier" },
       {
         type: 'ul',
         items: [
-          "Adapter le vocabulaire, les exemples et les cas d'usage à la réalité locale.",
-          'Prendre en compte les attentes de confidentialité et les cadres réglementaires.',
-          "Choisir des canaux de distribution où l'audience francophone est réellement présente.",
-          'Ajuster le prix et le positionnement au pouvoir d\'achat et à la concurrence locale.',
+          "Comprendre pourquoi l'original plaît, pas seulement à quoi il ressemble.",
+          "Apporter mon angle : l'IA et la cybersécurité expliquées simplement.",
+          "Soigner les détails que d'autres négligent.",
+          "L'expliquer clairement, en français.",
         ],
       },
       { type: 'h2', text: 'Le piège à éviter' },
       {
         type: 'p',
-        text: "Le marché francophone est plus petit : moins de spectateurs, monétisation souvent plus faible. « Moins de concurrence » n'est pas un boulevard garanti. Le seul juge de paix reste le terrain : est-ce que ces utilisateurs sont atteignables et convaincus en français ?",
+        text: "« S'inspirer » ne veut pas dire « cloner sans réfléchir ». Si je n'apporte rien de plus — un usage plus simple, une explication plus claire, un vrai soin — alors il n'y a pas de raison de le faire. Le seul juge de paix, c'est la personne qui l'utilise : est-ce que ça lui rend service ?",
       },
     ],
   },

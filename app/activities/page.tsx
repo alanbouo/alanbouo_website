@@ -53,7 +53,7 @@ export default function ActivitiesPage() {
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <Link
-                    href="/blog/construire-un-saas-rentable-en-public"
+                    href="/blog/construire-en-public"
                     style={{
                       backgroundColor: '#28a745',
                       color: 'white',
@@ -264,7 +264,7 @@ export default function ActivitiesPage() {
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            <Link href="/blog/construire-un-saas-rentable-en-public" style={{
+            <Link href="/blog/construire-en-public" style={{
               backgroundColor: 'white',
               padding: '2rem',
               borderRadius: '10px',
@@ -278,10 +278,10 @@ export default function ActivitiesPage() {
                 </span>
               </div>
               <h4 style={{ color: '#333', marginBottom: '1rem' }}>
-                Construire un SaaS rentable en public : ma méthode
+                Construire en public : ma façon d'avancer
               </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Comment je documente en transparence ma route vers des SaaS à revenus récurrents — en pariant sur l'exécution et la localisation.
+                Pourquoi je montre le chemin réel plutôt que la version marketing : mes décisions, mes doutes, et ce que j'apprends en construisant.
               </p>
               <div style={{
                 display: 'flex',
