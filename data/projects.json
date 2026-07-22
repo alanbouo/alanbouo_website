@@ -2,50 +2,50 @@
   {
     "id": "clawpilot",
     "title": "ClawPilot",
-    "description": "Your personal AI that remembers you, acts for you, and keeps your data private. Available on WhatsApp - no app to download, no account to create. Just text.",
+    "description": "Ton IA personnelle qui se souvient de toi, agit pour toi et garde tes données privées. Disponible sur WhatsApp — aucune app à installer, aucun compte à créer. Il suffit d'écrire.",
     "icon": "message-circle",
     "color": "#25D366",
-    "tags": ["WhatsApp", "AI Assistant", "Personal AI"],
+    "tags": ["WhatsApp", "Assistant IA", "IA personnelle"],
     "link": "https://clawpilot.life",
     "external": true
   },
   {
     "id": "tubechatai",
     "title": "TubeChatAI",
-    "description": "Chat with any YouTube video — ask questions, get clarifications, or dive deeper into the content in real time. Turn passive watching into an engaging, conversational learning experience.",
+    "description": "Discute avec n'importe quelle vidéo YouTube — pose tes questions, obtiens des précisions ou va plus loin dans le contenu, en temps réel. Transforme le visionnage passif en apprentissage conversationnel.",
     "icon": "youtube",
     "color": "#FF0000",
-    "tags": ["YouTube", "LLM", "Learning"],
+    "tags": ["YouTube", "LLM", "Apprentissage"],
     "link": "https://tubechatai.xyz",
     "external": true
   },
   {
     "id": "memomind",
     "title": "MemoMind",
-    "description": "Chat with and extract insights from your voice memos or recorded thoughts. Organize ideas, recall details, and turn casual recordings into actionable knowledge effortlessly.",
+    "description": "Discute avec tes mémos vocaux et extrais-en des insights. Organise tes idées, retrouve les détails et transforme sans effort tes enregistrements en connaissances actionnables.",
     "icon": "microphone",
     "color": "#667eea",
-    "tags": ["Voice AI", "Notes", "Productivity"],
+    "tags": ["IA vocale", "Notes", "Productivité"],
     "link": "https://memomind.space",
     "external": true
   },
   {
     "id": "vibex",
     "title": "VibeX",
-    "description": "AI-powered growth tool for X (Twitter). Boost your presence, engagement, and audience through smart content suggestions, analytics, and optimization.",
+    "description": "Outil de croissance propulsé par l'IA pour X (Twitter). Booste ta présence, ton engagement et ton audience grâce à des suggestions de contenu, des analytics et de l'optimisation.",
     "icon": "twitter",
     "color": "#1DA1F2",
-    "tags": ["X/Twitter", "Growth", "Analytics"],
+    "tags": ["X/Twitter", "Croissance", "Analytics"],
     "link": "https://vibx.space",
     "external": true
   },
   {
     "id": "vigilai",
     "title": "VigilAI",
-    "description": "Monitor your brand's visibility and reputation across major AI assistants like ChatGPT and Claude. Get real-time visibility scores, sentiment analysis, and competitor comparisons.",
+    "description": "Surveille la visibilité et la réputation de ta marque à travers les grands assistants IA comme ChatGPT et Claude. Scores de visibilité en temps réel, analyse de sentiment et comparaisons concurrentielles.",
     "icon": "eye",
     "color": "#8b2e8b",
-    "tags": ["Brand Monitoring", "AI Visibility", "Analytics"],
+    "tags": ["Surveillance de marque", "Visibilité IA", "Analytics"],
     "link": "https://vigilai.watch",
     "external": true
   }

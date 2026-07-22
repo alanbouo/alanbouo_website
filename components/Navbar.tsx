@@ -15,14 +15,14 @@ const Navbar = () => {
 
           <div className="desktop-menu">
             <ul className="desktop-menu-list">
-              <li><Link href="/projects" className="nav-link">Projects</Link></li>
+              <li><Link href="/projects" className="nav-link">Produits</Link></li>
               <li><Link href="/blog" className="nav-link">Blog</Link></li>
-              <li><Link href="/about" className="nav-link">About</Link></li>
+              <li><Link href="/about" className="nav-link">À propos</Link></li>
               <li><Link href="/contact" className="nav-link">Contact</Link></li>
             </ul>
-            
+
             <div className="desktop-cta">
-              <Link href="/contact" className="cta-button">Get in Touch</Link>
+              <Link href="/contact" className="cta-button">Suivre le parcours</Link>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="mobile-nav-bar">
         <Link href="/projects" className="mobile-nav-item">
           <i className="fas fa-tools"></i>
-          <span>Projects</span>
+          <span>Produits</span>
         </Link>
         <Link href="/blog" className="mobile-nav-item">
           <i className="fas fa-blog"></i>
@@ -40,7 +40,7 @@ const Navbar = () => {
         </Link>
         <Link href="/about" className="mobile-nav-item">
           <i className="fas fa-user"></i>
-          <span>About</span>
+          <span>À propos</span>
         </Link>
         <Link href="/contact" className="mobile-nav-item">
           <i className="fas fa-envelope"></i>
