@@ -2,70 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
-
-// Temporary hardcoded posts - will be replaced with contentlayer data
-const posts = [
-  {
-    title: "Complete Guide: Moving from Cloud AI to Self-Hosted AI Models",
-    description: "Step-by-step guide to deploy your own AI models locally, enhance data privacy, and create cost-effective AI solutions.",
-    date: "2025-02-09",
-    modified: "2025-02-09",
-    slug: "migrating-from-cloud-to-self-hosted",
-    category: "Tutorial",
-    tags: ["AI", "Self-Hosting", "Privacy", "Deployment", "Cloud Migration"],
-    featured: true,
-    readingTime: 8,
-    content: "Complete guide content here..."
-  },
-  {
-    title: "Why My Olive Grove Framework Is Changing AI Ethics",
-    description: "Exploring how agriculture-inspired thinking creates more sustainable and ethical AI deployment strategies.",
-    date: "2025-01-15",
-    modified: "2025-01-15",
-    slug: "olive-grove-framework-ai-ethics",
-    category: "Ethics",
-    tags: ["AI Ethics", "Sustainability", "Framework", "Agriculture", "Responsible AI"],
-    featured: false,
-    readingTime: 5,
-    content: "Olive Grove Framework content here..."
-  },
-  {
-    title: "Privacy Audit Checklist: 10 Signs Your AI Setup Needs Security Updates",
-    description: "A comprehensive checklist to assess your current AI infrastructure and identify potential privacy vulnerabilities.",
-    date: "2025-01-08",
-    modified: "2025-01-08",
-    slug: "privacy-audit-checklist-ai",
-    category: "Security",
-    tags: ["Privacy", "Security", "Audit", "Compliance", "Data Protection"],
-    featured: false,
-    readingTime: 7,
-    content: "Privacy audit content here..."
-  },
-  {
-    title: "From Marseille Startup to Global Self-Hosted AI Leader",
-    description: "Personal journey and lessons learned building an ethical AI consultancy in the heart of French innovation.",
-    date: "2024-12-22",
-    modified: "2024-12-22",
-    slug: "marseille-startup-to-global-ai",
-    category: "Personal",
-    tags: ["Entrepreneurship", "AI", "France", "Startup", "Leadership"],
-    featured: false,
-    readingTime: 4,
-    content: "Marseille startup story content here..."
-  },
-  {
-    title: "Cost Analysis: Why Self-Hosted AI Saves Money in the Long Run",
-    description: "Detailed financial breakdown showing how switching to self-hosted AI models reduces operational costs by up to 60%.",
-    date: "2024-12-15",
-    modified: "2024-12-15",
-    slug: "cost-analysis-self-hosted-ai",
-    category: "Business",
-    tags: ["Cost Analysis", "ROI", "Business", "Economics", "Self-Hosting"],
-    featured: false,
-    readingTime: 6,
-    content: "Cost analysis content here..."
-  }
-]
+import { articles, getArticle, blockToText, type Block } from '../../../data/articles'
 
 interface Props {
   params: {
@@ -73,13 +10,17 @@ interface Props {
   }
 }
 
+export function generateStaticParams() {
+  return articles.map((article) => ({ slug: article.slug }))
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = posts.find(p => p.slug === params.slug)
-  
+  const post = getArticle(params.slug)
+
   if (!post) {
     return {
-      title: 'Post Not Found',
-      description: 'The requested blog post could not be found.'
+      title: 'Article introuvable',
+      description: "L'article demandé est introuvable."
     }
   }
 
@@ -97,8 +38,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.description,
       url: postUrl,
-      siteName: 'Alan Bouo - AI Self-Hosting Expert',
-      locale: 'en_US',
+      siteName: 'Alan Bouo — Expert IA & cybersécurité',
+      locale: 'fr_FR',
       type: 'article',
       publishedTime: post.date,
       modifiedTime: post.modified,
@@ -125,8 +66,47 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+function renderBlock(block: Block, index: number) {
+  switch (block.type) {
+    case 'h2':
+      return (
+        <h2 key={index} style={{ fontSize: '1.6rem', margin: '2.5rem 0 1rem', color: 'var(--primary-blue)' }}>
+          {block.text}
+        </h2>
+      )
+    case 'p':
+      return (
+        <p key={index} style={{ marginBottom: '1.25rem' }}>
+          {block.text}
+        </p>
+      )
+    case 'ul':
+      return (
+        <ul key={index} style={{ margin: '0 0 1.5rem 1.25rem', paddingLeft: '1rem' }}>
+          {block.items.map((item, i) => (
+            <li key={i} style={{ marginBottom: '0.5rem' }}>{item}</li>
+          ))}
+        </ul>
+      )
+    case 'quote':
+      return (
+        <blockquote key={index} style={{
+          borderLeft: '4px solid var(--cta-yellow)',
+          paddingLeft: '1.25rem',
+          margin: '1.5rem 0',
+          fontStyle: 'italic',
+          color: '#555'
+        }}>
+          {block.text}
+        </blockquote>
+      )
+    default:
+      return null
+  }
+}
+
 export default function BlogPost({ params }: Props) {
-  const post = posts.find(p => p.slug === params.slug)
+  const post = getArticle(params.slug)
 
   if (!post) {
     notFound()
@@ -134,6 +114,7 @@ export default function BlogPost({ params }: Props) {
 
   const baseUrl = 'https://alanbouo.com'
   const postUrl = `${baseUrl}/blog/${post.slug}`
+  const wordCount = post.content.map(blockToText).join(' ').split(/\s+/).length
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -162,8 +143,9 @@ export default function BlogPost({ params }: Props) {
     },
     keywords: post.tags.join(', '),
     articleSection: post.category,
-    wordCount: post.content.split(' ').length,
+    wordCount,
     timeRequired: `PT${post.readingTime}M`,
+    inLanguage: 'fr-FR',
   }
 
   return (
@@ -172,7 +154,7 @@ export default function BlogPost({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       <main>
         {/* Article Header */}
         <section style={{
@@ -193,17 +175,17 @@ export default function BlogPost({ params }: Props) {
                 {post.category}
               </span>
             </div>
-            
-            <h1 style={{ 
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)', 
+
+            <h1 style={{
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               marginBottom: '1rem',
               lineHeight: '1.2'
             }}>
               {post.title}
             </h1>
-            
-            <p style={{ 
-              fontSize: '1.2rem', 
+
+            <p style={{
+              fontSize: '1.2rem',
               marginBottom: '2rem',
               opacity: 0.9,
               maxWidth: '600px',
@@ -211,10 +193,10 @@ export default function BlogPost({ params }: Props) {
             }}>
               {post.description}
             </p>
-            
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'center', 
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
               gap: '2rem',
               flexWrap: 'wrap',
               fontSize: '0.9rem',
@@ -222,15 +204,15 @@ export default function BlogPost({ params }: Props) {
             }}>
               <span>
                 <i className="fas fa-calendar" style={{ marginRight: '0.5rem' }}></i>
-                {new Date(post.date).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
+                {new Date(post.date).toLocaleDateString('fr-FR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
                 })}
               </span>
               <span>
                 <i className="fas fa-clock" style={{ marginRight: '0.5rem' }}></i>
-                {post.readingTime} min read
+                {post.readingTime} min de lecture
               </span>
               <span>
                 <i className="fas fa-user" style={{ marginRight: '0.5rem' }}></i>
@@ -241,22 +223,22 @@ export default function BlogPost({ params }: Props) {
         </section>
 
         {/* Article Content */}
-        <article style={{ 
-          padding: '4rem 1rem', 
-          backgroundColor: 'var(--white)' 
+        <article style={{
+          padding: '4rem 1rem',
+          backgroundColor: 'var(--white)'
         }}>
-          <div style={{ 
-            maxWidth: '800px', 
+          <div style={{
+            maxWidth: '800px',
             margin: '0 auto',
             lineHeight: '1.8',
             fontSize: '1.1rem'
           }}>
             <div style={{ marginBottom: '3rem' }}>
-              {post.content}
+              {post.content.map(renderBlock)}
             </div>
 
             {/* Tags */}
-            <div style={{ 
+            <div style={{
               borderTop: '1px solid #eee',
               paddingTop: '2rem',
               marginBottom: '3rem'
@@ -282,30 +264,32 @@ export default function BlogPost({ params }: Props) {
             </div>
 
             {/* Share Buttons */}
-            <div style={{ 
+            <div style={{
               borderTop: '1px solid #eee',
               paddingTop: '2rem',
               marginBottom: '3rem'
             }}>
-              <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Share this article</h3>
+              <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Partager cet article</h3>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <button
-                  onClick={() => navigator.clipboard.writeText(postUrl)}
+                <a
+                  href={`https://x.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title)}&via=alanbouo`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
-                    backgroundColor: 'var(--light-gray)',
-                    border: '1px solid #ddd',
+                    backgroundColor: '#111',
+                    color: 'white',
                     padding: '0.5rem 1rem',
                     borderRadius: '8px',
-                    cursor: 'pointer',
+                    textDecoration: 'none',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.5rem'
                   }}
                 >
-                  <i className="fas fa-link"></i>
-                  Copy Link
-                </button>
-                
+                  <i className="fa-brands fa-x-twitter"></i>
+                  X
+                </a>
+
                 <a
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`}
                   target="_blank"
@@ -324,30 +308,11 @@ export default function BlogPost({ params }: Props) {
                   <i className="fab fa-linkedin"></i>
                   LinkedIn
                 </a>
-                
-                <a
-                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title)}&via=alanbouo`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    backgroundColor: '#1da1f2',
-                    color: 'white',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '8px',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                  }}
-                >
-                  <i className="fab fa-twitter"></i>
-                  Twitter
-                </a>
               </div>
             </div>
 
             {/* Navigation */}
-            <div style={{ 
+            <div style={{
               borderTop: '1px solid #eee',
               paddingTop: '2rem',
               display: 'flex',
@@ -368,9 +333,9 @@ export default function BlogPost({ params }: Props) {
                 }}
               >
                 <i className="fas fa-arrow-left"></i>
-                Back to Blog
+                Retour au blog
               </Link>
-              
+
               <Link
                 href="/contact"
                 style={{
@@ -382,7 +347,7 @@ export default function BlogPost({ params }: Props) {
                   fontWeight: 'bold'
                 }}
               >
-                Get in Touch
+                Me contacter
               </Link>
             </div>
           </div>
