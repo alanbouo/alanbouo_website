@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const metadata = {
   title: 'À propos d\'Alan Bouo — Expert IA & cybersécurité, build in public',
-  description: "Alan Bouo, expert IA & cybersécurité qui construit des SaaS à revenus récurrents en public. Créateur de ClawPilot, TubeChatAI, MemoMind, VibeX et VigilAI. Basé à Lyon, France."
+  description: "Alan Bouo, passionné d'IA & de cybersécurité. Je construis des produits et j'apprends en public, en rendant ces sujets accessibles. Créateur de ClawPilot, TubeChatAI, MemoMind, VibeX et VigilAI. Basé à Lyon, France."
 }
 
 export default function AboutPage() {
@@ -29,15 +29,14 @@ export default function AboutPage() {
               Expert IA &amp; Cybersécurité
             </h2>
             <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '1.5rem', fontWeight: '500' }}>
-              Je construis des SaaS à revenus récurrents et je documente tout en public. Mon objectif :
-              bâtir des produits qui génèrent un revenu déconnecté de mon temps — sur le modèle de
-              Pieter Levels et Marc Lou.
+              Je construis des produits, seul, et je documente tout en public. Ce qui me motive :
+              comprendre, fabriquer des choses utiles, et pouvoir vivre de ce que je crée — en
+              gardant mon indépendance.
             </p>
             <p style={{ fontSize: '17px', lineHeight: '1.7', marginBottom: '2rem', opacity: 0.92 }}>
-              Ma méthode : adapter au marché francophone des produits déjà validés ailleurs. Le pari
-              porte sur l'exécution et la localisation, pas sur l'existence du besoin. Et mon
-              différenciateur, c'est de rendre l'IA et la cybersécurité <strong>accessibles</strong> —
-              un espace encore largement vide en français.
+              Ce qui me tient à cœur, c'est de rendre l'IA et la cybersécurité vraiment{' '}
+              <strong>accessibles</strong>. J'explique en français, simplement, ce que je comprends —
+              parce que c'est ma langue et que peu de gens le font sur ces sujets.
             </p>
 
             <div style={{ marginBottom: '2rem' }}>
@@ -151,30 +150,29 @@ export default function AboutPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
             <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #6A1B9A' }}>
-              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🎯 Le cap</h3>
+              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🎯 Ce qui me motive</h3>
               <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Construire un ou plusieurs SaaS générant un revenu récurrent (MRR), déconnecté de mon temps.
+                Comprendre, fabriquer des choses utiles, et vivre de ce que je crée en gardant mon indépendance.
               </p>
             </div>
             <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #667eea' }}>
-              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🧭 La méthode</h3>
+              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🧭 Ma façon de faire</h3>
               <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Adapter au marché francophone des produits déjà validés ailleurs — parier sur l'exécution
-                et la localisation, pas sur le besoin.
+                Partir d'idées qui ont fait leurs preuves plutôt que de tout réinventer, et y apporter ma patte.
               </p>
             </div>
             <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #ff6b35' }}>
-              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🔍 Le différenciateur</h3>
+              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🔍 Ce que j'apporte</h3>
               <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Une expertise IA + cybersécurité doublée d'un réflexe de vulgarisation. La sécurité est
-                quasi absente des contenus IA orientés usage : j'occupe cet espace.
+                Une double casquette IA + cybersécurité et l'envie de vulgariser. La sécurité est
+                souvent l'angle mort des contenus IA : c'est là que j'ai envie d'aider.
               </p>
             </div>
             <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #556B2F' }}>
               <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>📖 En transparence</h3>
               <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Je documente le parcours en public : métriques, décisions, avancées et ratés assumés.
-                Le contenu est mon moteur de distribution et de test.
+                Je documente le parcours en public : décisions, avancées, doutes et ratés assumés.
+                Sans version marketing.
               </p>
             </div>
           </div>

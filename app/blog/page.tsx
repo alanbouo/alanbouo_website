@@ -3,7 +3,7 @@ import { articles, categoryColors } from '../../data/articles'
 
 export const metadata = {
   title: 'Blog — Alan Bouo | IA & cybersécurité vulgarisées, build in public',
-  description: "Vulgarisation de l'IA et de la cybersécurité, et coulisses de ma construction de SaaS à revenus récurrents, documentées en public.",
+  description: "Vulgarisation de l'IA et de la cybersécurité, et coulisses de ce que je construis, documentées en public.",
 }
 
 export default function BlogPage() {
@@ -32,7 +32,7 @@ export default function BlogPage() {
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h1>Le blog</h1>
             <p style={{ fontSize: '18px', marginTop: '1rem' }}>
-              IA et cybersécurité vulgarisées, et coulisses de ma construction de SaaS en public.
+              IA et cybersécurité vulgarisées, et coulisses de ce que je construis, en public.
             </p>
           </div>
         </section>

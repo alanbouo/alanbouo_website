@@ -7,12 +7,12 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Alan Bouo — Expert IA & cybersécurité qui construit en public',
-  description: "Je construis des SaaS à revenus récurrents (MRR) en documentant tout en transparence. Expert IA & cybersécurité, je vulgarise l'intelligence artificielle et la sécurité pour le public francophone.",
-  keywords: ['IA', 'intelligence artificielle', 'cybersécurité', 'SaaS', 'build in public', 'MRR', 'vulgarisation', 'francophone', 'Alan Bouo'],
+  description: "Je construis des produits, j'apprends en avançant et je partage tout en public. Passionné d'IA et de cybersécurité, j'aime rendre ces sujets accessibles, sans jargon.",
+  keywords: ['IA', 'intelligence artificielle', 'cybersécurité', 'build in public', 'vulgarisation', 'indie hacking', 'SaaS', 'Alan Bouo'],
   authors: [{ name: 'Alan Bouo' }],
   openGraph: {
     title: 'Alan Bouo — Expert IA & cybersécurité qui construit en public',
-    description: "Je construis des SaaS à revenus récurrents en documentant tout en transparence. IA & cybersécurité vulgarisées pour le public francophone.",
+    description: "Je construis des produits et j'apprends en public. IA & cybersécurité rendues accessibles, sans jargon.",
     locale: 'fr_FR',
     type: 'website'
   }

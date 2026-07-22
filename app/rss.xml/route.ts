@@ -9,7 +9,7 @@ export async function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alan Bouo — Expert IA &amp; cybersécurité</title>
-    <description>Vulgarisation de l'IA et de la cybersécurité, et coulisses de ma construction de SaaS à revenus récurrents, documentées en public.</description>
+    <description>Vulgarisation de l'IA et de la cybersécurité, et coulisses de ce que je construis, documentées en public.</description>
     <link>${baseUrl}</link>
     <language>fr-FR</language>
     <managingEditor>alan@alanbouo.com (Alan Bouo)</managingEditor>
