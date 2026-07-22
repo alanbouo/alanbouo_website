@@ -27,24 +27,26 @@ export default function HomePage() {
           padding: '0 1rem',
           boxSizing: 'border-box'
         }}>
-          <h1 style={{ 
-            fontSize: 'clamp(2rem, 6vw, 3.5rem)', 
-            marginBottom: '1rem', 
+          <h1 style={{
+            fontSize: 'clamp(2rem, 6vw, 3.5rem)',
+            marginBottom: '1rem',
             lineHeight: '1.2',
             padding: '0 1rem'
           }}>
-            I Build<br />
-            <span style={{ color: '#ff6b35' }}>AI Products</span>
+            Je construis des SaaS<br />
+            <span style={{ color: '#ff6b35' }}>en public</span>
           </h1>
-          <p style={{ 
-            fontSize: 'clamp(1rem, 4vw, 1.3rem)', 
-            opacity: 0.9, 
+          <p style={{
+            fontSize: 'clamp(1rem, 4vw, 1.3rem)',
+            opacity: 0.9,
             margin: '0 auto 3rem',
-            maxWidth: '700px',
+            maxWidth: '760px',
             padding: '0 1rem',
             boxSizing: 'border-box'
           }}>
-            Shipping AI-powered apps that solve real problems. From idea to product, I build tools people actually use.
+            Expert IA &amp; cybersécurité, je documente en transparence ma route vers des produits à
+            revenus récurrents — en vulgarisant l'intelligence artificielle et la sécurité pour le
+            public francophone.
           </p>
 
           <Link
@@ -64,7 +66,7 @@ export default function HomePage() {
               transition: 'all 0.3s ease'
             }}
           >
-            See My Products
+            Voir ce que je construis
           </Link>
 
           <div style={{
@@ -76,9 +78,9 @@ export default function HomePage() {
             margin: '0 auto 4rem'
           }}>
             {[
-              { icon: 'database', text: '5 Products Shipped' },
-              { icon: 'link', text: 'AI-Powered Tools' },
-              { icon: 'shield', text: 'Indie Builder' }
+              { icon: 'database', text: 'Build in public' },
+              { icon: 'link', text: 'IA & Cybersécurité' },
+              { icon: 'shield', text: 'Objectif : revenus récurrents' }
             ].map((skill, index) => (
               <div key={index} style={{
                 background: 'rgba(255,255,255,0.1)',
@@ -159,7 +161,7 @@ export default function HomePage() {
                   <path d="M20 20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4l2 4h6a2 2 0 0 1 2 2v10z"/>
                 </svg>
               </div>
-              View My Work
+              Mes produits
             </Link>
             <Link
               href="/about"
@@ -189,9 +191,105 @@ export default function HomePage() {
                   <circle cx="12" cy="7" r="4"/>
                 </svg>
               </div>
-              About Me
+              À propos
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Build in Public / Approach Section */}
+      <section style={{ padding: '4rem 20px', backgroundColor: 'white' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+          <span style={{
+            display: 'inline-block',
+            backgroundColor: '#f3e8ff',
+            color: '#6A1B9A',
+            padding: '0.4rem 1rem',
+            borderRadius: '20px',
+            fontSize: '0.85rem',
+            fontWeight: 700,
+            letterSpacing: '1px',
+            marginBottom: '1.5rem'
+          }}>
+            MA DÉMARCHE
+          </span>
+          <h2 style={{ marginBottom: '1.5rem', color: '#333' }}>
+            Construire en public, pour de vrai
+          </h2>
+          <p style={{ color: '#555', lineHeight: '1.8', maxWidth: '760px', margin: '0 auto 1.5rem', fontSize: '1.1rem' }}>
+            L'objectif : bâtir un ou plusieurs SaaS générant un revenu récurrent, déconnecté de
+            mon temps. La méthode : adapter au marché francophone des produits déjà validés
+            ailleurs — pour porter le pari sur l'exécution et la localisation, pas sur l'existence
+            du besoin.
+          </p>
+          <p style={{ color: '#555', lineHeight: '1.8', maxWidth: '760px', margin: '0 auto', fontSize: '1.1rem' }}>
+            Le contenu n'est pas une fin en soi : c'est mon moteur de distribution et de test.
+            Je partage les métriques, les décisions, les avancées — et les ratés assumés.
+          </p>
+
+          {/* Funnel: X -> YouTube -> LinkedIn */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1.5rem',
+            marginTop: '3rem',
+            textAlign: 'left'
+          }}>
+            <div style={{
+              backgroundColor: '#f8f9fa',
+              padding: '1.75rem',
+              borderRadius: '15px',
+              border: '2px solid #e9ecef',
+              borderTop: '4px solid #1DA1F2'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
+                <i className="fa-brands fa-x-twitter" style={{ fontSize: '22px', color: '#111' }}></i>
+                <h3 style={{ margin: 0, color: '#333' }}>X — le journal de bord</h3>
+              </div>
+              <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
+                Court et fréquent. Capte l'attention au jour le jour : métriques, décisions,
+                avancées, ratés assumés.
+              </p>
+            </div>
+
+            <div style={{
+              backgroundColor: '#f8f9fa',
+              padding: '1.75rem',
+              borderRadius: '15px',
+              border: '2px solid #e9ecef',
+              borderTop: '4px solid #FF0000'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
+                <i className="fa-brands fa-youtube" style={{ fontSize: '22px', color: '#FF0000' }}></i>
+                <h3 style={{ margin: 0, color: '#333' }}>YouTube — le pilier</h3>
+              </div>
+              <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
+                Vulgarisation IA &amp; cyber + documentation du parcours de construction.
+                J'approfondis et je démontre l'expertise.
+              </p>
+            </div>
+
+            <div style={{
+              backgroundColor: '#f8f9fa',
+              padding: '1.75rem',
+              borderRadius: '15px',
+              border: '2px solid #e9ecef',
+              borderTop: '4px solid #0077b5'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
+                <i className="fa-brands fa-linkedin" style={{ fontSize: '22px', color: '#0077b5' }}></i>
+                <h3 style={{ margin: 0, color: '#333' }}>LinkedIn — les opportunités</h3>
+              </div>
+              <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
+                Crédibilité professionnelle auprès des décideurs francophones. Transforme la
+                crédibilité en opportunités, une fois les premiers jalons atteints.
+              </p>
+            </div>
+          </div>
+
+          <p style={{ color: '#888', fontStyle: 'italic', marginTop: '2rem', fontSize: '0.95rem' }}>
+            X capte l'attention → YouTube démontre l'expertise → LinkedIn ouvre les portes.
+          </p>
         </div>
       </section>
 
@@ -199,10 +297,10 @@ export default function HomePage() {
       <section style={{ padding: '4rem 20px', backgroundColor: '#f8f9fa' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#333' }}>
-            Products I've Built
+            Ce que je construis
           </h2>
-          <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', maxWidth: '600px', margin: '0 auto 3rem' }}>
-            AI-powered tools solving real problems for real users
+          <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', maxWidth: '640px', margin: '0 auto 3rem' }}>
+            Des produits propulsés par l'IA, expédiés et documentés en public
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -237,13 +335,13 @@ export default function HomePage() {
                 </div>
                 <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>ClawPilot</h3>
                 <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  Your personal AI on WhatsApp. No app to download, no account to create. Just text.
+                  Ton IA personnelle sur WhatsApp. Aucune app à installer, aucun compte à créer. Il suffit d'écrire.
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
                 <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>WhatsApp</span>
-                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>AI Assistant</span>
-                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Personal AI</span>
+                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Assistant IA</span>
+                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA personnelle</span>
               </div>
             </a>
 
@@ -276,13 +374,13 @@ export default function HomePage() {
                 </div>
                 <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>TubeChatAI</h3>
                 <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  Chat with any YouTube video — ask questions, get clarifications, dive deeper into content in real time.
+                  Discute avec n'importe quelle vidéo YouTube — pose tes questions, obtiens des précisions et va plus loin, en temps réel.
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
                 <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>YouTube</span>
                 <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>LLM</span>
-                <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Learning</span>
+                <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Apprentissage</span>
               </div>
             </a>
 
@@ -318,13 +416,13 @@ export default function HomePage() {
                 </div>
                 <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>MemoMind</h3>
                 <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  Chat with your voice memos. Extract insights, organize ideas, turn recordings into actionable knowledge.
+                  Discute avec tes mémos vocaux. Extrais des idées, organise tes pensées et transforme tes enregistrements en connaissances actionnables.
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Voice AI</span>
+                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA vocale</span>
                 <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Notes</span>
-                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivity</span>
+                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivité</span>
               </div>
             </a>
 
@@ -357,12 +455,12 @@ export default function HomePage() {
                 </div>
                 <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>VibeX</h3>
                 <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  AI-powered growth tool for X. Smart content suggestions, analytics, and optimization to grow your audience.
+                  Outil de croissance propulsé par l'IA pour X. Suggestions de contenu, analytics et optimisation pour développer ton audience.
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
                 <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>X/Twitter</span>
-                <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Growth</span>
+                <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Croissance</span>
                 <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Analytics</span>
               </div>
             </a>
@@ -397,12 +495,12 @@ export default function HomePage() {
                 </div>
                 <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>VigilAI</h3>
                 <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  Monitor your brand across AI assistants like ChatGPT & Claude. Visibility scores, sentiment, competitor analysis.
+                  Surveille ta marque à travers les assistants IA comme ChatGPT &amp; Claude. Scores de visibilité, sentiment et analyse concurrentielle.
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-                <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Brand Monitoring</span>
-                <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>AI Visibility</span>
+                <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Surveillance de marque</span>
+                <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Visibilité IA</span>
               </div>
             </a>
           </div>
@@ -413,7 +511,7 @@ export default function HomePage() {
       <section style={{ padding: '4rem 20px', backgroundColor: 'white' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: '#333' }}>
-            Latest from My Blog
+            Derniers articles
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
@@ -456,13 +554,13 @@ export default function HomePage() {
                 </div>
               </div>
               <div style={{ color: '#28a745', fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold' }}>
-                SELF-HOSTING
+                AUTO-HÉBERGEMENT
               </div>
               <h4 style={{ color: '#333', marginBottom: '1rem' }}>
-                Complete Guide: Migrating from Cloud AI to Self-Hosted Infrastructure
+                Guide complet : migrer d'une IA cloud vers une infrastructure auto-hébergée
               </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Discover the latest AI innovations transforming businesses: from advanced machine learning to next-generation intelligent assistants.
+                Reprendre le contrôle de ses données et de ses coûts en passant du cloud à une IA auto-hébergée — pourquoi, quand et comment.
               </p>
                 <div style={{ fontSize: '14px', color: '#999', display: 'flex', alignItems: 'center' }}>
                   <div style={{
@@ -480,7 +578,7 @@ export default function HomePage() {
                       <line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                   </div>
-                  September 14, 2025
+                  14 septembre 2025
                 </div>
             </Link>
 
@@ -510,9 +608,9 @@ export default function HomePage() {
                   <line x1="5" y1="12" x2="19" y2="12"/>
                 </svg>
               </div>
-              <h4 style={{ color: '#333', marginBottom: '1rem' }}>More Coming Soon</h4>
+              <h4 style={{ color: '#333', marginBottom: '1rem' }}>Bientôt plus de contenu</h4>
               <p style={{ color: '#666', marginBottom: '1rem' }}>
-                Exciting new tutorials and insights on web development, DevOps, and AI
+                De nouveaux articles et retours d'expérience sur l'IA, la cybersécurité et la construction de produits
               </p>
               <Link href="/blog" style={{
                 backgroundColor: '#007bff',
@@ -524,7 +622,7 @@ export default function HomePage() {
                 display: 'inline-block',
                 alignSelf: 'center'
               }}>
-                View All Posts
+                Voir tous les articles
               </Link>
             </div>
           </div>
@@ -539,9 +637,9 @@ export default function HomePage() {
         color: 'white'
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Building Something with AI?</h2>
+          <h2 style={{ marginBottom: '1rem' }}>Tu t'intéresses à l'IA, à la cybersécurité ou au build in public ?</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Want to chat about AI products, indie building, or just say hi? I'd love to connect.
+            Suis le parcours, échange avec moi, ou dis simplement bonjour. J'adore rencontrer d'autres passionnés.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link href="/contact" style={{
@@ -566,14 +664,11 @@ export default function HomePage() {
                 justifyContent: 'center'
               }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4.5 16.5c-1.5 1.5-3 3.5-3 5.5s1.5 4 3 5.5c1.5-1.5 3-3.5 3-5.5s-1.5-4-3-5.5z"/>
-                  <path d="M19.5 7.5c1.5-1.5 3-3.5 3-5.5s-1.5-4-3-5.5c-1.5 1.5-3 3.5-3 5.5s1.5 4 3 5.5z"/>
-                  <path d="M12 12c-1.5-1.5-3-3.5-3-5.5s1.5-4 3-5.5c1.5 1.5 3 3.5 3 5.5s-1.5 4-3 5.5z"/>
-                  <path d="M12 12c1.5 1.5 3 3.5 3 5.5s-1.5 4-3 5.5c-1.5-1.5-3-3.5-3-5.5s1.5-4 3-5.5z"/>
-                  <line x1="12" y1="2" x2="12" y2="22"/>
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
                 </svg>
               </div>
-              Ready to explore AI opportunities?
+              Suivre le parcours
             </Link>
           </div>
         </div>

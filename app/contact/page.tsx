@@ -37,10 +37,10 @@ export default function ContactPage() {
         </div>
         <div style={{ maxWidth: '800px', position: 'relative', zIndex: 1 }}>
           <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)', marginBottom: '1rem', lineHeight: '1.2' }}>
-            Let's Connect
+            Connectons-nous
           </h1>
           <p style={{ fontSize: 'clamp(1rem, 4vw, 1.3rem)', opacity: 0.9, margin: '0 auto 3rem', maxWidth: '700px' }}>
-            Connect with me on social to discuss AI.
+            Rejoins-moi sur les réseaux pour parler IA, cybersécurité et build in public.
           </p>
         </div>
       </section>
@@ -48,9 +48,9 @@ export default function ContactPage() {
       {/* Social Media Section */}
       <section style={{ padding: '4rem 1rem', backgroundColor: '#667eea', color: 'white', textAlign: 'center' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Follow My Journey</h2>
-          <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', marginBottom: '3rem', opacity: '0.9', maxWidth: '600px', margin: '0 auto 3rem' }}>
-            Follow for insights on AI, self-hosting, and privacy-first development.
+          <h2 style={{ marginBottom: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Suis mon parcours</h2>
+          <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', marginBottom: '3rem', opacity: '0.9', maxWidth: '640px', margin: '0 auto 3rem' }}>
+            X pour le journal de bord au quotidien, YouTube pour approfondir l'IA et la cybersécurité, LinkedIn pour les opportunités.
           </p>
 
           <div className="social-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
@@ -75,7 +75,7 @@ export default function ContactPage() {
             >
               <i className="fab fa-youtube" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>YouTube</h3>
-              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Video tutorials and AI insights</p>
+              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Le pilier : vulgarisation IA &amp; cyber</p>
             </a>
 
             <a
@@ -99,8 +99,8 @@ export default function ContactPage() {
             >
               <i className="fa-brands fa-x-twitter" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>X</h3>
-{/*               <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Connect with me on X</p>
- */}            </a>
+              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Le journal de bord au quotidien</p>
+            </a>
 
             <a
               href="https://linkedin.com/in/alanbouo"
@@ -123,8 +123,8 @@ export default function ContactPage() {
             >
               <i className="fab fa-linkedin" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>LinkedIn</h3>
-{/*               <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Professional networking and articles</p>
- */}            </a>
+              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Crédibilité &amp; opportunités pros</p>
+            </a>
 
             <a
               href="https://github.com/alanbouo"
@@ -147,7 +147,7 @@ export default function ContactPage() {
             >
               <i className="fab fa-github" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>GitHub</h3>
-              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Open source projects and code</p>
+              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Projets open source et code</p>
             </a>
 
             <a
@@ -173,7 +173,7 @@ export default function ContactPage() {
                 <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
               </svg>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>Newsletter</h3>
-              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>AI insights in your inbox</p>
+              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Le parcours dans ta boîte mail</p>
             </a>
           </div>
 

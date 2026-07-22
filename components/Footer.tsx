@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Footer() {
   const handleNewsletter = (e: any) => {
     e.preventDefault()
-    alert('Thank you for subscribing!')
+    alert('Merci pour ton inscription !')
   }
 
   return (
@@ -28,8 +28,8 @@ export default function Footer() {
 
         <div className="grid grid-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
           <div>
-            <h3>Follow Me</h3>
-            <p>Stay updated with the latest on AI innovations.</p>
+            <h3>Suivre le parcours</h3>
+            <p>IA & cybersécurité vulgarisées, en public. YouTube pour approfondir, X pour le journal de bord au jour le jour.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', margin: '1rem 0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <a href="https://www.youtube.com/@alanbouo" className="social-icon" aria-label="YouTube tutorials"
@@ -62,28 +62,28 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3>Links</h3>
+            <h3>Liens</h3>
             <ul style={{ listStyle: 'none' }}>
-              <li><Link href="/" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Home</Link></li>
-              <li><Link href="/projects" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Projects</Link></li>
+              <li><Link href="/" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Accueil</Link></li>
+              <li><Link href="/projects" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Produits</Link></li>
               <li><Link href="/blog" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Blog</Link></li>
-              <li><Link href="/about" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>About</Link></li>
+              <li><Link href="/about" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>À propos</Link></li>
               <li><Link href="/contact" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Contact</Link></li>
-              <li><Link href="/privacy" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Privacy Policy</Link></li>
+              <li><Link href="/privacy" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Confidentialité</Link></li>
             </ul>
           </div>
           <div>
             <h3>Newsletter</h3>
-            <p>Subscribe for latest insights on AI.</p>
+            <p>Le parcours build in public, directement dans ta boîte mail.</p>
             <form onSubmit={handleNewsletter} style={{ marginTop: '1rem' }}>
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="Ton adresse e-mail"
                 required
                 style={{ padding: '0.5rem', marginBottom: '0.5rem', width: '100%', borderRadius: '3px', border: 'none' }}
-                aria-label="Email for newsletter"
+                aria-label="E-mail pour la newsletter"
               />
-              <button type="submit" style={{ backgroundColor: '#ff6b35', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '4px', cursor: 'pointer' }}>Subscribe</button>
+              <button type="submit" style={{ backgroundColor: '#ff6b35', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '4px', cursor: 'pointer' }}>S'abonner</button>
             </form>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function Footer() {
           fontFamily: 'Roboto, sans-serif',
           fontSize: '14px'
         }}>
-            <p style={{ color: '#e0e0e0', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2026 Alan Bouo. All rights reserved. <em style={{ color: '#ffffff' }}>Accelerating AI innovation through expert insights and ethical guidance.</em></p>
+            <p style={{ color: '#e0e0e0', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2026 Alan Bouo. Tous droits réservés. <em style={{ color: '#ffffff' }}>Rendre l'IA et la cybersécurité accessibles, un produit à la fois.</em></p>
         </div>
       </div>
 

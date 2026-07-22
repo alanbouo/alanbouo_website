@@ -38,10 +38,10 @@ export default function ServicesPage() {
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '1.5rem', lineHeight: '1.2', fontWeight: 'bold' }}>
-            AI & Data Products
+            Ce que je construis
           </h1>
           <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '3rem', opacity: 0.9 }}>
-            Check out what I have been up to.
+            Des produits IA expédiés et documentés en public.
           </p>
           <Link href="/contact" style={{
             backgroundColor: '#FF9800',
@@ -58,7 +58,7 @@ export default function ServicesPage() {
             transition: 'all 0.3s ease'
           }}>
             <i className="fas fa-calendar"></i>
-            Get in Touch
+            Me contacter
           </Link>
         </div>
       </section>
@@ -67,10 +67,10 @@ export default function ServicesPage() {
       <section style={{ padding: '4rem 1rem', backgroundColor: 'white' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#333' }}>
-            Shipped Products
+            Produits lancés
           </h2>
           <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', fontSize: '18px' }}>
-            What is your favorite?
+            Lequel est ton préféré ?
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {displayedProjects.map((project) => {
@@ -183,7 +183,7 @@ export default function ServicesPage() {
                       display: 'inline-block',
                       fontSize: '14px'
                     }}>
-                      View Project
+                      Voir le produit
                     </Link>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function ServicesPage() {
                   minWidth: '120px',
                   textAlign: 'center'
                 }}>
-                  Page {currentPage} of {totalPages}
+                  Page {currentPage} sur {totalPages}
                 </span>
 
                 <button
@@ -290,9 +290,9 @@ export default function ServicesPage() {
         color: 'white'
       }}>
         <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Want to See What's Next?</h2>
+          <h2 style={{ marginBottom: '1rem' }}>Envie de voir la suite ?</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Check out my GitHub project backlog to see upcoming AI initiatives and ongoing development work.
+            Jette un œil à mon backlog GitHub pour découvrir les prochaines initiatives IA et le travail en cours.
           </p>
           <a
             href="https://github.com/users/alanbouo/projects/1"
@@ -324,7 +324,7 @@ export default function ServicesPage() {
             }}
           >
             <i className="fab fa-github"></i>
-            View My Backlog
+            Voir mon backlog
           </a>
         </div>
       </section>
