@@ -33,8 +33,8 @@ export default function HomePage() {
             lineHeight: '1.2',
             padding: '0 1rem'
           }}>
-            Je construis des SaaS<br />
-            <span style={{ color: '#ff6b35' }}>en public</span>
+            Rendre l'IA et la cybersécurité<br />
+            <span style={{ color: '#ff6b35' }}>accessibles</span>
           </h1>
           <p style={{
             fontSize: 'clamp(1rem, 4vw, 1.3rem)',
@@ -44,9 +44,8 @@ export default function HomePage() {
             padding: '0 1rem',
             boxSizing: 'border-box'
           }}>
-            Passionné d'IA &amp; de cybersécurité, je construis des produits et j'apprends en
-            avançant — en partageant tout, sans filtre, pour rendre ces sujets accessibles au plus
-            grand nombre.
+            Je construis des produits et j'apprends en public, et j'explique simplement — en
+            français — ce que trop peu de gens prennent le temps d'expliquer.
           </p>
 
           <Link
