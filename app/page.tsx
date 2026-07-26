@@ -44,8 +44,8 @@ export default function HomePage() {
             padding: '0 1rem',
             boxSizing: 'border-box'
           }}>
-            Je construis des produits en public — et l'IA et la cybersécurité expliquées
-            simplement, ce que trop peu de gens prennent le temps de faire.
+            Je construis des produits en public — et l'IA et la cybersécurité, expliquées
+            simplement.
           </p>
 
           <Link

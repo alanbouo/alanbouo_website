@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { articles, categoryColors } from '../../data/articles'
+import { getAllPosts, categoryColors } from '@/lib/posts'
 
 export const metadata = {
   title: 'Blog — Alan Bouo | IA & cybersécurité vulgarisées, build in public',
@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 export default function BlogPage() {
-  const posts = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const posts = getAllPosts()
 
   const featuredPost = posts.find(post => post.featured)
   const regularPosts = posts.filter(post => !post.featured)
@@ -63,8 +63,17 @@ export default function BlogPage() {
                     boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
                     marginBottom: '2rem',
                     textAlign: 'center',
-                    border: `3px solid ${categoryColors[featuredPost.category as keyof typeof categoryColors] || '#28a745'}`
+                    border: `3px solid ${categoryColors[featuredPost.category as keyof typeof categoryColors] || '#28a745'}`,
+                    overflow: 'hidden'
                   }}>
+                    {featuredPost.image && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={featuredPost.image}
+                        alt={featuredPost.title}
+                        style={{ width: '100%', maxHeight: '320px', objectFit: 'cover', borderRadius: '10px', marginBottom: '2rem', display: 'block' }}
+                      />
+                    )}
                     <div style={{ marginBottom: '2rem' }}>
                       <span style={{
                         backgroundColor: categoryColors[featuredPost.category as keyof typeof categoryColors] || '#28a745',
@@ -124,8 +133,17 @@ export default function BlogPage() {
                       borderRadius: '12px',
                       border: `3px solid ${categoryColors[post.category as keyof typeof categoryColors] || '#28a745'}`,
                       transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                      boxShadow: '0 5px 15px rgba(0,0,0,0.1)'
+                      boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+                      overflow: 'hidden'
                     }}>
+                      {post.image && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          style={{ width: '100%', height: '160px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem', display: 'block' }}
+                        />
+                      )}
                       <div style={{ marginBottom: '1rem' }}>
                         <span style={{
                           backgroundColor: categoryColors[post.category as keyof typeof categoryColors] || '#28a745',
