@@ -1,9 +1,10 @@
-'use client'
-
 import Link from 'next/link'
-import Image from 'next/image'
+import { getAllPosts, categoryColor } from '@/lib/posts'
 
 export default function HomePage() {
+  const posts = getAllPosts()
+  const latestPost = posts.find((p) => p.featured) ?? posts[0]
+
   return (
     <main>
       {/* Hero Section */}
@@ -513,7 +514,7 @@ export default function HomePage() {
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
-            <Link href="/blog/construire-en-public" style={{
+            <Link href={`/blog/${latestPost.slug}`} style={{
               backgroundColor: '#f8f9fa',
               padding: '2rem',
               borderRadius: '10px',
@@ -524,41 +525,50 @@ export default function HomePage() {
               position: 'relative'
             }}>
               {/* Blog Post Thumbnail */}
-              <div style={{
-                width: '100%',
-                height: '120px',
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                borderRadius: '8px',
-                marginBottom: '1.5rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white'
-              }}>
+              {latestPost.image ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={latestPost.image}
+                  alt={latestPost.title}
+                  style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1.5rem', display: 'block' }}
+                />
+              ) : (
                 <div style={{
-                  width: '60px',
-                  height: '60px',
-                  background: 'rgba(255,255,255,0.2)',
-                  borderRadius: '50%',
+                  width: '100%',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  borderRadius: '8px',
+                  marginBottom: '1.5rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  border: '2px solid rgba(255,255,255,0.3)'
+                  color: 'white'
                 }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-3.08-3.08 2.5 2.5 0 0 1 2.96-3.08A2.5 2.5 0 0 1 9.5 2Z"/>
-                    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 3.08-3.08 2.5 2.5 0 0 0-2.96-3.08A2.5 2.5 0 0 0 14.5 2Z"/>
-                  </svg>
+                  <div style={{
+                    width: '60px',
+                    height: '60px',
+                    background: 'rgba(255,255,255,0.2)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: '2px solid rgba(255,255,255,0.3)'
+                  }}>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-3.08-3.08 2.5 2.5 0 0 1 2.96-3.08A2.5 2.5 0 0 1 9.5 2Z"/>
+                      <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 3.08-3.08 2.5 2.5 0 0 0-2.96-3.08A2.5 2.5 0 0 0 14.5 2Z"/>
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div style={{ color: '#FF9800', fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold' }}>
-                BUILD IN PUBLIC
+              )}
+              <div style={{ color: categoryColor(latestPost.category), fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
+                {latestPost.category}
               </div>
               <h4 style={{ color: '#333', marginBottom: '1rem' }}>
-                Construire en public : ma façon d'avancer
+                {latestPost.title}
               </h4>
               <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                Pourquoi je montre le chemin réel plutôt que la version marketing : mes décisions, mes doutes, et ce que j'apprends en construisant.
+                {latestPost.description}
               </p>
                 <div style={{ fontSize: '14px', color: '#999', display: 'flex', alignItems: 'center' }}>
                   <div style={{
@@ -576,7 +586,7 @@ export default function HomePage() {
                       <line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                   </div>
-                  15 juillet 2026
+                  {new Date(latestPost.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </div>
             </Link>
 
