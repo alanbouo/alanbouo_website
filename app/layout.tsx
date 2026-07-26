@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import './globals.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import SiteFrame from '@/components/SiteFrame'
 
 export const metadata: Metadata = {
   title: 'Alan Bouo — Expert IA & cybersécurité qui construit en public',
@@ -56,12 +54,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Navbar />
-
-        <main data-cta-variant={ctaVariant}>
+        <SiteFrame ctaVariant={ctaVariant}>
           {children}
-        </main>
-        <Footer />
+        </SiteFrame>
       </body>
     </html>
   )
