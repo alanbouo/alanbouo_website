@@ -44,8 +44,8 @@ export default function HomePage() {
             padding: '0 1rem',
             boxSizing: 'border-box'
           }}>
-            Je construis des produits et j'apprends en public, et j'explique simplement — en
-            français — ce que trop peu de gens prennent le temps d'expliquer.
+            Je construis des produits en public — et l'IA et la cybersécurité expliquées
+            simplement, ce que trop peu de gens prennent le temps de faire.
           </p>
 
           <Link
@@ -245,8 +245,8 @@ export default function HomePage() {
                 <h3 style={{ margin: 0, color: '#333' }}>X — le journal de bord</h3>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
-                Court et fréquent, au jour le jour : ce que je teste, ce que je décide, ce qui
-                avance et ce qui rate.
+                Le journal de bord, au jour le jour : ce qui avance, ce qui rate, ce qui se
+                décide.
               </p>
             </div>
 
@@ -262,8 +262,8 @@ export default function HomePage() {
                 <h3 style={{ margin: 0, color: '#333' }}>YouTube — pour approfondir</h3>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
-                Je prends le temps d'expliquer l'IA et la cybersécurité, et de montrer les coulisses
-                de ce que je construis.
+                Le temps d'expliquer l'IA et la cybersécurité, et de montrer les coulisses de la
+                construction.
               </p>
             </div>
 
@@ -279,7 +279,7 @@ export default function HomePage() {
                 <h3 style={{ margin: 0, color: '#333' }}>LinkedIn — pour échanger</h3>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
-                Le format plus posé : je partage les enseignements de fond avec celles et ceux qui
+                Le format plus posé : les enseignements de fond, pour celles et ceux qui
                 construisent aussi.
               </p>
             </div>
