@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
-import { articles, getArticle, blockToText, type Block } from '../../../data/articles'
+import { getPost, getPostSlugs } from '@/lib/posts'
 
 interface Props {
   params: {
@@ -11,11 +11,11 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }))
+  return getPostSlugs().map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getArticle(params.slug)
+  const post = getPost(params.slug)
 
   if (!post) {
     return {
@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const baseUrl = 'https://alanbouo.com'
   const postUrl = `${baseUrl}/blog/${post.slug}`
+  const ogImage = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/img/blog/${post.slug}-og.jpg`
 
   return {
     title: `${post.title} | Alan Bouo`,
@@ -45,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       modifiedTime: post.modified,
       authors: ['Alan Bouo'],
       tags: post.tags,
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -52,6 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       creator: '@alanbouo',
       site: '@alanbouo',
+      images: [ogImage],
     },
     alternates: {
       canonical: postUrl,
@@ -66,47 +69,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-function renderBlock(block: Block, index: number) {
-  switch (block.type) {
-    case 'h2':
-      return (
-        <h2 key={index} style={{ fontSize: '1.6rem', margin: '2.5rem 0 1rem', color: 'var(--primary-blue)' }}>
-          {block.text}
-        </h2>
-      )
-    case 'p':
-      return (
-        <p key={index} style={{ marginBottom: '1.25rem' }}>
-          {block.text}
-        </p>
-      )
-    case 'ul':
-      return (
-        <ul key={index} style={{ margin: '0 0 1.5rem 1.25rem', paddingLeft: '1rem' }}>
-          {block.items.map((item, i) => (
-            <li key={i} style={{ marginBottom: '0.5rem' }}>{item}</li>
-          ))}
-        </ul>
-      )
-    case 'quote':
-      return (
-        <blockquote key={index} style={{
-          borderLeft: '4px solid var(--cta-yellow)',
-          paddingLeft: '1.25rem',
-          margin: '1.5rem 0',
-          fontStyle: 'italic',
-          color: '#555'
-        }}>
-          {block.text}
-        </blockquote>
-      )
-    default:
-      return null
-  }
-}
-
 export default function BlogPost({ params }: Props) {
-  const post = getArticle(params.slug)
+  const post = getPost(params.slug)
 
   if (!post) {
     notFound()
@@ -114,14 +78,13 @@ export default function BlogPost({ params }: Props) {
 
   const baseUrl = 'https://alanbouo.com'
   const postUrl = `${baseUrl}/blog/${post.slug}`
-  const wordCount = post.content.map(blockToText).join(' ').split(/\s+/).length
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    image: `${baseUrl}/img/blog/${post.slug}-og.jpg`,
+    image: post.image ? `${baseUrl}${post.image}` : `${baseUrl}/img/blog/${post.slug}-og.jpg`,
     author: {
       '@type': 'Person',
       name: 'Alan Bouo',
@@ -143,7 +106,7 @@ export default function BlogPost({ params }: Props) {
     },
     keywords: post.tags.join(', '),
     articleSection: post.category,
-    wordCount,
+    wordCount: post.wordCount,
     timeRequired: `PT${post.readingTime}M`,
     inLanguage: 'fr-FR',
   }
@@ -222,6 +185,18 @@ export default function BlogPost({ params }: Props) {
           </div>
         </section>
 
+        {/* Cover Image */}
+        {post.image && (
+          <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem 1rem 0' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.image}
+              alt={post.title}
+              style={{ width: '100%', height: 'auto', borderRadius: '12px', display: 'block' }}
+            />
+          </div>
+        )}
+
         {/* Article Content */}
         <article style={{
           padding: '4rem 1rem',
@@ -233,35 +208,39 @@ export default function BlogPost({ params }: Props) {
             lineHeight: '1.8',
             fontSize: '1.1rem'
           }}>
-            <div style={{ marginBottom: '3rem' }}>
-              {post.content.map(renderBlock)}
-            </div>
+            <div
+              className="article-body"
+              style={{ marginBottom: '3rem' }}
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
 
             {/* Tags */}
-            <div style={{
-              borderTop: '1px solid #eee',
-              paddingTop: '2rem',
-              marginBottom: '3rem'
-            }}>
-              <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Tags</h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {post.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    style={{
-                      backgroundColor: 'var(--light-gray)',
-                      color: 'var(--text-color)',
-                      padding: '0.3rem 0.8rem',
-                      borderRadius: '15px',
-                      fontSize: '0.9rem',
-                      border: '1px solid #ddd'
-                    }}
-                  >
-                    #{tag}
-                  </span>
-                ))}
+            {post.tags.length > 0 && (
+              <div style={{
+                borderTop: '1px solid #eee',
+                paddingTop: '2rem',
+                marginBottom: '3rem'
+              }}>
+                <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Tags</h3>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  {post.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      style={{
+                        backgroundColor: 'var(--light-gray)',
+                        color: 'var(--text-color)',
+                        padding: '0.3rem 0.8rem',
+                        borderRadius: '15px',
+                        fontSize: '0.9rem',
+                        border: '1px solid #ddd'
+                      }}
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Share Buttons */}
             <div style={{
