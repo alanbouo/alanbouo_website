@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
@@ -188,12 +189,16 @@ export default function BlogPost({ params }: Props) {
         {/* Cover Image */}
         {post.image && (
           <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem 1rem 0' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={post.image}
-              alt={post.title}
-              style={{ width: '100%', height: 'auto', borderRadius: '12px', display: 'block' }}
-            />
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 9', borderRadius: '12px', overflow: 'hidden' }}>
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                priority
+                sizes="(max-width: 800px) 100vw, 800px"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
           </div>
         )}
 

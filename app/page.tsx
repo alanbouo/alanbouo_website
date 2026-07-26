@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getAllPosts, categoryColor } from '@/lib/posts'
 
 export default function HomePage() {
@@ -526,12 +527,15 @@ export default function HomePage() {
             }}>
               {/* Blog Post Thumbnail */}
               {latestPost.image ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={latestPost.image}
-                  alt={latestPost.title}
-                  style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1.5rem', display: 'block' }}
-                />
+                <div style={{ position: 'relative', width: '100%', height: '120px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
+                  <Image
+                    src={latestPost.image}
+                    alt={latestPost.title}
+                    fill
+                    sizes="(max-width: 700px) 100vw, 380px"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
               ) : (
                 <div style={{
                   width: '100%',
