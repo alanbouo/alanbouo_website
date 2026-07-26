@@ -53,11 +53,22 @@ Un [lien](https://exemple.com) et du **gras** au besoin.
 
 ## 4. L'image d'illustration
 
-1. Dépose ton image dans `public/img/blog/` (ex. `public/img/blog/mon-image.jpg`).
-2. Référence-la dans l'en-tête : `image: "/img/blog/mon-image.jpg"` (le chemin commence toujours par `/img/blog/`).
+⚠️ Deux pièges fréquents :
 
-L'image s'affiche en haut de l'article, sur la carte de la liste, et sert d'aperçu au partage (réseaux sociaux).
-Formats conseillés : `.jpg` ou `.webp`, largeur ~1200 px.
+1. **Le bon dossier, c'est `public/img/blog/`** — et pas le dossier `img/` à la racine
+   (celui-là n'est pas servi par le site). Dépose ton fichier ici, par exemple
+   `public/img/blog/claude-code-depot-distant.png`.
+2. **Le nom dans l'en-tête doit correspondre exactement à ton fichier.** Ne laisse pas
+   l'exemple `mon-image.png` : remplace-le par le vrai nom.
+
+Ensuite, dans l'en-tête : `image: "/img/blog/claude-code-depot-distant.png"`
+(le chemin commence toujours par `/img/blog/`, sans `public`).
+
+L'image s'affiche en haut de l'article, sur la carte de la liste, et sert d'aperçu au
+partage (réseaux sociaux).
+
+Formats acceptés : tous les formats web — `.png`, `.jpg`, `.webp`… Vise ~1200 px de large
+et évite les fichiers de plusieurs Mo.
 
 ## 5. Publier
 
