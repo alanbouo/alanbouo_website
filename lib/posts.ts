@@ -1,13 +1,33 @@
-// Pipeline Markdown du blog.
-// Chaque article est un fichier `content/blog/<slug>.md` avec un en-tête (frontmatter).
+// Pipeline de contenu du blog.
+// Chaque article est un fichier `content/blog/<slug>.mdoc` (créé via l'éditeur Keystatic)
+// ou `.md` (écrit à la main), avec un en-tête (frontmatter).
 // Ce module lit ces fichiers au build et fournit les données aux pages (liste, article, RSS).
 
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
+import Markdoc from '@markdoc/markdoc'
 
 const BLOG_DIR = path.join(process.cwd(), 'content/blog')
+const EXTENSIONS = ['.mdoc', '.md']
+
+function renderBody(content: string, ext: string): string {
+  if (ext === '.mdoc') {
+    const ast = Markdoc.parse(content)
+    const transformed = Markdoc.transform(ast)
+    return Markdoc.renderers.html(transformed)
+  }
+  return marked.parse(content, { async: false }) as string
+}
+
+function findPostFile(slug: string): { fullPath: string; ext: string } | null {
+  for (const ext of EXTENSIONS) {
+    const fullPath = path.join(BLOG_DIR, `${slug}${ext}`)
+    if (fs.existsSync(fullPath)) return { fullPath, ext }
+  }
+  return null
+}
 
 // Couleurs par catégorie (cartes et badges). Une catégorie inconnue prend la couleur par défaut.
 export const categoryColors: Record<string, string> = {
@@ -47,15 +67,19 @@ export function getPostSlugs(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return []
   return fs
     .readdirSync(BLOG_DIR)
-    .filter((file) => file.endsWith('.md') && file.toLowerCase() !== 'readme.md')
-    .map((file) => file.replace(/\.md$/, ''))
+    .filter(
+      (file) =>
+        EXTENSIONS.some((ext) => file.endsWith(ext)) &&
+        file.toLowerCase() !== 'readme.md'
+    )
+    .map((file) => file.replace(/\.(mdoc|md)$/, ''))
 }
 
 function parsePost(slug: string): Post | null {
-  const fullPath = path.join(BLOG_DIR, `${slug}.md`)
-  if (!fs.existsSync(fullPath)) return null
+  const found = findPostFile(slug)
+  if (!found) return null
 
-  const raw = fs.readFileSync(fullPath, 'utf8')
+  const raw = fs.readFileSync(found.fullPath, 'utf8')
   const { data, content } = matter(raw)
 
   const date = toDateString(data.date)
@@ -65,7 +89,7 @@ function parsePost(slug: string): Post | null {
       ? data.readingTime
       : Math.max(1, Math.round(words / 200))
 
-  const html = marked.parse(content, { async: false }) as string
+  const html = renderBody(content, found.ext)
 
   return {
     slug,

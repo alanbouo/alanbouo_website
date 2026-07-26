@@ -1,8 +1,20 @@
 # Comment publier un article de blog
 
-Chaque article est un simple fichier Markdown dans ce dossier (`content/blog/`).
-Pour publier : ajoute un fichier `.md`, commit, push. Il apparaît automatiquement
-sur `/blog` et à l'adresse `/blog/<nom-du-fichier>` (sans le `.md`).
+## Le plus simple : l'éditeur web (Keystatic)
+
+Tu peux tout faire depuis un **éditeur visuel**, sans toucher aux fichiers : rédiger,
+choisir la catégorie, déposer l'image de couverture, publier. Voir **`KEYSTATIC.md`**
+à la racine du projet. En local : `npm run dev` puis <http://localhost:3000/keystatic>.
+
+L'éditeur range l'image au bon endroit et écrit le bon chemin tout seul — plus de
+pièges de dossier ou de nom de fichier.
+
+## À la main (alternative)
+
+Chaque article est aussi un simple fichier dans ce dossier (`content/blog/`) : `.mdoc`
+(créé par l'éditeur) ou `.md` (écrit à la main). Pour publier à la main : ajoute un
+fichier, commit, push. Il apparaît automatiquement sur `/blog` et à l'adresse
+`/blog/<nom-du-fichier>` (sans l'extension).
 
 ## 1. Le nom du fichier = l'URL (le « slug »)
 
