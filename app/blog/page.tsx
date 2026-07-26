@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getAllPosts, categoryColors } from '@/lib/posts'
 
 export const metadata = {
@@ -67,12 +68,15 @@ export default function BlogPage() {
                     overflow: 'hidden'
                   }}>
                     {featuredPost.image && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={featuredPost.image}
-                        alt={featuredPost.title}
-                        style={{ width: '100%', maxHeight: '320px', objectFit: 'cover', borderRadius: '10px', marginBottom: '2rem', display: 'block' }}
-                      />
+                      <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 9', borderRadius: '10px', overflow: 'hidden', marginBottom: '2rem' }}>
+                        <Image
+                          src={featuredPost.image}
+                          alt={featuredPost.title}
+                          fill
+                          sizes="(max-width: 900px) 100vw, 760px"
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
                     )}
                     <div style={{ marginBottom: '2rem' }}>
                       <span style={{
@@ -137,12 +141,15 @@ export default function BlogPage() {
                       overflow: 'hidden'
                     }}>
                       {post.image && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          style={{ width: '100%', height: '160px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem', display: 'block' }}
-                        />
+                        <div style={{ position: 'relative', width: '100%', height: '160px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1rem' }}>
+                          <Image
+                            src={post.image}
+                            alt={post.title}
+                            fill
+                            sizes="(max-width: 700px) 100vw, 380px"
+                            style={{ objectFit: 'cover' }}
+                          />
+                        </div>
                       )}
                       <div style={{ marginBottom: '1rem' }}>
                         <span style={{
