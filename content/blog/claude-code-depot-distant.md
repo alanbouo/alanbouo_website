@@ -5,10 +5,8 @@ date: "2026-07-26"
 category: "IA"
 tags: ["IA", "Vulgarisation", "Claude"]
 featured: false
-image: "/img/blog/mon-image.png"
+image: "/img/blog/claude-code-depot-distant.png"
 ---
-
-# J'ai testé 4 façons de faire tourner Claude Code sur un dépôt distant — voici ce qui compte vraiment
 
 Je voulais mieux comprendre les différentes façons de travailler avec Claude Code sans tout avoir à cloner en local. J'avais un découpage bien rangé en tête : trois options, trois cas d'usage, un tableau pour choisir. Je les ai testées avant de trancher. En cours de route, ce découpage a évolué en fonction de ce que les tests montraient — et le résultat est plus intéressant que celui que j'avais en tête au départ.
 
