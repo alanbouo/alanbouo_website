@@ -1,0 +1,49 @@
+---
+title: 'DGFiP piratée : deux fois en six mois, le même problème d''identité'
+description: >-
+  Retour sur la fuite de données revendiquée à la DGFiP en août 2026 : ce que
+  confirme le ministère, ce qui reste non vérifié, et pourquoi le vecteur
+  d'attaque révèle un problème d'autorisation plutôt qu'une faille technique.
+date: 2026-09-03
+category: Cybersécurité
+tags:
+  - DGFiP
+  - administration
+  - cyberattaque
+  - usurpation d'identité
+  - fuite de données
+featured: false
+image: >-
+  /img/blog/dgfip-piratee-deux-fois-en-six-mois-le-meme-probleme-d-identite/image.jpeg
+---
+# La cyberattaque de la DGFiP : ce que l’on sait
+
+Le 12 août 2026, un pseudonyme apparaît sur un forum cybercriminel : ZeroBytes. Il revendique l'extraction de près de 700 000 lignes de donnés de l'administration fiscale. L'intrusion, dit-il, remonte au 26 juin.
+
+Le lendemain, 13 août, le ministère de l'Économie et des Finances confirme un accès illégitime au système d'information de la DGFiP, survenu fin juin après une usurpation d'identité. Le communiqué reste flou sur deux points essentiels : il ne dit pas combien d'usagers sont touchés, ni quelles données précisément ont été consultées ou extraites. Il annonce en revanche que les personnes concernées recevront une information individuelle, et que de nouvelles mesures de restriction ont été mises en place depuis la revendication.
+
+Le parquet de Paris a ouvert une enquête. C'est à peu près tout ce qui est officiel à ce stade.
+
+Le reste — les 678 438 lignes, leur répartition entre particuliers et professionnels, la liste des données concernées, la mise en vente du fichier — vient de sources non officielles, notamment le site French Breaches. Ce sont des chiffres revendiqués, pas confirmés.
+
+Une seconde revendication, du même pseudonyme, porte sur une intrusion datée du 29 juillet, visant cette fois un serveur de données cadastrales : 252 149 lignes extraites, 2 041 778 titulaires annoncés.
+
+Cette affaire n'est pas isolée. En février 2026, Bercy avait déjà révélé des accès illégitimes au fichier national des comptes bancaires FICOBA, après usurpation des identifiants d'un fonctionnaire, avec 1,2 million de comptes potentiellement concernés.
+
+## Un problème d'identité, pas de faille technique
+
+Ce qui frappe dans cette affaire, ce n'est pas une prouesse technique. C'est un problème d'autorisation.
+
+Le vecteur annoncé par Bercy est une usurpation d'identité. Pas une faille logicielle exploitée à distance, pas une vulnérabilité zero-day : quelqu'un s'est fait passer pour quelqu'un d'autre. C'est exactement le même schéma que pour FICOBA en février, où des identifiants d'un fonctionnaire avaient été détournés. Deux fois en six mois, dans la même administration, le même type de vecteur : un accès parfaitement légitime, utilisé par la mauvaise personne.
+
+L'outil compromis dans l'affaire de juin est un outil de recherche. Un compte détourné n'a pas simplement consulté un dossier isolé : il a interrogé un système conçu pour chercher parmi l'ensemble des contribuables. La question n'est donc pas seulement « qui a le droit de se connecter », mais « qui a le droit d'extraire, et combien ». On peut avoir un contrôle d'authentification parfaitement fonctionnel — le bon mot de passe, la bonne session — et aucune limite sur le volume de données qu'un compte peut extraire en une fois. C'est ce deuxième contrôle qui semble avoir manqué.
+
+Enfin, dans les deux affaires DGFiP, la détection n'est pas venue d'un système de surveillance interne, mais d'un événement extérieur : une revendication publique. Un accès légitime utilisé de façon anormale ne déclenche rien si personne ne surveille les schémas d'usage — volumétrie inhabituelle, requêtes hors périmètre métier, horaires atypiques. C'est un motif qui revient régulièrement dans les incidents récents : des systèmes qui fonctionnent exactement comme prévu, utilisés en dehors de ce qu'on avait anticipé, et détectés par accident plutôt que par conception.
+
+## Que risquent les personnes concernées ?
+
+Le risque principal et documenté, c'est l'hameçonnage ciblé. Avec des données comme les revenus, l'adresse, la situation familiale ou l'historique d'échanges avec les impôts, un appel ou un e-mail se faisant passer pour l'administration fiscale peut devenir très convaincant.
+
+## Ce qui reste à établir
+
+Plusieurs points restent ouverts au moment où j'écris ces lignes. La DGFiP n'a publié aucun bilan chiffré officiel. La seconde revendication, sur les données cadastrales, n'est pas confirmée. Aucun lien n'est établi entre cette affaire et celle de FICOBA en février. Et le délai réel entre détection interne et notification — celui qui compte vraiment, au-delà du malentendu sur les 72 heures — n'est pas connu.
