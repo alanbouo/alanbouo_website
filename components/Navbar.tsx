@@ -18,11 +18,10 @@ const Navbar = () => {
               <li><Link href="/projects" className="nav-link">Produits</Link></li>
               <li><Link href="/blog" className="nav-link">Blog</Link></li>
               <li><Link href="/about" className="nav-link">À propos</Link></li>
-              <li><Link href="/contact" className="nav-link">Contact</Link></li>
             </ul>
 
             <div className="desktop-cta">
-              <Link href="/contact" className="cta-button">Suivre le parcours</Link>
+              <Link href="/contact" className="cta-button">Me contacter</Link>
             </div>
           </div>
         </div>
