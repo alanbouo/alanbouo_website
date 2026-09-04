@@ -685,9 +685,9 @@ export default function HomePage() {
         color: 'white'
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Tu t'intéresses à l'IA, à la cybersécurité ou au build in public ?</h2>
+          <h2 style={{ marginBottom: '1rem' }}>Tu t'intéresses à l'IA ou à la cybersécurité ?</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Suis le parcours, échange avec moi, ou dis simplement bonjour. J'adore rencontrer d'autres passionnés.
+            Échangeons, ou dis simplement bonjour. J'adore rencontrer d'autres passionnés.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link href="/contact" style={{
@@ -716,7 +716,7 @@ export default function HomePage() {
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
               </div>
-              Suivre le parcours
+              Me contacter
             </Link>
           </div>
         </div>
