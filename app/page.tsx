@@ -216,14 +216,10 @@ export default function HomePage() {
           <h2 style={{ marginBottom: '1.5rem', color: '#333' }}>
             Apprendre en construisant, pour de vrai
           </h2>
-          <p style={{ color: '#555', lineHeight: '1.8', maxWidth: '760px', margin: '0 auto 1.5rem', fontSize: '1.1rem' }}>
-            J'aime comprendre comment les choses marchent, les construire de mes mains, et voir
-            quelqu'un s'en servir. C'est cette pratique concrète qui nourrit ce que j'explique
-            ici — pas la version marketing.
-          </p>
           <p style={{ color: '#555', lineHeight: '1.8', maxWidth: '760px', margin: '0 auto', fontSize: '1.1rem' }}>
-            Pas de storytelling lissé : quand je partage, ce sont les vraies décisions, les
-            avancées, les doutes — et les ratés assumés.
+            J'aime comprendre comment les choses marchent, et les construire moi-même — du code
+            aux systèmes complets. C'est cette pratique concrète qui nourrit ce que j'explique
+            ici, pas la version théorique.
           </p>
 
           {/* Funnel: X -> YouTube -> LinkedIn */}
