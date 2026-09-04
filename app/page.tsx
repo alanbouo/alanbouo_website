@@ -4,7 +4,6 @@ import { getAllPosts, categoryColor } from '@/lib/posts'
 
 export default function HomePage() {
   const posts = getAllPosts()
-  const latestPost = posts.find((p) => p.featured) ?? posts[0]
 
   return (
     <main>
@@ -443,65 +442,66 @@ export default function HomePage() {
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
-            <Link href={`/blog/${latestPost.slug}`} style={{
-              backgroundColor: '#f8f9fa',
-              padding: '2rem',
-              borderRadius: '10px',
-              textDecoration: 'none',
-              transition: 'all 0.3s ease',
-              border: '2px solid #e9ecef',
-              overflow: 'hidden',
-              position: 'relative'
-            }}>
-              {/* Blog Post Thumbnail */}
-              {latestPost.image ? (
-                <div style={{ position: 'relative', width: '100%', height: '120px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
-                  <Image
-                    src={latestPost.image}
-                    alt={latestPost.title}
-                    fill
-                    sizes="(max-width: 700px) 100vw, 380px"
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-              ) : (
-                <div style={{
-                  width: '100%',
-                  height: '120px',
-                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                  borderRadius: '8px',
-                  marginBottom: '1.5rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white'
-                }}>
+            {posts.slice(0, 3).map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} style={{
+                backgroundColor: '#f8f9fa',
+                padding: '2rem',
+                borderRadius: '10px',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                border: '2px solid #e9ecef',
+                overflow: 'hidden',
+                position: 'relative'
+              }}>
+                {/* Blog Post Thumbnail */}
+                {post.image ? (
+                  <div style={{ position: 'relative', width: '100%', height: '120px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.5rem' }}>
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 700px) 100vw, 380px"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                ) : (
                   <div style={{
-                    width: '60px',
-                    height: '60px',
-                    background: 'rgba(255,255,255,0.2)',
-                    borderRadius: '50%',
+                    width: '100%',
+                    height: '120px',
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    borderRadius: '8px',
+                    marginBottom: '1.5rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: '2px solid rgba(255,255,255,0.3)'
+                    color: 'white'
                   }}>
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-3.08-3.08 2.5 2.5 0 0 1 2.96-3.08A2.5 2.5 0 0 1 9.5 2Z"/>
-                      <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 3.08-3.08 2.5 2.5 0 0 0-2.96-3.08A2.5 2.5 0 0 0 14.5 2Z"/>
-                    </svg>
+                    <div style={{
+                      width: '60px',
+                      height: '60px',
+                      background: 'rgba(255,255,255,0.2)',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      border: '2px solid rgba(255,255,255,0.3)'
+                    }}>
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-3.08-3.08 2.5 2.5 0 0 1 2.96-3.08A2.5 2.5 0 0 1 9.5 2Z"/>
+                        <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 3.08-3.08 2.5 2.5 0 0 0-2.96-3.08A2.5 2.5 0 0 0 14.5 2Z"/>
+                      </svg>
+                    </div>
                   </div>
+                )}
+                <div style={{ color: categoryColor(post.category), fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
+                  {post.category}
                 </div>
-              )}
-              <div style={{ color: categoryColor(latestPost.category), fontSize: '14px', marginBottom: '1rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
-                {latestPost.category}
-              </div>
-              <h4 style={{ color: '#333', marginBottom: '1rem' }}>
-                {latestPost.title}
-              </h4>
-              <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
-                {latestPost.description}
-              </p>
+                <h4 style={{ color: '#333', marginBottom: '1rem' }}>
+                  {post.title}
+                </h4>
+                <p style={{ color: '#666', lineHeight: '1.6', marginBottom: '1rem' }}>
+                  {post.description}
+                </p>
                 <div style={{ fontSize: '14px', color: '#999', display: 'flex', alignItems: 'center' }}>
                   <div style={{
                     width: '16px',
@@ -518,53 +518,24 @@ export default function HomePage() {
                       <line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                   </div>
-                  {new Date(latestPost.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  {new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </div>
-            </Link>
-
-            <div style={{
-              backgroundColor: '#f8f9fa',
-              padding: '2rem',
-              borderRadius: '10px',
-              border: '2px solid #e9ecef',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              textAlign: 'center'
-            }}>
-              <div style={{
-                width: '60px',
-                height: '60px',
-                background: 'linear-gradient(135deg, #007bff 0%, #0056b3 100%)',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 1rem',
-                boxShadow: '0 4px 15px rgba(0, 123, 255, 0.3)'
-              }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"/>
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </div>
-              <h4 style={{ color: '#333', marginBottom: '1rem' }}>Bientôt plus de contenu</h4>
-              <p style={{ color: '#666', marginBottom: '1rem' }}>
-                De nouveaux articles et retours d'expérience sur l'IA, la cybersécurité et la construction de produits
-              </p>
-              <Link href="/blog" style={{
-                backgroundColor: '#007bff',
-                color: 'white',
-                padding: '0.75rem 1.5rem',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                display: 'inline-block',
-                alignSelf: 'center'
-              }}>
-                Voir tous les articles
               </Link>
-            </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <Link href="/blog" style={{
+              backgroundColor: '#007bff',
+              color: 'white',
+              padding: '0.75rem 1.5rem',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              display: 'inline-block'
+            }}>
+              Voir tous les articles
+            </Link>
           </div>
         </div>
       </section>
