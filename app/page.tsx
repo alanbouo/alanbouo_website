@@ -550,23 +550,28 @@ export default function HomePage() {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{ marginBottom: '1rem' }}>Tu t'intéresses à l'IA ou à la cybersécurité ?</h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Échangeons, ou dis simplement bonjour. J'adore rencontrer d'autres passionnés.
+            Reçois mes prochains articles directement par e-mail, sans algorithme entre nous.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="/contact" style={{
-              backgroundColor: '#FF9800',
-              color: 'white',
-              padding: '1.5rem 2.5rem',
-              borderRadius: '10px',
-              textDecoration: 'none',
-              fontWeight: 'bold',
-              fontSize: '1.2rem',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              boxShadow: '0 6px 20px rgba(255, 152, 0, 0.4)',
-              transition: 'all 0.3s ease'
-            }}>
+            <a
+              href="https://substack.com/@alanbouo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: '#FF9800',
+                color: 'white',
+                padding: '1.5rem 2.5rem',
+                borderRadius: '10px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '1.2rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                boxShadow: '0 6px 20px rgba(255, 152, 0, 0.4)',
+                transition: 'all 0.3s ease'
+              }}
+            >
               <div style={{
                 width: '24px',
                 height: '24px',
@@ -579,8 +584,8 @@ export default function HomePage() {
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
               </div>
-              Me contacter
-            </Link>
+              S'inscrire à la newsletter
+            </a>
           </div>
         </div>
       </section>
