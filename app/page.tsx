@@ -503,6 +503,47 @@ export default function HomePage() {
                 <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Visibilité IA</span>
               </div>
             </a>
+
+            {/* CookSmart */}
+            <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              border: '3px solid #FF6B35',
+              textDecoration: 'none',
+              display: 'block'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #FF6B35 0%, #CC4A1A 100%)',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem',
+                  boxShadow: '0 4px 15px rgba(255, 107, 53, 0.3)'
+                }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 3a3 3 0 0 1 3 3c0 1.5-1 2.5-1 4H5c0-1.5-1-2.5-1-4a3 3 0 0 1 5-2.24A3 3 0 0 1 12 3a3 3 0 0 1 5 0z"/>
+                    <path d="M5 10h14l-1 4H6z"/>
+                    <path d="M6 14v6a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-6"/>
+                  </svg>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>CookSmart</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                  Ton assistant IA pour cuisiner malin : plans de repas, recettes personnalisées et courses optimisées, sans prise de tête.
+                </p>
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Cuisine</span>
+                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA</span>
+                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Recettes</span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
