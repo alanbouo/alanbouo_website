@@ -46,12 +46,11 @@ export default function HomePage() {
             padding: '0 1rem',
             boxSizing: 'border-box'
           }}>
-            Je construis des produits en public — et l'IA et la cybersécurité, expliquées
-            simplement.
+            Des explications claires, sans jargon, nourries par ce que je construis vraiment.
           </p>
 
           <Link
-            href="/projects"
+            href="/blog"
             style={{
               backgroundColor: '#FF9800',
               color: 'white',
@@ -67,7 +66,7 @@ export default function HomePage() {
               transition: 'all 0.3s ease'
             }}
           >
-            Voir ce que je construis
+            Lire les articles
           </Link>
 
           <div style={{
@@ -79,9 +78,9 @@ export default function HomePage() {
             margin: '0 auto 4rem'
           }}>
             {[
-              { icon: 'database', text: 'Build in public' },
               { icon: 'link', text: 'IA & Cybersécurité' },
-              { icon: 'shield', text: 'Apprendre en construisant' }
+              { icon: 'shield', text: 'Apprendre en construisant' },
+              { icon: 'database', text: 'Projets concrets' }
             ].map((skill, index) => (
               <div key={index} style={{
                 background: 'rgba(255,255,255,0.1)',
@@ -215,16 +214,16 @@ export default function HomePage() {
             MA DÉMARCHE
           </span>
           <h2 style={{ marginBottom: '1.5rem', color: '#333' }}>
-            Construire en public, pour de vrai
+            Apprendre en construisant, pour de vrai
           </h2>
           <p style={{ color: '#555', lineHeight: '1.8', maxWidth: '760px', margin: '0 auto 1.5rem', fontSize: '1.1rem' }}>
             J'aime comprendre comment les choses marchent, les construire de mes mains, et voir
-            quelqu'un s'en servir. Le build in public, c'est simplement ma façon d'avancer : je
-            montre le chemin réel, pas la version marketing.
+            quelqu'un s'en servir. C'est cette pratique concrète qui nourrit ce que j'explique
+            ici — pas la version marketing.
           </p>
           <p style={{ color: '#555', lineHeight: '1.8', maxWidth: '760px', margin: '0 auto', fontSize: '1.1rem' }}>
-            Pas de storytelling lissé : je partage les vraies décisions, les avancées, les doutes —
-            et les ratés assumés. Autant que ça puisse aider quelqu'un d'autre en chemin.
+            Pas de storytelling lissé : quand je partage, ce sont les vraies décisions, les
+            avancées, les doutes — et les ratés assumés.
           </p>
 
           {/* Funnel: X -> YouTube -> LinkedIn */}
@@ -247,8 +246,8 @@ export default function HomePage() {
                 <h3 style={{ margin: 0, color: '#333' }}>X — le journal de bord</h3>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
-                Le journal de bord, au jour le jour : ce qui avance, ce qui rate, ce qui se
-                décide.
+                Ce qui avance, ce qui rate, ce qui se décide — quand j'ai quelque chose à
+                montrer.
               </p>
             </div>
 
@@ -288,7 +287,7 @@ export default function HomePage() {
           </div>
 
           <p style={{ color: '#888', fontStyle: 'italic', marginTop: '2rem', fontSize: '0.95rem' }}>
-            Trois formats, un même fil : construire, comprendre, et partager en chemin.
+            Trois formats, un même fil : construire et comprendre.
           </p>
         </div>
       </section>
