@@ -299,14 +299,14 @@ export default function HomePage() {
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            {/* ClawPilot */}
-            <a href="https://clawpilot.life" target="_blank" rel="noopener noreferrer" style={{
+            {/* CookSmart */}
+            <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: 'white',
               padding: '2rem',
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              border: '3px solid #25D366',
+              border: '3px solid #FF6B35',
               textDecoration: 'none',
               display: 'block'
             }}>
@@ -314,29 +314,29 @@ export default function HomePage() {
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+                  background: 'linear-gradient(135deg, #FF6B35 0%, #CC4A1A 100%)',
                   borderRadius: '50%',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1rem',
-                  boxShadow: '0 4px 15px rgba(37, 211, 102, 0.3)'
+                  boxShadow: '0 4px 15px rgba(255, 107, 53, 0.3)'
                 }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                    <circle cx="9" cy="10" r="1"/>
-                    <circle cx="15" cy="10" r="1"/>
+                    <path d="M17 3a3 3 0 0 1 3 3c0 1.5-1 2.5-1 4H5c0-1.5-1-2.5-1-4a3 3 0 0 1 5-2.24A3 3 0 0 1 12 3a3 3 0 0 1 5 0z"/>
+                    <path d="M5 10h14l-1 4H6z"/>
+                    <path d="M6 14v6a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-6"/>
                   </svg>
                 </div>
-                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>ClawPilot</h3>
+                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>CookSmart</h3>
                 <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  Ton IA personnelle sur WhatsApp. Aucune app à installer, aucun compte à créer. Il suffit d'écrire.
+                  Ton assistant IA pour cuisiner malin : plans de repas, recettes personnalisées et courses optimisées, sans prise de tête.
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>WhatsApp</span>
-                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Assistant IA</span>
-                <span style={{ backgroundColor: '#f0fff4', color: '#25D366', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA personnelle</span>
+                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Cuisine</span>
+                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA</span>
+                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Recettes</span>
               </div>
             </a>
 
@@ -420,125 +420,17 @@ export default function HomePage() {
                 <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivité</span>
               </div>
             </a>
+          </div>
 
-            {/* VibeX */}
-            <a href="https://vibx.space" target="_blank" rel="noopener noreferrer" style={{
-              backgroundColor: 'white',
-              padding: '2rem',
-              borderRadius: '15px',
-              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              border: '3px solid #1DA1F2',
+          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <Link href="/projects" style={{
+              color: '#6A1B9A',
               textDecoration: 'none',
-              display: 'block'
+              fontWeight: 'bold',
+              fontSize: '1rem'
             }}>
-              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-                <div style={{
-                  width: '60px',
-                  height: '60px',
-                  background: 'linear-gradient(135deg, #1DA1F2 0%, #0d8ecf 100%)',
-                  borderRadius: '50%',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '1rem',
-                  boxShadow: '0 4px 15px rgba(29, 161, 242, 0.3)'
-                }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </div>
-                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>VibeX</h3>
-                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  Outil de croissance propulsé par l'IA pour X. Suggestions de contenu, analytics et optimisation pour développer ton audience.
-                </p>
-              </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-                <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>X/Twitter</span>
-                <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Croissance</span>
-                <span style={{ backgroundColor: '#f0f9ff', color: '#1DA1F2', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Analytics</span>
-              </div>
-            </a>
-
-            {/* VigilAI */}
-            <a href="https://vigilai.watch" target="_blank" rel="noopener noreferrer" style={{
-              backgroundColor: 'white',
-              padding: '2rem',
-              borderRadius: '15px',
-              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              border: '3px solid #8b2e8b',
-              textDecoration: 'none',
-              display: 'block'
-            }}>
-              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-                <div style={{
-                  width: '60px',
-                  height: '60px',
-                  background: 'linear-gradient(135deg, #8b2e8b 0%, #6f1e6f 100%)',
-                  borderRadius: '50%',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '1rem',
-                  boxShadow: '0 4px 15px rgba(139, 46, 139, 0.3)'
-                }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                    <circle cx="12" cy="12" r="3"/>
-                  </svg>
-                </div>
-                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>VigilAI</h3>
-                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  Surveille ta marque à travers les assistants IA comme ChatGPT &amp; Claude. Scores de visibilité, sentiment et analyse concurrentielle.
-                </p>
-              </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-                <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Surveillance de marque</span>
-                <span style={{ backgroundColor: '#fdf2ff', color: '#8b2e8b', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Visibilité IA</span>
-              </div>
-            </a>
-
-            {/* CookSmart */}
-            <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{
-              backgroundColor: 'white',
-              padding: '2rem',
-              borderRadius: '15px',
-              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              border: '3px solid #FF6B35',
-              textDecoration: 'none',
-              display: 'block'
-            }}>
-              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-                <div style={{
-                  width: '60px',
-                  height: '60px',
-                  background: 'linear-gradient(135deg, #FF6B35 0%, #CC4A1A 100%)',
-                  borderRadius: '50%',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '1rem',
-                  boxShadow: '0 4px 15px rgba(255, 107, 53, 0.3)'
-                }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M17 3a3 3 0 0 1 3 3c0 1.5-1 2.5-1 4H5c0-1.5-1-2.5-1-4a3 3 0 0 1 5-2.24A3 3 0 0 1 12 3a3 3 0 0 1 5 0z"/>
-                    <path d="M5 10h14l-1 4H6z"/>
-                    <path d="M6 14v6a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-6"/>
-                  </svg>
-                </div>
-                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>CookSmart</h3>
-                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                  Ton assistant IA pour cuisiner malin : plans de repas, recettes personnalisées et courses optimisées, sans prise de tête.
-                </p>
-              </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Cuisine</span>
-                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA</span>
-                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Recettes</span>
-              </div>
-            </a>
+              Voir tous mes produits →
+            </Link>
           </div>
         </div>
       </section>
