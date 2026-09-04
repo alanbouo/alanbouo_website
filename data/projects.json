@@ -48,5 +48,15 @@
     "tags": ["Surveillance de marque", "Visibilité IA", "Analytics"],
     "link": "https://vigilai.watch",
     "external": true
+  },
+  {
+    "id": "cooksmart",
+    "title": "CookSmart",
+    "description": "Ton assistant IA pour cuisiner malin : plans de repas, recettes personnalisées et courses optimisées, sans prise de tête.",
+    "icon": "chef-hat",
+    "color": "#FF6B35",
+    "tags": ["Cuisine", "IA", "Recettes"],
+    "link": "https://cooksmart.app",
+    "external": true
   }
 ]

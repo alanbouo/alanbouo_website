@@ -78,6 +78,7 @@ export default function ServicesPage() {
                                        project.id === 'memomind' ? '#f0f4ff' :
                                        project.id === 'vibex' ? '#f0f9ff' :
                                        project.id === 'clawpilot' ? '#f0fff4' :
+                                       project.id === 'cooksmart' ? '#fff4ed' :
                                        '#fdf2ff'
 
               const getIcon = (id: string) => {
@@ -118,6 +119,14 @@ export default function ServicesPage() {
                         <circle cx="12" cy="12" r="3"/>
                       </svg>
                     )
+                  case 'cooksmart':
+                    return (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M17 3a3 3 0 0 1 3 3c0 1.5-1 2.5-1 4H5c0-1.5-1-2.5-1-4a3 3 0 0 1 5-2.24A3 3 0 0 1 12 3a3 3 0 0 1 5 0z"/>
+                        <path d="M5 10h14l-1 4H6z"/>
+                        <path d="M6 14v6a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-6"/>
+                      </svg>
+                    )
                   default:
                     return null
                 }
@@ -143,6 +152,7 @@ export default function ServicesPage() {
                                  project.id === 'memomind' ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' :
                                  project.id === 'vibex' ? 'linear-gradient(135deg, #1DA1F2 0%, #0d8ecf 100%)' :
                                  project.id === 'clawpilot' ? 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)' :
+                                 project.id === 'cooksmart' ? 'linear-gradient(135deg, #FF6B35 0%, #CC4A1A 100%)' :
                                  'linear-gradient(135deg, #8b2e8b 0%, #6f1e6f 100%)',
                       borderRadius: '50%',
                       display: 'inline-flex',
