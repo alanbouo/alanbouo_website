@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Privacy Policy - Alan Bouo',
+  title: 'Politique de confidentialité - Alan Bouo',
   description:
-    "Learn how Alan Bouo protects your privacy. This policy explains what we collect, how it's used, retention, your rights, cookies/analytics, and how to contact us.",
+    "Découvrez comment Alan Bouo protège votre vie privée. Cette politique explique ce qui est collecté, comment c'est utilisé, la conservation des données, vos droits, les cookies/analytics, et comment nous contacter.",
 }
 
 export default function PrivacyPage() {
@@ -24,64 +24,64 @@ export default function PrivacyPage() {
         }}
       >
         <header style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-          <h1 style={{ color: '#2c3e50', marginBottom: '0.5rem', fontWeight: 700, fontSize: 'clamp(48px, 6vw, 60px)', fontFamily: 'Inter, sans-serif' }}>Privacy Policy</h1>
-          <p style={{ color: '#2c3e50', fontSize: 'clamp(16px, 2vw, 18px)', fontWeight: 400, fontFamily: 'Inter, sans-serif' }}>Last Updated: September 23, 2025</p>
+          <h1 style={{ color: '#2c3e50', marginBottom: '0.5rem', fontWeight: 700, fontSize: 'clamp(48px, 6vw, 60px)', fontFamily: 'Inter, sans-serif' }}>Politique de confidentialité</h1>
+          <p style={{ color: '#2c3e50', fontSize: 'clamp(16px, 2vw, 18px)', fontWeight: 400, fontFamily: 'Inter, sans-serif' }}>Dernière mise à jour : 23 septembre 2025</p>
         </header>
 
         <section style={{ marginBottom: '1.25rem' }}>
           <h2 style={sectionHeadingStyle}>1. Introduction</h2>
           <p style={pStyle}>
-            Your privacy matters. This Privacy Policy explains how this website collects, uses, and protects your
-            information in a manner consistent with modern, privacy-first practices aligned with AI and data ethics.
+            Votre vie privée compte. Cette politique de confidentialité explique comment ce site collecte, utilise et
+            protège vos informations, dans le respect de pratiques modernes et respectueuses de la vie privée, alignées
+            avec l'éthique de l'IA et des données.
           </p>
         </section>
 
         <section style={{ marginBottom: '1.25rem' }}>
-          <h2 style={sectionHeadingStyle}>2. Information We Collect</h2>
-          <p style={pStyle}>We collect only what is necessary to operate this website and communicate with you:</p>
+          <h2 style={sectionHeadingStyle}>2. Informations que nous collectons</h2>
+          <p style={pStyle}>Nous ne collectons que ce qui est nécessaire au fonctionnement de ce site et à nos échanges avec vous :</p>
           <ul style={ulStyle}>
             <li>
-              <strong>Contact Details:</strong> If you email or book a meeting, we receive your name and email address.
+              <strong>Coordonnées :</strong> si vous nous écrivez ou réservez un rendez-vous, nous recevons votre nom et votre adresse e-mail.
             </li>
             <li>
-              <strong>Newsletter:</strong> If you subscribe, we store your email address to send updates. You can
-              unsubscribe anytime.
+              <strong>Newsletter :</strong> si vous vous inscrivez, nous conservons votre adresse e-mail pour vous envoyer des mises à jour. Vous pouvez vous désinscrire à tout moment.
             </li>
             <li>
-              <strong>Basic Analytics:</strong> Anonymous usage data (e.g., page views, referrers) to improve content and UX. No personal profiles.
+              <strong>Statistiques de base :</strong> des données d'usage anonymes (pages vues, référents, etc.) pour améliorer le contenu et l'expérience utilisateur. Aucun profil personnel n'est constitué.
             </li>
           </ul>
         </section>
 
         <section style={{ marginBottom: '1.25rem' }}>
-          <h2 style={sectionHeadingStyle}>3. How We Use Your Information</h2>
-          <p style={pStyle}>We use your information for the following purposes:</p>
+          <h2 style={sectionHeadingStyle}>3. Comment nous utilisons vos informations</h2>
+          <p style={pStyle}>Nous utilisons vos informations aux fins suivantes :</p>
           <ul style={ulStyle}>
-            <li>To respond to inquiries and provide requested information or services.</li>
-            <li>To send optional newsletter updates if you opted in.</li>
-            <li>To analyze anonymous usage patterns and improve the website's performance and content.</li>
+            <li>Répondre à vos demandes et fournir les informations ou services demandés.</li>
+            <li>Envoyer les mises à jour de la newsletter si vous y avez souscrit.</li>
+            <li>Analyser les tendances d'usage anonymes afin d'améliorer les performances et le contenu du site.</li>
           </ul>
         </section>
 
         <section style={{ marginBottom: '1.25rem' }}>
-          <h2 style={sectionHeadingStyle}>4. Data Retention</h2>
+          <h2 style={sectionHeadingStyle}>4. Conservation des données</h2>
           <p style={pStyle}>
-            Contact information is retained only as long as needed to respond to inquiries or maintain an ongoing
-            professional conversation. Newsletter data is kept until you unsubscribe. Anonymous analytics do not include
-            personally identifiable information.
+            Les coordonnées ne sont conservées que le temps nécessaire pour répondre à vos demandes ou maintenir un
+            échange professionnel en cours. Les données de newsletter sont conservées jusqu'à votre désinscription. Les
+            statistiques anonymes ne contiennent aucune information permettant de vous identifier.
           </p>
         </section>
 
         <section style={{ marginBottom: '1.25rem' }}>
-          <h2 style={sectionHeadingStyle}>5. Your Rights</h2>
-          <p style={pStyle}>Depending on your jurisdiction, you may have the right to:</p>
+          <h2 style={sectionHeadingStyle}>5. Vos droits</h2>
+          <p style={pStyle}>Selon votre juridiction, vous pouvez disposer des droits suivants :</p>
           <ul style={ulStyle}>
-            <li>Access the personal information we hold about you.</li>
-            <li>Request correction or deletion of your data.</li>
-            <li>Object to certain processing or withdraw consent at any time.</li>
+            <li>Accéder aux informations personnelles que nous détenons à votre sujet.</li>
+            <li>Demander la correction ou la suppression de vos données.</li>
+            <li>Vous opposer à certains traitements ou retirer votre consentement à tout moment.</li>
           </ul>
           <p style={pStyle}>
-            To exercise your rights, email{' '}
+            Pour exercer vos droits, écrivez à{' '}
             <a href="mailto:privacy@alanbouo.com" style={linkStyle}>
               privacy@alanbouo.com
             </a>
@@ -92,27 +92,29 @@ export default function PrivacyPage() {
         <section style={{ marginBottom: '1.25rem' }}>
           <h2 style={sectionHeadingStyle}>6. Cookies & Analytics</h2>
           <p style={pStyle}>
-            This site may use a privacy-friendly analytics tool to understand how pages are used. Data is aggregated and
-            anonymized. Cookies, if present, are minimal and used only for essential functionality or consent preferences.
+            Ce site peut utiliser un outil d'analyse respectueux de la vie privée pour comprendre l'usage des pages. Les
+            données sont agrégées et anonymisées. Les cookies éventuellement présents sont minimaux et servent
+            uniquement aux fonctionnalités essentielles ou aux préférences de consentement.
           </p>
         </section>
 
         <section style={{ marginBottom: '1.25rem' }}>
-          <h2 style={sectionHeadingStyle}>7. Data Security</h2>
+          <h2 style={sectionHeadingStyle}>7. Sécurité des données</h2>
           <p style={pStyle}>
-            Reasonable technical and organizational measures are employed to protect information from unauthorized access
-            or disclosure. However, no method of transmission over the internet is 100% secure.
+            Des mesures techniques et organisationnelles raisonnables sont mises en œuvre pour protéger les informations
+            contre tout accès ou divulgation non autorisés. Cependant, aucune méthode de transmission sur Internet n'est
+            sécurisée à 100 %.
           </p>
         </section>
 
         <section style={{ marginBottom: '1.25rem' }}>
-          <h2 style={sectionHeadingStyle}>8. Contact Us</h2>
+          <h2 style={sectionHeadingStyle}>8. Nous contacter</h2>
           <p style={pStyle}>
-            If you have questions or requests related to this Privacy Policy, please contact:
+            Pour toute question ou demande liée à cette politique de confidentialité, contactez-nous :
           </p>
           <ul style={ulStyle}>
             <li>
-              <strong>Email:</strong>{' '}
+              <strong>E-mail :</strong>{' '}
               <a href="mailto:me@alanbouo.com" style={linkStyle}>
                 me@alanbouo.com
               </a>
@@ -131,7 +133,7 @@ export default function PrivacyPage() {
                 fontWeight: 700,
               }}
             >
-              Contact Page
+              Page de contact
             </Link>
           </div>
         </section>
