@@ -540,55 +540,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        padding: '3rem 20px',
-        textAlign: 'center',
-        color: 'white'
-      }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Tu t'intéresses à l'IA ou à la cybersécurité ?</h2>
-          <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Reçois mes prochains articles directement par e-mail, sans algorithme entre nous.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a
-              href="https://substack.com/@alanbouo"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                backgroundColor: '#FF9800',
-                color: 'white',
-                padding: '1.5rem 2.5rem',
-                borderRadius: '10px',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                fontSize: '1.2rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                boxShadow: '0 6px 20px rgba(255, 152, 0, 0.4)',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <div style={{
-                width: '24px',
-                height: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              S'inscrire à la newsletter
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }
