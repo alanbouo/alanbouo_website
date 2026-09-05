@@ -3,33 +3,26 @@
 import Link from 'next/link'
 
 export default function Footer() {
-  const handleNewsletter = (e: any) => {
-    e.preventDefault()
-    alert('Merci pour ton inscription !')
-  }
-
   return (
     <footer
       tabIndex={0}
       style={{
-        backgroundColor: 'var(--deep-blue)',
-        color: 'var(--light-gray)',
+        backgroundColor: '#1a0a2e',
+        color: '#d8d0e0',
         padding: '2rem 1rem',
         marginTop: '20px',
         width: '100%',
         position: 'relative',
-        borderTop: '1px solid #556B2F'
+        borderTop: '1px solid #6A1B9A'
       }}
     >
       {/* Footer Content */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '2rem' }}>
 
-
-
         <div className="grid grid-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
           <div>
-            <h3>Suivre le parcours</h3>
-            <p>IA & cybersécurité vulgarisées, en public. YouTube pour approfondir, X pour le journal de bord au jour le jour.</p>
+            <h3 style={{ color: 'white' }}>Me suivre</h3>
+            <p>IA & cybersécurité vulgarisées. YouTube pour approfondir, X et LinkedIn pour les à-côtés.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', margin: '1rem 0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <a href="https://www.youtube.com/@alanbouo" className="social-icon" aria-label="YouTube tutorials"
@@ -62,40 +55,48 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3>Liens</h3>
-            <ul style={{ listStyle: 'none' }}>
-              <li><Link href="/" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Accueil</Link></li>
-              <li><Link href="/projects" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Produits</Link></li>
-              <li><Link href="/blog" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Blog</Link></li>
-              <li><Link href="/about" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>À propos</Link></li>
-              <li><Link href="/contact" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Contact</Link></li>
-              <li><Link href="/privacy" className="footer-link" style={{padding: '1px', borderRadius: '10%', display: 'flex', alignItems: 'center', justifyContent: 'left' }}>Confidentialité</Link></li>
+            <h3 style={{ color: 'white' }}>Liens</h3>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <li><Link href="/" className="footer-link">Accueil</Link></li>
+              <li><Link href="/projects" className="footer-link">Produits</Link></li>
+              <li><Link href="/blog" className="footer-link">Blog</Link></li>
+              <li><Link href="/about" className="footer-link">À propos</Link></li>
+              <li><Link href="/contact" className="footer-link">Contact</Link></li>
+              <li><Link href="/privacy" className="footer-link">Confidentialité</Link></li>
             </ul>
           </div>
           <div>
-            <h3>Newsletter</h3>
-            <p>Le parcours build in public, directement dans ta boîte mail.</p>
-            <form onSubmit={handleNewsletter} style={{ marginTop: '1rem' }}>
-              <input
-                type="email"
-                placeholder="Ton adresse e-mail"
-                required
-                style={{ padding: '0.5rem', marginBottom: '0.5rem', width: '100%', borderRadius: '3px', border: 'none' }}
-                aria-label="E-mail pour la newsletter"
-              />
-              <button type="submit" style={{ backgroundColor: '#ff6b35', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '4px', cursor: 'pointer' }}>S'abonner</button>
-            </form>
+            <h3 style={{ color: 'white' }}>Newsletter</h3>
+            <p>Reçois mes prochains articles directement par e-mail, sans algorithme entre nous.</p>
+            <a
+              href="https://substack.com/@alanbouo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                marginTop: '1rem',
+                backgroundColor: '#ff6b35',
+                color: 'white',
+                border: 'none',
+                padding: '0.6rem 1.2rem',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                fontWeight: 600
+              }}
+            >
+              S'inscrire sur Substack
+            </a>
           </div>
         </div>
         <div style={{
           textAlign: 'center',
           marginTop: '2rem',
-          borderTop: '1px solid var(--olive-green)',
+          borderTop: '1px solid #4a2a6a',
           paddingTop: '1rem',
           fontFamily: 'Roboto, sans-serif',
           fontSize: '14px'
         }}>
-            <p style={{ color: '#e0e0e0', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2026 Alan Bouo. Tous droits réservés. <em style={{ color: '#ffffff' }}>Rendre l'IA et la cybersécurité accessibles, un produit à la fois.</em></p>
+            <p style={{ color: '#c0b8cc', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2026 Alan Bouo. Tous droits réservés. <em style={{ color: '#ffffff' }}>Rendre l'IA et la cybersécurité accessibles, un produit à la fois.</em></p>
         </div>
       </div>
 
@@ -116,8 +117,18 @@ export default function Footer() {
           outline: none;
         }
 
+        footer :global(.footer-link) {
+          color: #d8d0e0;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        footer :global(.footer-link:hover) {
+          color: #ff6b35;
+        }
+
         footer:focus, footer:has(*:focus) {
-          outline: 2px solid var(--golden-yellow);
+          outline: 2px solid #ff6b35;
           outline-offset: 2px;
         }
       `}</style>
