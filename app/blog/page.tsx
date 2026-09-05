@@ -3,15 +3,15 @@ import Image from 'next/image'
 import { getAllPosts, categoryColors } from '@/lib/posts'
 
 export const metadata = {
-  title: 'Blog — Alan Bouo | IA & cybersécurité vulgarisées, build in public',
-  description: "Vulgarisation de l'IA et de la cybersécurité, et coulisses de ce que je construis, documentées en public.",
+  title: 'Blog — Alan Bouo | IA & cybersécurité expliquées clairement',
+  description: "Des explications claires sur l'IA et la cybersécurité, nourries par ce que je construis vraiment.",
 }
 
 export default function BlogPage() {
   const posts = getAllPosts()
 
-  const featuredPost = posts.find(post => post.featured)
-  const regularPosts = posts.filter(post => !post.featured)
+  const featuredPost = posts.find(post => post.featured) ?? posts[0]
+  const regularPosts = posts.filter(post => post.slug !== featuredPost?.slug)
 
   // Get unique categories with counts
   const categoryCounts = posts.reduce((acc, post) => {
@@ -24,7 +24,7 @@ export default function BlogPage() {
     count
   }))
 
-  const recentPosts = posts.slice(0, 3)
+  const recentPosts = regularPosts.slice(0, 3)
 
   return (
     <main>
@@ -33,7 +33,7 @@ export default function BlogPage() {
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h1>Le blog</h1>
             <p style={{ fontSize: '18px', marginTop: '1rem' }}>
-              IA et cybersécurité vulgarisées, et coulisses de ce que je construis, en public.
+              Des explications claires sur l'IA et la cybersécurité, nourries par ce que je construis vraiment.
             </p>
           </div>
         </section>
@@ -219,24 +219,16 @@ export default function BlogPage() {
                 <h3 style={{ marginBottom: '1rem', color: 'var(--primary-blue)' }}>Catégories</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   {categories.map((category, index) => (
-                    <li key={index} style={{ marginBottom: '0.5rem' }}>
-                      <Link
-                        href="#"
-                        style={{
-                          color: 'var(--text-color)',
-                          textDecoration: 'none',
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          padding: '0.5rem 0',
-                          borderRadius: '4px',
-                          transition: 'background-color 0.3s ease'
-                        }}
-                        className="category-link"
-                      >
-                        <span>{category.name}</span>
-                        <span style={{ color: '#999', fontSize: '12px' }}>({category.count})</span>
-                      </Link>
+                    <li key={index} style={{
+                      marginBottom: '0.5rem',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      padding: '0.5rem 0',
+                      color: 'var(--text-color)'
+                    }}>
+                      <span>{category.name}</span>
+                      <span style={{ color: '#999', fontSize: '12px' }}>({category.count})</span>
                     </li>
                   ))}
                 </ul>
@@ -282,7 +274,7 @@ export default function BlogPage() {
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h2 style={{ marginBottom: '1rem' }}>On échange ?</h2>
             <p style={{ fontSize: '18px', marginBottom: '2rem' }}>
-              Une question sur l'IA, la cybersécurité ou le build in public ? Suis le parcours ou écris-moi.
+              Une question sur l'IA ou la cybersécurité ? Écris-moi.
             </p>
             <Link
               href="/contact"
