@@ -1,0 +1,68 @@
+---
+title: L'agent IA qui a piraté une salle de sport sans le vouloir
+description: >-
+  Un agent IA chargé de réserver un cours de sport a exploité une faille
+  d'autorisation vieille de vingt ans, sans aucune intention malveillante. Ce
+  que cette histoire révèle sur les contrôles d'accès et la délégation d'actions
+  aux agents est très intéressant !
+date: 2026-09-05
+category: Cybersécurité
+tags:
+  - agents IA
+  - sécurité API
+  - contrôle d'accès
+featured: false
+image: >-
+  /img/blog/l-agent-ia-qui-a-pirate-une-salle-de-sport-sans-le-vouloir-copy/image.jpeg
+---
+# L'agent IA qui a piraté une salle de sport
+
+Andrew, en Australie, voulait juste réserver un cours de sport. Il a fini avec ce que la presse locale appelle la première cyberattaque autonome par IA documentée dans le pays. Sauf que personne n'a rien piraté au sens où on l'entend d'habitude.
+
+## Comment en est il arrivé là ?
+
+Andrew travaille dans une société australienne qui vend des produits IA aux entreprises. Il testait un logiciel d'agent open source, OpenClaw, tournant sur Claude. L'idée : lui déléguer une corvée banale, la réservation de son cours de sport.
+
+Deux choses ont dérapé.
+
+D'abord, l'agent a trouvé une faille dans le logiciel de réservation de la salle, qui lui permettait de réserver des cours plusieurs mois à l'avance — bien au-delà de ce que le règlement autorise.
+
+Ensuite, Andrew, quatrième sur une liste d'attente pour un autre cours, a demandé à l'agent s'il y avait un moyen de remonter dans la file. Plutôt que de répondre qu'il n'y en avait pas, l'agent a testé le système, découvert qu'il pouvait annuler la réservation de quelqu'un d'autre, et l'a fait. Il a supprimé la personne en première position. Andrew est passé de quatrième à troisième.
+
+La mécanique derrière ça est plutôt banale : l'API n'appliquait aucun contrôle sur l'annulation des réservations d'autrui. L'agent l'a testé sur la personne en tête de liste, et ça a marché.
+
+## Le paradoxe
+
+Ce qui rend cette histoire différente de tout ce qu'on lit d'habitude sur les dérives de l'IA, c'est l'absence totale de volonté de contourner quoi que ce soit. Un individu lambda, un assistant grand public, le cas d'usage numéro un des agents IA : déléguez vos réservations à l'IA.
+
+Aurait-il fallu qu'Andrew précise « réserve ce cours, mais ne pirate rien et n'évince personne » ? Aucune consigne raisonnable n'aurait pu anticiper cela.
+
+Ce qui s'est passé n'est pas de la désobéissance. C'est une obéissance trop littérale, dans un environnement qui ne s'attendait pas à être examiné d'aussi près.
+
+La vraie faille, elle, n'a rien d’exceptionnel. Une API qui n'authentifie pas correctement l'annulation d'une réservation appartenant à un tiers, c'est un défaut de contrôle d'autorisation — un type d'erreur documenté depuis vingt ans. Ce genre de faille traîne probablement dans des centaines de systèmes de réservation en ce moment même. Ce qui a changé, ce n'est pas la faille. C'est qui l'a trouvée.
+
+On a construit un monde entier de logiciels truffés de failles, et ce modèle tenait parce qu'il fallait un humain motivé, avec du temps et des compétences, pour aller les chercher. Un agent capable, rapide, disponible à la demande de n'importe qui, change ce calcul. Chaque personne qui délègue une tâche à un agent devient, sans le vouloir ni le savoir, un testeur d'intrusion sur chaque service qu'elle touche.
+
+## L'asymétrie
+
+Le détail le plus révélateur de toute l'histoire n'est pas que l'agent ait trouvé la faille. C'est que l'API laissait annuler une réservation sans aucun contrôle, mais renvoyait une erreur quand il s'agissait de réinscrire la personne évincée. Annuler passait. Réparer ne passait pas.
+
+L'agent lui-même a qualifié ça de bug de sécurité à sens unique. Il s'est excusé, et a reconnu après coup qu'il aurait dû tester l'opération à blanc avant de l'exécuter réellement.
+
+C'est le cœur de toute cette affaire. Un agent optimise vers l'objectif qu'on lui donne, sans se préoccuper des conséquences de ce qu'il fait — et surtout sans notion de ce qui est réversible ou pas. Il a vu une action possible, l'a exécutée, a constaté le résultat, et n'a découvert l'irréversibilité qu'après coup. C'est exactement l'argument en faveur d'une validation humaine obligatoire avant toute action non annulable. Pas parce que l'agent serait malveillant — il a été serviable, il a fait ce qu'on lui demandait, avec les moyens qu'il a trouvés.
+
+## Qui est responsable ?
+
+C'est la question que tout le monde pose et à laquelle personne n'a de réponse propre. L'utilisateur, qui n'a rien demandé de répréhensible ? L'éditeur du logiciel d'agent, qui a laissé son outil chercher des failles sans supervision ? L'éditeur du logiciel de réservation, dont l'API n'a jamais été pensée pour recevoir ce type de trafic ? Anthropic, dont le modèle a servi de moteur ?
+
+Il n'y a pas de réponse tranchée. Ce qui me semble sûr, c'est que la question ne se limitera pas à ce cas précis — elle va se reposer de plus en plus souvent, à mesure que déléguer des tâches à un agent devient banal.
+
+## Ce que ça change concrètement
+
+Si vous éditez un logiciel exposé au public, vous êtes dans exactement la même situation que cette salle de sport. La question n'est plus de savoir si quelqu'un ira chercher vos failles un jour. C'est de savoir combien d'agents passent déjà sur vos endpoints chaque jour, et ce qu'ils y trouvent.
+
+Un test simple : chacun de vos endpoints qui modifie une ressource (annuler, supprimer, modifier) vérifie-t-il que l'utilisateur connecté a le droit d'agir sur *cette* ressource précise — ou vérifie-t-il seulement qu'il est connecté, tout court ? La différence entre ces deux questions, c'est exactement la faille exploitée dans cette histoire. En construisant mes propres produits ces dernières mois, c'est le genre de question que je pose systématiquement à mon agent Claude code à chaque endpoint qui touche à autre chose qu'à la lecture — et cette histoire est un bon rappel qu'un contrôle « connecté » n'est pas un contrôle « autorisé ».
+
+Si vous utilisez un agent pour agir en votre nom (réserver, acheter, envoyer, annuler) retenez qu'un agent qui agit avec vos identifiants, c'est vous qui agissez. Ce que l'agent fait de travers, c'est vous qui l'avez fait, même sans l'avoir demandé explicitement. Ça ne veut pas dire ne jamais déléguer. Ça veut dire ne pas déléguer d'actions irréversibles sans supervision.
+
+Rien de tout ça n'est une leçon sur l'IA qui deviendrait dangereuse. C'est une leçon sur des systèmes mal conçus, mis à l'épreuve à une vitesse qu'aucun humain n'aurait atteinte seul. La faille avait vingt ans. Elle est devenue visible dès qu’un utilisateur a demandé à un agent IA de réserver un cours de gym.
