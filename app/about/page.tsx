@@ -141,43 +141,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Approach Section */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'white' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '3rem', color: '#333' }}>
-            Ma démarche
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
-            <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #6A1B9A' }}>
-              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🎯 Ce qui me motive</h3>
-              <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Comprendre comment les choses marchent, et fabriquer des choses utiles.
-              </p>
-            </div>
-            <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #667eea' }}>
-              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🧭 Ma façon de faire</h3>
-              <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Partir d'idées qui ont fait leurs preuves plutôt que de tout réinventer, et y apporter ma patte.
-              </p>
-            </div>
-            <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #ff6b35' }}>
-              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🔍 Ce que j'apporte</h3>
-              <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Une double casquette IA + cybersécurité et l'envie de vulgariser. La sécurité est
-                souvent l'angle mort des contenus IA : c'est là que j'ai envie d'aider.
-              </p>
-            </div>
-            <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #556B2F' }}>
-              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>📖 Ma façon d'expliquer</h3>
-              <p style={{ color: '#666', lineHeight: '1.7' }}>
-                J'explique avec honnêteté : mes choix, ce qui marche, ce qui a demandé des ajustements.
-                Sans version marketing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Education & Certifications Section */}
       <section style={{ padding: '4rem 1rem', backgroundColor: '#f8f9fa' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
