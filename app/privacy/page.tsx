@@ -82,8 +82,8 @@ export default function PrivacyPage() {
           </ul>
           <p style={pStyle}>
             Pour exercer vos droits, écrivez à{' '}
-            <a href="mailto:privacy@alanbouo.com" style={linkStyle}>
-              privacy@alanbouo.com
+            <a href="mailto:contact@alanbouo.com" style={linkStyle}>
+              contact@alanbouo.com
             </a>
             .
           </p>
@@ -115,8 +115,8 @@ export default function PrivacyPage() {
           <ul style={ulStyle}>
             <li>
               <strong>E-mail :</strong>{' '}
-              <a href="mailto:me@alanbouo.com" style={linkStyle}>
-                me@alanbouo.com
+              <a href="mailto:contact@alanbouo.com" style={linkStyle}>
+                contact@alanbouo.com
               </a>
             </li>
           </ul>
