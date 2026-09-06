@@ -23,35 +23,23 @@ export default function Footer() {
           <div>
             <h3 style={{ color: 'white' }}>Me suivre</h3>
             <p>IA & cybersécurité vulgarisées. YouTube pour approfondir, X et LinkedIn pour les à-côtés.</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', margin: '1rem 0' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <a href="https://www.youtube.com/@alanbouo" className="social-icon" aria-label="YouTube tutorials"
-                   style={{ backgroundColor: 'white', padding: '8px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
-                  <i className="fa-brands fa-youtube" style={{ color: '#ff0000', fontSize: '18px' }}></i>
-                </a>
-                <Link href="https://www.youtube.com/@alanbouo" className="footer-link">Youtube</Link>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <a href="https://x.com/alanbouo" className="social-icon" aria-label="X threads discussion"
-                   style={{ backgroundColor: 'white', padding: '8px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
-                  <i className="fa-brands fa-x-twitter" style={{ color: '#1da1f2', fontSize: '18px' }}></i>
-                </a>
-                <Link href="https://x.com/alanbouo" className="footer-link">X</Link>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <a href="https://linkedin.com/in/alanbouo" className="social-icon" aria-label="LinkedIn articles"
-                   style={{ backgroundColor: 'white', padding: '8px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
-                  <i className="fa-brands fa-linkedin" style={{ color: '#0077b5', fontSize: '18px' }}></i>
-                </a>
-                <Link href="https://linkedin.com/in/alanbouo" className="footer-link">LinkedIn</Link>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <a href="https://github.com/alanbouo" className="social-icon" aria-label="GitHub repository"
-                   style={{ backgroundColor: 'white', padding: '8px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
-                  <i className="fa-brands fa-github" style={{ color: '#333', fontSize: '18px' }}></i>
-                </a>
-                <Link href="https://github.com/alanbouo" className="footer-link">GitHub</Link>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '1rem 0' }}>
+              <a href="https://www.youtube.com/@alanbouo" aria-label="YouTube"
+                 style={{ backgroundColor: 'white', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
+                <i className="fa-brands fa-youtube" style={{ color: '#ff0000', fontSize: '16px' }}></i>
+              </a>
+              <a href="https://x.com/alanbouo" aria-label="X"
+                 style={{ backgroundColor: 'white', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
+                <i className="fa-brands fa-x-twitter" style={{ color: '#1da1f2', fontSize: '16px' }}></i>
+              </a>
+              <a href="https://linkedin.com/in/alanbouo" aria-label="LinkedIn"
+                 style={{ backgroundColor: 'white', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
+                <i className="fa-brands fa-linkedin" style={{ color: '#0077b5', fontSize: '16px' }}></i>
+              </a>
+              <a href="https://github.com/alanbouo" aria-label="GitHub"
+                 style={{ backgroundColor: 'white', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
+                <i className="fa-brands fa-github" style={{ color: '#333', fontSize: '16px' }}></i>
+              </a>
             </div>
           </div>
           <div>
