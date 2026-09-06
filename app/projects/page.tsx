@@ -8,12 +8,15 @@ import { useState } from 'react'
 export default function ProjectsPage() {
   const projectsPerPage = 6
   const [currentPage, setCurrentPage] = useState(1)
-  const totalProjects = projectsData.length
+  const sortedProjects = [...projectsData].sort((a, b) =>
+    a.status === b.status ? 0 : a.status === 'shipped' ? -1 : 1
+  )
+  const totalProjects = sortedProjects.length
   const totalPages = Math.ceil(totalProjects / projectsPerPage)
 
   const startIndex = (currentPage - 1) * projectsPerPage
   const endIndex = startIndex + projectsPerPage
-  const displayedProjects = projectsData.slice(startIndex, endIndex)
+  const displayedProjects = sortedProjects.slice(startIndex, endIndex)
 
   const goToPreviousPage = () => {
     setCurrentPage(prev => Math.max(prev - 1, 1))
