@@ -307,52 +307,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* GitHub Backlog CTA */}
-      <section style={{
-        background: 'linear-gradient(135deg, #24292e 0%, #1a1e22 100%)',
-        padding: '4rem 1rem',
-        textAlign: 'center',
-        color: 'white'
-      }}>
-        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Envie de voir la suite ?</h2>
-          <p style={{ fontSize: '1.1rem', marginBottom: '2rem', opacity: 0.9 }}>
-            Jette un œil à mon backlog GitHub pour découvrir les prochaines initiatives IA et le travail en cours.
-          </p>
-          <a
-            href="https://github.com/users/alanbouo/projects/1"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              backgroundColor: '#ffffff',
-              color: '#24292e',
-              padding: '1.5rem 3rem',
-              borderRadius: '50px',
-              textDecoration: 'none',
-              fontWeight: 'bold',
-              fontSize: '1.2rem',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              boxShadow: '0 8px 25px rgba(255, 255, 255, 0.3)',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => {
-              const target = e.target as HTMLAnchorElement
-              target.style.backgroundColor = '#f6f8fa'
-              target.style.boxShadow = '0 12px 35px rgba(255, 255, 255, 0.4)'
-            }}
-            onMouseOut={(e) => {
-              const target = e.target as HTMLAnchorElement
-              target.style.backgroundColor = '#ffffff'
-              target.style.boxShadow = '0 8px 25px rgba(255, 255, 255, 0.3)'
-            }}
-          >
-            <i className="fab fa-github"></i>
-            Voir mon backlog
-          </a>
-        </div>
-      </section>
     </main>
   )
 }
