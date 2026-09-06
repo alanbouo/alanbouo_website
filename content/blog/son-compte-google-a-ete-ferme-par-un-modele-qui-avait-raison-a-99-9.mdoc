@@ -1,0 +1,61 @@
+---
+title: Son compte Google a été fermé par un modèle qui avait raison à 99,9 %
+description: >-
+  Une photo envoyée pour une téléconsultation médicale a fait perdre à un père
+  l'accès à son compte Google, malgré un non-lieu de la police. Le vrai problème
+  n'était pas le modèle de détection, mais ce que Google en a fait ensuite.
+date: 2026-09-06
+category: Cybersécurité
+tags:
+  - détection IA
+  - faux positifs
+  - vie privée
+  - Google
+  - ' point de défaillance unique'
+featured: false
+image: >-
+  /img/blog/son-compte-google-a-ete-ferme-par-un-modele-qui-avait-raison-a-99-9/image.png
+---
+# Quand un détecteur excellent produit des accusations infondées
+
+Nous sommes un vendredi soir, en février 2021, à San Francisco. L'enfant de Mark ne va pas bien. Avant la téléconsultation, une infirmière lui demande une photo de la zone concernée. Sa femme prend les clichés depuis le téléphone de Mark et se les envoie sur son propre iPhones. Rien d'inhabituel dans ce geste : des millions de parents font exactement la même chose avant d'aller chez le médecin.
+
+Sauvegarde automatique activée, les photos remontent sur Google Photos. Deux jours plus tard, le compte Google de Mark est verrouillé. Un signalement est parti vers le National Center for Missing & Exploited Children (NCMEC), qui l'a transmis à la police de San Francisco. Un enquêteur ouvre le dossier, l'examine, conclut à un non-lieu : les faits ne réunissent pas les éléments d'une infraction. Mark demande donc à récupérer son compte — des années de mails, de contacts, de photos de famille. Google refuse.
+
+Un autre cas, à Houston, se produit à un jour d'intervalle dans des circonstances similaires.
+
+Dans ce cas de figure, une réaction spontanée pourrait être de chercher le bug : un algorithme mal calibré, une erreur de classification isolée. Mais la question plus intéressante n'est pas celle-là. Le système s'est-il vraiment trompé — ou a-t-il fait exactement ce pour quoi il a été conçu, avec toutes les conséquences que cela implique appliqué à l'échelle d'un milliard de comptes ?
+
+## Deux technologies, une seule s'est déclenchée
+
+Une confusion circule régulièrement autour de ce type d'affaire : l'attribution à PhotoDNA, l'outil de hachage développé par Microsoft et largement utilisé dans l'industrie. Cependant, en l'occurence, Google documente deux briques technologiques distinctes, avec des rôles qui ne se recouvrent pas.
+
+La première est le hash matching. Le principe est simple : une image connue, déjà répertoriée dans une base de contenus identifiés comme illégaux, produit une empreinte numérique à laquelle est comparée l'empreinte de toute nouvelle photo. C'est rapide, fiable, et ça ne peut techniquement pas produire de faux positif sur un contenu inédit. En effet, par définition, une photo prise la veille sur un téléphone n'a pas d'empreinte connue.
+
+La seconde brique est un classifieur : un modèle entraîné à repérer des contenus jamais vus, dont les signalements passent ensuite par une revue humaine chez Google avant transmission aux autorités.
+
+Dans le cas de Mark, c'est probablement cette deuxième brique qui a déclenché le processus de signalement. En effet, selon l'Electronic Frontier Foundation, Google n'a pas examiné la seule image signalée mais l'intégralité de la bibliothèque de photos de Mark. On peut imaginer aisément l'utilisation d'un modèle probabiliste pour réaliser cette tâche.
+
+## Le paradoxe du dépistage
+
+Le problème de ce type d'analyse est que malgré l'utilisation de modèle très performants, les volumes analysés sont tellement grands que les faux positifs sont nécessairement extrêmement nombreux.
+
+Même en considérant un détecteur correct dans 99,9 % des cas, s'il est appliqué à un milliard de photos, pour un événement recherché qui concerne une photo sur dix millions, alors le calcul donne environ cent vrais positifs et un million de faux positifs (0,1 % d'erreur appliqué à un milliard de cas). Un détecteur peut être excellent sur le papier et produire, en volume absolu, très majoritairement des accusations infondées. Ce n'est pas un défaut de conception : ce sont les statistiques.
+
+## Ce qui a réellement cassé
+
+La problématique de cette affaire n'est pas technique, elle est organisationnelle. L'enquêteur en charge du dossier a tenté de joindre Mark pour l'entendre dans le cadre de son enquête. Impossible : Google avait déjà coupé l'accès à son adresse mail au moment même du signalement. La sanction avait précédé, et de fait empêché, la vérification qu'elle était censée déclencher.
+
+Le rapport de l'enquêteur est sans ambiguïté sur ce point : les faits ne réunissaient pas les éléments d'une infraction, et la police disposait déjà de tout ce que Google détenait pour en juger. Rien dans la chaîne ne nécessitait un accès supplémentaire à quoi que ce soit — ce qui manquait, c'était un canal pour contacter la personne accusée.
+
+L'obligation légale américaine oblige les plateformes à signaler tout contenu suspect au NCMEC dès qu'elles en ont connaissance. Elle explique pourquoi Google a signalé. Elle n'explique ni pourquoi Google a coupé l'accès de Mark à ses propres comptes avant tout jugement, ni pourquoi la plateforme a refusé toute voie de recours une fois le non-lieu rendu. Ce sont deux décisions distinctes, prises par l'entreprise, qui ne découlent d'aucune obligation légale.
+
+## La leçon, côté sécurité
+
+Ce que révèle vraiment cette affaire, ce n'est pas la fiabilité d'un modèle de détection — c'est une architecture de concentration. Un compte Google unique portait les mails, les contacts, les photos et l'accès à d'autres services de Mark. Un seul signal automatisé a suffi à couper l'ensemble d'un coup, sans étape intermédiaire ni recours immédiat. C'est un point de défaillance unique, exactement le type de risque qu'on documente en cybersécurité quand on parle de concentration excessive sur un seul fournisseur ou un seul compte.
+
+Le déclencheur lui-même est assez révélateur : une sauvegarde automatique, activée par défaut, sans intention ni conscience de l'utilisateur. Le geste qui a exposé Mark n'était pas un choix — c'était un paramètre par défaut agissant en arrière-plan.
+
+## Conclusion
+
+Cette affaire illustre un mécanisme qui dépasse largement le cas de Mark : un modèle peut afficher une précision impressionnante et produire, à l'échelle d'un milliard de comptes, un volume considérable d'erreurs — sans qu'aucune des deux affirmations ne contredise l'autre. Le problème ne se règle pas en améliorant encore le modèle ; il se règle dans ce qu'une organisation fait ensuite de ce signal probabiliste.
