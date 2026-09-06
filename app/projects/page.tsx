@@ -44,7 +44,7 @@ export default function ProjectsPage() {
             Ce que je construis
           </h1>
           <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '3rem', opacity: 0.9 }}>
-            Des projets IA à différents stades : certains déjà en production, d'autres encore en développement.
+            Tous mes projets IA — certains utilisables dès aujourd'hui, d'autres encore en chantier.
           </p>
           <Link href="/contact" style={{
             backgroundColor: '#FF9800',
