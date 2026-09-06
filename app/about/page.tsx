@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'À propos d\'Alan Bouo — Expert IA & cybersécurité, build in public',
-  description: "Alan Bouo, passionné d'IA & de cybersécurité. Je construis des produits et j'apprends en public, en rendant ces sujets accessibles. Créateur de ClawPilot, TubeChatAI, MemoMind, VibeX et VigilAI. Basé à Lyon, France."
+  title: 'À propos d\'Alan Bouo — Expert IA & cybersécurité',
+  description: "Alan Bouo, passionné d'IA & de cybersécurité. Je construis des produits et j'explique ce que j'apprends, en rendant ces sujets accessibles. Créateur de CookSmart, TubeChatAI, MemoMind et d'autres projets en cours. Basé à Lyon, France."
 }
 
 export default function AboutPage() {
@@ -29,9 +29,8 @@ export default function AboutPage() {
               Expert IA &amp; Cybersécurité
             </h2>
             <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '1.5rem', fontWeight: '500' }}>
-              Je construis des produits, seul, et je documente tout en public. Ce qui me motive :
-              comprendre, fabriquer des choses utiles, et pouvoir vivre de ce que je crée — en
-              gardant mon indépendance.
+              Je construis des produits, seul. Ce qui me motive : comprendre, fabriquer des choses
+              utiles, et pouvoir vivre de ce que je crée — en gardant mon indépendance.
             </p>
             <p style={{ fontSize: '17px', lineHeight: '1.7', marginBottom: '2rem', opacity: 0.92 }}>
               Ce qui me tient à cœur, c'est de rendre l'IA et la cybersécurité vraiment{' '}
@@ -40,14 +39,15 @@ export default function AboutPage() {
             </p>
 
             <div style={{ marginBottom: '2rem' }}>
-              <h3 style={{ fontSize: '18px', marginBottom: '1rem', color: 'rgba(255,255,255,0.9)' }}>Produits que je construis :</h3>
+              <h3 style={{ fontSize: '18px', marginBottom: '1rem', color: 'rgba(255,255,255,0.9)' }}>Projets que je construis :</h3>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '16px', lineHeight: '1.8' }}>
-                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://clawpilot.life" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>ClawPilot</a> — Ton IA personnelle sur WhatsApp</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>CookSmart</a> — Ton assistant IA pour cuisiner malin</li>
                 <li style={{ marginBottom: '0.5rem' }}>• <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>TubeChatAI</a> — Discuter avec n'importe quelle vidéo YouTube</li>
                 <li style={{ marginBottom: '0.5rem' }}>• <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>MemoMind</a> — Des insights à partir de tes mémos vocaux</li>
-                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://vibx.space" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>VibeX</a> — Outil de croissance IA pour X/Twitter</li>
-                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://vigilai.watch" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>VigilAI</a> — Surveillance de marque sur les assistants IA</li>
               </ul>
+              <Link href="/projects" style={{ color: '#ff6b35', textDecoration: 'none', fontWeight: 'bold', fontSize: '15px', display: 'inline-block', marginTop: '0.75rem' }}>
+                Voir tous mes projets →
+              </Link>
             </div>
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
@@ -169,9 +169,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #556B2F' }}>
-              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>📖 En transparence</h3>
+              <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>📖 Ma façon d'expliquer</h3>
               <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Je documente le parcours en public : décisions, avancées, doutes et ratés assumés.
+                J'explique avec honnêteté : mes choix, ce qui marche, ce qui a demandé des ajustements.
                 Sans version marketing.
               </p>
             </div>
