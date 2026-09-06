@@ -41,7 +41,7 @@ export default function ContactPage() {
             Une question sur l'IA, la cybersécurité, ou un projet à me proposer ? Écris-moi directement.
           </p>
           <a
-            href="mailto:me@alanbouo.com"
+            href="mailto:contact@alanbouo.com"
             style={{
               backgroundColor: '#FF9800',
               color: 'white',
@@ -57,7 +57,7 @@ export default function ContactPage() {
             }}
           >
             <i className="fas fa-envelope"></i>
-            me@alanbouo.com
+            contact@alanbouo.com
           </a>
         </div>
       </section>
