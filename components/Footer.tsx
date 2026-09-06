@@ -22,8 +22,7 @@ export default function Footer() {
         <div className="grid grid-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
           <div>
             <h3 style={{ color: 'white' }}>Me suivre</h3>
-            <p>IA & cybersécurité vulgarisées. YouTube pour approfondir, X et LinkedIn pour les à-côtés.</p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '1rem 0' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '1rem' }}>
               <a href="https://www.youtube.com/@alanbouo" aria-label="YouTube"
                  style={{ backgroundColor: 'white', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
                 <i className="fa-brands fa-youtube" style={{ color: '#ff0000', fontSize: '16px' }}></i>
@@ -45,11 +44,9 @@ export default function Footer() {
           <div>
             <h3 style={{ color: 'white' }}>Liens</h3>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <li><Link href="/" className="footer-link">Accueil</Link></li>
               <li><Link href="/projects" className="footer-link">Produits</Link></li>
               <li><Link href="/blog" className="footer-link">Blog</Link></li>
               <li><Link href="/about" className="footer-link">À propos</Link></li>
-              <li><Link href="/contact" className="footer-link">Contact</Link></li>
               <li><Link href="/privacy" className="footer-link">Confidentialité</Link></li>
             </ul>
           </div>
