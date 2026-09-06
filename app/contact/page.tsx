@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function ContactPage() {
   return (
     <main>
@@ -39,18 +37,37 @@ export default function ContactPage() {
           <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)', marginBottom: '1rem', lineHeight: '1.2' }}>
             Connectons-nous
           </h1>
-          <p style={{ fontSize: 'clamp(1rem, 4vw, 1.3rem)', opacity: 0.9, margin: '0 auto 3rem', maxWidth: '700px' }}>
-            Rejoins-moi sur les réseaux pour parler IA, cybersécurité et build in public.
+          <p style={{ fontSize: 'clamp(1rem, 4vw, 1.3rem)', opacity: 0.9, margin: '0 auto 2.5rem', maxWidth: '700px' }}>
+            Une question sur l'IA, la cybersécurité, ou un projet à me proposer ? Écris-moi directement.
           </p>
+          <a
+            href="mailto:me@alanbouo.com"
+            style={{
+              backgroundColor: '#FF9800',
+              color: 'white',
+              padding: '1rem 2.5rem',
+              borderRadius: '50px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              fontSize: '1.1rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              boxShadow: '0 8px 25px rgba(255, 152, 0, 0.4)'
+            }}
+          >
+            <i className="fas fa-envelope"></i>
+            me@alanbouo.com
+          </a>
         </div>
       </section>
 
       {/* Social Media Section */}
       <section style={{ padding: '4rem 1rem', backgroundColor: '#667eea', color: 'white', textAlign: 'center' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <h2 style={{ marginBottom: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Suis mon parcours</h2>
+          <h2 style={{ marginBottom: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Me suivre</h2>
           <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', marginBottom: '3rem', opacity: '0.9', maxWidth: '640px', margin: '0 auto 3rem' }}>
-            X pour le journal de bord au quotidien, YouTube pour approfondir l'IA et la cybersécurité, LinkedIn pour échanger avec celles et ceux qui construisent.
+            YouTube pour approfondir l'IA et la cybersécurité, X et LinkedIn pour les à-côtés.
           </p>
 
           <div className="social-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
@@ -99,7 +116,7 @@ export default function ContactPage() {
             >
               <i className="fa-brands fa-x-twitter" style={{ fontSize: '48px', marginBottom: '1rem' }}></i>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>X</h3>
-              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Le journal de bord au quotidien</p>
+              <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Ce qui avance, ce qui se décide</p>
             </a>
 
             <a
@@ -175,33 +192,6 @@ export default function ContactPage() {
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>Newsletter</h3>
               <p style={{ fontSize: '0.9rem', opacity: '0.8', margin: 0 }}>Le parcours dans ta boîte mail</p>
             </a>
-          </div>
-
-          <div style={{ marginTop: '3rem' }}>
-{/*             <p style={{ fontSize: '1.1rem', opacity: '0.9', marginBottom: '2rem' }}>
-              💡 <strong>Pro tip:</strong> Follow me on multiple platforms to get the full spectrum of content -
-              from deep technical tutorials on YouTube to quick insights on X!
-            </p> */}
-            {/* <Link
-              href="/blog"
-              style={{
-                backgroundColor: 'white',
-                color: '#667eea',
-                padding: '1rem 2rem',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-                fontSize: '1.1rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                boxShadow: '0 4px 15px rgba(255, 255, 255, 0.3)',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <i className="fas fa-arrow-left"></i>
-              Back to Blog
-            </Link> */}
           </div>
         </div>
       </section>
