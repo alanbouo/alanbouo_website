@@ -7,7 +7,8 @@
     "color": "#25D366",
     "tags": ["WhatsApp", "Assistant IA", "IA personnelle"],
     "link": "https://clawpilot.life",
-    "external": true
+    "external": true,
+    "status": "early"
   },
   {
     "id": "tubechatai",
@@ -17,7 +18,8 @@
     "color": "#FF0000",
     "tags": ["YouTube", "LLM", "Apprentissage"],
     "link": "https://tubechatai.xyz",
-    "external": true
+    "external": true,
+    "status": "shipped"
   },
   {
     "id": "memomind",
@@ -27,7 +29,8 @@
     "color": "#667eea",
     "tags": ["IA vocale", "Notes", "Productivité"],
     "link": "https://memomind.space",
-    "external": true
+    "external": true,
+    "status": "shipped"
   },
   {
     "id": "vibex",
@@ -37,7 +40,8 @@
     "color": "#1DA1F2",
     "tags": ["X/Twitter", "Croissance", "Analytics"],
     "link": "https://vibx.space",
-    "external": true
+    "external": true,
+    "status": "early"
   },
   {
     "id": "vigilai",
@@ -47,7 +51,8 @@
     "color": "#8b2e8b",
     "tags": ["Surveillance de marque", "Visibilité IA", "Analytics"],
     "link": "https://vigilai.watch",
-    "external": true
+    "external": true,
+    "status": "early"
   },
   {
     "id": "cooksmart",
@@ -57,6 +62,7 @@
     "color": "#FF6B35",
     "tags": ["Cuisine", "IA", "Recettes"],
     "link": "https://cooksmart.app",
-    "external": true
+    "external": true,
+    "status": "shipped"
   }
 ]

@@ -294,7 +294,7 @@ export default function HomePage() {
             Ce que je construis
           </h2>
           <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', maxWidth: '640px', margin: '0 auto 3rem' }}>
-            Des produits propulsés par l'IA, expédiés et documentés en public
+            Des produits propulsés par l'IA, conçus et expédiés du début à la fin
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -428,7 +428,7 @@ export default function HomePage() {
               fontWeight: 'bold',
               fontSize: '1rem'
             }}>
-              Voir tous mes produits →
+              Voir tous mes projets →
             </Link>
           </div>
         </div>

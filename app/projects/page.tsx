@@ -5,7 +5,7 @@ import Image from 'next/image'
 import projectsData from '../../data/projects.json'
 import { useState } from 'react'
 
-export default function ServicesPage() {
+export default function ProjectsPage() {
   const projectsPerPage = 6
   const [currentPage, setCurrentPage] = useState(1)
   const totalProjects = projectsData.length
@@ -41,7 +41,7 @@ export default function ServicesPage() {
             Ce que je construis
           </h1>
           <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '3rem', opacity: 0.9 }}>
-            Des produits IA expédiés et documentés en public.
+            Des projets IA à différents stades : certains déjà en production, d'autres encore en développement.
           </p>
           <Link href="/contact" style={{
             backgroundColor: '#FF9800',
@@ -67,10 +67,10 @@ export default function ServicesPage() {
       <section style={{ padding: '4rem 1rem', backgroundColor: 'white' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#333' }}>
-            Produits lancés
+            Mes projets
           </h2>
           <p style={{ textAlign: 'center', marginBottom: '3rem', color: '#666', fontSize: '18px' }}>
-            Lequel est ton préféré ?
+            Certains sont disponibles dès aujourd'hui, d'autres sont encore en développement.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {displayedProjects.map((project) => {
@@ -146,6 +146,18 @@ export default function ServicesPage() {
                 }}>
                   <div style={{ textAlign: 'center', marginBottom: '1.5rem', flex: 1 }}>
                     <div style={{
+                    display: 'inline-block',
+                    marginBottom: '1rem',
+                    backgroundColor: project.status === 'shipped' ? '#e6f7ed' : '#fff3e0',
+                    color: project.status === 'shipped' ? '#1a7a42' : '#b56600',
+                    padding: '0.25rem 0.75rem',
+                    borderRadius: '20px',
+                    fontSize: '11px',
+                    fontWeight: 'bold'
+                  }}>
+                    {project.status === 'shipped' ? 'Disponible' : 'En développement'}
+                  </div>
+                  <div style={{
                       width: '60px',
                       height: '60px',
                       background: project.id === 'tubechatai' ? 'linear-gradient(135deg, #FF0000 0%, #CC0000 100%)' :
@@ -193,7 +205,7 @@ export default function ServicesPage() {
                       display: 'inline-block',
                       fontSize: '14px'
                     }}>
-                      Voir le produit
+                      Voir le projet
                     </Link>
                   </div>
                 </div>

@@ -44,7 +44,7 @@ export default function Footer() {
           <div>
             <h3 style={{ color: 'white' }}>Liens</h3>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <li><Link href="/projects" className="footer-link">Produits</Link></li>
+              <li><Link href="/projects" className="footer-link">Projets</Link></li>
               <li><Link href="/blog" className="footer-link">Blog</Link></li>
               <li><Link href="/about" className="footer-link">À propos</Link></li>
               <li><Link href="/privacy" className="footer-link">Confidentialité</Link></li>
