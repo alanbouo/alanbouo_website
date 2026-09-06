@@ -29,13 +29,12 @@ export default function AboutPage() {
               Expert IA &amp; Cybersécurité
             </h2>
             <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '1.5rem', fontWeight: '500' }}>
-              Je construis des produits, seul. Ce qui me motive : comprendre, fabriquer des choses
-              utiles, et pouvoir vivre de ce que je crée — en gardant mon indépendance.
+              Ce qui me motive : comprendre comment les choses marchent, et fabriquer des choses
+              utiles.
             </p>
             <p style={{ fontSize: '17px', lineHeight: '1.7', marginBottom: '2rem', opacity: 0.92 }}>
               Ce qui me tient à cœur, c'est de rendre l'IA et la cybersécurité vraiment{' '}
-              <strong>accessibles</strong>. J'explique en français, simplement, ce que je comprends —
-              parce que c'est ma langue et que peu de gens le font sur ces sujets.
+              <strong>accessibles</strong>. J'explique simplement ce que je comprends.
             </p>
 
             <div style={{ marginBottom: '2rem' }}>
@@ -152,7 +151,7 @@ export default function AboutPage() {
             <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #6A1B9A' }}>
               <h3 style={{ color: '#333', marginBottom: '0.75rem' }}>🎯 Ce qui me motive</h3>
               <p style={{ color: '#666', lineHeight: '1.7' }}>
-                Comprendre, fabriquer des choses utiles, et vivre de ce que je crée en gardant mon indépendance.
+                Comprendre comment les choses marchent, et fabriquer des choses utiles.
               </p>
             </div>
             <div style={{ backgroundColor: '#f8f9fa', padding: '2rem', borderRadius: '10px', borderLeft: '4px solid #667eea' }}>
