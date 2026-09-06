@@ -29,12 +29,12 @@ export default function AboutPage() {
               Expert IA &amp; Cybersécurité
             </h2>
             <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '1.5rem', fontWeight: '500' }}>
-              Ce qui me motive : comprendre comment les choses marchent, et fabriquer des choses
-              utiles.
+              J'aime comprendre comment les choses marchent, et fabriquer des choses utiles à
+              partir de ce que j'apprends.
             </p>
             <p style={{ fontSize: '17px', lineHeight: '1.7', marginBottom: '2rem', opacity: 0.92 }}>
-              Ce qui me tient à cœur, c'est de rendre l'IA et la cybersécurité vraiment{' '}
-              <strong>accessibles</strong>. J'explique simplement ce que je comprends.
+              Je m'attache à rendre l'IA et la cybersécurité vraiment{' '}
+              <strong>accessibles</strong>, en expliquant simplement ce que je comprends.
             </p>
 
             <div style={{ marginBottom: '2rem' }}>
