@@ -30,7 +30,7 @@ export default function ProjectsPage() {
     <main>
       {/* Hero Section */}
       <section style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)',
         padding: '4rem 1rem',
         textAlign: 'center',
         color: 'white',
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
             Tous mes projets IA — certains utilisables dès aujourd'hui, d'autres encore en chantier.
           </p>
           <Link href="/contact" style={{
-            backgroundColor: '#FF9800',
+            backgroundColor: 'var(--cta-yellow)',
             color: 'white',
             padding: '1.2rem 3rem',
             borderRadius: '50px',
@@ -78,10 +78,10 @@ export default function ProjectsPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {displayedProjects.map((project) => {
               const tagBackgroundColor = project.id === 'tubechatai' ? '#fff0f0' :
-                                       project.id === 'memomind' ? '#f0f4ff' :
+                                       project.id === 'memomind' ? '#EDF1F2' :
                                        project.id === 'vibex' ? '#f0f9ff' :
                                        project.id === 'clawpilot' ? '#f0fff4' :
-                                       project.id === 'cooksmart' ? '#fff4ed' :
+                                       project.id === 'cooksmart' ? '#F7EEDD' :
                                        '#fdf2ff'
 
               const getIcon = (id: string) => {
@@ -164,10 +164,10 @@ export default function ProjectsPage() {
                       width: '60px',
                       height: '60px',
                       background: project.id === 'tubechatai' ? 'linear-gradient(135deg, #FF0000 0%, #CC0000 100%)' :
-                                 project.id === 'memomind' ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' :
+                                 project.id === 'memomind' ? 'linear-gradient(135deg, #5B7A87 0%, #3E5560 100%)' :
                                  project.id === 'vibex' ? 'linear-gradient(135deg, #1DA1F2 0%, #0d8ecf 100%)' :
                                  project.id === 'clawpilot' ? 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)' :
-                                 project.id === 'cooksmart' ? 'linear-gradient(135deg, #FF6B35 0%, #CC4A1A 100%)' :
+                                 project.id === 'cooksmart' ? 'linear-gradient(135deg, var(--cta-yellow) 0%, #CC4A1A 100%)' :
                                  'linear-gradient(135deg, #8b2e8b 0%, #6f1e6f 100%)',
                       borderRadius: '50%',
                       display: 'inline-flex',
@@ -199,7 +199,7 @@ export default function ProjectsPage() {
                   </div>
                   <div style={{ textAlign: 'center', marginTop: 'auto' }}>
                     <Link href={project.link} style={{
-                      backgroundColor: '#FF9800',
+                      backgroundColor: 'var(--cta-yellow)',
                       color: 'white',
                       padding: '0.5rem 1rem',
                       borderRadius: '6px',
@@ -224,7 +224,7 @@ export default function ProjectsPage() {
                   onClick={goToPreviousPage}
                   disabled={currentPage === 1}
                   style={{
-                    backgroundColor: currentPage === 1 ? '#e2e8f0' : '#667eea',
+                    backgroundColor: currentPage === 1 ? '#e2e8f0' : '#5B7A87',
                     color: currentPage === 1 ? '#94a3b8' : 'white',
                     border: 'none',
                     borderRadius: '50%',
@@ -235,21 +235,21 @@ export default function ProjectsPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: currentPage === 1 ? 'none' : '0 4px 15px rgba(102, 126, 234, 0.4)',
+                    boxShadow: currentPage === 1 ? 'none' : '0 4px 15px rgba(91, 122, 135, 0.4)',
                     transition: 'all 0.3s ease'
                   }}
                   onMouseOver={(e) => {
                     if (currentPage !== 1) {
                       const target = e.target as HTMLButtonElement
                       target.style.backgroundColor = '#5a67d8'
-                      target.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.6)'
+                      target.style.boxShadow = '0 6px 20px rgba(91, 122, 135, 0.6)'
                     }
                   }}
                   onMouseOut={(e) => {
                     if (currentPage !== 1) {
                       const target = e.target as HTMLButtonElement
-                      target.style.backgroundColor = '#667eea'
-                      target.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.4)'
+                      target.style.backgroundColor = '#5B7A87'
+                      target.style.boxShadow = '0 4px 15px rgba(91, 122, 135, 0.4)'
                     }
                   }}
                 >
@@ -270,7 +270,7 @@ export default function ProjectsPage() {
                   onClick={goToNextPage}
                   disabled={currentPage === totalPages}
                   style={{
-                    backgroundColor: currentPage === totalPages ? '#e2e8f0' : '#667eea',
+                    backgroundColor: currentPage === totalPages ? '#e2e8f0' : '#5B7A87',
                     color: currentPage === totalPages ? '#94a3b8' : 'white',
                     border: 'none',
                     borderRadius: '50%',
@@ -281,21 +281,21 @@ export default function ProjectsPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: currentPage === totalPages ? 'none' : '0 4px 15px rgba(102, 126, 234, 0.4)',
+                    boxShadow: currentPage === totalPages ? 'none' : '0 4px 15px rgba(91, 122, 135, 0.4)',
                     transition: 'all 0.3s ease'
                   }}
                   onMouseOver={(e) => {
                     if (currentPage !== totalPages) {
                       const target = e.target as HTMLButtonElement
                       target.style.backgroundColor = '#5a67d8'
-                      target.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.6)'
+                      target.style.boxShadow = '0 6px 20px rgba(91, 122, 135, 0.6)'
                     }
                   }}
                   onMouseOut={(e) => {
                     if (currentPage !== totalPages) {
                       const target = e.target as HTMLButtonElement
-                      target.style.backgroundColor = '#667eea'
-                      target.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.4)'
+                      target.style.backgroundColor = '#5B7A87'
+                      target.style.boxShadow = '0 4px 15px rgba(91, 122, 135, 0.4)'
                     }
                   }}
                 >

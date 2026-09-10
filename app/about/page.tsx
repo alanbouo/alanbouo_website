@@ -11,7 +11,7 @@ export default function AboutPage() {
     <main>
       {/* Hero Section */}
       <section className="hero-section" style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)',
         padding: '4rem 1rem',
         color: 'white',
         minHeight: '60vh',
@@ -40,18 +40,18 @@ export default function AboutPage() {
             <div style={{ marginBottom: '2rem' }}>
               <h3 style={{ fontSize: '18px', marginBottom: '1rem', color: 'rgba(255,255,255,0.9)' }}>Projets que je construis :</h3>
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '16px', lineHeight: '1.8' }}>
-                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>CookSmart</a> — Ton assistant IA pour cuisiner malin</li>
-                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>TubeChatAI</a> — Discuter avec n'importe quelle vidéo YouTube</li>
-                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{ color: '#ff6b35', textDecoration: 'none' }}>MemoMind</a> — Des insights à partir de tes mémos vocaux</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-yellow)', textDecoration: 'none' }}>CookSmart</a> — Ton assistant IA pour cuisiner malin</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-yellow)', textDecoration: 'none' }}>TubeChatAI</a> — Discuter avec n'importe quelle vidéo YouTube</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-yellow)', textDecoration: 'none' }}>MemoMind</a> — Des insights à partir de tes mémos vocaux</li>
               </ul>
-              <Link href="/projects" style={{ color: '#ff6b35', textDecoration: 'none', fontWeight: 'bold', fontSize: '15px', display: 'inline-block', marginTop: '0.75rem' }}>
+              <Link href="/projects" style={{ color: 'var(--cta-yellow)', textDecoration: 'none', fontWeight: 'bold', fontSize: '15px', display: 'inline-block', marginTop: '0.75rem' }}>
                 Voir tous mes projets →
               </Link>
             </div>
 
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
             <Link href="/contact" style={{
-              backgroundColor: '#FF9800',
+              backgroundColor: 'var(--cta-yellow)',
               color: 'white',
               padding: '1rem 2rem',
               borderRadius: '50px',
@@ -118,8 +118,8 @@ export default function AboutPage() {
               height: '320px',
               borderRadius: '50%',
               overflow: 'hidden',
-              border: '6px solid #ff6b35',
-              boxShadow: '0 15px 50px rgba(255, 107, 53, 0.4)',
+              border: '6px solid var(--cta-yellow)',
+              boxShadow: '0 15px 50px rgba(201, 154, 78, 0.4)',
               margin: '0 auto',
               transition: 'transform 0.3s ease'
             }} className="profile-image-hover">
@@ -154,13 +154,13 @@ export default function AboutPage() {
               padding: '2rem',
               borderRadius: '10px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              borderLeft: '4px solid #667eea'
+              borderLeft: '4px solid #5B7A87'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                <i className="fas fa-certificate" style={{ color: '#667eea', fontSize: '24px', marginRight: '1rem' }}></i>
+                <i className="fas fa-certificate" style={{ color: '#5B7A87', fontSize: '24px', marginRight: '1rem' }}></i>
                 <div>
                   <h3 style={{ color: '#333', margin: 0 }}>Google Cybersecurity Professional Certificate</h3>
-                  <p style={{ color: '#667eea', margin: '0.5rem 0' }}>2024</p>
+                  <p style={{ color: '#5B7A87', margin: '0.5rem 0' }}>2024</p>
                 </div>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
@@ -173,13 +173,13 @@ export default function AboutPage() {
               padding: '2rem',
               borderRadius: '10px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              borderLeft: '4px solid #667eea'
+              borderLeft: '4px solid #5B7A87'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                <i className="fas fa-graduation-cap" style={{ color: '#667eea', fontSize: '24px', marginRight: '1rem' }}></i>
+                <i className="fas fa-graduation-cap" style={{ color: '#5B7A87', fontSize: '24px', marginRight: '1rem' }}></i>
                 <div>
                   <h3 style={{ color: '#333', margin: 0 }}>Certificat d'études spécialisées en Intelligence Artificielle</h3>
-                  <p style={{ color: '#667eea', margin: '0.5rem 0' }}>Télécom Paris, France — 2020</p>
+                  <p style={{ color: '#5B7A87', margin: '0.5rem 0' }}>Télécom Paris, France — 2020</p>
                 </div>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
@@ -192,13 +192,13 @@ export default function AboutPage() {
               padding: '2rem',
               borderRadius: '10px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              borderLeft: '4px solid #667eea'
+              borderLeft: '4px solid #5B7A87'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                <i className="fas fa-graduation-cap" style={{ color: '#667eea', fontSize: '24px', marginRight: '1rem' }}></i>
+                <i className="fas fa-graduation-cap" style={{ color: '#5B7A87', fontSize: '24px', marginRight: '1rem' }}></i>
                 <div>
                   <h3 style={{ color: '#333', margin: 0 }}>Master of Science in Energy Systems Management</h3>
-                  <p style={{ color: '#667eea', margin: '0.5rem 0' }}>University College London, UK — 2011</p>
+                  <p style={{ color: '#5B7A87', margin: '0.5rem 0' }}>University College London, UK — 2011</p>
                 </div>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
@@ -211,13 +211,13 @@ export default function AboutPage() {
               padding: '2rem',
               borderRadius: '10px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-              borderLeft: '4px solid #667eea'
+              borderLeft: '4px solid #5B7A87'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                <i className="fas fa-graduation-cap" style={{ color: '#667eea', fontSize: '24px', marginRight: '1rem' }}></i>
+                <i className="fas fa-graduation-cap" style={{ color: '#5B7A87', fontSize: '24px', marginRight: '1rem' }}></i>
                 <div>
                   <h3 style={{ color: '#333', margin: 0 }}>Diplôme d'ingénieur</h3>
-                  <p style={{ color: '#667eea', margin: '0.5rem 0' }}>CentraleSupélec, France — 2011</p>
+                  <p style={{ color: '#5B7A87', margin: '0.5rem 0' }}>CentraleSupélec, France — 2011</p>
                 </div>
               </div>
               <p style={{ color: '#666', lineHeight: '1.6' }}>

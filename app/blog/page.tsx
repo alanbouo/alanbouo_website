@@ -29,7 +29,7 @@ export default function BlogPage() {
   return (
     <main>
         {/* Header */}
-        <section className="blog-header" style={{ padding: '3rem 1rem', background: 'linear-gradient(135deg, #6A1B9A 0%, #9C27B0 100%)', color: 'var(--white)', textAlign: 'center' }}>
+        <section className="blog-header" style={{ padding: '3rem 1rem', background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)', color: 'var(--white)', textAlign: 'center' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h1>Le blog</h1>
             <p style={{ fontSize: '18px', marginTop: '1rem' }}>
@@ -108,7 +108,7 @@ export default function BlogPage() {
                     <Link
                       href={`/blog/${featuredPost.slug}`}
                       style={{
-                        backgroundColor: '#FF9800',
+                        backgroundColor: 'var(--cta-yellow)',
                         color: 'var(--white)',
                         padding: '1rem 2rem',
                         borderRadius: '8px',
@@ -176,7 +176,7 @@ export default function BlogPage() {
                         <span><i className="fas fa-clock" style={{ marginRight: '0.3rem' }}></i>{post.readingTime} min de lecture</span>
                         <Link
                           href={`/blog/${post.slug}`}
-                          style={{ color: '#FF9800', textDecoration: 'none', fontWeight: 'bold' }}
+                          style={{ color: 'var(--cta-yellow)', textDecoration: 'none', fontWeight: 'bold' }}
                         >
                           Lire <i className="fas fa-arrow-right" style={{ marginLeft: '0.3rem', fontSize: '12px' }}></i>
                         </Link>
@@ -267,7 +267,7 @@ export default function BlogPage() {
         {/* CTA Section */}
         <section className="blog-cta-section" style={{
           padding: '4rem 1rem',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)',
           color: 'var(--white)',
           textAlign: 'center'
         }}>
@@ -280,7 +280,7 @@ export default function BlogPage() {
               href="/contact"
               className="blog-cta-button"
               style={{
-                backgroundColor: '#FF9800',
+                backgroundColor: 'var(--cta-yellow)',
                 color: 'var(--white)',
                 padding: '1.5rem 3rem',
                 borderRadius: '50px',

@@ -4,7 +4,7 @@ export default function ContactPage() {
 
       {/* Hero Section */}
       <section style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)',
         padding: '3rem 1rem',
         textAlign: 'center',
         color: 'white',
@@ -43,7 +43,7 @@ export default function ContactPage() {
           <a
             href="mailto:contact@alanbouo.com"
             style={{
-              backgroundColor: '#FF9800',
+              backgroundColor: 'var(--cta-yellow)',
               color: 'white',
               padding: '1rem 2.5rem',
               borderRadius: '50px',
@@ -63,7 +63,7 @@ export default function ContactPage() {
       </section>
 
       {/* Social Media Section */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: '#667eea', color: 'white', textAlign: 'center' }}>
+      <section style={{ padding: '4rem 1rem', backgroundColor: '#5B7A87', color: 'white', textAlign: 'center' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <h2 style={{ marginBottom: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Me suivre</h2>
           <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', marginBottom: '3rem', opacity: '0.9', maxWidth: '640px', margin: '0 auto 3rem' }}>
@@ -77,7 +77,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               style={{
                 backgroundColor: 'white',
-                color: '#667eea',
+                color: '#5B7A87',
                 padding: '2rem 1rem',
                 borderRadius: '15px',
                 textDecoration: 'none',
@@ -101,7 +101,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               style={{
                 backgroundColor: 'white',
-                color: '#667eea',
+                color: '#5B7A87',
                 padding: '2rem 1rem',
                 borderRadius: '15px',
                 textDecoration: 'none',
@@ -125,7 +125,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               style={{
                 backgroundColor: 'white',
-                color: '#667eea',
+                color: '#5B7A87',
                 padding: '2rem 1rem',
                 borderRadius: '15px',
                 textDecoration: 'none',
@@ -149,7 +149,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               style={{
                 backgroundColor: 'white',
-                color: '#667eea',
+                color: '#5B7A87',
                 padding: '2rem 1rem',
                 borderRadius: '15px',
                 textDecoration: 'none',
@@ -173,7 +173,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               style={{
                 backgroundColor: 'white',
-                color: '#667eea',
+                color: '#5B7A87',
                 padding: '2rem 1rem',
                 borderRadius: '15px',
                 textDecoration: 'none',
@@ -186,7 +186,7 @@ export default function ContactPage() {
               }}
               aria-label="Subscribe to Alanbouo's Newsletter"
             >
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="#667eea" style={{ marginBottom: '1rem' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="#5B7A87" style={{ marginBottom: '1rem' }}>
                 <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
               </svg>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.2rem' }}>Newsletter</h3>
