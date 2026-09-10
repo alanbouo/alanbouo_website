@@ -10,7 +10,7 @@ export default function ActivitiesPage() {
     <main style={{ backgroundColor: 'var(--white)', minHeight: '100vh' }}>
       {/* Hero Section */}
       <section style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)',
         padding: '4rem 1rem',
         textAlign: 'center',
         color: 'white'
@@ -273,7 +273,7 @@ export default function ActivitiesPage() {
               border: '1px solid #e9ecef'
             }}>
               <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                <span style={{ backgroundColor: '#FF9800', color: 'white', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>
+                <span style={{ backgroundColor: 'var(--cta-yellow)', color: 'white', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>
                   BUILD IN PUBLIC
                 </span>
               </div>

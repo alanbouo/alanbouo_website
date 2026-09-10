@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Libre+Franklin:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-blue: #001F3F;
-  --tech-green: #556B2F;
-  --cta-yellow: #DAA520;
+  /* Identité DA "presque-noir opérationnel" (voir alanbouo-pilotage/chaine.md) */
+  --primary-blue: #14181C;   /* base sombre, plus noir pur */
+  --surface-dark-alt: #1D2329;
+  --tech-green: #5B7A87;     /* accent secondaire bleu-gris */
+  --cta-yellow: #C99A4E;     /* accent ambre — référence terminal CRT */
   --white: #FFFFFF;
   --light-gray: #F5F5F5;
-  --text-color: #333333;
+  --text-color: #1B1F23;
   --line-height: 1.6;
+  --font-display: 'JetBrains Mono', ui-monospace, monospace;
+  --font-body: 'Libre Franklin', system-ui, sans-serif;
 }
 
 * {
@@ -17,7 +21,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: var(--line-height);
   color: var(--text-color);
@@ -25,7 +29,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-display);
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
@@ -53,7 +57,7 @@ button, a {
 }
 
 .cta {
-  background-color: #FF9800;
+  background-color: var(--cta-yellow);
   color: var(--primary-blue);
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -64,9 +68,9 @@ button, a {
 }
 
 .cta:hover {
-  background-color: #F57C00;
+  background-color: #A8793F;
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+  box-shadow: 0 0 10px rgba(201, 154, 78, 0.5);
 }
 
 .fade-glow {
@@ -74,7 +78,7 @@ button, a {
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(218, 165, 32, 0.8);
+  box-shadow: 0 0 20px rgba(201, 154, 78, 0.8);
   transform: scale(1.02);
 }
 
@@ -117,10 +121,10 @@ button, a {
 /* Animation Keyframes */
 @keyframes pulseGlow {
   0%, 100% {
-    text-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+    text-shadow: 0 0 10px rgba(201, 154, 78, 0.3);
   }
   50% {
-    text-shadow: 0 0 20px rgba(218, 165, 32, 0.8);
+    text-shadow: 0 0 20px rgba(201, 154, 78, 0.8);
   }
 }
 
@@ -191,7 +195,7 @@ button, a {
 .cta:hover {
   background-color: var(--tech-green);
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+  box-shadow: 0 0 10px rgba(201, 154, 78, 0.5);
 }
 
 .nav-link {
@@ -231,7 +235,7 @@ button, a {
 /* Profile Styles */
 .profile-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 40px rgba(218, 165, 32, 0.5);
+  box-shadow: 0 12px 40px rgba(201, 154, 78, 0.5);
 }
 
 @media (max-width: 768px) {

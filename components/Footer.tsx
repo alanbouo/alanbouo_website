@@ -7,13 +7,13 @@ export default function Footer() {
     <footer
       tabIndex={0}
       style={{
-        backgroundColor: '#1a0a2e',
-        color: '#d8d0e0',
+        backgroundColor: 'var(--primary-blue)',
+        color: '#A9B4B9',
         padding: '2rem 1rem',
         marginTop: '20px',
         width: '100%',
         position: 'relative',
-        borderTop: '1px solid #6A1B9A'
+        borderTop: '1px solid var(--cta-yellow)'
       }}
     >
       {/* Footer Content */}
@@ -60,8 +60,8 @@ export default function Footer() {
               style={{
                 display: 'inline-block',
                 marginTop: '1rem',
-                backgroundColor: '#ff6b35',
-                color: 'white',
+                backgroundColor: 'var(--cta-yellow)',
+                color: 'var(--primary-blue)',
                 border: 'none',
                 padding: '0.6rem 1.2rem',
                 borderRadius: '4px',
@@ -76,12 +76,12 @@ export default function Footer() {
         <div style={{
           textAlign: 'center',
           marginTop: '2rem',
-          borderTop: '1px solid #4a2a6a',
+          borderTop: '1px solid rgba(255, 255, 255, 0.12)',
           paddingTop: '1rem',
-          fontFamily: 'Roboto, sans-serif',
+          fontFamily: 'var(--font-body)',
           fontSize: '14px'
         }}>
-            <p style={{ color: '#c0b8cc', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2026 Alan Bouo. Tous droits réservés. <em style={{ color: '#ffffff' }}>Rendre l'IA et la cybersécurité accessibles, un produit à la fois.</em></p>
+            <p style={{ color: '#8A9499', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2026 Alan Bouo. Tous droits réservés. <em style={{ color: '#ffffff' }}>Rendre l'IA et la cybersécurité accessibles, un produit à la fois.</em></p>
         </div>
       </div>
 
@@ -103,17 +103,17 @@ export default function Footer() {
         }
 
         footer :global(.footer-link) {
-          color: #d8d0e0;
+          color: #A9B4B9;
           text-decoration: none;
           transition: color 0.2s ease;
         }
 
         footer :global(.footer-link:hover) {
-          color: #ff6b35;
+          color: var(--cta-yellow);
         }
 
         footer:focus, footer:has(*:focus) {
-          outline: 2px solid #ff6b35;
+          outline: 2px solid var(--cta-yellow);
           outline-offset: 2px;
         }
       `}</style>

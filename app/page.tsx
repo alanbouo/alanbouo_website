@@ -11,7 +11,7 @@ export default function HomePage() {
       <section
         className="hero-section"
         style={{
-          background: 'linear-gradient(135deg, #6A1B9A 0%, #9C27B0 100%)',
+          background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)',
           padding: '6rem 1rem 4rem',
           textAlign: 'center',
           color: 'white',
@@ -35,7 +35,7 @@ export default function HomePage() {
             padding: '0 1rem'
           }}>
             Rendre l'IA et la cybersécurité<br />
-            <span style={{ color: '#ff6b35' }}>accessibles</span>
+            <span style={{ color: 'var(--cta-yellow)' }}>accessibles</span>
           </h1>
           <p style={{
             fontSize: 'clamp(1rem, 4vw, 1.3rem)',
@@ -51,7 +51,7 @@ export default function HomePage() {
           <Link
             href="/blog"
             style={{
-              backgroundColor: '#FF9800',
+              backgroundColor: 'var(--cta-yellow)',
               color: 'white',
               fontSize: '1.4rem',
               padding: '1.5rem 3rem',
@@ -138,7 +138,7 @@ export default function HomePage() {
               href="/projects"
               style={{
                 backgroundColor: 'white',
-                color: '#667eea',
+                color: '#5B7A87',
                 padding: '1rem 2rem',
                 borderRadius: '8px',
                 textDecoration: 'none',
@@ -201,16 +201,17 @@ export default function HomePage() {
         <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
           <span style={{
             display: 'inline-block',
-            backgroundColor: '#f3e8ff',
-            color: '#6A1B9A',
+            backgroundColor: '#EDF1F2',
+            color: 'var(--tech-green)',
             padding: '0.4rem 1rem',
-            borderRadius: '20px',
+            borderRadius: '4px',
             fontSize: '0.85rem',
+            fontFamily: 'var(--font-display)',
             fontWeight: 700,
             letterSpacing: '1px',
             marginBottom: '1.5rem'
           }}>
-            MA DÉMARCHE
+            [ MA DÉMARCHE ]
           </span>
           <h2 style={{ marginBottom: '1.5rem', color: '#333' }}>
             Apprendre en construisant, pour de vrai
@@ -305,7 +306,7 @@ export default function HomePage() {
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              border: '3px solid #FF6B35',
+              border: '3px solid var(--cta-yellow)',
               textDecoration: 'none',
               display: 'block'
             }}>
@@ -313,13 +314,13 @@ export default function HomePage() {
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  background: 'linear-gradient(135deg, #FF6B35 0%, #CC4A1A 100%)',
+                  background: 'linear-gradient(135deg, var(--cta-yellow) 0%, #CC4A1A 100%)',
                   borderRadius: '50%',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1rem',
-                  boxShadow: '0 4px 15px rgba(255, 107, 53, 0.3)'
+                  boxShadow: '0 4px 15px rgba(201, 154, 78, 0.3)'
                 }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M17 3a3 3 0 0 1 3 3c0 1.5-1 2.5-1 4H5c0-1.5-1-2.5-1-4a3 3 0 0 1 5-2.24A3 3 0 0 1 12 3a3 3 0 0 1 5 0z"/>
@@ -333,9 +334,9 @@ export default function HomePage() {
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Cuisine</span>
-                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA</span>
-                <span style={{ backgroundColor: '#fff4ed', color: '#FF6B35', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Recettes</span>
+                <span style={{ backgroundColor: '#F7EEDD', color: 'var(--cta-yellow)', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Cuisine</span>
+                <span style={{ backgroundColor: '#F7EEDD', color: 'var(--cta-yellow)', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA</span>
+                <span style={{ backgroundColor: '#F7EEDD', color: 'var(--cta-yellow)', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Recettes</span>
               </div>
             </a>
 
@@ -385,7 +386,7 @@ export default function HomePage() {
               borderRadius: '15px',
               boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              border: '3px solid #667eea',
+              border: '3px solid #5B7A87',
               textDecoration: 'none',
               display: 'block'
             }}>
@@ -393,13 +394,13 @@ export default function HomePage() {
                 <div style={{
                   width: '60px',
                   height: '60px',
-                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  background: 'linear-gradient(135deg, #5B7A87 0%, #3E5560 100%)',
                   borderRadius: '50%',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1rem',
-                  boxShadow: '0 4px 15px rgba(102, 126, 234, 0.3)'
+                  boxShadow: '0 4px 15px rgba(91, 122, 135, 0.3)'
                 }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
@@ -414,16 +415,16 @@ export default function HomePage() {
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA vocale</span>
-                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Notes</span>
-                <span style={{ backgroundColor: '#f0f4ff', color: '#667eea', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivité</span>
+                <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA vocale</span>
+                <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Notes</span>
+                <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivité</span>
               </div>
             </a>
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
             <Link href="/projects" style={{
-              color: '#6A1B9A',
+              color: 'var(--cta-yellow)',
               textDecoration: 'none',
               fontWeight: 'bold',
               fontSize: '1rem'
@@ -468,7 +469,7 @@ export default function HomePage() {
                   <div style={{
                     width: '100%',
                     height: '120px',
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)',
                     borderRadius: '8px',
                     marginBottom: '1.5rem',
                     display: 'flex',

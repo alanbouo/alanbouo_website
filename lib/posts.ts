@@ -31,13 +31,13 @@ function findPostFile(slug: string): { fullPath: string; ext: string } | null {
 
 // Couleurs par catégorie (cartes et badges). Une catégorie inconnue prend la couleur par défaut.
 export const categoryColors: Record<string, string> = {
-  'Build in public': '#FF9800',
-  'IA': '#667eea',
+  'Build in public': '#C99A4E',
+  'IA': '#5B7A87',
   'Cybersécurité': '#8b2e8b',
   'Coulisses': '#556B2F',
 }
 
-export const DEFAULT_CATEGORY_COLOR = '#667eea'
+export const DEFAULT_CATEGORY_COLOR = '#5B7A87'
 
 export interface PostMeta {
   slug: string

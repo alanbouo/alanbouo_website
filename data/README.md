@@ -38,7 +38,8 @@ Each project should have the following properties:
 
 Common color codes used:
 - `#28a745` - Green (for analytics, success metrics)
-- `#667eea` - Blue (for infrastructure, security)
+- `#5B7A87` - Blue-gray (DA "presque-noir opérationnel" — infrastructure, security)
+- `#C99A4E` - Amber (DA accent principal — mise en avant)
 - `#8b2e8b` - Purple (for AI/ML, advanced tech)
 
 ### Example

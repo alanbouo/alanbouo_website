@@ -123,7 +123,7 @@ export default function BlogPost({ params }: Props) {
         {/* Article Header */}
         <section style={{
           padding: '4rem 1rem 2rem',
-          background: 'linear-gradient(135deg, #6A1B9A 0%, #9C27B0 100%)',
+          background: 'linear-gradient(135deg, #14181C 0%, #3A4750 100%)',
           color: 'var(--white)'
         }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
@@ -323,7 +323,7 @@ export default function BlogPost({ params }: Props) {
               <Link
                 href="/contact"
                 style={{
-                  backgroundColor: '#FF9800',
+                  backgroundColor: 'var(--cta-yellow)',
                   color: 'white',
                   padding: '0.75rem 1.5rem',
                   borderRadius: '8px',

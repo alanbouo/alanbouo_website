@@ -17,15 +17,15 @@ export default function PrivacyPage() {
           boxShadow: '0 0 10px rgba(0,0,0,0.1)',
           borderRadius: '5px',
           padding: '20px',
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'var(--font-body)',
           lineHeight: 1.6,
           color: '#333',
           fontSize: '16px',
         }}
       >
         <header style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-          <h1 style={{ color: '#2c3e50', marginBottom: '0.5rem', fontWeight: 700, fontSize: 'clamp(48px, 6vw, 60px)', fontFamily: 'Inter, sans-serif' }}>Politique de confidentialité</h1>
-          <p style={{ color: '#2c3e50', fontSize: 'clamp(16px, 2vw, 18px)', fontWeight: 400, fontFamily: 'Inter, sans-serif' }}>Dernière mise à jour : 23 septembre 2025</p>
+          <h1 style={{ color: 'var(--text-color)', marginBottom: '0.5rem', fontWeight: 700, fontSize: 'clamp(48px, 6vw, 60px)', fontFamily: 'var(--font-display)' }}>Politique de confidentialité</h1>
+          <p style={{ color: 'var(--text-color)', fontSize: 'clamp(16px, 2vw, 18px)', fontWeight: 400, fontFamily: 'var(--font-body)' }}>Dernière mise à jour : 23 septembre 2025</p>
         </header>
 
         <section style={{ marginBottom: '1.25rem' }}>
@@ -125,8 +125,8 @@ export default function PrivacyPage() {
               href="/contact"
               style={{
                 display: 'inline-block',
-                background: '#DAA520',
-                color: '#001F3F',
+                background: 'var(--cta-yellow)',
+                color: 'var(--primary-blue)',
                 textDecoration: 'none',
                 padding: '0.75rem 1.5rem',
                 borderRadius: '6px',
@@ -144,12 +144,12 @@ export default function PrivacyPage() {
 
 /* Inline style helpers */
 const sectionHeadingStyle: React.CSSProperties = {
-  color: '#34495e',
+  color: 'var(--tech-green)',
   fontWeight: 500,
   fontSize: 'clamp(24px, 4vw, 32px)',
   margin: 0,
   marginBottom: '0.5rem',
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: 'var(--font-display)',
 }
 
 const pStyle: React.CSSProperties = {
@@ -157,18 +157,18 @@ const pStyle: React.CSSProperties = {
   marginBottom: '15px',
   fontSize: '16px',
   lineHeight: '1.6',
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: 'var(--font-body)',
 }
 
 const ulStyle: React.CSSProperties = {
   margin: 0,
   paddingLeft: '1.25rem',
   marginBottom: '15px',
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: 'var(--font-body)',
 }
 
 const linkStyle: React.CSSProperties = {
-  color: '#34495e',
+  color: 'var(--tech-green)',
   textDecoration: 'underline',
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: 'var(--font-body)',
 }
