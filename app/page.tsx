@@ -283,7 +283,7 @@ export default function HomePage() {
           </div>
 
           <p style={{ color: '#888', fontStyle: 'italic', marginTop: '2rem', fontSize: '0.95rem' }}>
-            Trois formats, un même fil : construire et comprendre.
+            Trois canaux, chacun avec son rôle.
           </p>
         </div>
       </section>
