@@ -1,0 +1,13 @@
+{
+  "pkg": "alanbouo_website",
+  "globalName": "AlanbouoDS",
+  "shape": "package",
+  "srcDir": "lib",
+  "cssEntry": "app/globals.css",
+  "guidelinesGlob": [
+    "docs/design/*.md"
+  ],
+  "entry": "./.design-sync/ds-entry.mjs",
+  "readmeHeader": ".design-sync/conventions.md",
+  "projectId": "593a9e1f-5cda-4193-88c0-599aadc9ee8b"
+}
