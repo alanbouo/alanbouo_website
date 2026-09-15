@@ -5,20 +5,23 @@ dans `app/globals.css` + styles inline / `styled-jsx`).
 
 ## Direction artistique
 
-Source de vérité et rationale complet : dépôt `alanbouo-pilotage`, fichier
-`chaine.md` (section « Nom, identité visuelle, direction artistique ») et
-`videos/da-pistes.html` pour le détail des pistes comparées. **Toute évolution
-de la DA se décide là-bas d'abord**, puis se répercute ici — jamais l'inverse.
+**Source unique des valeurs** : dépôt `alanbouo-pilotage`, fichier `chaine.md`,
+entrée « Direction artistique » des décisions prises. Rationale et pistes
+comparées dans `videos/da-pistes.html`. **Toute évolution de la DA se décide
+là-bas d'abord**, puis se répercute ici — jamais l'inverse.
 
-Valeurs telles qu'implémentées (`app/globals.css`, variables CSS `:root`) :
+Les valeurs ne sont pas recopiées ici : elles ne vivent qu'à deux endroits,
+`chaine.md` qui fait foi et `app/globals.css` (`:root`) qui les implémente.
+Correspondance des variables CSS :
 
-| Rôle | Variable CSS | Valeur |
-|---|---|---|
-| Fond sombre (hero, nav, footer) | `--primary-blue` | `#14181C` |
-| Accent principal (CTA, liens, highlight) | `--cta-yellow` | `#C99A4E` (ambre) |
-| Accent secondaire | `--tech-green` | `#5B7A87` (bleu-gris) |
-| Police titres / repères | `--font-display` | JetBrains Mono |
-| Police texte courant | `--font-body` | Libre Franklin |
+| Rôle | Variable CSS |
+|---|---|
+| Fond sombre (hero, nav, footer) | `--primary-blue` |
+| Surface sombre alternative | `--surface-dark-alt` |
+| Accent principal (CTA, liens, highlight) | `--cta-yellow` |
+| Accent secondaire | `--tech-green` |
+| Police titres / repères | `--font-display` |
+| Police texte courant | `--font-body` |
 
 Motif récurrent : crochets `[ ]` façon flag CLI autour des labels/eyebrows
 (ex. `[ MA DÉMARCHE ]` sur la page d'accueil).
