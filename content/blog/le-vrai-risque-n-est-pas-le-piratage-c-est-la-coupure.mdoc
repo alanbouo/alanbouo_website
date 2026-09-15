@@ -1,0 +1,64 @@
+---
+title: Le vrai risque n'est pas le piratage, c'est la coupure
+description: >-
+  Un compte Google fermé sans piratage ni faute, et sans recours possible : le
+  cas de Mark révèle une dépendance qu'on ne cartographie jamais avant qu'elle
+  ne casse. Quelques règles simples pour réduire son exposition.
+date: 2026-09-15
+category: Cybersécurité
+tags:
+  - sécurité des comptes
+  - vie privée
+  - Google
+  - résilience numérique
+  - 2FA
+featured: false
+image: /img/blog/le-vrai-risque-n-est-pas-le-piratage-c-est-la-coupure/image.png
+---
+# Le vrai risque n'est pas le piratage, c'est la coupure
+
+En 2021, Mark a perdu son compte Google du jour au lendemain. Pas de piratage, pas d'erreur de sa part, seulement un algorithme qui a signalé une photo de son enfant comme contenu illicite.
+
+Résultat : mail supprimé, contacts effacés, photos disparues, et son numéro Google Fi coupé avec tout ce qui dépendait de la vérification en deux étapes ailleurs. Il a voulu contester. Il a renoncé.
+
+J’ai déjà documenté ce cas dans [un autre article](https://www.alanbouo.com/blog/son-compte-google-a-ete-ferme-par-un-modele-qui-avait-raison-a-99-9). Ce qui m'intéresse ici, c'est ce qu'il révèle sur le problème, parce que ce n'est pas un cas isolé, et parce que la mécanique qui l'a produit peu concerner à peu près tout le monde, y compris moi.
+
+## La cascade
+
+Le talon d’Achille, ce n'est pas le compte mail lui-même. C'est tout ce qui repose dessus sans qu'on en ait pleinement conscience.
+
+Un compte mail, c'est la racine de récupération de presque tout : banque, réseaux sociaux, abonnements, cloud, etc. Si son accès tombe, on perd la clé qui permet de récupérer quasiment toutes les autres.
+
+Le numéro de téléphone, c'est le second pilier. Il porte les SMS de vérification de comptes qui n'ont, en apparence, rien à voir avec son service de messagerie email. Sauf que dans le cas de Mark, email et numéro venaient du même fournisseur. Deux points de défaillance, en apparence, indépendants n'en formaient qu'un seul.
+
+Ces dépendance, c’est la partie qu'on ne voit jamais avant qu'elle ne tombe : on ne les cartographie pas tant que ça fonctionne. Le jour où le pilier central saute, on découvre la liste des conséquences en même temps qu'on recherche le numéro du service client.
+
+## Pourquoi il n'y a pas de recours
+
+La tentation, c'est de se dire qu'il y a forcément une procédure, un appel, un humain au bout du fil. Chez une messagerie grand public comme Gmail, ce n'est pas le cas. Pas d’une façon qui protège réellement l'utilisateur.
+
+Les conditions d'utilisation autorisent la fermeture unilatérale, sans obligation de motivation détaillée ni de délai de réponse. Les procédures d’appel, quand elles existent, sont en grande partie automatisées : on soumet un formulaire, un système statue, et la décision reste discrétionnaire. Rien n'oblige l’entreprise à la justifier ni à la revoir.
+
+Le détail le plus révélateur dans ce genre d'affaires : même quand une enquête de police conclut explicitement à l'absence d'infraction, cela ne rouvre pas automatiquement le compte. La décision de l’entreprise et la décision judiciaire sont deux réalités distinctes. L’entreprise reste seule maîtresse de sa plateforme, y compris après un non-lieu de l’enquête.
+
+Un service gratuit et grand public n'a structurellement pas vocation à offrir une procédure contradictoire à l'échelle de ses centaines de millions d'utilisateurs.
+
+## Un peu de bon sens numérique
+
+Voici quelques règles qui vous aideront à réduire réellement votre exposition.
+
+**Séparer la messagerie mail de votre adresse email**
+Utiliser un nom de domaine personnel pour son adresse mail principale. C'est votre identité. Vous pouvez l'héberger ensuite chez n'importe quel fournisseur (avec la possibilité de migrer les MX ailleurs si vous le souhaitez). Ça coûte le prix d'un domaine par an et une heure de configuration.
+
+**Remplacer le 2FA par SMS par une application ou une clé (physique ou non)**
+Le SMS fait transiter la vérification par un opérateur téléphonique. C’est  un maillon de plus qui peut tomber indépendamment de votre volonté. Une app d'authentification ou une clé d’identification élimine cette dépendance externe.
+
+**Sauvegarder hors de l'écosystème principal.**
+Un export périodique des photos, contacts et documents vers un support ou un service distinct de celui qui héberge le mail principal. Nul besoin d'automatiser dès le premier jour — un export manuel trimestriel change déjà la donne.
+
+**Numéro de téléphone chez un opérateur distinct de votre fournisseur d'identité**
+Si votre adresse email et la téléphonie viennent de la même entreprise, une coupure touche les deux en même temps. Séparer les deux, c'est éliminer un point de défaillance commun.
+
+## Conclusion
+
+Finalement, c’est une question d'architecture assez simple. Il s’agit de ne pas concentrer plusieurs points critiques auprès du même fournisseur. Ainsi, aucune décision, qu’elle soit automatisée ou non, ne peut pas te couper tous les accès d'un coup.
