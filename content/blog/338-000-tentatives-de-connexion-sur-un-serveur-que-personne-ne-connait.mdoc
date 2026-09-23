@@ -1,0 +1,98 @@
+---
+title: 338 000 tentatives de connexion sur un serveur que personne ne connaît
+description: >-
+  Analyse des logs SSH d'un serveur Coolify jamais rendu public : 338 000
+  tentatives de connexion en 3 semaines, et pourquoi un mot de passe fort ne
+  suffit pas face à ce bruit de fond permanent d'Internet.
+date: 2026-09-23
+category: Cybersécurité
+tags:
+  - SSH
+  - sécurité serveur
+  - build in public
+  - Coolify
+  - authentification par clé
+featured: false
+image: >-
+  /img/blog/338-000-tentatives-de-connexion-sur-un-serveur-que-personne-ne-connait/image.jpg
+---
+# 338 000 tentatives de connexion sur un serveur que personne ne connaît
+
+Mon serveur Coolify n'a jamais figuré nulle part. Pas de lien public, pas de mention dans un tweet, pas de DNS pointant vers un nom qui donnerait envie de cliquer. C'est une machine qui héberge des projets en cours, point.
+
+Je viens de jeter un œil sur les journaux disponibles et de m'apercevoir qu'en l'espace de 3 semaines, ce serveur a dénombré pas moins**338 000 tentatives de connexion SSH par mot de passe, toutes échouées**. Soit environ 16 000 par jour, sur un serveur qui été sensé être sous les radars.
+
+La question naturelle, la première qui vient : qui teste cette machine, et pourquoi elle ?
+
+La réponse est plus simple, et plus inquiétante à sa manière : personne ne teste *cette machine* en particulier. Tout ce qui répond sur le port 22 se fait tester, tout le temps, sans exception. Ce n'est pas un signal de ciblage. C'est la conséquence d'avoir une IP publique sur Internet.
+
+## Ce que le détail des chiffres montre
+
+Voici la répartition des noms d'utilisateurs testés sur les 338 000 tentatives :
+
+{% table %}
+- Utilisateur
+- Tentatives
+---
+- `root`
+- 151 371
+---
+- `ubuntu` (invalide)
+- 29 254
+---
+- `admin` (invalide)
+- 12 687
+---
+- `user` (invalide)
+- 4 610
+---
+- noms génériques et sous-domaines spécifiques (`tubechatai`, `vibx`, `promptflow`, `crypto`, `wallet`, `memomind`, `cooksmart`, `vigilai`…)
+- 3 000 à 4 100 chacun
+{% /table %}
+
+Deux choses à noter ici.
+
+D'abord, le dictionnaire de noms. `root`, `ubuntu`, `admin`, `user` (les comptes système les plus courants). Et à côté, une série de noms qui correspondent exactement aux sous-domaines présents sur mon nom de domaine alanbouo.com et hébergés sur cette machine (`tubechatai`, `vibx`, `promptflow`, etc). Ce n'est pas un dictionnaire générique : c'est une énumération directe de ce qui est accessible via mes DNS publics.
+
+Ensuite, la répartition par IP source : aucune IP ne dépasse 3,5 % du volume total. Des dizaines de sources différentes, aucune qui insiste plus que les autres. Ce n'est pas un acteur isolé qui s'acharne sur une cible repérée. C'est le bruit de fond permanent d'Internet (des botnets qui balayent en continu toute IPv4 qui répond sur le port 22), indépendamment de qui l'héberge ou de ce qu'elle contient.
+
+Aucune de ces 338 000 tentatives n'a abouti.
+
+Ce chiffre établit une chose : ce niveau de pression n'est pas l'exception, c'est la norme pour toute machine avec une IP publique et un port 22 ouvert, qu'elle héberge un projet personnel en construction ou une infrastructure de production critique.
+
+## Pourquoi ça compte quand même
+
+On pourrait se dire : si c'est du bruit générique, pas grave, mon mot de passe est solide, la probabilité qu'il tombe dessus est minuscule. C'est vrai à un instant donné. C'est faux sur la durée.
+
+Le problème n'est pas la force d'un mot de passe pris isolément. C'est la nature du canal :
+
+- L'authentification par mot de passe reste ouverte 24 h/24, sans autre limite que celle qu'on configure soi-même sur le serveur.
+- 16 000 tentatives par jour, ce n'est pas artisanal. C'est automatisé, distribué sur des dizaines de sources, et ça ne s'arrête jamais.
+- Un mot de passe fort réduit la probabilité de succès à chaque tentative. Il ne change rien au fait que le canal reste attaquable indéfiniment, à coût quasi nul pour qui rejoue la tentative.
+
+Un mot de passe, même correct, est un pari qui se rejoue en continu, sans jamais s'épuiser du côté de celui qui teste. Sur un temps infini, un événement improbable à chaque tentative individuelle devient, mécaniquement, presque certain à terme. Ce n'est pas une question de chance. C'est une question de probabilité appliquée à un canal qui ne ferme jamais.
+
+## Ce que change une clé
+
+Une authentification par clé asymétrique ne renforce pas le pari, elle le supprime.
+
+Avec un mot de passe, il y a un secret unique, partagé entre le client et le serveur, qui doit être transmis à chaque connexion pour être vérifié. C'est ce secret qu'on devine par essais successifs.
+
+Avec une paire de clés, il n'y a plus de secret unique à faire transiter. Une clé privée reste sur ta machine, ne quitte jamais ton disque, n'est jamais envoyée sur le réseau. Une clé publique est déposée sur le serveur. Elle peut être vue par n'importe qui, ça ne pose aucun problème, elle ne sert qu'à vérifier une preuve mathématique que tu détiens la clé privée correspondante, sans jamais la révéler.
+
+Il n'y a donc plus rien à deviner par essais répétés. Le canal d'attaque que représentait le mot de passe disparaît. Ce n'est pas un mot de passe plus robuste. C'est un mécanisme d'une autre nature.
+
+## Comment faire concrètement pour protéger ainsi son
+
+Rien de spectaculaire, quelques étapes dans l'ordre :
+
+1. Générer une paire de clés ed25519, protégée par une passphrase (`ssh-keygen -t ed25519`).
+1. Déposer la clé publique sur le serveur pendant que l'authentification par mot de passe fonctionne encore (`ssh-copy-id` ou copie manuelle dans `~/.ssh/authorized_keys`).
+1. Vérifier que la connexion par clé fonctionne, dans une session séparée, **avant** de toucher à quoi que ce soit d'autre.
+1. Une fois vérifié : éditer `/etc/ssh/sshd_config`, chercher la ligne `PasswordAuthentication yes`, la remplacer par `PasswordAuthentication no`, sauvegarder, puis redémarrer le service avec `sudo systemctl restart sshd`.
+
+## Accepter les règles d'Internet
+
+Le volume ne va pas baisser. Ce n'est pas l'objectif, et ça ne le sera jamais, tant qu'Internet existe sous cette forme, tout ce qui répond sur le port 22 continuera d'être testé, en permanence, par des machines qui ne savent même pas ce qu'elles testent.
+
+Le but n'est pas de faire disparaître la pression. C'est de rendre chaque tentative, aussi nombreuse soit-elle, structurellement incapable d'aboutir. 338 000 essais contre un mot de passe, c'est un pari qui finit par se jouer contre toi. 338 000 essais contre une clé, c'est zéro pari du tout.
