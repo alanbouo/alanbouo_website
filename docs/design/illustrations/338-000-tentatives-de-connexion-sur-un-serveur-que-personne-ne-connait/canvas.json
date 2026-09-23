@@ -1,0 +1,7 @@
+{
+  "artboards": [
+    { "file": "Couverture.dc.html", "x": 0, "y": 0, "w": 1280, "h": 720, "title": "Couverture d'article — 1280×720 (16:9)" },
+    { "file": "Main.dc.html", "x": 1400, "y": 0, "w": 1200, "h": 630, "title": "Carte OG — 1200×630" }
+  ],
+  "launch": { "view": "focused", "file": "Couverture.dc.html" }
+}
