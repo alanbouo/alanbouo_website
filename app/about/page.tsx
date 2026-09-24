@@ -25,7 +25,7 @@ export default function AboutPage() {
             <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '1rem', lineHeight: '1.2', fontWeight: 'bold' }}>
               ALAN BOUO
             </h1>
-            <h2 style={{ fontSize: 'clamp(1.3rem, 4vw, 2rem)', marginBottom: '2rem', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '600' }}>
+            <h2 style={{ fontSize: 'clamp(1.3rem, 4vw, 2rem)', marginBottom: '2rem', color: 'inherit', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '600' }}>
               Expert IA &amp; Cybersécurité
             </h2>
             <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '1.5rem', fontWeight: '500' }}>
