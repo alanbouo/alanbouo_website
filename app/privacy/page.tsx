@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import { pageMetadata } from '@/lib/site'
 
-export const metadata = {
+export const metadata = pageMetadata({
+  path: '/privacy',
   title: 'Politique de confidentialité - Alan Bouo',
   description:
     "Découvrez comment Alan Bouo protège votre vie privée. Cette politique explique ce qui est collecté, comment c'est utilisé, la conservation des données, vos droits, les cookies/analytics, et comment nous contacter.",
-}
+})
 
 export default function PrivacyPage() {
   return (

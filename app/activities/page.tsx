@@ -1,9 +1,11 @@
 import Link from 'next/link'
+import { pageMetadata } from '@/lib/site'
 
-export const metadata = {
+export const metadata = pageMetadata({
+  path: '/activities',
   title: "Activités — Le parcours tech d'Alan Bouo",
   description: "Découvre mon travail en développement web, auto-hébergement, IA/ML et open source. Guides, tutoriels et retours d'expérience."
-}
+})
 
 export default function ActivitiesPage() {
   return (

@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { pageMetadata } from '@/lib/site'
 
-export const metadata = {
+export const metadata = pageMetadata({
+  path: '/about',
   title: 'À propos d\'Alan Bouo — Expert IA & cybersécurité',
   description: "Alan Bouo, passionné d'IA & de cybersécurité. Je construis des produits et j'explique ce que j'apprends, en rendant ces sujets accessibles. Créateur de CookSmart, TubeChatAI, MemoMind et d'autres projets en cours. Basé à Lyon, France."
-}
+})
 
 export default function AboutPage() {
   return (

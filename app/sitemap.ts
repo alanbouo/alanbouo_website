@@ -1,11 +1,11 @@
 import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/posts'
 
-const baseUrl = 'https://alanbouo.com'
+import { SITE_URL as baseUrl } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: baseUrl, changeFrequency: 'weekly', priority: 1 },
+    { url: `${baseUrl}/`, changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/about`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/projects`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/activities`, changeFrequency: 'monthly', priority: 0.6 },

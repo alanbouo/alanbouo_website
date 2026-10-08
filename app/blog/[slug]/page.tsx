@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
 import { getPost, getPostSlugs } from '@/lib/posts'
+import { SITE_URL, DEFAULT_OG_IMAGE } from '@/lib/site'
 
 interface Props {
   params: {
@@ -25,9 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
-  const baseUrl = 'https://alanbouo.com'
+  const baseUrl = SITE_URL
   const postUrl = `${baseUrl}/blog/${post.slug}`
-  const ogImage = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/img/blog/${post.slug}-og.jpg`
+  const ogImage = post.image ? `${baseUrl}${post.image}` : DEFAULT_OG_IMAGE
 
   return {
     title: `${post.title} | Alan Bouo`,
@@ -77,7 +78,7 @@ export default function BlogPost({ params }: Props) {
     notFound()
   }
 
-  const baseUrl = 'https://alanbouo.com'
+  const baseUrl = SITE_URL
   const postUrl = `${baseUrl}/blog/${post.slug}`
 
   const jsonLd = {
@@ -85,7 +86,7 @@ export default function BlogPost({ params }: Props) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
-    image: post.image ? `${baseUrl}${post.image}` : `${baseUrl}/img/blog/${post.slug}-og.jpg`,
+    image: post.image ? `${baseUrl}${post.image}` : DEFAULT_OG_IMAGE,
     author: {
       '@type': 'Person',
       name: 'Alan Bouo',
@@ -96,7 +97,7 @@ export default function BlogPost({ params }: Props) {
       name: 'Alan Bouo',
       logo: {
         '@type': 'ImageObject',
-        url: `${baseUrl}/img/logo.png`,
+        url: `${baseUrl}/img/alan.png`,
       },
     },
     datePublished: post.date,

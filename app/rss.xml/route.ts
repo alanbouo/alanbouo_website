@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import { getAllPosts } from '@/lib/posts'
+import { SITE_URL } from '@/lib/site'
 
 export async function GET() {
-  const baseUrl = 'https://alanbouo.com'
+  const baseUrl = SITE_URL
   const sortedPosts = getAllPosts()
 
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>

@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const baseUrl = 'https://alanbouo.com'
+import { SITE_URL as baseUrl } from '@/lib/site'
 
 export default function robots(): MetadataRoute.Robots {
   return {

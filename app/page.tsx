@@ -1,12 +1,47 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllPosts, categoryColor } from '@/lib/posts'
+import { pageMetadata, SITE_URL, SOCIAL_PROFILES } from '@/lib/site'
+
+export const metadata = pageMetadata({
+  path: '/',
+  title: 'Alan Bouo — Expert IA & cybersécurité qui construit en public',
+  description: "Je construis des produits, j'apprends en avançant et je partage tout en public. Passionné d'IA et de cybersécurité, j'aime rendre ces sujets accessibles, sans jargon.",
+})
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#alan-bouo`,
+      name: 'Alan Bouo',
+      url: `${SITE_URL}/`,
+      image: `${SITE_URL}/img/alan.png`,
+      description: "Je construis des produits et je partage tout en public. IA et cybersécurité rendues accessibles, sans jargon.",
+      knowsAbout: ['Intelligence artificielle', 'Cybersécurité'],
+      sameAs: SOCIAL_PROFILES,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      name: 'Alan Bouo',
+      url: `${SITE_URL}/`,
+      inLanguage: 'fr-FR',
+      publisher: { '@id': `${SITE_URL}/#alan-bouo` },
+    },
+  ],
+}
 
 export default function HomePage() {
   const posts = getAllPosts()
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section
         className="hero-section"

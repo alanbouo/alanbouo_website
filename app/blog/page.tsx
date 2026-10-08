@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllPosts, categoryColors } from '@/lib/posts'
+import { pageMetadata } from '@/lib/site'
 
-export const metadata = {
+export const metadata = pageMetadata({
+  path: '/blog',
   title: 'Blog — Alan Bouo | IA & cybersécurité expliquées clairement',
   description: "Des explications claires sur l'IA et la cybersécurité, nourries par ce que je construis vraiment.",
-}
+})
 
 export default function BlogPage() {
   const posts = getAllPosts()

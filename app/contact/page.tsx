@@ -1,3 +1,11 @@
+import { pageMetadata } from '@/lib/site'
+
+export const metadata = pageMetadata({
+  path: '/contact',
+  title: 'Contact — Alan Bouo',
+  description: "Une question sur l'IA, la cybersécurité, ou un projet à proposer à Alan Bouo ? Écris-lui directement par e-mail ou retrouve-le sur YouTube, X et LinkedIn.",
+})
+
 export default function ContactPage() {
   return (
     <main>
