@@ -1,5 +1,16 @@
 [
   {
+    "id": "plumes",
+    "title": "Plumes",
+    "description": "Assistant de rédaction pour iPhone : note une idée, reçois un brouillon dans ta voix, retouche-le du pouce. L'IA propose, tu acceptes ou tu refuses.",
+    "icon": "feather",
+    "color": "#C99A4E",
+    "tags": ["iPhone", "Rédaction", "IA"],
+    "link": "https://apps.apple.com/us/app/plumes/id6806171173",
+    "external": true,
+    "status": "shipped"
+  },
+  {
     "id": "clawpilot",
     "title": "ClawPilot",
     "description": "Ton IA personnelle qui se souvient de toi, agit pour toi et garde tes données privées. Disponible sur WhatsApp — aucune app à installer, aucun compte à créer. Il suffit d'écrire.",
