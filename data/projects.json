@@ -7,6 +7,7 @@
     "color": "#C99A4E",
     "tags": ["iPhone", "Rédaction", "IA"],
     "link": "https://apps.apple.com/us/app/plumes/id6806171173",
+    "appStoreLink": "https://apps.apple.com/us/app/plumes/id6806171173",
     "external": true,
     "status": "shipped"
   },
@@ -29,6 +30,7 @@
     "color": "#FF0000",
     "tags": ["YouTube", "LLM", "Apprentissage"],
     "link": "https://tubechatai.xyz",
+    "appStoreLink": "https://apps.apple.com/fr/app/tubechat-ai/id6752591427",
     "external": true,
     "status": "shipped"
   },
@@ -74,6 +76,7 @@
     "color": "#C99A4E",
     "tags": ["Cuisine", "IA", "Recettes"],
     "link": "https://cooksmart.app",
+    "appStoreLink": "https://apps.apple.com/fr/app/cooksmart-ai-recipes/id6761052282",
     "external": true,
     "status": "shipped"
   }

@@ -376,6 +376,7 @@ export default function HomePage() {
             
               <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginTop: '1.25rem' }}>
                 <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'var(--cta-yellow)', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>Site web</a>
+                <a href="https://apps.apple.com/fr/app/cooksmart-ai-recipes/id6761052282" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#14181C', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>App Store</a>
               </div>
             </div>
 
@@ -419,6 +420,7 @@ export default function HomePage() {
             
               <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginTop: '1.25rem' }}>
                 <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'var(--cta-yellow)', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>Site web</a>
+                <a href="https://apps.apple.com/fr/app/tubechat-ai/id6752591427" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#14181C', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>App Store</a>
               </div>
             </div>
 
