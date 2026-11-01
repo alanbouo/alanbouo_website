@@ -335,7 +335,7 @@ export default function HomePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {/* CookSmart */}
-            <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{
+            <div style={{
               backgroundColor: 'white',
               padding: '2rem',
               borderRadius: '15px',
@@ -373,10 +373,14 @@ export default function HomePage() {
                 <span style={{ backgroundColor: '#F7EEDD', color: 'var(--cta-yellow)', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA</span>
                 <span style={{ backgroundColor: '#F7EEDD', color: 'var(--cta-yellow)', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Recettes</span>
               </div>
-            </a>
+            
+              <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginTop: '1.25rem' }}>
+                <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'var(--cta-yellow)', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>Site web</a>
+              </div>
+            </div>
 
             {/* TubeChatAI */}
-            <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{
+            <div style={{
               backgroundColor: 'white',
               padding: '2rem',
               borderRadius: '15px',
@@ -412,7 +416,11 @@ export default function HomePage() {
                 <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>LLM</span>
                 <span style={{ backgroundColor: '#fff0f0', color: '#FF0000', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Apprentissage</span>
               </div>
-            </a>
+            
+              <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginTop: '1.25rem' }}>
+                <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'var(--cta-yellow)', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>Site web</a>
+              </div>
+            </div>
 
             {/* MemoMind */}
             <div style={{
