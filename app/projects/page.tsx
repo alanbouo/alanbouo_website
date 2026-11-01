@@ -82,6 +82,7 @@ export default function ProjectsPage() {
                                        project.id === 'vibex' ? '#f0f9ff' :
                                        project.id === 'clawpilot' ? '#f0fff4' :
                                        project.id === 'cooksmart' ? '#F7EEDD' :
+                                       project.id === 'promptotheque' ? '#F6EFE3' :
                                        '#fdf2ff'
 
               const getIcon = (id: string) => {
@@ -138,6 +139,13 @@ export default function ProjectsPage() {
                         <path d="M6 14v6a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-6"/>
                       </svg>
                     )
+                  case 'promptotheque':
+                    return (
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                      </svg>
+                    )
                   default:
                     return null
                 }
@@ -176,6 +184,7 @@ export default function ProjectsPage() {
                                  project.id === 'vibex' ? 'linear-gradient(135deg, #1DA1F2 0%, #0d8ecf 100%)' :
                                  project.id === 'clawpilot' ? 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)' :
                                  project.id === 'cooksmart' ? 'linear-gradient(135deg, var(--cta-yellow) 0%, #CC4A1A 100%)' :
+                                 project.id === 'promptotheque' ? 'linear-gradient(135deg, #B5894A 0%, #8A6530 100%)' :
                                  'linear-gradient(135deg, #8b2e8b 0%, #6f1e6f 100%)',
                       borderRadius: '50%',
                       display: 'inline-flex',

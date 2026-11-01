@@ -470,6 +470,46 @@ export default function HomePage() {
                 <a href="https://apps.apple.com/fr/app/memomind-m%C3%A9mos-vocaux-ia/id6825675614" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#14181C', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>App Store</a>
               </div>
             </div>
+
+            {/* Promptothèque */}
+            <div style={{
+              backgroundColor: 'white',
+              padding: '2rem',
+              borderRadius: '15px',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+              border: '3px solid #B5894A',
+              display: 'block'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #B5894A 0%, #8A6530 100%)',
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '1rem'
+                }}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                  </svg>
+                </div>
+                <h3 style={{ color: '#333', marginBottom: '0.5rem' }}>Promptothèque</h3>
+                <p style={{ color: '#666', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                  Bibliothèque de prompts IA en français, par métier et par outil. Un générateur et une extension de navigateur pour les insérer en un clic.
+                </p>
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                <span style={{ backgroundColor: '#F6EFE3', color: '#B5894A', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Prompts</span>
+                <span style={{ backgroundColor: '#F6EFE3', color: '#B5894A', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA</span>
+                <span style={{ backgroundColor: '#F6EFE3', color: '#B5894A', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivité</span>
+              </div>
+              <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginTop: '1.25rem' }}>
+                <a href="https://promptotheque.eu" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'var(--cta-yellow)', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>Site web</a>
+              </div>
+            </div>
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>

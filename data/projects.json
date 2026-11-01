@@ -79,5 +79,16 @@
     "appStoreLink": "https://apps.apple.com/fr/app/cooksmart-ai-recipes/id6761052282",
     "external": true,
     "status": "shipped"
+  },
+  {
+    "id": "promptotheque",
+    "title": "Promptothèque",
+    "description": "Bibliothèque de prompts IA en français : par métier, par outil, avec un générateur et une extension de navigateur pour les insérer en un clic.",
+    "icon": "book-open",
+    "color": "#B5894A",
+    "tags": ["Prompts", "IA", "Productivité"],
+    "link": "https://promptotheque.eu",
+    "external": true,
+    "status": "early"
   }
 ]
