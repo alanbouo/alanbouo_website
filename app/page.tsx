@@ -453,6 +453,7 @@ export default function HomePage() {
                 <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA vocale</span>
                 <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Notes</span>
                 <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivité</span>
+                <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>App Store</span>
               </div>
             </a>
           </div>

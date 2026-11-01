@@ -44,7 +44,7 @@ export default function AboutPage() {
               <ul style={{ listStyle: 'none', padding: 0, fontSize: '16px', lineHeight: '1.8' }}>
                 <li style={{ marginBottom: '0.5rem' }}>• <a href="https://cooksmart.app" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-yellow)', textDecoration: 'none' }}>CookSmart</a> — Ton assistant IA pour cuisiner malin</li>
                 <li style={{ marginBottom: '0.5rem' }}>• <a href="https://tubechatai.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-yellow)', textDecoration: 'none' }}>TubeChatAI</a> — Discuter avec n'importe quelle vidéo YouTube</li>
-                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-yellow)', textDecoration: 'none' }}>MemoMind</a> — Des insights à partir de tes mémos vocaux</li>
+                <li style={{ marginBottom: '0.5rem' }}>• <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-yellow)', textDecoration: 'none' }}>MemoMind</a> — Des insights à partir de tes mémos vocaux (<a href="https://apps.apple.com/fr/app/memomind-m%C3%A9mos-vocaux-ia/id6825675614" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--cta-yellow)', textDecoration: 'none' }}>disponible sur l'App Store</a>)</li>
               </ul>
               <Link href="/projects" style={{ color: 'var(--cta-yellow)', textDecoration: 'none', fontWeight: 'bold', fontSize: '15px', display: 'inline-block', marginTop: '0.75rem' }}>
                 Voir tous mes projets →
