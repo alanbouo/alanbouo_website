@@ -218,6 +218,21 @@ export default function ProjectsPage() {
                     }}>
                       Voir le projet
                     </Link>
+                    {(project as { appStoreLink?: string }).appStoreLink && (
+                      <a href={(project as { appStoreLink?: string }).appStoreLink} target="_blank" rel="noopener noreferrer" style={{
+                        backgroundColor: '#14181C',
+                        color: 'white',
+                        padding: '0.5rem 1rem',
+                        borderRadius: '6px',
+                        textDecoration: 'none',
+                        fontWeight: 'bold',
+                        display: 'inline-block',
+                        fontSize: '14px',
+                        marginLeft: '0.5rem'
+                      }}>
+                        App Store
+                      </a>
+                    )}
                   </div>
                 </div>
               )

@@ -38,8 +38,9 @@
     "description": "Discute avec tes mémos vocaux et extrais-en des insights. Organise tes idées, retrouve les détails et transforme sans effort tes enregistrements en connaissances actionnables.",
     "icon": "microphone",
     "color": "#5B7A87",
-    "tags": ["IA vocale", "Notes", "Productivité", "App Store"],
+    "tags": ["IA vocale", "Notes", "Productivité"],
     "link": "https://memomind.space",
+    "appStoreLink": "https://apps.apple.com/fr/app/memomind-m%C3%A9mos-vocaux-ia/id6825675614",
     "external": true,
     "status": "shipped"
   },

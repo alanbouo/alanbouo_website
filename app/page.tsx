@@ -415,7 +415,7 @@ export default function HomePage() {
             </a>
 
             {/* MemoMind */}
-            <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{
+            <div style={{
               backgroundColor: 'white',
               padding: '2rem',
               borderRadius: '15px',
@@ -453,9 +453,13 @@ export default function HomePage() {
                 <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>IA vocale</span>
                 <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Notes</span>
                 <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>Productivité</span>
-                <span style={{ backgroundColor: '#EDF1F2', color: '#5B7A87', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '12px', fontWeight: 'bold' }}>App Store</span>
               </div>
-            </a>
+            
+              <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', marginTop: '1.25rem' }}>
+                <a href="https://memomind.space" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: 'var(--cta-yellow)', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>Site web</a>
+                <a href="https://apps.apple.com/fr/app/memomind-m%C3%A9mos-vocaux-ia/id6825675614" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#14181C', color: 'white', padding: '0.5rem 1rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold', fontSize: '14px' }}>App Store</a>
+              </div>
+            </div>
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
