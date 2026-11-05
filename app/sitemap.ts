@@ -12,6 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/contact`, changeFrequency: 'yearly', priority: 0.5 },
     { url: `${baseUrl}/privacy`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/amstram`, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/amstram/support`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/amstram/confidentialite`, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   const postRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({

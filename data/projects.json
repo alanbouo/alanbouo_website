@@ -5,7 +5,11 @@
     "description": "Assistant de rédaction pour iPhone : note une idée, reçois un brouillon dans ta voix, retouche-le du pouce. L'IA propose, tu acceptes ou tu refuses.",
     "icon": "feather",
     "color": "#C99A4E",
-    "tags": ["iPhone", "Rédaction", "IA"],
+    "tags": [
+      "iPhone",
+      "Rédaction",
+      "IA"
+    ],
     "link": "https://apps.apple.com/us/app/plumes/id6806171173",
     "appStoreLink": "https://apps.apple.com/us/app/plumes/id6806171173",
     "external": true,
@@ -17,7 +21,11 @@
     "description": "Ton IA personnelle qui se souvient de toi, agit pour toi et garde tes données privées. Disponible sur WhatsApp — aucune app à installer, aucun compte à créer. Il suffit d'écrire.",
     "icon": "message-circle",
     "color": "#25D366",
-    "tags": ["WhatsApp", "Assistant IA", "IA personnelle"],
+    "tags": [
+      "WhatsApp",
+      "Assistant IA",
+      "IA personnelle"
+    ],
     "link": "https://clawpilot.life",
     "external": true,
     "status": "early"
@@ -28,7 +36,11 @@
     "description": "Discute avec n'importe quelle vidéo YouTube — pose tes questions, obtiens des précisions ou va plus loin dans le contenu, en temps réel. Transforme le visionnage passif en apprentissage conversationnel.",
     "icon": "youtube",
     "color": "#FF0000",
-    "tags": ["YouTube", "LLM", "Apprentissage"],
+    "tags": [
+      "YouTube",
+      "LLM",
+      "Apprentissage"
+    ],
     "link": "https://tubechatai.xyz",
     "appStoreLink": "https://apps.apple.com/fr/app/tubechat-ai/id6752591427",
     "external": true,
@@ -40,7 +52,11 @@
     "description": "Discute avec tes mémos vocaux et extrais-en des insights. Organise tes idées, retrouve les détails et transforme sans effort tes enregistrements en connaissances actionnables.",
     "icon": "microphone",
     "color": "#5B7A87",
-    "tags": ["IA vocale", "Notes", "Productivité"],
+    "tags": [
+      "IA vocale",
+      "Notes",
+      "Productivité"
+    ],
     "link": "https://memomind.space",
     "appStoreLink": "https://apps.apple.com/fr/app/memomind-m%C3%A9mos-vocaux-ia/id6825675614",
     "external": true,
@@ -52,7 +68,11 @@
     "description": "Outil de croissance propulsé par l'IA pour X (Twitter). Booste ta présence, ton engagement et ton audience grâce à des suggestions de contenu, des analytics et de l'optimisation.",
     "icon": "twitter",
     "color": "#1DA1F2",
-    "tags": ["X/Twitter", "Croissance", "Analytics"],
+    "tags": [
+      "X/Twitter",
+      "Croissance",
+      "Analytics"
+    ],
     "link": "https://vibx.space",
     "external": true,
     "status": "early"
@@ -63,7 +83,11 @@
     "description": "Surveille la visibilité et la réputation de ta marque à travers les grands assistants IA comme ChatGPT et Claude. Scores de visibilité en temps réel, analyse de sentiment et comparaisons concurrentielles.",
     "icon": "eye",
     "color": "#8b2e8b",
-    "tags": ["Surveillance de marque", "Visibilité IA", "Analytics"],
+    "tags": [
+      "Surveillance de marque",
+      "Visibilité IA",
+      "Analytics"
+    ],
     "link": "https://vigilai.watch",
     "external": true,
     "status": "early"
@@ -74,7 +98,11 @@
     "description": "Ton assistant IA pour cuisiner malin : plans de repas, recettes personnalisées et courses optimisées, sans prise de tête.",
     "icon": "chef-hat",
     "color": "#C99A4E",
-    "tags": ["Cuisine", "IA", "Recettes"],
+    "tags": [
+      "Cuisine",
+      "IA",
+      "Recettes"
+    ],
     "link": "https://cooksmart.app",
     "appStoreLink": "https://apps.apple.com/fr/app/cooksmart-ai-recipes/id6761052282",
     "external": true,
@@ -86,9 +114,28 @@
     "description": "Bibliothèque de prompts IA en français : par métier, par outil, avec un générateur et une extension de navigateur pour les insérer en un clic.",
     "icon": "book-open",
     "color": "#B5894A",
-    "tags": ["Prompts", "IA", "Productivité"],
+    "tags": [
+      "Prompts",
+      "IA",
+      "Productivité"
+    ],
     "link": "https://promptotheque.eu",
     "external": true,
+    "status": "early"
+  },
+  {
+    "id": "amstram",
+    "title": "Amstram",
+    "description": "Le am-stram-gram de la famille sur iPhone et iPad : chacun pose un doigt, le hasard désigne un gagnant ou forme les équipes.",
+    "icon": "hand",
+    "color": "#FF6B9D",
+    "tags": [
+      "iPhone",
+      "iPad",
+      "Jeu"
+    ],
+    "link": "/amstram",
+    "external": false,
     "status": "early"
   }
 ]
