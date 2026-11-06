@@ -76,6 +76,7 @@ export default function AmstramPage() {
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.6, margin: '0 0 1.75rem', opacity: 0.85 }}>
               Le am-stram-gram de la famille, sur iPhone et iPad : un gagnant ou des équipes, en quelques secondes.
+              Sans publicité, sans pistage, aucune donnée collectée.
             </p>
             {APP_STORE_URL ? (
               <a href={APP_STORE_URL} style={storeButton}>Télécharger sur l'App Store</a>
@@ -121,10 +122,10 @@ export default function AmstramPage() {
 
       <section style={{ background: INK, color: CREAM, padding: '3.5rem 1rem' }}>
         <div style={container}>
-          <h2 style={{ ...h2, color: CREAM }}>Rien à créer, rien à payer, rien qui sort</h2>
+          <h2 style={{ ...h2, color: CREAM }}>Aucune donnée collectée</h2>
           <p style={{ fontSize: 17, lineHeight: 1.6, maxWidth: 680, margin: '0 0 1.5rem' }}>
-            Pas de compte, pas de publicité, pas d'achat dans l'app, aucune donnée collectée. Amstram fonctionne sans
-            connexion, et vos réglages restent sur votre appareil.
+            Pas de publicité, pas de pistage, pas de compte, pas d'achat dans l'app. Amstram fonctionne sans connexion,
+            et vos réglages restent sur votre appareil. Rien ne quitte le téléphone ou la tablette.
           </p>
           <p style={{ margin: 0, display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             <Link href="/amstram/support" style={darkLink}>Aide et contact</Link>
