@@ -125,7 +125,7 @@ export default function AmstramPage() {
           <h2 style={{ ...h2, color: CREAM }}>Aucune donnée collectée</h2>
           <p style={{ fontSize: 17, lineHeight: 1.6, maxWidth: 680, margin: '0 0 1.5rem' }}>
             Pas de publicité, pas de pistage, pas de compte, pas d'achat dans l'app. Amstram fonctionne sans connexion,
-            et vos réglages restent sur votre appareil. Rien ne quitte le téléphone ou la tablette.
+            et vos réglages restent sur votre appareil. L'app n'envoie rien sur Internet.
           </p>
           <p style={{ margin: 0, display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             <Link href="/amstram/support" style={darkLink}>Aide et contact</Link>
