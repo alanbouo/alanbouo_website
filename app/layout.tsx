@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import SiteFrame from '@/components/SiteFrame'
+import { Analytics } from '@vercel/analytics/next'
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -33,31 +34,12 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Matomo Analytics Initialization
-              var _paq = window._paq = window._paq || [];
-              _paq.push(['trackPageView']);
-              _paq.push(['enableLinkTracking']);
-              _paq.push(['setCustomVariable', 1, "Traffic_Source", document.referrer.includes('ilan.com') ? 'Organic' : 'Direct', "visit"]);
-
-              // Matomo setup (replace with your actual instance)
-              (function() {
-                var u="//your-matomo-url/";
-                _paq.push(['setTrackerUrl', u+'matomo.php']);
-                _paq.push(['setSiteId', '1']);
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-              })();
-            `,
-          }}
-        />
       </head>
       <body>
         <SiteFrame>
           {children}
         </SiteFrame>
+        <Analytics />
       </body>
     </html>
   )

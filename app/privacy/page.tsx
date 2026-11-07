@@ -94,9 +94,9 @@ export default function PrivacyPage() {
         <section style={{ marginBottom: '1.25rem' }}>
           <h2 style={sectionHeadingStyle}>6. Cookies & Analytics</h2>
           <p style={pStyle}>
-            Ce site peut utiliser un outil d'analyse respectueux de la vie privée pour comprendre l'usage des pages. Les
-            données sont agrégées et anonymisées. Les cookies éventuellement présents sont minimaux et servent
-            uniquement aux fonctionnalités essentielles ou aux préférences de consentement.
+            Ce site mesure son audience avec Vercel Web Analytics : pages vues, site d'origine, pays, type d'appareil et
+            de navigateur. Cet outil ne dépose aucun cookie et ne suit pas les visiteurs d'un site à l'autre ; les
+            données sont agrégées et ne permettent pas de vous identifier.
           </p>
         </section>
 
