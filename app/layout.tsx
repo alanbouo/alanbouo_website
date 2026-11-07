@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import SiteFrame from '@/components/SiteFrame'
-import { Analytics } from '@vercel/analytics/next'
+import SiteAnalytics from '@/components/SiteAnalytics'
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export default function RootLayout({
         <SiteFrame>
           {children}
         </SiteFrame>
-        <Analytics />
+        <SiteAnalytics />
       </body>
     </html>
   )
