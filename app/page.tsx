@@ -5,8 +5,8 @@ import { pageMetadata, SITE_URL, SOCIAL_PROFILES } from '@/lib/site'
 
 export const metadata = pageMetadata({
   path: '/',
-  title: 'Alan Bouo — Expert IA & cybersécurité qui construit en public',
-  description: "Je construis des produits, j'apprends en avançant et je partage tout en public. Passionné d'IA et de cybersécurité, j'aime rendre ces sujets accessibles, sans jargon.",
+  title: "Alan Bouo — Je construis des apps et j'explique l'IA et la cybersécurité",
+  description: "Je construis des apps utiles et gratuites, et j'explique l'IA et la cybersécurité en chemin, simplement et sans jargon.",
 })
 
 const jsonLd = {
@@ -18,7 +18,7 @@ const jsonLd = {
       name: 'Alan Bouo',
       url: `${SITE_URL}/`,
       image: `${SITE_URL}/img/alan.png`,
-      description: "Je construis des produits et je partage tout en public. IA et cybersécurité rendues accessibles, sans jargon.",
+      description: "Je construis des apps utiles et gratuites, et j'explique l'IA et la cybersécurité en chemin.",
       knowsAbout: ['Intelligence artificielle', 'Cybersécurité'],
       sameAs: SOCIAL_PROFILES,
     },

@@ -9,7 +9,7 @@ export async function GET() {
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alan Bouo — Expert IA &amp; cybersécurité</title>
+    <title>Alan Bouo</title>
     <description>Vulgarisation de l'IA et de la cybersécurité, et coulisses de ce que je construis, documentées en public.</description>
     <link>${baseUrl}</link>
     <language>fr-FR</language>

@@ -5,9 +5,9 @@
 import type { Metadata } from 'next'
 
 export const SITE_URL = 'https://www.alanbouo.com'
-export const SITE_NAME = 'Alan Bouo — Expert IA & cybersécurité'
+export const SITE_NAME = 'Alan Bouo'
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.png`
-const OG_IMAGE_ALT = 'Alan Bouo : IA & cybersécurité, construit en public'
+const OG_IMAGE_ALT = "Alan Bouo : des apps utiles, l'IA et la cybersécurité expliquées"
 
 export const SOCIAL_PROFILES = [
   'https://www.youtube.com/@alanbouo',

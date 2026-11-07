@@ -81,7 +81,7 @@ export default function Footer() {
           fontFamily: 'var(--font-body)',
           fontSize: '14px'
         }}>
-            <p style={{ color: '#8A9499', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2026 Alan Bouo. Tous droits réservés. <em style={{ color: '#ffffff' }}>Rendre l'IA et la cybersécurité accessibles, un produit à la fois.</em></p>
+            <p style={{ color: '#8A9499', fontSize: '13px', lineHeight: '1.5' }}>&copy; 2026 Alan Bouo. Tous droits réservés. <em style={{ color: '#ffffff' }}>Des apps utiles, et l'IA et la cybersécurité rendues accessibles.</em></p>
         </div>
       </div>
 

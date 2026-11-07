@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
 import { getPost, getPostSlugs } from '@/lib/posts'
-import { SITE_URL, DEFAULT_OG_IMAGE } from '@/lib/site'
+import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/site'
 
 interface Props {
   params: {
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.description,
       url: postUrl,
-      siteName: 'Alan Bouo — Expert IA & cybersécurité',
+      siteName: SITE_NAME,
       locale: 'fr_FR',
       type: 'article',
       publishedTime: post.date,

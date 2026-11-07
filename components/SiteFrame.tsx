@@ -8,10 +8,8 @@ import Footer from './Footer'
 // SAUF sur l'éditeur Keystatic (/keystatic) qui occupe tout l'écran.
 export default function SiteFrame({
   children,
-  ctaVariant,
 }: {
   children: React.ReactNode
-  ctaVariant: string
 }) {
   const pathname = usePathname()
 
@@ -22,7 +20,7 @@ export default function SiteFrame({
   return (
     <>
       <Navbar />
-      <main data-cta-variant={ctaVariant}>{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   )

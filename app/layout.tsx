@@ -6,17 +6,17 @@ import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from '@/lib/site'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Alan Bouo — Expert IA & cybersécurité qui construit en public',
-  description: "Je construis des produits, j'apprends en avançant et je partage tout en public. Passionné d'IA et de cybersécurité, j'aime rendre ces sujets accessibles, sans jargon.",
-  keywords: ['IA', 'intelligence artificielle', 'cybersécurité', 'build in public', 'vulgarisation', 'indie hacking', 'SaaS', 'Alan Bouo'],
+  title: "Alan Bouo — Je construis des apps et j'explique l'IA et la cybersécurité",
+  description: "Je construis des apps utiles et gratuites, et j'explique l'IA et la cybersécurité en chemin, simplement et sans jargon.",
+  keywords: ['IA', 'intelligence artificielle', 'cybersécurité', 'vulgarisation', 'apps gratuites', 'Alan Bouo'],
   authors: [{ name: 'Alan Bouo' }],
   openGraph: {
-    title: 'Alan Bouo — Expert IA & cybersécurité qui construit en public',
-    description: "Je construis des produits et j'apprends en public. IA & cybersécurité rendues accessibles, sans jargon.",
+    title: "Alan Bouo — Je construis des apps et j'explique l'IA et la cybersécurité",
+    description: "Je construis des apps utiles et gratuites, et j'explique l'IA et la cybersécurité en chemin.",
     siteName: SITE_NAME,
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: 'Alan Bouo : IA & cybersécurité, construit en public' }],
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "Alan Bouo : des apps utiles, l'IA et la cybersécurité expliquées" }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -29,9 +29,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // A/B Testing variant for CTA buttons
-  const ctaVariant = Math.random() < 0.5 ? 'demo' : 'audit';
-
   return (
     <html lang="fr">
       <head>
@@ -39,14 +36,10 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Globaux pour analytics
-              window.ctaVariant = "${ctaVariant}";
-
               // Matomo Analytics Initialization
               var _paq = window._paq = window._paq || [];
               _paq.push(['trackPageView']);
               _paq.push(['enableLinkTracking']);
-              _paq.push(['setCustomVariable', 3, "CTA_Variant", "${ctaVariant}", "visit"]);
               _paq.push(['setCustomVariable', 1, "Traffic_Source", document.referrer.includes('ilan.com') ? 'Organic' : 'Direct', "visit"]);
 
               // Matomo setup (replace with your actual instance)
@@ -62,7 +55,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <SiteFrame ctaVariant={ctaVariant}>
+        <SiteFrame>
           {children}
         </SiteFrame>
       </body>

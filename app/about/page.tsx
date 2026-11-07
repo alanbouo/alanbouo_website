@@ -4,8 +4,8 @@ import { pageMetadata } from '@/lib/site'
 
 export const metadata = pageMetadata({
   path: '/about',
-  title: 'À propos d\'Alan Bouo — Expert IA & cybersécurité',
-  description: "Alan Bouo, passionné d'IA & de cybersécurité. Je construis des produits et j'explique ce que j'apprends, en rendant ces sujets accessibles. Créateur de CookSmart, TubeChatAI, MemoMind et d'autres projets en cours. Basé à Lyon, France."
+  title: "À propos d'Alan Bouo",
+  description: "Alan Bouo construit des apps utiles et gratuites, et explique l'IA et la cybersécurité en chemin, simplement. Créateur de CookSmart, TubeChatAI, MemoMind et d'autres projets en cours. Basé à Lyon, France."
 })
 
 export default function AboutPage() {
@@ -27,8 +27,8 @@ export default function AboutPage() {
             <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '1rem', lineHeight: '1.2', fontWeight: 'bold' }}>
               ALAN BOUO
             </h1>
-            <h2 style={{ fontSize: 'clamp(1.3rem, 4vw, 2rem)', marginBottom: '2rem', color: 'inherit', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '600' }}>
-              Expert IA &amp; Cybersécurité
+            <h2 style={{ fontSize: 'clamp(1.3rem, 4vw, 2rem)', marginBottom: '2rem', color: 'inherit', opacity: 0.9, fontWeight: '600' }}>
+              Je construis des apps utiles et gratuites, et j'explique l'IA et la cybersécurité
             </h2>
             <p style={{ fontSize: '20px', lineHeight: '1.6', marginBottom: '1.5rem', fontWeight: '500' }}>
               J'aime comprendre comment les choses marchent, et fabriquer des choses utiles à
@@ -127,7 +127,7 @@ export default function AboutPage() {
             }} className="profile-image-hover">
               <Image
                 src="/img/alan.png"
-                alt="Alan BOUO — Expert IA & cybersécurité"
+                alt="Portrait d'Alan Bouo"
                 width={320}
                 height={320}
                 style={{ objectFit: 'cover', width: '100%', height: '100%' }}
