@@ -1,0 +1,76 @@
+---
+title: "Fausse vérification Mac : ce que contient vraiment la commande collée dans le Terminal"
+description: >-
+  Un faux contrôle « I'm not a robot » demande de coller une commande dans le
+  Terminal. Décodage, sans exécution, de ce qu'elle lance : agent de démarrage,
+  serveur lu sur la blockchain, vol du mot de passe de session.
+date:
+category: Cybersécurité
+tags:
+  - ClickFix
+  - macOS
+  - Terminal
+  - hameçonnage
+  - malware
+featured: false
+---
+# Fausse vérification Mac : ce que contient vraiment la commande collée dans le Terminal
+
+Je cherchais à installer la CLI de Grok. Sur Brave, la requête était « grok cli ». Le premier résultat, `grokcli.io`, n'était pas une annonce. Quelques secondes après le clic, une page m'a demandé de coller une commande dans le Terminal. J'ai collé, dans le Terminal ouvert par Spotlight. Je n'ai pas appuyé sur Entrée.
+
+Quelque chose m'avait paru bizarre, sans que je sache dire quoi. Je ne l'ai compris que plus tard. Cet article décrit ce que la page affichait, ce que contenait le presse-papiers, et ce que la commande aurait lancé. Il ne contient pas la commande.
+
+## La page : une coche verte avant le geste dangereux
+
+La page arrive en deux temps. D'abord une carte « Secure access check » avec une case « I'm not a robot » et cette phrase : « Checked in your browser. Nothing is sent anywhere. » Puis une fenêtre « Verification », une coche verte, quatre étapes :
+
+1. ⌘ + espace pour ouvrir Spotlight
+2. taper « Terminal » puis Entrée
+3. coller avec ⌘ + V
+4. Entrée pour finir
+
+Le bouton « Verified » est déjà coché. L'adresse de la page porte `?verified=true`, et ce paramètre suffit à afficher cet état. La coche ne prouve rien.
+
+La page n'envoie rien, c'est vrai. Elle ne fait qu'une chose : remplir le presse-papiers. Tant que vous ne collez pas et que vous n'appuyez pas sur Entrée, rien ne se lance.
+
+## Pourquoi c'était le premier résultat
+
+Le nom `grokcli.io` a une histoire. Les copies de la Wayback Machine, du 22 juillet 2025 au 16 juin 2026, montrent une page « Grok CLI - Conversational AI CLI Tool » qui promet une installation avec npm. C'est la page d'un projet tiers, pas un site de xAI. Un moteur de recherche classe un nom qui répond à la question depuis un an.
+
+La CLI officielle de xAI s'installe depuis le site de xAI, par une commande à lancer dans le Terminal. C'est ce qui rend le piège crédible : coller une commande est ici le geste normal.
+
+Le nom, lui, n'a pas gardé son contenu. La dernière modification de sa délégation DNS au registre date du 16 septembre 2026 : il pointe depuis vers des serveurs de noms que le rapport d'Infoblox de décembre 2025 range parmi ceux d'un réseau de domaines parkés. Infoblox y mesure plus de neuf visites sur dix qui finissent sur une arnaque, un logiciel indésirable ou un malware. Le rapport ne nomme pas l'opérateur de `grokcli.io`. Deux causes restent ouvertes : un changement voulu par le titulaire, ou un compte pris. Rien ne tranche.
+
+Mon historique Brave ne garde pas `grokcli.io` : ce nom redirige aussitôt vers d'autres adresses, selon le client qui l'appelle. Il montre une page « Loading » quatre secondes après la recherche, un formulaire, un second intermédiaire dont l'adresse porte le mot `grokcli` et un champ de coût, puis `krestle-clear.tiiny.site`. Cinquante minutes plus tard, en retapant le nom dans la barre d'adresse, je suis tombé sur une tout autre page : le visiteur est trié, puis revendu.
+
+## Ce que lance la commande, si on valide
+
+Le presse-papiers ne contient pas une vérification. Il contient une ligne qui fait exécuter à bash le résultat d'un décodage. Elle est emballée pour qu'un collage distrait ne montre ni `curl`, ni adresse. Un agent IA l'a décodée à ma demande, en lecture seule, sans rien exécuter. Décodée, elle télécharge un script nommé `clear-cache.sh` sur `3pmk.angusreforma.com` et le passe à un interpréteur.
+
+Ce script est lui-même emballé plusieurs fois : du base64, puis un AppleScript qui reconstruit son texte caractère par caractère. Une fois à plat, il fait trois choses.
+
+**Il s'installe.** Il écrit un agent de démarrage, `~/Library/LaunchAgents/com.Apple.ddjnmuymodzjkyov.plist`. Le nom imite Apple. L'agent démarre à l'ouverture de session et se relance s'il est tué.
+
+**Il va chercher l'adresse de son serveur au moment de s'exécuter.** Cette adresse n'est écrite ni dans la page, ni dans l'agent : il la lit dans un contrat public sur la blockchain Polygon. Le 18 octobre 2026, la valeur lue était `zmngfjl.fun`, un domaine enregistré le 12 octobre. Le même portefeuille a écrit cette valeur 45 fois entre le 1er mai et le 13 octobre. Bloquer un nom protège la visite d'hier. L'adresse peut changer sans qu'on retouche la page, ni l'agent déjà installé.
+
+**Il prend des ordres.** L'étape récupérée ce jour-là identifie le Mac, puis affiche une fenêtre qui imite les Réglages Système. Son texte : « You must enter the password to continue: ». La saisie est masquée, la fenêtre abandonne au bout de cent cinquante secondes, puis recommence tant que le mot de passe est refusé. Il est vérifié sur la machine, puis écrit dans un fichier du dossier personnel. Ensuite, le programme demande au serveur quoi faire, télécharge une suite et la lance en arrière-plan.
+
+## Ce qui n'est pas établi
+
+Le programme lu est un chargeur : il veut le mot de passe de session, puis il attend des ordres. Ce mot de passe ouvre la porte à ce qui est protégé sur le Mac. Mais les ordres suivants n'ont pas été ouverts. Je ne peux donc pas écrire que des navigateurs, un trousseau ou des portefeuilles ont été lus, ni que des données ont été volées.
+
+Je ne peux pas non plus attribuer cet échantillon à un nom de malware. Des rapports publics donnent un nom à d'autres échantillons qui lisent le même contrat. L'agent de démarrage de ceux-là ne s'appelle pas comme celui-ci.
+
+## Si vous avez vu cette page : deux cas
+
+**Vous n'avez pas appuyé sur Entrée.** Fermez l'onglet. Copiez autre chose pour écraser le presse-papiers. C'est tout.
+
+**Vous avez appuyé sur Entrée.** Considérez le Mac comme compromis. Coupez le réseau. Changez vos mots de passe depuis un autre appareil, en commençant par le compte Apple, la messagerie, les banques et les échanges. Supprimer le fichier `.plist` ne suffit pas : une suite a déjà pu être téléchargée.
+
+## Vérifier sa machine
+
+Ces noms sont des indices à chercher sur votre Mac, pas des adresses à ouvrir : l'agent `com.Apple.ddjnmuymodzjkyov` dans `~/Library/LaunchAgents`, le fichier `~/.txid` dans le dossier personnel, et dans vos journaux réseau les hôtes `krestle-clear.tiiny.site`, `3pmk.angusreforma.com` et `zmngfjl.fun` (valeur lue le 18 octobre 2026). Sur mon Mac, il n'y a ni l'agent ni le fichier. Leur absence ne prouve pas que tout va bien : ce sont les noms d'un échantillon, lu un jour.
+
+## Le réflexe de coller
+
+Cette page n'a pas d'exploit. Elle compte sur un geste, celui de tous ceux qui installent des outils en ligne de commande : coller dans le Terminal ce qu'on vient de copier. J'ai ensuite cherché à signaler la page. Je n'ai pas trouvé où le faire sur Brave Search.
