@@ -1,0 +1,75 @@
+---
+title: "Docker contourne ufw : pourquoi votre port reste ouvert malgré le pare-feu"
+description: >-
+  Docker écrit ses règles iptables avant celles de ufw : un port publié reste
+  joignable depuis Internet, pare-feu actif ou non. Le mécanisme, le cas de
+  quatre bases PostgreSQL exposées sur mon serveur, et la correction qui tient.
+date:
+category: Cybersécurité
+tags:
+  - Docker
+  - ufw
+  - iptables
+  - PostgreSQL
+  - Coolify
+  - auto-hébergement
+featured: false
+---
+# Docker contourne ufw : pourquoi votre port reste ouvert malgré le pare-feu
+
+Pendant l'investigation sur la compromission de mon instance Metabase, en septembre, j'ai tapé une commande pour vérifier ce qui protégeait le serveur :
+
+```
+$ ufw status
+Status: inactive
+```
+
+Aucune règle iptables propre non plus. Ce qui empêchait mes bases de données d'être joignables depuis Internet, c'était l'absence d'un mapping de port dans Docker. Autrement dit, une case à cocher dans une interface.
+
+Quatre bases PostgreSQL de ce serveur avaient cette case cochée. Elles étaient publiées sur Internet.
+
+Mais le plus important n'est pas que `ufw` était inactif chez moi. C'est que, même actif, il n'aurait rien changé.
+
+## Le mécanisme
+
+Sous Linux, le filtrage réseau passe par iptables : une suite de chaînes de règles, lues dans un ordre précis. `ufw` est une surcouche qui écrit ses règles dans certaines de ces chaînes.
+
+Quand Docker publie un port (`-p 5433:5432`, ou la ligne `ports:` d'un fichier Compose), il ne passe pas par `ufw`. Il écrit directement ses propres règles dans une chaîne `DOCKER`, et le trafic destiné au conteneur traverse cette chaîne **avant** d'atteindre les règles de `ufw`.
+
+Résultat : vous pouvez avoir `ufw` actif, une règle « tout refuser sauf 22, 80 et 443 », et un port PostgreSQL publié par Docker restera joignable depuis n'importe où. `ufw status` ne le montre pas. Rien ne vous prévient.
+
+C'est probablement l'erreur la plus répandue de l'auto-hébergement, parce qu'elle donne une impression de sécurité que la machine ne fournit pas.
+
+## Le piège annexe : 0.0.0.0
+
+Un mapping s'écrit avec une adresse d'écoute, souvent omise :
+
+- `5433:5432` équivaut à `0.0.0.0:5433:5432` : le port écoute sur toutes les interfaces, Internet compris.
+- `127.0.0.1:5433:5432` : le port n'écoute que sur la machine elle-même.
+
+Quand une base n'a besoin d'être jointe que par une application du même serveur, elle n'a besoin d'aucun port publié : un réseau Docker interne suffit.
+
+## Ce que l'exposition a coûté en pratique
+
+Les identifiants de ces quatre bases étaient lisibles dans la base de Metabase, celle que l'attaquant pouvait lire. Et les bases étaient joignables depuis Internet. La combinaison rendait ces mots de passe utilisables depuis n'importe où.
+
+Je ne peux pas affirmer que ces bases ont été consultées : leurs journaux de connexion (`log_connections`) étaient désactivés, une connexion réussie n'aurait laissé aucune trace. Je peux affirmer qu'elles étaient joignables, et qu'elles ont été attaquées en continu. Ce que ça représente en volume fait l'objet d'un article à part.
+
+En cours d'investigation, j'ai trouvé autre chose, sans rapport avec la faille Metabase : l'interface d'administration de Coolify, l'outil qui orchestre ce serveur, joignable depuis Internet sur le port 8000, **en HTTP non chiffré**. C'est le plan de contrôle de 22 services, toutes leurs variables d'environnement, et l'exécution de commandes sur la machine. Les ports 6001 et 6002 étaient ouverts aussi.
+
+## La correction qui tient : un pare-feu en amont
+
+J'ai décidé de placer le filtrage là où Docker ne peut pas écrire : un pare-feu cloud, chez l'hébergeur, devant la machine. Il survit à Docker, aux redémarrages et aux erreurs de configuration d'un service.
+
+Le principe général : tout refuser en entrée, puis n'ouvrir que ce qui doit l'être. Sur coolify-2, trois ports restent ouverts en entrée : TCP 22, 80 et 443. Tout le reste est refusé par défaut.
+
+Une fois les ports fermés, le 13 septembre, le trafic d'attaque externe sur ces bases est passé d'environ 200 tentatives par jour à zéro, du jour au lendemain. Dernière tentative externe enregistrée : le 13 septembre à 21:38:35.
+
+## Vérifier votre serveur en dix minutes
+
+1. **Lister ce que Docker publie** : `docker ps --format '{{.Names}}\t{{.Ports}}'`. Tout `0.0.0.0:` ou `:::` est joignable de partout, si rien n'est filtré en amont.
+2. **Regarder depuis l'extérieur, pas depuis la machine** : un scan des ports depuis une autre connexion (`nmap -Pn votre-ip`). Le test local ne vaut pas mesure externe.
+3. **Retirer les ports inutiles** : une base utilisée par une application voisine n'a pas besoin de `ports:`.
+4. **Mettre le pare-feu chez l'hébergeur**, pas seulement sur la machine.
+
+`ufw` n'est pas inutile. Il ne protège simplement pas ce que Docker publie.
