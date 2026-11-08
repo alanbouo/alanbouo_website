@@ -10,16 +10,22 @@ Le mécanisme, le piège du 0.0.0.0 et la vérification en dix minutes : https:/
 
 ## LinkedIn
 
-C'est probablement l'erreur la plus répandue de l'auto-hébergement, parce qu'elle donne une impression de sécurité que la machine ne fournit pas.
+Image : `docker-contourne-ufw.png` (dans ce dossier)
+Lien de l'article en premier commentaire : https://alanbouo.com/blog/docker-contourne-ufw
 
-Sous Linux, ufw écrit ses règles dans iptables. Quand Docker publie un port, il ne passe pas par ufw : il écrit ses propres règles, que le trafic destiné au conteneur traverse avant celles d'ufw. Vous pouvez avoir un pare-feu actif qui refuse tout sauf 22, 80 et 443, et une base PostgreSQL publiée par Docker reste joignable depuis n'importe où. Rien ne vous prévient.
+Vous avez un pare-feu actif, une règle « tout refuser sauf 22, 80 et 443 », et un port PostgreSQL publié par Docker reste joignable depuis Internet.
 
-Je l'ai constaté pendant l'investigation sur la compromission de mon instance Metabase : quatre bases étaient publiées sur Internet, et leurs identifiants étaient lisibles par l'attaquant.
+Docker ne passe pas par ufw. Pour publier un port, il écrit ses propres règles dans la chaîne DOCKER d'iptables, que le trafic traverse avant les règles de ufw. Rien ne vous prévient, et `ufw status` ne le montre pas.
 
-J'ai décidé de placer le filtrage là où Docker ne peut pas écrire : un pare-feu chez l'hébergeur, devant la machine. Une fois les ports fermés, le 13 septembre, le trafic d'attaque externe sur ces bases est passé d'environ 200 tentatives par jour à zéro.
+Chez moi, `ufw status` affichait `inactive`. Quatre bases PostgreSQL de mon serveur étaient publiées sur Internet, et ce qui les séparait de l'extérieur n'était pas un pare-feu mais une case dans une interface. Même actif, ufw n'y aurait rien changé.
 
-ufw n'est pas inutile. Il ne protège simplement pas ce que Docker publie. Et le test se fait depuis l'extérieur : un test local ne vaut pas mesure externe.
+J'ai décidé de placer le filtrage là où Docker ne peut pas écrire : un pare-feu chez l'hébergeur, devant la machine. Il survit à Docker, aux redémarrages et aux erreurs de configuration d'un service.
 
-Où se trouve le filtrage de vos serveurs : sur la machine, ou devant ?
+Dix minutes pour vérifier le vôtre :
+1. `docker ps --format '{{.Names}}\t{{.Ports}}'` : tout `0.0.0.0:` ou `:::` est joignable de partout si rien ne filtre en amont.
+2. Un scan depuis une autre connexion (`nmap -Pn votre-ip`). Le test fait depuis la machine ne mesure pas ce que voit Internet.
+3. Retirer les `ports:` d'une base qui n'est utilisée que par une application voisine : un réseau Docker interne suffit.
 
-https://alanbouo.com/blog/docker-contourne-ufw
+La dernière fois que vous avez regardé votre serveur depuis l'extérieur, c'était quand ?
+
+Texte alternatif : schéma Internet vers chaîne DOCKER vers conteneur sur le port 5433, avec les règles ufw en dessous, contournées et jamais atteintes.
