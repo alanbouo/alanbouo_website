@@ -1,0 +1,31 @@
+# Un article arrive sur main par la fusion de sa pull request, avec un champ « date: » vide.
+# Cette action y écrit la date du jour (heure de Paris) : la fusion est la publication.
+# Le commit qu'elle pousse redéploie le site avec la date figée.
+name: Date de publication
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/blog/**"
+
+permissions:
+  contents: write
+
+jobs:
+  dater:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Écrire la date des articles sans date
+        run: node scripts/date-publication.mjs
+
+      - name: Commiter
+        run: |
+          git diff --quiet content/blog && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add content/blog
+          git commit -m "blog: date de publication ($(TZ=Europe/Paris date +%F))"
+          git push

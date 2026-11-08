@@ -57,6 +57,10 @@ export interface Post extends PostMeta {
   wordCount: number
 }
 
+function buildDate(): string {
+  return new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Paris' })
+}
+
 function toDateString(value: unknown, fallback = ''): string {
   if (value instanceof Date) return value.toISOString().slice(0, 10)
   if (typeof value === 'string') return value.slice(0, 10)
@@ -82,7 +86,9 @@ function parsePost(slug: string): Post | null {
   const raw = fs.readFileSync(found.fullPath, 'utf8')
   const { data, content } = matter(raw)
 
-  const date = toDateString(data.date)
+  // Date vide : article en cours de relecture dans une pull request. La prévisualisation
+  // l'affiche à la date du build ; à la fusion, l'action « Date de publication » écrit la vraie.
+  const date = toDateString(data.date) || buildDate()
   const words = content.split(/\s+/).filter(Boolean).length
   const readingTime =
     typeof data.readingTime === 'number' && data.readingTime > 0

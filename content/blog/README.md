@@ -1,5 +1,16 @@
 # Comment publier un article de blog
 
+## Le circuit habituel : une pull request par article
+
+Un article arrive en pull request (branche `article/<slug>`), avec ses posts X et
+LinkedIn dans `content/social/<slug>.md`. Le skill `/article` la prépare.
+
+1. **Relire** la PR : le texte, la prévisualisation Vercel (lien dans la PR), les posts,
+   et la liste « À regarder » de la description.
+2. **Fusionner** : c'est la publication. Le champ `date:` est laissé vide dans la PR ;
+   l'action « Date de publication » y écrit la date du jour juste après la fusion.
+3. **Publier les posts** de `content/social/<slug>.md`.
+
 ## Le plus simple : l'éditeur web (Keystatic)
 
 Tu peux tout faire depuis un **éditeur visuel**, sans toucher aux fichiers : rédiger,
@@ -84,4 +95,5 @@ et évite les fichiers de plusieurs Mo.
 
 ## 5. Publier
 
-Commit + push sur `main` : le site se reconstruit et l'article est en ligne.
+Commit + push sur `main` : le site se reconstruit et l'article est en ligne. Un champ
+`date:` laissé vide reçoit la date du jour par l'action « Date de publication ».
