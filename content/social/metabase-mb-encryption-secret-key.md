@@ -10,14 +10,21 @@ Pourquoi la clé se pose à l'installation, et comment ne pas la perdre : https:
 
 ## LinkedIn
 
-Il y a une différence énorme entre « on a piraté mon outil de tableaux de bord » et « on a lu les mots de passe de mes bases de production ». Sur mon instance Metabase, cette différence tenait à une variable d'environnement qui n'était pas définie.
+Image : `metabase-mb-encryption-secret-key.png` (dans ce dossier)
+Lien de l'article en premier commentaire : https://alanbouo.com/blog/metabase-mb-encryption-secret-key
 
-Metabase garde les identifiants des bases qu'il interroge dans sa propre base interne. Avec MB_ENCRYPTION_SECRET_KEY, ils sont chiffrés. Sans elle, ils sont en clair. Tant que personne ne lit la base interne, la différence est invisible.
+Entre « on a piraté mon outil de tableaux de bord » et « on a lu les mots de passe de toutes mes bases de production », il y a une variable d'environnement. Sur mon instance Metabase, elle n'était pas définie.
 
-Le jour où une injection SQL l'a lue, la table contenait les identifiants de six bases connectées, en clair. Il a fallu faire tourner quatre mots de passe et reconfigurer trois applications. Avec la clé, la faille aurait été la même ; ce qu'elle donnait, non.
+Metabase garde les identifiants des bases qu'il interroge (hôte, port, utilisateur, mot de passe) dans sa propre base interne. Avec `MB_ENCRYPTION_SECRET_KEY`, ils sont chiffrés. Sans elle, ils sont stockés en clair. Tant que personne ne lit cette base, la différence est invisible.
 
-Le piège : la clé se pose avant. Au premier démarrage, Metabase chiffre les secrets existants ; si la clé est perdue, ils deviennent illisibles. Elle se stocke dans un gestionnaire de secrets et se sauvegarde comme la base elle-même.
+Mon instance a été compromise en août et septembre par CVE-2026-72898, une injection SQL non authentifiée notée CVSS 10.0, qui permet de lire cette base interne. Elle contenait les identifiants de six bases, en clair. Quatre étaient en même temps publiées sur Internet. Avec la clé, l'attaquant aurait obtenu ces identifiants chiffrés : la faille aurait été la même, ce qu'elle donnait, non.
 
-Le cas dépasse Metabase : outils d'automatisation, tableaux de bord, ETL stockent tous des identifiants vers d'autres systèmes. Pour chacun, une question : si quelqu'un lit sa base, qu'obtient-il en clair ?
+Je ne peux pas affirmer que ces bases ont été consultées, leurs journaux de connexion étant désactivés. Je peux affirmer qu'elles étaient joignables et que leurs identifiants étaient lisibles. Il a fallu faire tourner quatre mots de passe et reconfigurer trois applications.
 
-https://alanbouo.com/blog/metabase-mb-encryption-secret-key
+Le message était dans les journaux de démarrage depuis l'installation : « Saved credentials encryption is DISABLED ». Je ne l'avais jamais lu.
+
+Le piège : la clé se pose avant, pas après. Au premier démarrage avec la clé, les secrets existants sont chiffrés. Si la clé est perdue, ils deviennent illisibles. Elle se génère, se range dans un gestionnaire de secrets, et se sauvegarde comme la base elle-même.
+
+Le cas dépasse Metabase : outils d'automatisation, tableaux de bord, ETL stockent tous des identifiants vers d'autres systèmes. Dans les vôtres, qu'obtiendrait quelqu'un qui en lirait la base ?
+
+Texte alternatif : extrait de journal de démarrage de Metabase indiquant que le chiffrement des identifiants enregistrés est désactivé, avec le nom de la variable MB_ENCRYPTION_SECRET_KEY.
