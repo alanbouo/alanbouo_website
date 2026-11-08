@@ -22,8 +22,12 @@ Format :
 
 - **X** : 1 à 3 tweets, un par paragraphe, 280 caractères au plus chacun, lien de
   l'article dans le dernier. Un fil de plusieurs tweets se publie en réponses successives.
-- **LinkedIn** : un post, lien de l'article à la fin. Absent quand le sujet n'est pas
-  l'IA ou la cybersécurité (sortie de produit, référencement).
+- **LinkedIn** : un post, lien de l'article à la fin ou en premier commentaire. Absent
+  quand le sujet n'est pas l'IA ou la cybersécurité (sortie de produit, référencement).
+  Une image éventuelle est rangée à côté (`<slug>.png`), signalée par une ligne
+  `Image :` en tête de section et décrite par une ligne `Texte alternatif :` en fin.
+- **Post sans article** : même format, sur une branche `post/<slug>`. Fusionner ne change
+  rien au site : c'est le feu vert pour publier.
 
 Les gabarits font foi : `../newsroom/prompts/alanbouo/x.md` et `linkedin.md`, avec la voix
 de `../alanbouo-pilotage/voice.md`.
