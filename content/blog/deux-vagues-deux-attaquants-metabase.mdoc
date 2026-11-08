@@ -1,0 +1,90 @@
+---
+title: "Compromission de masse : deux vagues, deux attaquants, lisibles dans les données"
+description: >-
+  Dix comptes administrateurs créés par des tiers sur mon instance Metabase,
+  en deux vagues aux profils opposés : scanners pressés puis opérateur
+  discret. Ce que les noms, les horaires et les adresses révèlent.
+date:
+category: Cybersécurité
+tags:
+  - Metabase
+  - CVE-2026-72898
+  - réponse à incident
+  - attaquants
+  - forensique
+featured: false
+---
+# Compromission de masse : deux vagues, deux attaquants, lisibles dans les données
+
+Quand on pense « piratage », on imagine quelqu'un qui a choisi sa cible. Sur mon instance Metabase, compromise entre août et septembre 2026 par la faille CVE-2026-72898, rien ne ressemble à ça. Au moins dix comptes administrateurs ont été créés par des tiers. En les relisant dans la base, ils se rangent en deux groupes qui n'ont presque rien en commun.
+
+## Vague 1 : les scanners (12 août → 5 septembre)
+
+Six comptes, tous nommés sur le même modèle : `admin-*@poc.local`.
+
+- **Connectés une seule fois**, dans les secondes qui suivent leur création.
+- **Depuis des adresses DigitalOcean**, un hébergeur cloud : `162.243.242.176`, `157.245.203.132`, `68.183.68.63`, `206.189.199.39`.
+- **Des user-agents aléatoires**, dont un qui ne se cache même pas : `python-requests/2.34.2`, la signature d'un script Python.
+
+`poc` veut dire *proof of concept* : la preuve que la faille marche. Le compte est créé, la connexion est testée, et on passe à l'instance suivante. Rien n'a été fait de ces comptes ensuite.
+
+## Vague 2 : l'opérateur discret (7 → 13 septembre)
+
+Quatre comptes, nommés autrement : `svc-backup-*@local.dev`, avec le prénom « System ».
+
+- **Un nommage crédible.** Un compte « service de sauvegarde » nommé « System », dans une liste d'utilisateurs, passe pour un compte technique légitime.
+- **Un user-agent constant.**
+- **Des connexions plusieurs heures après la création**, environ cinq heures plus tard, tous les trois jours.
+- **Depuis Tencent Cloud** (`129.226.216.22`) et un hébergeur indonésien (`103.130.18.45`, `.144`).
+
+La cadence régulière, création puis connexion environ cinq heures plus tard, tous les trois jours, évoque un pipeline automatisé en deux étapes plutôt qu'un humain devant un clavier. C'est une hypothèse déduite d'une régularité, pas une preuve.
+
+## Le détail qui trahit l'insertion directe
+
+Les comptes `poc.local` portent `is_superuser = true`, mais **n'appartiennent à aucun groupe de permissions**.
+
+Dans Metabase, un administrateur créé normalement, par l'interface, est placé dans les groupes correspondants. Un superutilisateur sans aucun groupe, c'est la signature d'une ligne écrite directement dans la base par une requête SQL, en contournant l'application. Exactement ce que permet l'injection.
+
+Les comptes `svc-backup`, eux, figurent dans les groupes 1 et 2. Leur création ressemble davantage à celle d'un compte légitime, ce qui colle avec leur souci de passer inaperçus.
+
+## Ce que ça change de le savoir
+
+Deux profils, deux intentions apparentes :
+
+{% table %}
+-
+- Vague 1
+- Vague 2
+---
+- Nom
+- `admin-*@poc.local`
+- `svc-backup-*@local.dev`, « System »
+---
+- Connexion
+- une fois, dans les secondes
+- plusieurs heures après, à intervalle régulier
+---
+- User-agent
+- aléatoire, dont `python-requests`
+- constant
+---
+- Origine
+- DigitalOcean
+- Tencent Cloud, hébergeur indonésien
+---
+- Groupes
+- aucun
+- groupes 1 et 2
+{% /table %}
+
+La première vague vérifie que la porte est ouverte. La seconde cherche à rester dans la maison. Pour celui qui défend, ce ne sont pas les mêmes questions : la première dit « vous étiez vulnérable », la seconde demande « qu'a-t-on fait chez vous ? ».
+
+Sur ce point, ce que je peux établir a des limites : aucun de ces comptes n'a exécuté de requête dans l'outil, sur 2 875 enregistrées. Ce qui s'est passé hors de l'outil, je ne peux pas le savoir, faute de journaux. Je l'explique dans [l'article sur l'investigation sans journaux](/blog/investigation-intrusion-sans-journaux).
+
+## Ce que ça dit d'une compromission de masse
+
+Une faille notée 10.0, publique, avec des milliers d'instances exposées, n'attire pas un attaquant. Elle en attire plusieurs, qui ne se connaissent pas, avec des outils et des objectifs différents, et qui passent chacun à leur rythme.
+
+Je n'ai pas été choisi. Mon instance était dans la liste.
+
+Pour vérifier la vôtre : la liste des utilisateurs, triée par date de création. Un compte que vous n'avez pas créé, même nommé « System » ou « backup », est un signal.
