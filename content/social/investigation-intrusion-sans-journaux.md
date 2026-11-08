@@ -10,16 +10,21 @@ Comment écrire une conclusion honnête quand les journaux manquent : https://al
 
 ## LinkedIn
 
-« Non observé » et « prouvé absent » ne sont pas la même phrase. Toute la valeur d'un rapport d'incident tient dans la discipline de ne pas glisser de l'une à l'autre.
+Image : `investigation-intrusion-sans-journaux.png` (dans ce dossier)
+Lien de l'article en premier commentaire : https://alanbouo.com/blog/investigation-intrusion-sans-journaux
 
-Après la compromission de mon instance Metabase, les systèmes n'avaient presque rien gardé. Le journal d'audit est une fonction de l'offre Enterprise : sur la version libre, la table existe et reste vide. Les journaux d'accès du proxy n'avaient jamais été activés. La journalisation des connexions était désactivée sur les bases PostgreSQL.
+J'ai mené une investigation après intrusion avec une IA, du 13 au 15 septembre. Elle a accéléré des choses réelles, et elle a affirmé une chose qu'elle n'avait pas vérifiée.
 
-Ce qui restait, c'était la base interne de l'outil, exploitée ligne à ligne : comptes, connexions, 2 875 exécutions de requêtes. Aucune n'est attribuée à un compte malveillant. C'est beaucoup. Ce n'est pas « il ne s'est rien passé » : l'injection qui a servi à entrer ne passe pas par ces requêtes.
+Ce qui a bien marché : identifier la CVE à partir de la version et d'un symptôme banal, extraire et lire un dump de 149 Mo (53 tables non vides), reconstituer la chronologie, cartographier ce qui était exposé, rédiger le rapport d'incident.
 
-Le test qui aurait tranché une partie de la question, compter les requêtes vers l'endpoint vulnérable, demandait les journaux du proxy. Ils n'existaient pas.
+Ce qui a raté, tel quel : un utilisateur PostgreSQL `postgres` supposé, alors que Coolify crée un rôle par ressource. Un `grep` sur des noms de conteneurs qui sont des identifiants opaques et ne pouvaient rien donner. Une chaîne prise pour un mot de passe, alors que c'était un nom d'utilisateur.
 
-La conclusion que j'ai retenue tient en deux parties : dans l'outil, l'activité est bornée ; en dehors, aucune certitude. Un indicateur qui ne peut pas voir l'événement recherché ne prouve pas son absence.
+Et surtout : l'affirmation que la surface exposée se limitait à SSH et HTTP/HTTPS, sans avoir scanné les autres ports. Un balayage élargi a ensuite montré l'interface d'administration de Coolify joignable depuis Internet sur le port 8000, en HTTP non chiffré, ainsi que les ports 6001 et 6002. Elle est restée ouverte pendant qu'on refermait Metabase.
 
-Vos journaux permettraient-ils de répondre à « qu'ont-ils pris ? », ou seulement à « qu'a-t-on vu ? » ?
+Ce qui pose problème n'est pas l'erreur en soi, c'est la forme de la phrase : « la surface se limite à… » se lit comme un constat, alors que c'était une absence de mesure.
 
-https://alanbouo.com/blog/investigation-intrusion-sans-journaux
+C'est la distinction qui fait la valeur d'un rapport d'incident : « non observé » n'est pas « prouvé absent ».
+
+Quand un outil vous rend un constat d'absence, savez-vous ce qu'il a réellement mesuré ?
+
+Texte alternatif : trois ports (22, 80, 443) présentés comme affirmés, puis trois ports (8000, 6001, 6002) constatés ensuite en scannant, dont l'interface d'administration Coolify en HTTP non chiffré.
