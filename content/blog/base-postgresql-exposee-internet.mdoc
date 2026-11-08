@@ -1,0 +1,69 @@
+---
+title: "Base PostgreSQL exposée sur Internet : 2 h 35 avant la première attaque"
+description: >-
+  Ce que subit réellement une base de données publiée sur Internet, mesuré sur
+  six mois de journaux : délai avant la première attaque, volume, dictionnaire
+  de noms d'utilisateur, et le cas d'un port « caché » attaqué de façon ciblée.
+date:
+category: Cybersécurité
+tags:
+  - PostgreSQL
+  - exposition
+  - force brute
+  - auto-hébergement
+  - Docker
+featured: false
+---
+# Base PostgreSQL exposée sur Internet : 2 h 35 avant la première attaque
+
+Une base de données mise en ligne à 07:15. Première tentative d'authentification depuis Internet à 09:50. Deux heures trente-cinq.
+
+Ce chiffre vient des journaux de mes propres bases PostgreSQL, que Docker publiait sur Internet sans que je le sache (le mécanisme est expliqué dans [l'article sur Docker et ufw](/blog/docker-contourne-ufw)). Je les ai relus en septembre, pendant l'investigation sur la compromission de mon instance Metabase. Ils couvrent six mois, depuis la création des conteneurs.
+
+## Le volume
+
+Sur une seule de ces bases, Boudget :
+
+- **77 476** tentatives d'authentification en six mois ;
+- **406 par jour** en moyenne, **843 par jour** en août ;
+- **12 390** noms d'utilisateur distincts essayés.
+
+La répartition horaire est plate : 32 % d'écart seulement entre l'heure la plus calme et la plus active, sur 24 heures. Personne ne dort derrière ces tentatives. Ce sont des programmes.
+
+## Le dictionnaire
+
+Les noms essayés ne sont pas pris au hasard. On y trouve `keycloak`, `strapi`, `airflow`, `kong`, `odoo`, `superset`, `supabase_admin`, `n8n`.
+
+Ce sont les rôles que des logiciels courants de l'auto-hébergement créent par défaut dans PostgreSQL. Les robots connaissent la pile logicielle des gens qui hébergent eux-mêmes, et ils essaient les comptes que chaque outil installe sans qu'on y pense.
+
+## La base que personne ne pouvait joindre
+
+Sur la même machine, une autre base, hébergée en réseau interne, sans port publié : **zéro** tentative sur toute la période.
+
+Ce n'est pas la solidité de son mot de passe qui l'a protégée. C'est que personne ne pouvait la joindre.
+
+## Le port « caché »
+
+Une des bases écoutait sur un port non conventionnel, 5441. On pourrait croire que ça protège : les robots visent d'abord 5432, le port par défaut de PostgreSQL.
+
+Pendant 4 mois et 21 jours, ce port n'a reçu aucune tentative. Puis, un jour, **25 287 tentatives en 54 minutes**, avec un pic à 8,7 par seconde.
+
+Ce n'était pas un balayage d'opportunité. Ce jour-là, Boudget, sur le même serveur et sur un port plus couramment visé, a reçu 219 tentatives, exactement son rythme habituel. L'attaque a visé un port, un seul, et un nom d'utilisateur, un seul.
+
+Trois heures avant, il y avait une activité d'attaquant dans Metabase. C'est là que l'adresse et le port de cette base sont écrits, en clair.
+
+Je ne peux pas affirmer que c'est le même acteur : les adresses IP source de ces tentatives ne sont pas journalisées. L'hypothèse la plus cohérente, que je présente comme une hypothèse, est que l'adresse de la cible a été extraite de Metabase.
+
+Ce que ça montre en tout cas : un port inhabituel retarde la découverte par les robots. Il ne protège pas d'un attaquant qui a lu votre configuration. Et le jour où ça cède, il n'atténue rien.
+
+## La fermeture
+
+Le 13 septembre, j'ai fermé les ports, avec un pare-feu en amont de la machine. Le trafic d'attaque externe est passé d'environ 200 tentatives par jour à zéro, du jour au lendemain. Dernière tentative externe : 13 septembre, 21:38:35.
+
+## Ce qu'on peut en tirer sans extrapoler
+
+- Une base publiée sur Internet est attaquée en quelques heures, pas en quelques semaines. Chez moi : 2 h 35.
+- Le volume est continu et automatisé : des centaines de tentatives par jour, de jour comme de nuit.
+- Le mot de passe n'est qu'un pari contre ce volume. Ne pas être joignable retire le pari.
+
+Pour les connexions SSH, le même bruit de fond se mesure aussi : je l'ai raconté dans [338 000 tentatives de connexion sur un serveur que personne ne connaît](/blog/338-000-tentatives-de-connexion-sur-un-serveur-que-personne-ne-connait).
