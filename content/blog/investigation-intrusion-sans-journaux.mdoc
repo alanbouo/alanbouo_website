@@ -1,0 +1,95 @@
+---
+title: "Investigation après une intrusion sans journaux : distinguer « non observé » et « prouvé absent »"
+description: >-
+  Comment établir ce qui s'est passé après une compromission quand les
+  journaux manquent : ce qui restait exploitable dans la base de Metabase, ce
+  qui a été perdu, et la conclusion qu'on peut honnêtement écrire.
+date:
+category: Cybersécurité
+tags:
+  - investigation
+  - forensique
+  - réponse à incident
+  - journalisation
+  - Metabase
+featured: false
+---
+# Investigation après une intrusion sans journaux : distinguer « non observé » et « prouvé absent »
+
+Après une intrusion, la question qu'on se pose tout de suite est : « qu'est-ce qu'ils ont pris ? ». La réponse honnête dépend de ce que les systèmes ont gardé. Sur mon instance Metabase, compromise en août et septembre 2026, ils n'avaient presque rien gardé.
+
+Cet article ne parle pas d'outils. Il parle de la façon d'écrire une conclusion quand les preuves sont incomplètes, parce que c'est là que se joue la rigueur d'une investigation.
+
+## Ce qui manquait
+
+- **`audit_log` vide.** Le journal d'audit de Metabase est une fonction de l'offre Enterprise. Sur la version libre, la table existe et ne contient rien.
+- **Journaux d'accès du proxy jamais activés.** Je ne pouvais donc pas compter les requêtes envoyées vers l'endpoint vulnérable.
+- **Journaux applicatifs de Metabase effacés au redémarrage.**
+- **`log_connections` désactivé sur les bases PostgreSQL.** Une connexion réussie n'aurait laissé aucune trace.
+
+## Ce qui restait
+
+La base interne de Metabase, elle, garde beaucoup de choses pour son propre fonctionnement. Un dump de 149 Mo, 53 tables non vides, exploité ligne à ligne :
+
+- `core_user` : les comptes, dont dix administrateurs créés par des tiers entre le 12 août et le 13 septembre ;
+- `login_history` : 55 connexions, avec adresses IP et user-agents ;
+- `query_execution` : 2 875 exécutions de requêtes ;
+- `revision` et `recent_views` : 146 et 87 entrées ;
+- `api_key` et `metabase_fieldvalues`.
+
+## Ce qu'on en tire
+
+- **Aucune** des 2 875 exécutions de requêtes n'est attribuée à un compte malveillant.
+- Les 146 révisions et les 87 consultations récentes sont toutes légitimes : aucun objet modifié par un attaquant.
+- Aucune clé API créée.
+- Aucune trace d'exécution de code ni de compromission de la machine.
+
+C'est beaucoup. Et ce n'est pas « il ne s'est rien passé ».
+
+## Pourquoi ce n'est pas une preuve d'absence
+
+L'injection SQL qui a servi à entrer ne passe pas par `query_execution` : cette table enregistre les requêtes lancées depuis l'interface de Metabase, pas celles qu'un attaquant glisse dans la base interne par la faille. Zéro requête malveillante dans l'outil ne dit rien de ce que l'injection a lu.
+
+Les identifiants des bases connectées étaient stockés en clair dans cette base interne. Quatre de ces bases étaient joignables depuis Internet. Et `log_connections` était désactivé. Si quelqu'un s'y est connecté avec les bons identifiants, il n'y a aucun endroit où ça se serait écrit.
+
+## Le test décisif, identifié puis perdu
+
+Il y avait un test qui aurait tranché une partie de la question : compter les requêtes vers `/api/session/reset_password` dans les journaux du proxy. C'est la porte d'entrée de la faille. Leur nombre et leurs dates auraient borné l'activité de l'attaquant.
+
+Ces journaux n'existaient pas. Le test était impossible.
+
+## Le faux ami
+
+Un indicateur vient vite à l'esprit : les compteurs de PostgreSQL (`pg_stat_user_tables`), qui comptent les lectures par table. Ils n'auraient détecté qu'un martèlement prolongé. Un `pg_dump`, qui lit tout en une passe, s'y noie. Un indicateur qui ne peut pas voir l'événement recherché ne prouve pas son absence.
+
+## La conclusion qu'on peut écrire
+
+Voici celle que j'ai retenue, et que j'assume :
+
+- **Dans l'outil**, l'activité est finement bornée : comptes créés, connexions, aucune requête, aucune modification.
+- **En dehors de l'outil**, aucune certitude : ce que l'injection a lu, et ce qui a pu être fait avec les identifiants, ne peut pas être établi.
+
+Le tableau qui m'a servi de garde-fou :
+
+{% table %}
+- On peut dire
+- On ne peut pas dire
+---
+- Les identifiants de quatre bases étaient lisibles en clair
+- Que ces bases ont été consultées
+---
+- Aucune requête n'a été exécutée par un compte malveillant
+- Qu'aucune donnée n'a été lue
+---
+- Aucune trace d'exécution de code sur la machine
+- Que la machine n'a certainement pas été touchée
+---
+- `audit_log` est vide
+- Qu'il ne s'est rien passé : c'est une fonction absente
+{% /table %}
+
+« Non observé » et « prouvé absent » ne sont pas la même phrase. Toute la valeur d'un rapport d'incident tient dans la discipline de ne pas glisser de l'une à l'autre.
+
+## Ce qui a changé
+
+[À COMPLÉTER : ce qui est désormais journalisé sur coolify-2 — proxy, `log_connections`, rétention — si une décision a été prise]
