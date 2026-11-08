@@ -1,0 +1,110 @@
+---
+title: "Exposer son serveur IA local sur Internet : ce que révèle un simple sous-domaine"
+description: >-
+  Un enregistrement DNS vers sa machine à domicile publie son opérateur, son
+  pays et son bloc d'adresses, signés de son nom de domaine. Le cas réel, le
+  risque d'une adresse dynamique, et les alternatives : réseau privé, tunnel,
+  relais.
+date:
+category: Cybersécurité
+tags:
+  - DNS
+  - auto-hébergement
+  - IA locale
+  - Tailscale
+  - transparence des certificats
+featured: false
+---
+# Exposer son serveur IA local sur Internet : ce que révèle un simple sous-domaine
+
+Le 19 septembre, en faisant l'inventaire des noms publiés sous mon domaine, je suis tombé sur celui-ci : `api.voicelora.alanbouo.com`. Il pointe vers une machine chez moi, celle qui fait tourner des modèles en local. Deux commandes suffisent pour voir ce qu'il raconte :
+
+```
+api.voicelora.alanbouo.com  →  90.175.x.x
+résolution inverse          →  xx.pool90-175-xx.dynamic.orange.es
+```
+
+J'ai masqué une partie de l'adresse. Sans ce masque, cet article reproduirait exactement la fuite qu'il décrit.
+
+## Ce qu'on publie sans le vouloir
+
+La résolution inverse, c'est le nom que l'opérateur donne à une adresse IP. Personne ne la lit, et pourtant elle se lit sans aucun outil :
+
+{% table %}
+- Ce que dit l'enregistrement
+- Ce qu'on en déduit
+---
+- `dynamic`
+- une connexion résidentielle, pas un hébergeur
+---
+- `orange`
+- l'opérateur, donc le point de contact d'une réquisition ou d'un signalement
+---
+- `.es`
+- le pays
+---
+- `pool90-175-…`
+- le bloc d'adresses, donc une zone géographique restreinte
+{% /table %}
+
+Le nom de domaine, lui, dit à qui tout cela appartient. Et le sous-domaine (`api.voicelora`) dit ce que fait la machine.
+
+Ce nom figure dans les registres de transparence des certificats depuis le 29 avril 2026. Cinq mois de publication au moment où je l'ai vu.
+
+## Pourquoi on en arrive là
+
+Le besoin est légitime : joindre depuis l'extérieur une machine assez puissante pour faire de l'inférence, sans louer de GPU. Le réflexe qui marche en cinq minutes, c'est un enregistrement A vers chez soi. On ne le fait pas par négligence, on le fait parce que ça fonctionne tout de suite.
+
+Au moment du test, aucun port d'inférence courant n'était joignable (`11434` pour Ollama, `8000` pour vLLM, `7860`, `8188` pour ComfyUI, `1234` pour LM Studio), ni SSH, ni HTTP. Une réserve de méthode : ce test a été fait depuis le réseau local. Il montre qu'aucune redirection de port n'était en place, il ne vaut pas mesure externe. Je n'écris donc pas que la machine était joignable : elle ne l'était pas, d'après ce test.
+
+Le problème n'est pas là. Il est dans ce que le nom publie, qu'un port soit ouvert ou non.
+
+## Les deux risques
+
+**Une divulgation permanente.** Tant que l'enregistrement existe, n'importe qui peut relier mon nom de domaine à une connexion domestique, un opérateur, un pays et une zone.
+
+**Un enregistrement qui survit à l'adresse.** L'adresse est dynamique : elle change au renouvellement du bail. L'enregistrement, lui, ne change pas. Au prochain changement, `api.voicelora.alanbouo.com` désignera la connexion domestique d'un inconnu, toujours sous mon nom.
+
+Tout ce qui fait encore confiance à ce nom enverra alors ses requêtes, et parfois ses jetons, chez ce tiers : une liste d'autorisation CORS, un webhook, une variable d'environnement oubliée. C'est la forme domestique du *dangling DNS*, cousin du détournement de sous-domaine.
+
+## Ce qu'il faut faire à la place
+
+Par ordre de préférence, avec les contreparties de chaque option.
+
+### 1. Rien de public : un réseau privé
+
+Tailscale, WireGuard, Netbird. La machine reçoit une adresse dans un réseau privé, joignable seulement par les appareils autorisés. Aucun enregistrement DNS public, aucun port ouvert, rien à découvrir. Pour de l'inférence personnelle, c'est la réponse dans la grande majorité des cas.
+
+*Contrepartie :* un client à installer sur chaque appareil, et une dépendance à un service tiers pour la coordination, sauf WireGuard auto-hébergé. Un réseau privé ne supprime pas tout risque : il déplace la surface vers les clients et le service de coordination.
+
+### 2. Un tunnel sortant
+
+Cloudflare Tunnel, ngrok. La connexion part de chez vous vers le fournisseur : aucun port entrant, votre adresse n'est jamais publiée, et une authentification peut se placer en amont.
+
+*Contrepartie :* le trafic transite par un tiers. C'est à peser quand on fait de l'inférence sur des données sensibles, c'est-à-dire précisément le cas qui pousse à héberger chez soi.
+
+### 3. Si un enregistrement public est vraiment nécessaire
+
+Cas rare, par exemple un webhook entrant :
+
+- jamais vers l'adresse résidentielle : passer par un relais chez un hébergeur ;
+- nommer sans décrire (`edge-3` plutôt que `api.voicelora`) ;
+- un certificat joker `*.domaine` obtenu en challenge DNS-01, pour ne pas publier chaque nom dans les registres de transparence ;
+- une date de revue, parce qu'un enregistrement « temporaire » ne l'est jamais.
+
+### 4. L'inventaire
+
+C'est ce qui manque à tout le monde, moi compris. Lister ce que les registres de transparence connaissent de son domaine :
+
+```bash
+curl -s "https://crt.sh/?q=%25.votredomaine.fr&output=json" \
+  | jq -r '.[].name_value' | sort -u
+```
+
+Puis résoudre chaque nom (`dig +short nom`), regarder où il pointe, et supprimer ce qui ne sert plus.
+
+## On ne se cache pas sur Internet
+
+Même sans enregistrement DNS public, un certificat suffit à publier un nom : c'est le sujet de ma vidéo sur [la transparence des certificats](https://youtu.be/OGIFI3CW1QM). Ici, c'est l'angle inverse : ce que publie un enregistrement DNS. Dans les deux cas, on ne choisit pas d'être discret sur Internet. On choisit ce qu'on y met.
+
+[À COMPLÉTER : ce qui a été fait de `api.voicelora.alanbouo.com` depuis le constat — supprimé, remplacé par un réseau privé, ou encore en place]
