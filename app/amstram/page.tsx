@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 })
 
 // À renseigner à la publication : le bouton remplace alors la mention « Bientôt ».
-const APP_STORE_URL: string | null = null
+const APP_STORE_URL: string | null = 'https://apps.apple.com/us/app/amstram/id6831367827'
 
 // Couleurs de l'app, volontairement hors de la charte du site (voir CLAUDE.md).
 const INK = '#1A1A2E'
